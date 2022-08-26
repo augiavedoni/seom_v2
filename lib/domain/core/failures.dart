@@ -4,6 +4,12 @@ part 'failures.freezed.dart';
 
 @freezed
 class ValueFailure<T> with _$ValueFailure<T> {
+  const factory ValueFailure.invalidCuil({
+    required T failedValue,
+  }) = InvaliCuil<T>;
+
+  const factory ValueFailure.emptyCuil() = EmptyCuil<T>;
+
   const factory ValueFailure.invalidName({
     required T failedValue,
   }) = InvalidName<T>;

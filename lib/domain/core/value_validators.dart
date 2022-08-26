@@ -47,6 +47,24 @@ Either<ValueFailure<String>, String> validateName(String name) {
   }
 }
 
+Either<ValueFailure<String>, String> validateCuil(String cuil) {
+  const String regEx = r"^(\d{11})$";
+
+  if (RegExp(regEx).hasMatch(cuil)) {
+    return right(cuil);
+  } else {
+    if (cuil.isEmpty) {
+      return left(
+        const ValueFailure.emptyCuil(),
+      );
+    } else {
+      return left(
+        ValueFailure.invalidCuil(failedValue: cuil),
+      );
+    }
+  }
+}
+
 Either<ValueFailure<String>, String> validateEmailAddress(String emailAddress) {
   const String regEx =
       r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""";

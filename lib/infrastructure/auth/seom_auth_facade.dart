@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/auth/seom_user.dart';
+import '../../domain/auth/value_objects/cuil.dart';
 import '../../domain/auth/value_objects/email_address.dart';
 import '../../domain/auth/value_objects/password.dart';
 import '../../domain/core/value_objects/unique_id.dart';
@@ -18,9 +19,11 @@ class SeomAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
+    required Cuil cuil,
     required EmailAddress emailAddress,
     required Password password,
   }) async {
+    final String cuilString = cuil.getOrCrash();
     final String emailAddressString = emailAddress.getOrCrash();
     final String passwordString = password.getOrCrash();
 
@@ -29,10 +32,9 @@ class SeomAuthFacade implements IAuthFacade {
       parameters: {
         "email": emailAddressString,
         "password": passwordString,
-        "role": ["user"],
         "firstName": "Augusto",
         "lastName": "Giavedoni",
-        "cuil": "2042375992",
+        "cuil": cuilString,
         "birthdate": "2000-02-20",
       },
     );

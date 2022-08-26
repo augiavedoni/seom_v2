@@ -8,8 +8,8 @@ import '../../injection.dart';
 
 import '../core/theme/app_colors.dart';
 
-import 'widgets/sign_in_form.dart';
-import 'widgets/sign_up_form.dart';
+import 'widgets/sign_in_form/sign_in_form.dart';
+import 'widgets/sign_up_form/sign_up_form.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);

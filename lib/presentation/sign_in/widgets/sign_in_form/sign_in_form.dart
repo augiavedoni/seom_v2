@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../application/auth/auth_bloc.dart';
-import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
+import '../../../../application/auth/auth_bloc.dart';
+import '../../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
 
-import '../../../domain/auth/auth_failure.dart';
+import '../../../../domain/auth/auth_failure.dart';
 
-import '../../common_widgets/custom_dialog.dart';
-import '../../core/theme/app_colors.dart';
-import '../../routes/router.gr.dart';
+import '../../../common_widgets/custom_dialog.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../routes/router.gr.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({Key? key}) : super(key: key);

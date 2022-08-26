@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/auth/auth_failure.dart';
+import '../../../domain/auth/value_objects/cuil.dart';
 import '../../../domain/auth/value_objects/email_address.dart';
 import '../../../domain/auth/i_auth_facade.dart';
 import '../../../domain/auth/value_objects/password.dart';
@@ -21,6 +22,12 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   SignUpFormBloc(this._authFacade) : super(SignUpFormState.initial()) {
     on<SignUpFormEvent>((event, emit) async {
       await event.map<FutureOr<void>>(
+        cuilChanged: (event) => emit(
+          state.copyWith(
+            cuil: Cuil(event.cuil),
+            authFailureOrSuccessOption: none(),
+          ),
+        ),
         emailChanged: (event) => emit(
           state.copyWith(
             emailAddress: EmailAddress(event.emailAddress),
@@ -45,6 +52,7 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   Future<void> _performActionOnAuthFacadeWithEmailAndPassword(
     Emitter<SignUpFormState> emitter,
     Future<Either<AuthFailure, Unit>> Function({
+      required Cuil cuil,
       required EmailAddress emailAddress,
       required Password password,
     })
@@ -63,6 +71,7 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       );
 
       failureOrSuccess = await forwardedCall(
+        cuil: state.cuil,
         emailAddress: state.emailAddress,
         password: state.password,
       );
