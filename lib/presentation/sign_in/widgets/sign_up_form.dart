@@ -20,6 +20,7 @@ class _SignUpFormState extends State<SignUpForm> {
   bool _isSignUpShowing = false;
   bool _isLoading = false;
   bool _needsValidation = false;
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +28,19 @@ class _SignUpFormState extends State<SignUpForm> {
 
     return BlocConsumer<SignUpFormBloc, SignUpFormState>(
       listener: (context, state) {
-        // state.authFailureOrSuccessOption.fold(
-        //   () => null,
-        //   (either) => either.fold(
-        //     (failure) => _showFailureDialog(context, failure),
-        //     (_) {
-        //       context.router.replace(const NotesOverviewScreenRoute());
+        state.authFailureOrSuccessOption.fold(
+          () => null,
+          (either) => either.fold(
+            (failure) => _showFailureDialog(context, failure),
+            (_) {
+              // context.router.replace(const NotesOverviewScreenRoute());
 
-        //       context
-        //           .read<AuthBloc>()
-        //           .add(const AuthEvent.authCheckedRequested());
-        //     },
-        //   ),
-        // );
+              // context
+              //     .read<AuthBloc>()
+              //     .add(const AuthEvent.authCheckedRequested());
+            },
+          ),
+        );
       },
       builder: (context, state) {
         return Positioned(
@@ -173,6 +174,17 @@ class _SignUpFormState extends State<SignUpForm> {
                                 Icons.lock_rounded,
                                 color: black,
                               ),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  !_obscurePassword
+                                      ? Icons.visibility_rounded
+                                      : Icons.visibility_off_rounded,
+                                  color: black,
+                                ),
+                                onPressed: () => setState(() {
+                                  _obscurePassword = !_obscurePassword;
+                                }),
+                              ),
                               labelText: "Contraseña",
                               labelStyle: Theme.of(context)
                                   .textTheme
@@ -202,7 +214,7 @@ class _SignUpFormState extends State<SignUpForm> {
                                     ),
                             cursorColor: yellow,
                             autocorrect: false,
-                            obscureText: true,
+                            obscureText: _obscurePassword,
                             onChanged: (password) =>
                                 BlocProvider.of<SignUpFormBloc>(context).add(
                               SignUpFormEvent.passwordChanged(password),
@@ -226,7 +238,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             'Al apretar el botón "Crear cuenta" estás aceptando los Términos y Condiciones del SEOM',
                           ),
                           const SizedBox(

@@ -22,24 +22,34 @@ class SignInForm extends StatefulWidget {
 class _SignInFormState extends State<SignInForm> {
   bool _needsValidation = false;
   bool _isLoading = false;
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
       listener: (context, state) {
-        // state.authFailureOrSuccessOption.fold(
-        //   () => null,
-        //   (either) => either.fold(
-        //     (failure) => _showFailureDialog(context, failure),
-        //     (_) {
-        //       context.router.replace(const NotesOverviewScreenRoute());
+        state.authFailureOrSuccessOption.fold(
+          () => null,
+          (either) => either.fold(
+            (failure) {
+              setState(() {
+                _isLoading = false;
+              });
 
-        //       context
-        //           .read<AuthBloc>()
-        //           .add(const AuthEvent.authCheckedRequested());
-        //     },
-        //   ),
-        // );
+              return _showFailureDialog(context, failure);
+            },
+            (_) {
+              setState(() {
+                _isLoading = false;
+              });
+              // context.router.replace(const NotesOverviewScreenRoute());
+
+              // context
+              //     .read<AuthBloc>()
+              //     .add(const AuthEvent.authCheckedRequested());
+            },
+          ),
+        );
       },
       builder: (context, state) {
         return Form(
@@ -109,6 +119,17 @@ class _SignInFormState extends State<SignInForm> {
                     Icons.lock_rounded,
                     color: black,
                   ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      !_obscurePassword
+                          ? Icons.visibility_rounded
+                          : Icons.visibility_off_rounded,
+                      color: black,
+                    ),
+                    onPressed: () => setState(() {
+                      _obscurePassword = !_obscurePassword;
+                    }),
+                  ),
                   labelText: "Contraseña",
                   labelStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
                         color: black,
@@ -134,7 +155,7 @@ class _SignInFormState extends State<SignInForm> {
                     ),
                 cursorColor: green,
                 autocorrect: false,
-                obscureText: true,
+                obscureText: _obscurePassword,
                 onChanged: (password) =>
                     BlocProvider.of<SignInFormBloc>(context).add(
                   SignInFormEvent.passwordChanged(password),
