@@ -44,7 +44,7 @@ class _RequestStatusFailure<T> extends RequestStatus<T> {
       (failure != null) ? failure(error) : orElse!();
 
   @override
-  String toString() => 'SupervielleFailure';
+  String toString() => 'SeomFailure';
 
   @override
   bool operator ==(Object other) =>
