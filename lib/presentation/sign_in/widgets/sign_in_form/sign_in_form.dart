@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../application/auth/auth_bloc.dart';
 import '../../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
@@ -42,11 +41,12 @@ class _SignInFormState extends State<SignInForm> {
               setState(() {
                 _isLoading = false;
               });
-              // context.router.replace(const NotesOverviewScreenRoute());
 
-              // context
-              //     .read<AuthBloc>()
-              //     .add(const AuthEvent.authCheckedRequested());
+              context.router.replace(const HomeScreenRoute());
+
+              context
+                  .read<AuthBloc>()
+                  .add(const AuthEvent.authCheckedRequested());
             },
           ),
         );

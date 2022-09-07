@@ -20,5 +20,5 @@ abstract class IAuthFacade {
 
   Option<SeomUser> getSignedInUser();
 
-  Future<void> signOut();
+  Future<Either<AuthFailure, Unit>> signOut();
 }

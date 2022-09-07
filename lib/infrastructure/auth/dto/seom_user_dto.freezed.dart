@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'seom_user.dart';
+part of 'seom_user_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,38 +14,44 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SeomUserDTO _$SeomUserDTOFromJson(Map<String, dynamic> json) {
+  return _SeomUserDTO.fromJson(json);
+}
+
 /// @nodoc
-mixin _$SeomUser {
+mixin _$SeomUserDTO {
   int get id => throw _privateConstructorUsedError;
-  FirstName get firstName => throw _privateConstructorUsedError;
-  LastName get lastName => throw _privateConstructorUsedError;
-  Cuil get cuil => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get cuil => throw _privateConstructorUsedError;
   DateTime get birthdate => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SeomUserCopyWith<SeomUser> get copyWith =>
+  $SeomUserDTOCopyWith<SeomUserDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SeomUserCopyWith<$Res> {
-  factory $SeomUserCopyWith(SeomUser value, $Res Function(SeomUser) then) =
-      _$SeomUserCopyWithImpl<$Res>;
+abstract class $SeomUserDTOCopyWith<$Res> {
+  factory $SeomUserDTOCopyWith(
+          SeomUserDTO value, $Res Function(SeomUserDTO) then) =
+      _$SeomUserDTOCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      FirstName firstName,
-      LastName lastName,
-      Cuil cuil,
+      String firstName,
+      String lastName,
+      String cuil,
       DateTime birthdate});
 }
 
 /// @nodoc
-class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
-  _$SeomUserCopyWithImpl(this._value, this._then);
+class _$SeomUserDTOCopyWithImpl<$Res> implements $SeomUserDTOCopyWith<$Res> {
+  _$SeomUserDTOCopyWithImpl(this._value, this._then);
 
-  final SeomUser _value;
+  final SeomUserDTO _value;
   // ignore: unused_field
-  final $Res Function(SeomUser) _then;
+  final $Res Function(SeomUserDTO) _then;
 
   @override
   $Res call({
@@ -63,15 +69,15 @@ class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as FirstName,
+              as String,
       lastName: lastName == freezed
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as LastName,
+              as String,
       cuil: cuil == freezed
           ? _value.cuil
           : cuil // ignore: cast_nullable_to_non_nullable
-              as Cuil,
+              as String,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
@@ -81,28 +87,29 @@ class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_SeomUserCopyWith<$Res> implements $SeomUserCopyWith<$Res> {
-  factory _$$_SeomUserCopyWith(
-          _$_SeomUser value, $Res Function(_$_SeomUser) then) =
-      __$$_SeomUserCopyWithImpl<$Res>;
+abstract class _$$_SeomUserDTOCopyWith<$Res>
+    implements $SeomUserDTOCopyWith<$Res> {
+  factory _$$_SeomUserDTOCopyWith(
+          _$_SeomUserDTO value, $Res Function(_$_SeomUserDTO) then) =
+      __$$_SeomUserDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
-      FirstName firstName,
-      LastName lastName,
-      Cuil cuil,
+      String firstName,
+      String lastName,
+      String cuil,
       DateTime birthdate});
 }
 
 /// @nodoc
-class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
-    implements _$$_SeomUserCopyWith<$Res> {
-  __$$_SeomUserCopyWithImpl(
-      _$_SeomUser _value, $Res Function(_$_SeomUser) _then)
-      : super(_value, (v) => _then(v as _$_SeomUser));
+class __$$_SeomUserDTOCopyWithImpl<$Res> extends _$SeomUserDTOCopyWithImpl<$Res>
+    implements _$$_SeomUserDTOCopyWith<$Res> {
+  __$$_SeomUserDTOCopyWithImpl(
+      _$_SeomUserDTO _value, $Res Function(_$_SeomUserDTO) _then)
+      : super(_value, (v) => _then(v as _$_SeomUserDTO));
 
   @override
-  _$_SeomUser get _value => super._value as _$_SeomUser;
+  _$_SeomUserDTO get _value => super._value as _$_SeomUserDTO;
 
   @override
   $Res call({
@@ -112,7 +119,7 @@ class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
     Object? cuil = freezed,
     Object? birthdate = freezed,
   }) {
-    return _then(_$_SeomUser(
+    return _then(_$_SeomUserDTO(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -120,15 +127,15 @@ class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as FirstName,
+              as String,
       lastName: lastName == freezed
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as LastName,
+              as String,
       cuil: cuil == freezed
           ? _value.cuil
           : cuil // ignore: cast_nullable_to_non_nullable
-              as Cuil,
+              as String,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
@@ -139,35 +146,40 @@ class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SeomUser implements _SeomUser {
-  const _$_SeomUser(
+@JsonSerializable(explicitToJson: true)
+class _$_SeomUserDTO extends _SeomUserDTO {
+  const _$_SeomUserDTO(
       {required this.id,
       required this.firstName,
       required this.lastName,
       required this.cuil,
-      required this.birthdate});
+      required this.birthdate})
+      : super._();
+
+  factory _$_SeomUserDTO.fromJson(Map<String, dynamic> json) =>
+      _$$_SeomUserDTOFromJson(json);
 
   @override
   final int id;
   @override
-  final FirstName firstName;
+  final String firstName;
   @override
-  final LastName lastName;
+  final String lastName;
   @override
-  final Cuil cuil;
+  final String cuil;
   @override
   final DateTime birthdate;
 
   @override
   String toString() {
-    return 'SeomUser(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate)';
+    return 'SeomUserDTO(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SeomUser &&
+            other is _$_SeomUserDTO &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.firstName, firstName) &&
             const DeepCollectionEquality().equals(other.lastName, lastName) &&
@@ -175,6 +187,7 @@ class _$_SeomUser implements _SeomUser {
             const DeepCollectionEquality().equals(other.birthdate, birthdate));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -186,30 +199,41 @@ class _$_SeomUser implements _SeomUser {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SeomUserCopyWith<_$_SeomUser> get copyWith =>
-      __$$_SeomUserCopyWithImpl<_$_SeomUser>(this, _$identity);
+  _$$_SeomUserDTOCopyWith<_$_SeomUserDTO> get copyWith =>
+      __$$_SeomUserDTOCopyWithImpl<_$_SeomUserDTO>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SeomUserDTOToJson(
+      this,
+    );
+  }
 }
 
-abstract class _SeomUser implements SeomUser {
-  const factory _SeomUser(
+abstract class _SeomUserDTO extends SeomUserDTO {
+  const factory _SeomUserDTO(
       {required final int id,
-      required final FirstName firstName,
-      required final LastName lastName,
-      required final Cuil cuil,
-      required final DateTime birthdate}) = _$_SeomUser;
+      required final String firstName,
+      required final String lastName,
+      required final String cuil,
+      required final DateTime birthdate}) = _$_SeomUserDTO;
+  const _SeomUserDTO._() : super._();
+
+  factory _SeomUserDTO.fromJson(Map<String, dynamic> json) =
+      _$_SeomUserDTO.fromJson;
 
   @override
   int get id;
   @override
-  FirstName get firstName;
+  String get firstName;
   @override
-  LastName get lastName;
+  String get lastName;
   @override
-  Cuil get cuil;
+  String get cuil;
   @override
   DateTime get birthdate;
   @override
   @JsonKey(ignore: true)
-  _$$_SeomUserCopyWith<_$_SeomUser> get copyWith =>
+  _$$_SeomUserDTOCopyWith<_$_SeomUserDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

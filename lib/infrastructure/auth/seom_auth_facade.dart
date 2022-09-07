@@ -7,15 +7,20 @@ import '../../domain/auth/seom_user.dart';
 import '../../domain/auth/value_objects/cuil.dart';
 import '../../domain/auth/value_objects/email_address.dart';
 import '../../domain/auth/value_objects/password.dart';
-import '../../domain/core/value_objects/unique_id.dart';
 import '../core/http/seom_client.dart';
+import '../datasource/user_data_source.dart';
+import 'dto/seom_user_dto.dart';
 
 @Injectable(as: IAuthFacade)
 @lazySingleton
 class SeomAuthFacade implements IAuthFacade {
   final SeomClient _client;
+  final UserDataSource _userDataSource;
 
-  SeomAuthFacade(this._client);
+  SeomAuthFacade(
+    this._client,
+    this._userDataSource,
+  );
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
@@ -40,7 +45,13 @@ class SeomAuthFacade implements IAuthFacade {
     );
 
     return response.map(
-      ok: (response) => right(unit),
+      ok: (response) {
+        final SeomUserDTO user = SeomUserDTO.fromJson(response);
+
+        _userDataSource.user = user.toDomain();
+
+        return right(unit);
+      },
       error: (error, statusCode) {
         if (statusCode == 401 && error.error == "email-already-in-use") {
           return left(const AuthFailure.emailAlreadyInUse());
@@ -68,7 +79,13 @@ class SeomAuthFacade implements IAuthFacade {
     );
 
     return response.map(
-      ok: (response) => right(unit),
+      ok: (response) {
+        final SeomUserDTO user = SeomUserDTO.fromJson(response);
+
+        _userDataSource.user = user.toDomain();
+
+        return right(unit);
+      },
       error: (error, statusCode) {
         if (statusCode == 401 && error.message == "Bad credentials") {
           return left(const AuthFailure.invalidEmailAndPasswordCombination());
@@ -81,11 +98,25 @@ class SeomAuthFacade implements IAuthFacade {
 
   @override
   Option<SeomUser> getSignedInUser() => optionOf(
-        SeomUser(
-          id: UniqueId(),
-        ),
+        _userDataSource.user,
       );
 
   @override
-  Future<void> signOut() async {}
+  Future<Either<AuthFailure, Unit>> signOut() async {
+    final response = await _client.post(
+      "auth/logout",
+      parameters: {
+        "userId": _userDataSource.user!.id,
+      },
+    );
+
+    return response.map(
+      ok: (_) {
+        _userDataSource.clearData();
+
+        return right(unit);
+      },
+      error: (_, __) => left(const AuthFailure.serverError()),
+    );
+  }
 }
