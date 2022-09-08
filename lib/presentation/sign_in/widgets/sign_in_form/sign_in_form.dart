@@ -233,12 +233,11 @@ class _SignInFormState extends State<SignInForm> {
     BuildContext context,
     AuthFailure failure,
   ) {
-    final String description = failure.map(
+    final String description = failure.maybeMap(
       cancelledByUser: (_) => "Operación cancelada por el usuario",
-      serverError: (_) => "Oops! Algó falló... ¡Volvé a intentarlo!",
-      emailAlreadyInUse: (_) => "El correo electrónico ya está en uso",
       invalidEmailAndPasswordCombination: (_) =>
           "La combinación de correo electrónico y contraseña es incorrecta",
+      orElse: () => "Oops! Algó falló... ¡Volvé a intentarlo!",
     );
 
     setState(() {

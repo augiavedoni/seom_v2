@@ -53,8 +53,14 @@ class SeomAuthFacade implements IAuthFacade {
         return right(unit);
       },
       error: (error, statusCode) {
-        if (statusCode == 401 && error.error == "email-already-in-use") {
-          return left(const AuthFailure.emailAlreadyInUse());
+        if (statusCode == 400) {
+          switch (error.error) {
+            case "email-already-in-use":
+              return left(const AuthFailure.emailAlreadyInUse());
+
+            case "cuil-already-registered":
+              return left(const AuthFailure.cuilAlreadyInUse());
+          }
         }
 
         return left(const AuthFailure.serverError());
@@ -80,6 +86,7 @@ class SeomAuthFacade implements IAuthFacade {
 
     return response.map(
       ok: (response) {
+        //TODO: mapear campos faltantes
         final SeomUserDTO user = SeomUserDTO.fromJson(response);
 
         _userDataSource.user = user.toDomain();

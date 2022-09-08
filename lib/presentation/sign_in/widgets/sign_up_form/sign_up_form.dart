@@ -27,6 +27,8 @@ class _SignUpFormState extends State<SignUpForm> {
   bool _isLoading = false;
   bool _needsValidation = false;
 
+  //TODO: terminar formulario de registro y redireccionar a pantalla de inicio
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -181,12 +183,11 @@ class _SignUpFormState extends State<SignUpForm> {
     BuildContext context,
     AuthFailure failure,
   ) {
-    final String description = failure.map(
+    final String description = failure.maybeMap(
       cancelledByUser: (_) => "Operación cancelada por el usuario",
-      serverError: (_) => "Oops! Algó falló... ¡Volvé a intentarlo!",
       emailAlreadyInUse: (_) => "El correo electrónico ya está en uso",
-      invalidEmailAndPasswordCombination: (_) =>
-          "La combinación de correo electrónico y contraseña es incorrecta",
+      cuilAlreadyInUse: (_) => "El CUIL ingresado ya está registrado",
+      orElse: () => "Oops! Algó falló... ¡Volvé a intentarlo!",
     );
 
     setState(() {
