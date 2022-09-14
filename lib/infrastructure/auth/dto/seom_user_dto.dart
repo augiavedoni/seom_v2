@@ -6,6 +6,8 @@ import '../../../domain/auth/seom_user.dart';
 import '../../../domain/auth/value_objects/cuil.dart';
 import '../../../domain/auth/value_objects/first_name.dart';
 import '../../../domain/auth/value_objects/last_name.dart';
+import '../../../domain/auth/value_objects/refresh_token.dart';
+import '../../../domain/auth/value_objects/token.dart';
 
 part 'seom_user_dto.freezed.dart';
 part 'seom_user_dto.g.dart';
@@ -21,6 +23,8 @@ abstract class SeomUserDTO implements _$SeomUserDTO {
     required String lastName,
     required String cuil,
     required DateTime birthdate,
+    required String token,
+    required String refreshToken,
   }) = _SeomUserDTO;
 
   factory SeomUserDTO.fromDomain(SeomUser user) {
@@ -30,6 +34,8 @@ abstract class SeomUserDTO implements _$SeomUserDTO {
       lastName: user.lastName.getOrCrash(),
       cuil: user.cuil.getOrCrash(),
       birthdate: user.birthdate,
+      token: user.token.getOrCrash(),
+      refreshToken: user.refreshToken.getOrCrash(),
     );
   }
 
@@ -40,6 +46,8 @@ abstract class SeomUserDTO implements _$SeomUserDTO {
       lastName: LastName(lastName),
       cuil: Cuil(cuil),
       birthdate: birthdate,
+      token: Token(token),
+      refreshToken: RefreshToken(refreshToken),
     );
   }
 

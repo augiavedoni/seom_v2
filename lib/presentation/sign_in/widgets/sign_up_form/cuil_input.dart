@@ -14,11 +14,11 @@ class ___CuilInputState extends State<_CuilInput> {
       decoration: InputDecoration(
         prefixIcon: const Icon(
           Icons.badge_rounded,
-          color: black,
+          color: Colors.white,
         ),
         labelText: "CUIL",
         labelStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
-              color: black,
+              color: Colors.white,
             ),
         border: OutlineInputBorder(
           borderSide: const BorderSide(
@@ -34,12 +34,19 @@ class ___CuilInputState extends State<_CuilInput> {
           ),
           borderRadius: BorderRadius.circular(15),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            width: 2,
+            color: Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(15),
+        ),
         focusColor: Colors.white,
       ),
       style: Theme.of(context).textTheme.bodyText2!.copyWith(
-            color: black,
+            color: Colors.white,
           ),
-      cursorColor: yellow,
+      cursorColor: black,
       autocorrect: false,
       enableSuggestions: true,
       keyboardType: TextInputType.number,

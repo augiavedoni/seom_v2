@@ -25,6 +25,8 @@ mixin _$SeomUserDTO {
   String get lastName => throw _privateConstructorUsedError;
   String get cuil => throw _privateConstructorUsedError;
   DateTime get birthdate => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
+  String get refreshToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +44,9 @@ abstract class $SeomUserDTOCopyWith<$Res> {
       String firstName,
       String lastName,
       String cuil,
-      DateTime birthdate});
+      DateTime birthdate,
+      String token,
+      String refreshToken});
 }
 
 /// @nodoc
@@ -60,6 +64,8 @@ class _$SeomUserDTOCopyWithImpl<$Res> implements $SeomUserDTOCopyWith<$Res> {
     Object? lastName = freezed,
     Object? cuil = freezed,
     Object? birthdate = freezed,
+    Object? token = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -82,6 +88,14 @@ class _$SeomUserDTOCopyWithImpl<$Res> implements $SeomUserDTOCopyWith<$Res> {
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -98,7 +112,9 @@ abstract class _$$_SeomUserDTOCopyWith<$Res>
       String firstName,
       String lastName,
       String cuil,
-      DateTime birthdate});
+      DateTime birthdate,
+      String token,
+      String refreshToken});
 }
 
 /// @nodoc
@@ -118,6 +134,8 @@ class __$$_SeomUserDTOCopyWithImpl<$Res> extends _$SeomUserDTOCopyWithImpl<$Res>
     Object? lastName = freezed,
     Object? cuil = freezed,
     Object? birthdate = freezed,
+    Object? token = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_$_SeomUserDTO(
       id: id == freezed
@@ -140,6 +158,14 @@ class __$$_SeomUserDTOCopyWithImpl<$Res> extends _$SeomUserDTOCopyWithImpl<$Res>
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -153,7 +179,9 @@ class _$_SeomUserDTO extends _SeomUserDTO {
       required this.firstName,
       required this.lastName,
       required this.cuil,
-      required this.birthdate})
+      required this.birthdate,
+      required this.token,
+      required this.refreshToken})
       : super._();
 
   factory _$_SeomUserDTO.fromJson(Map<String, dynamic> json) =>
@@ -169,10 +197,14 @@ class _$_SeomUserDTO extends _SeomUserDTO {
   final String cuil;
   @override
   final DateTime birthdate;
+  @override
+  final String token;
+  @override
+  final String refreshToken;
 
   @override
   String toString() {
-    return 'SeomUserDTO(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate)';
+    return 'SeomUserDTO(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
   }
 
   @override
@@ -184,7 +216,10 @@ class _$_SeomUserDTO extends _SeomUserDTO {
             const DeepCollectionEquality().equals(other.firstName, firstName) &&
             const DeepCollectionEquality().equals(other.lastName, lastName) &&
             const DeepCollectionEquality().equals(other.cuil, cuil) &&
-            const DeepCollectionEquality().equals(other.birthdate, birthdate));
+            const DeepCollectionEquality().equals(other.birthdate, birthdate) &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.refreshToken, refreshToken));
   }
 
   @JsonKey(ignore: true)
@@ -195,7 +230,9 @@ class _$_SeomUserDTO extends _SeomUserDTO {
       const DeepCollectionEquality().hash(firstName),
       const DeepCollectionEquality().hash(lastName),
       const DeepCollectionEquality().hash(cuil),
-      const DeepCollectionEquality().hash(birthdate));
+      const DeepCollectionEquality().hash(birthdate),
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(refreshToken));
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +253,9 @@ abstract class _SeomUserDTO extends SeomUserDTO {
       required final String firstName,
       required final String lastName,
       required final String cuil,
-      required final DateTime birthdate}) = _$_SeomUserDTO;
+      required final DateTime birthdate,
+      required final String token,
+      required final String refreshToken}) = _$_SeomUserDTO;
   const _SeomUserDTO._() : super._();
 
   factory _SeomUserDTO.fromJson(Map<String, dynamic> json) =
@@ -232,6 +271,10 @@ abstract class _SeomUserDTO extends SeomUserDTO {
   String get cuil;
   @override
   DateTime get birthdate;
+  @override
+  String get token;
+  @override
+  String get refreshToken;
   @override
   @JsonKey(ignore: true)
   _$$_SeomUserDTOCopyWith<_$_SeomUserDTO> get copyWith =>

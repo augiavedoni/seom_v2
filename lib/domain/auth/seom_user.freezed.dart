@@ -21,6 +21,8 @@ mixin _$SeomUser {
   LastName get lastName => throw _privateConstructorUsedError;
   Cuil get cuil => throw _privateConstructorUsedError;
   DateTime get birthdate => throw _privateConstructorUsedError;
+  Token get token => throw _privateConstructorUsedError;
+  RefreshToken get refreshToken => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeomUserCopyWith<SeomUser> get copyWith =>
@@ -36,7 +38,9 @@ abstract class $SeomUserCopyWith<$Res> {
       FirstName firstName,
       LastName lastName,
       Cuil cuil,
-      DateTime birthdate});
+      DateTime birthdate,
+      Token token,
+      RefreshToken refreshToken});
 }
 
 /// @nodoc
@@ -54,6 +58,8 @@ class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
     Object? lastName = freezed,
     Object? cuil = freezed,
     Object? birthdate = freezed,
+    Object? token = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -76,6 +82,14 @@ class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as Token,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as RefreshToken,
     ));
   }
 }
@@ -91,7 +105,9 @@ abstract class _$$_SeomUserCopyWith<$Res> implements $SeomUserCopyWith<$Res> {
       FirstName firstName,
       LastName lastName,
       Cuil cuil,
-      DateTime birthdate});
+      DateTime birthdate,
+      Token token,
+      RefreshToken refreshToken});
 }
 
 /// @nodoc
@@ -111,6 +127,8 @@ class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
     Object? lastName = freezed,
     Object? cuil = freezed,
     Object? birthdate = freezed,
+    Object? token = freezed,
+    Object? refreshToken = freezed,
   }) {
     return _then(_$_SeomUser(
       id: id == freezed
@@ -133,6 +151,14 @@ class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as Token,
+      refreshToken: refreshToken == freezed
+          ? _value.refreshToken
+          : refreshToken // ignore: cast_nullable_to_non_nullable
+              as RefreshToken,
     ));
   }
 }
@@ -145,7 +171,9 @@ class _$_SeomUser implements _SeomUser {
       required this.firstName,
       required this.lastName,
       required this.cuil,
-      required this.birthdate});
+      required this.birthdate,
+      required this.token,
+      required this.refreshToken});
 
   @override
   final int id;
@@ -157,10 +185,14 @@ class _$_SeomUser implements _SeomUser {
   final Cuil cuil;
   @override
   final DateTime birthdate;
+  @override
+  final Token token;
+  @override
+  final RefreshToken refreshToken;
 
   @override
   String toString() {
-    return 'SeomUser(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate)';
+    return 'SeomUser(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
   }
 
   @override
@@ -172,7 +204,10 @@ class _$_SeomUser implements _SeomUser {
             const DeepCollectionEquality().equals(other.firstName, firstName) &&
             const DeepCollectionEquality().equals(other.lastName, lastName) &&
             const DeepCollectionEquality().equals(other.cuil, cuil) &&
-            const DeepCollectionEquality().equals(other.birthdate, birthdate));
+            const DeepCollectionEquality().equals(other.birthdate, birthdate) &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.refreshToken, refreshToken));
   }
 
   @override
@@ -182,7 +217,9 @@ class _$_SeomUser implements _SeomUser {
       const DeepCollectionEquality().hash(firstName),
       const DeepCollectionEquality().hash(lastName),
       const DeepCollectionEquality().hash(cuil),
-      const DeepCollectionEquality().hash(birthdate));
+      const DeepCollectionEquality().hash(birthdate),
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(refreshToken));
 
   @JsonKey(ignore: true)
   @override
@@ -196,7 +233,9 @@ abstract class _SeomUser implements SeomUser {
       required final FirstName firstName,
       required final LastName lastName,
       required final Cuil cuil,
-      required final DateTime birthdate}) = _$_SeomUser;
+      required final DateTime birthdate,
+      required final Token token,
+      required final RefreshToken refreshToken}) = _$_SeomUser;
 
   @override
   int get id;
@@ -208,6 +247,10 @@ abstract class _SeomUser implements SeomUser {
   Cuil get cuil;
   @override
   DateTime get birthdate;
+  @override
+  Token get token;
+  @override
+  RefreshToken get refreshToken;
   @override
   @JsonKey(ignore: true)
   _$$_SeomUserCopyWith<_$_SeomUser> get copyWith =>

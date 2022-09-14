@@ -22,6 +22,7 @@ mixin _$AuthFailure {
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$AuthFailure {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ mixin _$AuthFailure {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) =>
@@ -50,6 +53,7 @@ mixin _$AuthFailure {
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) =>
@@ -60,6 +64,7 @@ mixin _$AuthFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) =>
@@ -70,6 +75,7 @@ mixin _$AuthFailure {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -138,6 +144,7 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return cancelledByUser();
@@ -150,6 +157,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
     return cancelledByUser?.call();
@@ -162,6 +170,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -178,6 +187,7 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -191,6 +201,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -204,6 +215,7 @@ class _$CancelledByUser implements CancelledByUser {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -263,6 +275,7 @@ class _$ServerError implements ServerError {
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return serverError();
@@ -275,6 +288,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
     return serverError?.call();
@@ -287,6 +301,7 @@ class _$ServerError implements ServerError {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -303,6 +318,7 @@ class _$ServerError implements ServerError {
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -316,6 +332,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -329,6 +346,7 @@ class _$ServerError implements ServerError {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -389,6 +407,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return emailAlreadyInUse();
@@ -401,6 +420,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
     return emailAlreadyInUse?.call();
@@ -413,6 +433,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -429,6 +450,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -442,6 +464,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -455,6 +478,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -515,6 +539,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return cuilAlreadyInUse();
@@ -527,6 +552,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
     return cuilAlreadyInUse?.call();
@@ -539,6 +565,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -555,6 +582,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -568,6 +596,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -581,6 +610,7 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -594,6 +624,138 @@ class _$CuilAlreadyInUse implements CuilAlreadyInUse {
 
 abstract class CuilAlreadyInUse implements AuthFailure {
   const factory CuilAlreadyInUse() = _$CuilAlreadyInUse;
+}
+
+/// @nodoc
+abstract class _$$CitizenNotFoundCopyWith<$Res> {
+  factory _$$CitizenNotFoundCopyWith(
+          _$CitizenNotFound value, $Res Function(_$CitizenNotFound) then) =
+      __$$CitizenNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CitizenNotFoundCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$$CitizenNotFoundCopyWith<$Res> {
+  __$$CitizenNotFoundCopyWithImpl(
+      _$CitizenNotFound _value, $Res Function(_$CitizenNotFound) _then)
+      : super(_value, (v) => _then(v as _$CitizenNotFound));
+
+  @override
+  _$CitizenNotFound get _value => super._value as _$CitizenNotFound;
+}
+
+/// @nodoc
+
+class _$CitizenNotFound implements CitizenNotFound {
+  const _$CitizenNotFound();
+
+  @override
+  String toString() {
+    return 'AuthFailure.citizenNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CitizenNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
+    required TResult Function() invalidEmailAndPasswordCombination,
+  }) {
+    return citizenNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
+    TResult Function()? invalidEmailAndPasswordCombination,
+  }) {
+    return citizenNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (citizenNotFound != null) {
+      return citizenNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+  }) {
+    return citizenNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+  }) {
+    return citizenNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (citizenNotFound != null) {
+      return citizenNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CitizenNotFound implements AuthFailure {
+  const factory CitizenNotFound() = _$CitizenNotFound;
 }
 
 /// @nodoc
@@ -646,6 +808,7 @@ class _$InvalidEmailAndPasswordCombination
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() cuilAlreadyInUse,
+    required TResult Function() citizenNotFound,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return invalidEmailAndPasswordCombination();
@@ -658,6 +821,7 @@ class _$InvalidEmailAndPasswordCombination
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
   }) {
     return invalidEmailAndPasswordCombination?.call();
@@ -670,6 +834,7 @@ class _$InvalidEmailAndPasswordCombination
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? cuilAlreadyInUse,
+    TResult Function()? citizenNotFound,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -686,6 +851,7 @@ class _$InvalidEmailAndPasswordCombination
     required TResult Function(ServerError value) serverError,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(CuilAlreadyInUse value) cuilAlreadyInUse,
+    required TResult Function(CitizenNotFound value) citizenNotFound,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -699,6 +865,7 @@ class _$InvalidEmailAndPasswordCombination
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -712,6 +879,7 @@ class _$InvalidEmailAndPasswordCombination
     TResult Function(ServerError value)? serverError,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(CuilAlreadyInUse value)? cuilAlreadyInUse,
+    TResult Function(CitizenNotFound value)? citizenNotFound,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),

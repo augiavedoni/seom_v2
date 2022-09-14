@@ -27,8 +27,6 @@ class _SignUpFormState extends State<SignUpForm> {
   bool _isLoading = false;
   bool _needsValidation = false;
 
-  //TODO: terminar formulario de registro y redireccionar a pantalla de inicio
-
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -40,11 +38,15 @@ class _SignUpFormState extends State<SignUpForm> {
           (either) => either.fold(
             (failure) => _showFailureDialog(context, failure),
             (_) {
-              // context.router.replace(const NotesOverviewScreenRoute());
+              setState(() {
+                _isLoading = false;
+              });
 
-              // context
-              //     .read<AuthBloc>()
-              //     .add(const AuthEvent.authCheckedRequested());
+              context.router.replace(const HomeScreenRoute());
+
+              context
+                  .read<AuthBloc>()
+                  .add(const AuthEvent.authCheckedRequested());
             },
           ),
         );
@@ -102,7 +104,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     Text(
                       "¡El proceso de registro es rápido y sencillo!",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                            color: black,
+                            color: Colors.white,
                           ),
                       textAlign: TextAlign.center,
                     ),
@@ -129,6 +131,9 @@ class _SignUpFormState extends State<SignUpForm> {
                           ),
                           const Text(
                             'Al apretar el botón "Crear cuenta" estás aceptando los Términos y Condiciones del SEOM',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                           const SizedBox(
                             height: 30,
@@ -187,6 +192,8 @@ class _SignUpFormState extends State<SignUpForm> {
       cancelledByUser: (_) => "Operación cancelada por el usuario",
       emailAlreadyInUse: (_) => "El correo electrónico ya está en uso",
       cuilAlreadyInUse: (_) => "El CUIL ingresado ya está registrado",
+      citizenNotFound: (_) =>
+          "El CUIL ingresado no se encuentra en nuestros registros. Por favor, acercate a la Municipalidad para resolver este inconveniente.",
       orElse: () => "Oops! Algó falló... ¡Volvé a intentarlo!",
     );
 
@@ -209,20 +216,22 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   void _validateInformationAndCreateAccount(BuildContext context) {
+    final bool isCuilValid =
+        BlocProvider.of<SignUpFormBloc>(context).state.cuil.isValid();
     final bool isEmailValid =
         BlocProvider.of<SignUpFormBloc>(context).state.emailAddress.isValid();
     final bool isPasswordValid =
         BlocProvider.of<SignUpFormBloc>(context).state.password.isValid();
     _needsValidation = true;
 
-    if (isEmailValid && isPasswordValid) {
-      setState(() {
+    setState(() {
+      if (isCuilValid && isEmailValid && isPasswordValid) {
         _isLoading = true;
-      });
 
-      BlocProvider.of<SignUpFormBloc>(context).add(
-        const SignUpFormEvent.registerWithEmailAndPasswordPressed(),
-      );
-    }
+        BlocProvider.of<SignUpFormBloc>(context).add(
+          const SignUpFormEvent.registerWithEmailAndPasswordPressed(),
+        );
+      }
+    });
   }
 }

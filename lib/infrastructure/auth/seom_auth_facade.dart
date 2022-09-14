@@ -37,10 +37,7 @@ class SeomAuthFacade implements IAuthFacade {
       parameters: {
         "email": emailAddressString,
         "password": passwordString,
-        "firstName": "Augusto",
-        "lastName": "Giavedoni",
         "cuil": cuilString,
-        "birthdate": "2000-02-20",
       },
     );
 
@@ -61,6 +58,8 @@ class SeomAuthFacade implements IAuthFacade {
             case "cuil-already-registered":
               return left(const AuthFailure.cuilAlreadyInUse());
           }
+        } else if (statusCode == 404 && error.error == "citizen-not-found") {
+          return left(const AuthFailure.citizenNotFound());
         }
 
         return left(const AuthFailure.serverError());
@@ -86,7 +85,6 @@ class SeomAuthFacade implements IAuthFacade {
 
     return response.map(
       ok: (response) {
-        //TODO: mapear campos faltantes
         final SeomUserDTO user = SeomUserDTO.fromJson(response);
 
         _userDataSource.user = user.toDomain();

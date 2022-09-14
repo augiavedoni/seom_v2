@@ -99,3 +99,23 @@ Either<ValueFailure<String>, String> validatePassword(String password) {
     }
   }
 }
+
+Either<ValueFailure<String>, String> validateToken(String token) {
+  if (token.isEmpty) {
+    return left(
+      const ValueFailure.emptyToken(),
+    );
+  } else {
+    return right(token);
+  }
+}
+
+Either<ValueFailure<String>, String> validateRefreshToken(String refreshToken) {
+  if (refreshToken.isEmpty) {
+    return left(
+      const ValueFailure.emptyRefreshToken(),
+    );
+  } else {
+    return right(refreshToken);
+  }
+}

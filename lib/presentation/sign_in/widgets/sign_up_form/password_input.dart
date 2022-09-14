@@ -9,21 +9,21 @@ class _PasswordInput extends StatefulWidget {
 
 class __PasswordInputState extends State<_PasswordInput> {
   bool _obscurePassword = true;
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
         prefixIcon: const Icon(
           Icons.lock_rounded,
-          color: black,
+          color: Colors.white,
         ),
         suffixIcon: IconButton(
           icon: Icon(
             !_obscurePassword
                 ? Icons.visibility_rounded
                 : Icons.visibility_off_rounded,
-            color: black,
+            color: Colors.white,
           ),
           onPressed: () => setState(() {
             _obscurePassword = !_obscurePassword;
@@ -31,7 +31,7 @@ class __PasswordInputState extends State<_PasswordInput> {
         ),
         labelText: "Contraseña",
         labelStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
-              color: black,
+              color: Colors.white,
             ),
         border: OutlineInputBorder(
           borderSide: const BorderSide(
@@ -47,12 +47,19 @@ class __PasswordInputState extends State<_PasswordInput> {
           ),
           borderRadius: BorderRadius.circular(15),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            width: 2,
+            color: Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(15),
+        ),
         focusColor: Colors.white,
       ),
       style: Theme.of(context).textTheme.bodyText2!.copyWith(
-            color: black,
+            color: Colors.white,
           ),
-      cursorColor: yellow,
+      cursorColor: black,
       autocorrect: false,
       obscureText: _obscurePassword,
       onChanged: (password) => BlocProvider.of<SignUpFormBloc>(context).add(

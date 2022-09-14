@@ -13,6 +13,8 @@ _$_SeomUserDTO _$$_SeomUserDTOFromJson(Map<String, dynamic> json) =>
       lastName: json['lastName'] as String,
       cuil: json['cuil'] as String,
       birthdate: DateTime.parse(json['birthdate'] as String),
+      token: json['token'] as String,
+      refreshToken: json['refreshToken'] as String,
     );
 
 Map<String, dynamic> _$$_SeomUserDTOToJson(_$_SeomUserDTO instance) =>
@@ -22,4 +24,6 @@ Map<String, dynamic> _$$_SeomUserDTOToJson(_$_SeomUserDTO instance) =>
       'lastName': instance.lastName,
       'cuil': instance.cuil,
       'birthdate': instance.birthdate.toIso8601String(),
+      'token': instance.token,
+      'refreshToken': instance.refreshToken,
     };

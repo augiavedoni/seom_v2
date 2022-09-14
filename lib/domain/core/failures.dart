@@ -32,6 +32,10 @@ class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.emptyPassword() = EmptyPassword<T>;
 
+  const factory ValueFailure.emptyToken() = EmptyToken<T>;
+
+  const factory ValueFailure.emptyRefreshToken() = EmptyRefreshToken<T>;
+
   const factory ValueFailure.exceedingLength({
     required T failedValue,
     required int maxLength,

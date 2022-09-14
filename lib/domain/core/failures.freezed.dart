@@ -27,6 +27,8 @@ mixin _$ValueFailure<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) =>
@@ -42,6 +44,8 @@ mixin _$ValueFailure<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) =>
@@ -57,6 +61,8 @@ mixin _$ValueFailure<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -73,6 +79,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) =>
@@ -88,6 +96,8 @@ mixin _$ValueFailure<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) =>
@@ -103,6 +113,8 @@ mixin _$ValueFailure<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -202,6 +214,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -220,6 +234,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -238,6 +254,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -260,6 +278,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -278,6 +298,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -296,6 +318,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -366,6 +390,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -384,6 +410,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -402,6 +430,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -424,6 +454,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -442,6 +474,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -460,6 +494,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -550,6 +586,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -568,6 +606,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -586,6 +626,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -608,6 +650,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -626,6 +670,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -644,6 +690,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -714,6 +762,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -732,6 +782,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -750,6 +802,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -772,6 +826,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -790,6 +846,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -808,6 +866,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -898,6 +958,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -916,6 +978,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -934,6 +998,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -956,6 +1022,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -974,6 +1042,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -992,6 +1062,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1087,6 +1159,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1105,6 +1179,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1123,6 +1199,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1145,6 +1223,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -1163,6 +1243,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -1181,6 +1263,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1252,6 +1336,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1270,6 +1356,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1288,6 +1376,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1310,6 +1400,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -1328,6 +1420,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -1346,6 +1440,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1436,6 +1532,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1454,6 +1552,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1472,6 +1572,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1494,6 +1596,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -1512,6 +1616,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -1530,6 +1636,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1601,6 +1709,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1619,6 +1729,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1637,6 +1749,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1659,6 +1773,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -1677,6 +1793,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -1695,6 +1813,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1708,6 +1828,348 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
 
 abstract class EmptyPassword<T> implements ValueFailure<T> {
   const factory EmptyPassword() = _$EmptyPassword<T>;
+}
+
+/// @nodoc
+abstract class _$$EmptyTokenCopyWith<T, $Res> {
+  factory _$$EmptyTokenCopyWith(
+          _$EmptyToken<T> value, $Res Function(_$EmptyToken<T>) then) =
+      __$$EmptyTokenCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$EmptyTokenCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$EmptyTokenCopyWith<T, $Res> {
+  __$$EmptyTokenCopyWithImpl(
+      _$EmptyToken<T> _value, $Res Function(_$EmptyToken<T>) _then)
+      : super(_value, (v) => _then(v as _$EmptyToken<T>));
+
+  @override
+  _$EmptyToken<T> get _value => super._value as _$EmptyToken<T>;
+}
+
+/// @nodoc
+
+class _$EmptyToken<T> implements EmptyToken<T> {
+  const _$EmptyToken();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptyToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyToken<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function() empty,
+  }) {
+    return emptyToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function()? empty,
+  }) {
+    return emptyToken?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (emptyToken != null) {
+      return emptyToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return emptyToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+  }) {
+    return emptyToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (emptyToken != null) {
+      return emptyToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyToken<T> implements ValueFailure<T> {
+  const factory EmptyToken() = _$EmptyToken<T>;
+}
+
+/// @nodoc
+abstract class _$$EmptyRefreshTokenCopyWith<T, $Res> {
+  factory _$$EmptyRefreshTokenCopyWith(_$EmptyRefreshToken<T> value,
+          $Res Function(_$EmptyRefreshToken<T>) then) =
+      __$$EmptyRefreshTokenCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$EmptyRefreshTokenCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$EmptyRefreshTokenCopyWith<T, $Res> {
+  __$$EmptyRefreshTokenCopyWithImpl(_$EmptyRefreshToken<T> _value,
+      $Res Function(_$EmptyRefreshToken<T>) _then)
+      : super(_value, (v) => _then(v as _$EmptyRefreshToken<T>));
+
+  @override
+  _$EmptyRefreshToken<T> get _value => super._value as _$EmptyRefreshToken<T>;
+}
+
+/// @nodoc
+
+class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
+  const _$EmptyRefreshToken();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptyRefreshToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyRefreshToken<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function() empty,
+  }) {
+    return emptyRefreshToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function()? empty,
+  }) {
+    return emptyRefreshToken?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (emptyRefreshToken != null) {
+      return emptyRefreshToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return emptyRefreshToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+  }) {
+    return emptyRefreshToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (emptyRefreshToken != null) {
+      return emptyRefreshToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyRefreshToken<T> implements ValueFailure<T> {
+  const factory EmptyRefreshToken() = _$EmptyRefreshToken<T>;
 }
 
 /// @nodoc
@@ -1796,6 +2258,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1814,6 +2278,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1832,6 +2298,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1854,6 +2322,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -1872,6 +2342,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -1890,6 +2362,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
@@ -1960,6 +2434,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function() emptyEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
     required TResult Function() empty,
   }) {
@@ -1978,6 +2454,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
   }) {
@@ -1996,6 +2474,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? emptyEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
     TResult Function()? empty,
     required TResult orElse(),
@@ -2018,6 +2498,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(EmptyEmail<T> value) emptyEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
@@ -2036,6 +2518,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
   }) {
@@ -2054,6 +2538,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(EmptyEmail<T> value)? emptyEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
