@@ -19,6 +19,9 @@ class _VehicleInformationCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         color: black,
       ),
+      margin: const EdgeInsets.symmetric(
+        horizontal: NavigationToolbar.kMiddleSpacing,
+      ),
       padding: const EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

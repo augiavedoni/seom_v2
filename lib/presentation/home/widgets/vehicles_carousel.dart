@@ -23,10 +23,7 @@ class VehiclesCarousel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: NavigationToolbar.kMiddleSpacing,
-            vertical: NavigationToolbar.kMiddleSpacing,
-          ),
+          padding: const EdgeInsets.all(NavigationToolbar.kMiddleSpacing),
           child: Text(
             "Tus vehículos",
             style: Theme.of(context).textTheme.headline5!.copyWith(
@@ -67,7 +64,7 @@ class VehiclesCarousel extends StatelessWidget {
                       options: CarouselOptions(
                         height: size.height * 0.2,
                         enableInfiniteScroll: false,
-                        viewportFraction: 0.85,
+                        viewportFraction: 0.8,
                         padEnds: false,
                       ),
                       items: state.vehicles
