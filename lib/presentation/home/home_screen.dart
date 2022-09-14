@@ -9,6 +9,7 @@ import '../../domain/core/errors.dart';
 import '../../injection.dart';
 import '../routes/router.gr.dart';
 import 'widgets/avatar_options.dart';
+import 'widgets/home_screen_overview.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -68,8 +69,11 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: Colors.white,
           ),
           backgroundColor: Colors.white,
+          body: const HomeScreenOverview(),
         ),
       ),
     );
   }
+
+  
 }

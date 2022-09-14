@@ -1,5 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../core/failures.dart';
 import '../value_objects/license_plate.dart';
 import '../value_objects/make.dart';
 import '../value_objects/model.dart';
@@ -29,4 +31,16 @@ abstract class Vehicle implements _$Vehicle {
         licensePlate: LicensePlate(""),
         vehicleType: VehicleType(""),
       );
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    return make.failureOrUnit
+        .andThen(model.failureOrUnit)
+        .andThen(year.failureOrUnit)
+        .andThen(licensePlate.failureOrUnit)
+        .andThen(vehicleType.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
+  }
 }

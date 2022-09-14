@@ -173,7 +173,7 @@ mixin _$VehicleWatcherState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Vehicle> vehicles) loadSuccess,
-    required TResult Function(VehicleFailure noteFailure) loadFailure,
+    required TResult Function(VehicleFailure vehicleFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -181,7 +181,7 @@ mixin _$VehicleWatcherState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -189,7 +189,7 @@ mixin _$VehicleWatcherState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -280,7 +280,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Vehicle> vehicles) loadSuccess,
-    required TResult Function(VehicleFailure noteFailure) loadFailure,
+    required TResult Function(VehicleFailure vehicleFailure) loadFailure,
   }) {
     return initial();
   }
@@ -291,7 +291,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -302,7 +302,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -397,7 +397,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Vehicle> vehicles) loadSuccess,
-    required TResult Function(VehicleFailure noteFailure) loadFailure,
+    required TResult Function(VehicleFailure vehicleFailure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -408,7 +408,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -419,7 +419,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -538,7 +538,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Vehicle> vehicles) loadSuccess,
-    required TResult Function(VehicleFailure noteFailure) loadFailure,
+    required TResult Function(VehicleFailure vehicleFailure) loadFailure,
   }) {
     return loadSuccess(vehicles);
   }
@@ -549,7 +549,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
   }) {
     return loadSuccess?.call(vehicles);
   }
@@ -560,7 +560,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -621,9 +621,9 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
   factory _$$_LoadFailureCopyWith(
           _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
       __$$_LoadFailureCopyWithImpl<$Res>;
-  $Res call({VehicleFailure noteFailure});
+  $Res call({VehicleFailure vehicleFailure});
 
-  $VehicleFailureCopyWith<$Res> get noteFailure;
+  $VehicleFailureCopyWith<$Res> get vehicleFailure;
 }
 
 /// @nodoc
@@ -639,20 +639,20 @@ class __$$_LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? noteFailure = freezed,
+    Object? vehicleFailure = freezed,
   }) {
     return _then(_$_LoadFailure(
-      noteFailure == freezed
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
+      vehicleFailure == freezed
+          ? _value.vehicleFailure
+          : vehicleFailure // ignore: cast_nullable_to_non_nullable
               as VehicleFailure,
     ));
   }
 
   @override
-  $VehicleFailureCopyWith<$Res> get noteFailure {
-    return $VehicleFailureCopyWith<$Res>(_value.noteFailure, (value) {
-      return _then(_value.copyWith(noteFailure: value));
+  $VehicleFailureCopyWith<$Res> get vehicleFailure {
+    return $VehicleFailureCopyWith<$Res>(_value.vehicleFailure, (value) {
+      return _then(_value.copyWith(vehicleFailure: value));
     });
   }
 }
@@ -660,14 +660,14 @@ class __$$_LoadFailureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.noteFailure);
+  const _$_LoadFailure(this.vehicleFailure);
 
   @override
-  final VehicleFailure noteFailure;
+  final VehicleFailure vehicleFailure;
 
   @override
   String toString() {
-    return 'VehicleWatcherState.loadFailure(noteFailure: $noteFailure)';
+    return 'VehicleWatcherState.loadFailure(vehicleFailure: $vehicleFailure)';
   }
 
   @override
@@ -676,12 +676,12 @@ class _$_LoadFailure implements _LoadFailure {
         (other.runtimeType == runtimeType &&
             other is _$_LoadFailure &&
             const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
+                .equals(other.vehicleFailure, vehicleFailure));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+      runtimeType, const DeepCollectionEquality().hash(vehicleFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -694,9 +694,9 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(KtList<Vehicle> vehicles) loadSuccess,
-    required TResult Function(VehicleFailure noteFailure) loadFailure,
+    required TResult Function(VehicleFailure vehicleFailure) loadFailure,
   }) {
-    return loadFailure(noteFailure);
+    return loadFailure(vehicleFailure);
   }
 
   @override
@@ -705,9 +705,9 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
   }) {
-    return loadFailure?.call(noteFailure);
+    return loadFailure?.call(vehicleFailure);
   }
 
   @override
@@ -716,11 +716,11 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(KtList<Vehicle> vehicles)? loadSuccess,
-    TResult Function(VehicleFailure noteFailure)? loadFailure,
+    TResult Function(VehicleFailure vehicleFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(noteFailure);
+      return loadFailure(vehicleFailure);
     }
     return orElse();
   }
@@ -764,9 +764,10 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements VehicleWatcherState {
-  const factory _LoadFailure(final VehicleFailure noteFailure) = _$_LoadFailure;
+  const factory _LoadFailure(final VehicleFailure vehicleFailure) =
+      _$_LoadFailure;
 
-  VehicleFailure get noteFailure;
+  VehicleFailure get vehicleFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
