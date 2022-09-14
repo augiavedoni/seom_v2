@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'vehicle.dart';
+part of 'vehicle_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,39 +14,46 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-/// @nodoc
-mixin _$Vehicle {
-  int get id => throw _privateConstructorUsedError;
-  Make get make => throw _privateConstructorUsedError;
-  Model get model => throw _privateConstructorUsedError;
-  Year get year => throw _privateConstructorUsedError;
-  LicensePlate get licensePlate => throw _privateConstructorUsedError;
-  VehicleType get vehicleType => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $VehicleCopyWith<Vehicle> get copyWith => throw _privateConstructorUsedError;
+VehicleDto _$VehicleDtoFromJson(Map<String, dynamic> json) {
+  return _VehicleDTO.fromJson(json);
 }
 
 /// @nodoc
-abstract class $VehicleCopyWith<$Res> {
-  factory $VehicleCopyWith(Vehicle value, $Res Function(Vehicle) then) =
-      _$VehicleCopyWithImpl<$Res>;
+mixin _$VehicleDto {
+  int get id => throw _privateConstructorUsedError;
+  String get make => throw _privateConstructorUsedError;
+  String get model => throw _privateConstructorUsedError;
+  int get year => throw _privateConstructorUsedError;
+  String get vehicleType => throw _privateConstructorUsedError;
+  String get licensePlate => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VehicleDtoCopyWith<VehicleDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VehicleDtoCopyWith<$Res> {
+  factory $VehicleDtoCopyWith(
+          VehicleDto value, $Res Function(VehicleDto) then) =
+      _$VehicleDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      Make make,
-      Model model,
-      Year year,
-      LicensePlate licensePlate,
-      VehicleType vehicleType});
+      String make,
+      String model,
+      int year,
+      String vehicleType,
+      String licensePlate});
 }
 
 /// @nodoc
-class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
-  _$VehicleCopyWithImpl(this._value, this._then);
+class _$VehicleDtoCopyWithImpl<$Res> implements $VehicleDtoCopyWith<$Res> {
+  _$VehicleDtoCopyWithImpl(this._value, this._then);
 
-  final Vehicle _value;
+  final VehicleDto _value;
   // ignore: unused_field
-  final $Res Function(Vehicle) _then;
+  final $Res Function(VehicleDto) _then;
 
   @override
   $Res call({
@@ -54,8 +61,8 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
     Object? make = freezed,
     Object? model = freezed,
     Object? year = freezed,
-    Object? licensePlate = freezed,
     Object? vehicleType = freezed,
+    Object? licensePlate = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -65,50 +72,52 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
       make: make == freezed
           ? _value.make
           : make // ignore: cast_nullable_to_non_nullable
-              as Make,
+              as String,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as Model,
+              as String,
       year: year == freezed
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
-              as Year,
-      licensePlate: licensePlate == freezed
-          ? _value.licensePlate
-          : licensePlate // ignore: cast_nullable_to_non_nullable
-              as LicensePlate,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
-              as VehicleType,
+              as String,
+      licensePlate: licensePlate == freezed
+          ? _value.licensePlate
+          : licensePlate // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
-  factory _$$_VehicleCopyWith(
-          _$_Vehicle value, $Res Function(_$_Vehicle) then) =
-      __$$_VehicleCopyWithImpl<$Res>;
+abstract class _$$_VehicleDTOCopyWith<$Res>
+    implements $VehicleDtoCopyWith<$Res> {
+  factory _$$_VehicleDTOCopyWith(
+          _$_VehicleDTO value, $Res Function(_$_VehicleDTO) then) =
+      __$$_VehicleDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
-      Make make,
-      Model model,
-      Year year,
-      LicensePlate licensePlate,
-      VehicleType vehicleType});
+      String make,
+      String model,
+      int year,
+      String vehicleType,
+      String licensePlate});
 }
 
 /// @nodoc
-class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
-    implements _$$_VehicleCopyWith<$Res> {
-  __$$_VehicleCopyWithImpl(_$_Vehicle _value, $Res Function(_$_Vehicle) _then)
-      : super(_value, (v) => _then(v as _$_Vehicle));
+class __$$_VehicleDTOCopyWithImpl<$Res> extends _$VehicleDtoCopyWithImpl<$Res>
+    implements _$$_VehicleDTOCopyWith<$Res> {
+  __$$_VehicleDTOCopyWithImpl(
+      _$_VehicleDTO _value, $Res Function(_$_VehicleDTO) _then)
+      : super(_value, (v) => _then(v as _$_VehicleDTO));
 
   @override
-  _$_Vehicle get _value => super._value as _$_Vehicle;
+  _$_VehicleDTO get _value => super._value as _$_VehicleDTO;
 
   @override
   $Res call({
@@ -116,10 +125,10 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
     Object? make = freezed,
     Object? model = freezed,
     Object? year = freezed,
-    Object? licensePlate = freezed,
     Object? vehicleType = freezed,
+    Object? licensePlate = freezed,
   }) {
-    return _then(_$_Vehicle(
+    return _then(_$_VehicleDTO(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -127,72 +136,77 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
       make: make == freezed
           ? _value.make
           : make // ignore: cast_nullable_to_non_nullable
-              as Make,
+              as String,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as Model,
+              as String,
       year: year == freezed
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
-              as Year,
-      licensePlate: licensePlate == freezed
-          ? _value.licensePlate
-          : licensePlate // ignore: cast_nullable_to_non_nullable
-              as LicensePlate,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
-              as VehicleType,
+              as String,
+      licensePlate: licensePlate == freezed
+          ? _value.licensePlate
+          : licensePlate // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Vehicle extends _Vehicle {
-  const _$_Vehicle(
+@JsonSerializable(explicitToJson: true)
+class _$_VehicleDTO extends _VehicleDTO {
+  const _$_VehicleDTO(
       {required this.id,
       required this.make,
       required this.model,
       required this.year,
-      required this.licensePlate,
-      required this.vehicleType})
+      required this.vehicleType,
+      required this.licensePlate})
       : super._();
+
+  factory _$_VehicleDTO.fromJson(Map<String, dynamic> json) =>
+      _$$_VehicleDTOFromJson(json);
 
   @override
   final int id;
   @override
-  final Make make;
+  final String make;
   @override
-  final Model model;
+  final String model;
   @override
-  final Year year;
+  final int year;
   @override
-  final LicensePlate licensePlate;
+  final String vehicleType;
   @override
-  final VehicleType vehicleType;
+  final String licensePlate;
 
   @override
   String toString() {
-    return 'Vehicle(id: $id, make: $make, model: $model, year: $year, licensePlate: $licensePlate, vehicleType: $vehicleType)';
+    return 'VehicleDto(id: $id, make: $make, model: $model, year: $year, vehicleType: $vehicleType, licensePlate: $licensePlate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Vehicle &&
+            other is _$_VehicleDTO &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.make, make) &&
             const DeepCollectionEquality().equals(other.model, model) &&
             const DeepCollectionEquality().equals(other.year, year) &&
             const DeepCollectionEquality()
-                .equals(other.licensePlate, licensePlate) &&
+                .equals(other.vehicleType, vehicleType) &&
             const DeepCollectionEquality()
-                .equals(other.vehicleType, vehicleType));
+                .equals(other.licensePlate, licensePlate));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -200,39 +214,49 @@ class _$_Vehicle extends _Vehicle {
       const DeepCollectionEquality().hash(make),
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(licensePlate),
-      const DeepCollectionEquality().hash(vehicleType));
+      const DeepCollectionEquality().hash(vehicleType),
+      const DeepCollectionEquality().hash(licensePlate));
 
   @JsonKey(ignore: true)
   @override
-  _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>
-      __$$_VehicleCopyWithImpl<_$_Vehicle>(this, _$identity);
+  _$$_VehicleDTOCopyWith<_$_VehicleDTO> get copyWith =>
+      __$$_VehicleDTOCopyWithImpl<_$_VehicleDTO>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_VehicleDTOToJson(
+      this,
+    );
+  }
 }
 
-abstract class _Vehicle extends Vehicle {
-  const factory _Vehicle(
+abstract class _VehicleDTO extends VehicleDto {
+  const factory _VehicleDTO(
       {required final int id,
-      required final Make make,
-      required final Model model,
-      required final Year year,
-      required final LicensePlate licensePlate,
-      required final VehicleType vehicleType}) = _$_Vehicle;
-  const _Vehicle._() : super._();
+      required final String make,
+      required final String model,
+      required final int year,
+      required final String vehicleType,
+      required final String licensePlate}) = _$_VehicleDTO;
+  const _VehicleDTO._() : super._();
+
+  factory _VehicleDTO.fromJson(Map<String, dynamic> json) =
+      _$_VehicleDTO.fromJson;
 
   @override
   int get id;
   @override
-  Make get make;
+  String get make;
   @override
-  Model get model;
+  String get model;
   @override
-  Year get year;
+  int get year;
   @override
-  LicensePlate get licensePlate;
+  String get vehicleType;
   @override
-  VehicleType get vehicleType;
+  String get licensePlate;
   @override
   @JsonKey(ignore: true)
-  _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>
+  _$$_VehicleDTOCopyWith<_$_VehicleDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

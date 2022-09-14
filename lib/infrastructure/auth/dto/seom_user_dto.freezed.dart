@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SeomUserDTO _$SeomUserDTOFromJson(Map<String, dynamic> json) {
+SeomUserDto _$SeomUserDtoFromJson(Map<String, dynamic> json) {
   return _SeomUserDTO.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SeomUserDTO {
+mixin _$SeomUserDto {
   int get id => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
@@ -30,15 +30,15 @@ mixin _$SeomUserDTO {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SeomUserDTOCopyWith<SeomUserDTO> get copyWith =>
+  $SeomUserDtoCopyWith<SeomUserDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SeomUserDTOCopyWith<$Res> {
-  factory $SeomUserDTOCopyWith(
-          SeomUserDTO value, $Res Function(SeomUserDTO) then) =
-      _$SeomUserDTOCopyWithImpl<$Res>;
+abstract class $SeomUserDtoCopyWith<$Res> {
+  factory $SeomUserDtoCopyWith(
+          SeomUserDto value, $Res Function(SeomUserDto) then) =
+      _$SeomUserDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String firstName,
@@ -50,12 +50,12 @@ abstract class $SeomUserDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SeomUserDTOCopyWithImpl<$Res> implements $SeomUserDTOCopyWith<$Res> {
-  _$SeomUserDTOCopyWithImpl(this._value, this._then);
+class _$SeomUserDtoCopyWithImpl<$Res> implements $SeomUserDtoCopyWith<$Res> {
+  _$SeomUserDtoCopyWithImpl(this._value, this._then);
 
-  final SeomUserDTO _value;
+  final SeomUserDto _value;
   // ignore: unused_field
-  final $Res Function(SeomUserDTO) _then;
+  final $Res Function(SeomUserDto) _then;
 
   @override
   $Res call({
@@ -102,7 +102,7 @@ class _$SeomUserDTOCopyWithImpl<$Res> implements $SeomUserDTOCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$_SeomUserDTOCopyWith<$Res>
-    implements $SeomUserDTOCopyWith<$Res> {
+    implements $SeomUserDtoCopyWith<$Res> {
   factory _$$_SeomUserDTOCopyWith(
           _$_SeomUserDTO value, $Res Function(_$_SeomUserDTO) then) =
       __$$_SeomUserDTOCopyWithImpl<$Res>;
@@ -118,7 +118,7 @@ abstract class _$$_SeomUserDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SeomUserDTOCopyWithImpl<$Res> extends _$SeomUserDTOCopyWithImpl<$Res>
+class __$$_SeomUserDTOCopyWithImpl<$Res> extends _$SeomUserDtoCopyWithImpl<$Res>
     implements _$$_SeomUserDTOCopyWith<$Res> {
   __$$_SeomUserDTOCopyWithImpl(
       _$_SeomUserDTO _value, $Res Function(_$_SeomUserDTO) _then)
@@ -204,7 +204,7 @@ class _$_SeomUserDTO extends _SeomUserDTO {
 
   @override
   String toString() {
-    return 'SeomUserDTO(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
+    return 'SeomUserDto(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
   }
 
   @override
@@ -247,7 +247,7 @@ class _$_SeomUserDTO extends _SeomUserDTO {
   }
 }
 
-abstract class _SeomUserDTO extends SeomUserDTO {
+abstract class _SeomUserDTO extends SeomUserDto {
   const factory _SeomUserDTO(
       {required final int id,
       required final String firstName,

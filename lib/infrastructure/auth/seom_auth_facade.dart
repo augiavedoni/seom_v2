@@ -8,6 +8,7 @@ import '../../domain/auth/value_objects/cuil.dart';
 import '../../domain/auth/value_objects/email_address.dart';
 import '../../domain/auth/value_objects/password.dart';
 import '../core/http/seom_client.dart';
+import '../datasource/token_data_source.dart';
 import '../datasource/user_data_source.dart';
 import 'dto/seom_user_dto.dart';
 
@@ -16,10 +17,12 @@ import 'dto/seom_user_dto.dart';
 class SeomAuthFacade implements IAuthFacade {
   final SeomClient _client;
   final UserDataSource _userDataSource;
+  final TokenDataSource _tokenDataSource;
 
   SeomAuthFacade(
     this._client,
     this._userDataSource,
+    this._tokenDataSource,
   );
 
   @override
@@ -43,9 +46,12 @@ class SeomAuthFacade implements IAuthFacade {
 
     return response.map(
       ok: (response) {
-        final SeomUserDTO user = SeomUserDTO.fromJson(response);
+        final SeomUserDto userDto = SeomUserDto.fromJson(response);
+        final SeomUser user = userDto.toDomain();
 
-        _userDataSource.user = user.toDomain();
+        _userDataSource.user = user;
+        _tokenDataSource.token = user.token;
+        _tokenDataSource.refreshToken = user.refreshToken;
 
         return right(unit);
       },
@@ -85,9 +91,12 @@ class SeomAuthFacade implements IAuthFacade {
 
     return response.map(
       ok: (response) {
-        final SeomUserDTO user = SeomUserDTO.fromJson(response);
+        final SeomUserDto userDto = SeomUserDto.fromJson(response);
+        final SeomUser user = userDto.toDomain();
 
-        _userDataSource.user = user.toDomain();
+        _userDataSource.user = user;
+        _tokenDataSource.token = user.token;
+        _tokenDataSource.refreshToken = user.refreshToken;
 
         return right(unit);
       },

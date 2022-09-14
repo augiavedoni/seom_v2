@@ -13,11 +13,11 @@ part 'seom_user_dto.freezed.dart';
 part 'seom_user_dto.g.dart';
 
 @freezed
-abstract class SeomUserDTO implements _$SeomUserDTO {
-  const SeomUserDTO._();
+abstract class SeomUserDto implements _$SeomUserDto {
+  const SeomUserDto._();
 
   @JsonSerializable(explicitToJson: true)
-  const factory SeomUserDTO({
+  const factory SeomUserDto({
     required int id,
     required String firstName,
     required String lastName,
@@ -27,8 +27,8 @@ abstract class SeomUserDTO implements _$SeomUserDTO {
     required String refreshToken,
   }) = _SeomUserDTO;
 
-  factory SeomUserDTO.fromDomain(SeomUser user) {
-    return SeomUserDTO(
+  factory SeomUserDto.fromDomain(SeomUser user) {
+    return SeomUserDto(
       id: user.id,
       firstName: user.firstName.getOrCrash(),
       lastName: user.lastName.getOrCrash(),
@@ -51,6 +51,6 @@ abstract class SeomUserDTO implements _$SeomUserDTO {
     );
   }
 
-  factory SeomUserDTO.fromJson(Map<String, dynamic> json) =>
-      _$SeomUserDTOFromJson(json);
+  factory SeomUserDto.fromJson(Map<String, dynamic> json) =>
+      _$SeomUserDtoFromJson(json);
 }

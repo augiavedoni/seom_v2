@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/auth/auth_bloc.dart';
+import '../../application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/core/errors.dart';
 import '../../injection.dart';
@@ -30,34 +31,44 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocListener(
-      listeners: <BlocListener>[
-        BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) => state.maybeMap(
-            unauthenticated: (value) => context.router.replace(
-              const SignInScreenRoute(),
+    return MultiBlocProvider(
+      providers: <BlocProvider>[
+        BlocProvider<VehicleWatcherBloc>(
+          create: (context) => getIt<VehicleWatcherBloc>()
+            ..add(
+              const VehicleWatcherEvent.getAllStarted(),
             ),
-            orElse: () => null,
-          ),
         ),
       ],
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "¡Hola, $firstName!",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
+      child: MultiBlocListener(
+        listeners: <BlocListener>[
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) => state.maybeMap(
+              unauthenticated: (value) => context.router.replace(
+                const SignInScreenRoute(),
+              ),
+              orElse: () => null,
+            ),
           ),
-          centerTitle: false,
-          actions: const <Widget>[
-            AvatarOptions(),
-          ],
-          elevation: 0,
+        ],
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              "¡Hola, $firstName!",
+              style: Theme.of(context).textTheme.headline5!.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            centerTitle: false,
+            actions: const <Widget>[
+              AvatarOptions(),
+            ],
+            elevation: 0,
+            backgroundColor: Colors.white,
+          ),
           backgroundColor: Colors.white,
         ),
-        backgroundColor: Colors.white,
       ),
     );
   }

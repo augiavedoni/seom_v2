@@ -13,7 +13,7 @@ abstract class Vehicle implements _$Vehicle {
   const Vehicle._();
 
   const factory Vehicle({
-    required String id,
+    required int id,
     required Make make,
     required Model model,
     required Year year,
@@ -22,7 +22,7 @@ abstract class Vehicle implements _$Vehicle {
   }) = _Vehicle;
 
   factory Vehicle.empty() => Vehicle(
-        id: "",
+        id: -1,
         make: Make(""),
         model: Model(""),
         year: Year(0),

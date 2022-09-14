@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
 import '../../../domain/vehicles/entities/vehicle.dart';
@@ -12,6 +13,7 @@ part 'vehicle_watcher_event.dart';
 part 'vehicle_watcher_state.dart';
 part 'vehicle_watcher_bloc.freezed.dart';
 
+@injectable
 class VehicleWatcherBloc
     extends Bloc<VehicleWatcherEvent, VehicleWatcherState> {
   final IVehicleRepository _vehicleRepository;
