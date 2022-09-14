@@ -119,3 +119,26 @@ Either<ValueFailure<String>, String> validateRefreshToken(String refreshToken) {
     return right(refreshToken);
   }
 }
+
+Either<ValueFailure<int>, int> validateYear(int year) {
+  if (year == 0 || year < 1930 || year > DateTime.now().year) {
+    return left(ValueFailure.invalidYear(failedValue: year));
+  } else {
+    return right(year);
+  }
+}
+
+Either<ValueFailure<String>, String> validateVehicleType(
+  String vehicleType,
+  List<String> validTypes,
+) {
+  if (validTypes.contains(vehicleType)) {
+    return right(vehicleType);
+  } else {
+    return left(
+      ValueFailure.invalidVehicleType(
+        failedValue: vehicleType,
+      ),
+    );
+  }
+}

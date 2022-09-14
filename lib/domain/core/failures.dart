@@ -41,5 +41,13 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required int maxLength,
   }) = ExceedingLength<T>;
 
+  const factory ValueFailure.invalidYear({
+    required T failedValue,
+  }) = InvalidYear<T>;
+
+  const factory ValueFailure.invalidVehicleType({
+    required T failedValue,
+  }) = InvalidVehicleType<T>;
+
   const factory ValueFailure.empty() = Empty<T>;
 }

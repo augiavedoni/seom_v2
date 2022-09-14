@@ -30,6 +30,8 @@ mixin _$ValueFailure<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +49,8 @@ mixin _$ValueFailure<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +68,8 @@ mixin _$ValueFailure<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) =>
@@ -82,6 +88,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +107,8 @@ mixin _$ValueFailure<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +126,8 @@ mixin _$ValueFailure<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) =>
@@ -217,6 +229,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return invalidCuil(failedValue);
@@ -237,6 +251,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return invalidCuil?.call(failedValue);
@@ -257,6 +273,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -281,6 +299,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidCuil(this);
@@ -301,6 +321,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return invalidCuil?.call(this);
@@ -321,6 +343,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -393,6 +417,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyCuil();
@@ -413,6 +439,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyCuil?.call();
@@ -433,6 +461,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -457,6 +487,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyCuil(this);
@@ -477,6 +509,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyCuil?.call(this);
@@ -497,6 +531,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -589,6 +625,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return invalidName(failedValue);
@@ -609,6 +647,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return invalidName?.call(failedValue);
@@ -629,6 +669,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -653,6 +695,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidName(this);
@@ -673,6 +717,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return invalidName?.call(this);
@@ -693,6 +739,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -765,6 +813,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyName();
@@ -785,6 +835,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyName?.call();
@@ -805,6 +857,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -829,6 +883,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyName(this);
@@ -849,6 +905,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyName?.call(this);
@@ -869,6 +927,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -961,6 +1021,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return shortName(failedValue);
@@ -981,6 +1043,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return shortName?.call(failedValue);
@@ -1001,6 +1065,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1025,6 +1091,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return shortName(this);
@@ -1045,6 +1113,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return shortName?.call(this);
@@ -1065,6 +1135,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1162,6 +1234,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return invalidEmail(failedValue);
@@ -1182,6 +1256,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return invalidEmail?.call(failedValue);
@@ -1202,6 +1278,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1226,6 +1304,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidEmail(this);
@@ -1246,6 +1326,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return invalidEmail?.call(this);
@@ -1266,6 +1348,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1339,6 +1423,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyEmail();
@@ -1359,6 +1445,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyEmail?.call();
@@ -1379,6 +1467,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1403,6 +1493,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyEmail(this);
@@ -1423,6 +1515,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyEmail?.call(this);
@@ -1443,6 +1537,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1535,6 +1631,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return shortPassword(failedValue);
@@ -1555,6 +1653,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return shortPassword?.call(failedValue);
@@ -1575,6 +1675,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1599,6 +1701,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return shortPassword(this);
@@ -1619,6 +1723,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return shortPassword?.call(this);
@@ -1639,6 +1745,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1712,6 +1820,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyPassword();
@@ -1732,6 +1842,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyPassword?.call();
@@ -1752,6 +1864,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1776,6 +1890,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyPassword(this);
@@ -1796,6 +1912,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyPassword?.call(this);
@@ -1816,6 +1934,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1883,6 +2003,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyToken();
@@ -1903,6 +2025,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyToken?.call();
@@ -1923,6 +2047,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1947,6 +2073,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyToken(this);
@@ -1967,6 +2095,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyToken?.call(this);
@@ -1987,6 +2117,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2054,6 +2186,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return emptyRefreshToken();
@@ -2074,6 +2208,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return emptyRefreshToken?.call();
@@ -2094,6 +2230,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2118,6 +2256,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyRefreshToken(this);
@@ -2138,6 +2278,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return emptyRefreshToken?.call(this);
@@ -2158,6 +2300,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2261,6 +2405,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return exceedingLength(failedValue, maxLength);
@@ -2281,6 +2427,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return exceedingLength?.call(failedValue, maxLength);
@@ -2301,6 +2449,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2325,6 +2475,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return exceedingLength(this);
@@ -2345,6 +2497,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return exceedingLength?.call(this);
@@ -2365,6 +2519,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2384,6 +2540,434 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
   int get maxLength;
   @JsonKey(ignore: true)
   _$$ExceedingLengthCopyWith<T, _$ExceedingLength<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidYearCopyWith<T, $Res> {
+  factory _$$InvalidYearCopyWith(
+          _$InvalidYear<T> value, $Res Function(_$InvalidYear<T>) then) =
+      __$$InvalidYearCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidYearCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidYearCopyWith<T, $Res> {
+  __$$InvalidYearCopyWithImpl(
+      _$InvalidYear<T> _value, $Res Function(_$InvalidYear<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidYear<T>));
+
+  @override
+  _$InvalidYear<T> get _value => super._value as _$InvalidYear<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidYear<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidYear<T> implements InvalidYear<T> {
+  const _$InvalidYear({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidYear(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidYear<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidYearCopyWith<T, _$InvalidYear<T>> get copyWith =>
+      __$$InvalidYearCopyWithImpl<T, _$InvalidYear<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
+    required TResult Function() empty,
+  }) {
+    return invalidYear(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? empty,
+  }) {
+    return invalidYear?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidYear != null) {
+      return invalidYear(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidYear(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(Empty<T> value)? empty,
+  }) {
+    return invalidYear?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidYear != null) {
+      return invalidYear(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidYear<T> implements ValueFailure<T> {
+  const factory InvalidYear({required final T failedValue}) = _$InvalidYear<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  _$$InvalidYearCopyWith<T, _$InvalidYear<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidVehicleTypeCopyWith<T, $Res> {
+  factory _$$InvalidVehicleTypeCopyWith(_$InvalidVehicleType<T> value,
+          $Res Function(_$InvalidVehicleType<T>) then) =
+      __$$InvalidVehicleTypeCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidVehicleTypeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidVehicleTypeCopyWith<T, $Res> {
+  __$$InvalidVehicleTypeCopyWithImpl(_$InvalidVehicleType<T> _value,
+      $Res Function(_$InvalidVehicleType<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidVehicleType<T>));
+
+  @override
+  _$InvalidVehicleType<T> get _value => super._value as _$InvalidVehicleType<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidVehicleType<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
+  const _$InvalidVehicleType({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidVehicleType(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidVehicleType<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidVehicleTypeCopyWith<T, _$InvalidVehicleType<T>> get copyWith =>
+      __$$InvalidVehicleTypeCopyWithImpl<T, _$InvalidVehicleType<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
+    required TResult Function() empty,
+  }) {
+    return invalidVehicleType(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? empty,
+  }) {
+    return invalidVehicleType?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidVehicleType != null) {
+      return invalidVehicleType(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidVehicleType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(Empty<T> value)? empty,
+  }) {
+    return invalidVehicleType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidVehicleType != null) {
+      return invalidVehicleType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidVehicleType<T> implements ValueFailure<T> {
+  const factory InvalidVehicleType({required final T failedValue}) =
+      _$InvalidVehicleType<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  _$$InvalidVehicleTypeCopyWith<T, _$InvalidVehicleType<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2437,6 +3021,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function() emptyToken,
     required TResult Function() emptyRefreshToken,
     required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
     required TResult Function() empty,
   }) {
     return empty();
@@ -2457,6 +3043,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
   }) {
     return empty?.call();
@@ -2477,6 +3065,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? emptyToken,
     TResult Function()? emptyRefreshToken,
     TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2501,6 +3091,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(EmptyToken<T> value) emptyToken,
     required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
     required TResult Function(Empty<T> value) empty,
   }) {
     return empty(this);
@@ -2521,6 +3113,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
   }) {
     return empty?.call(this);
@@ -2541,6 +3135,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(EmptyToken<T> value)? emptyToken,
     TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
