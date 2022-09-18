@@ -14,6 +14,7 @@ _$_VehicleDTO _$$_VehicleDTOFromJson(Map<String, dynamic> json) =>
       year: json['year'] as int,
       vehicleType: json['vehicleType'] as String,
       licensePlate: json['licensePlate'] as String,
+      parked: json['parked'] as bool,
     );
 
 Map<String, dynamic> _$$_VehicleDTOToJson(_$_VehicleDTO instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_VehicleDTOToJson(_$_VehicleDTO instance) =>
       'year': instance.year,
       'vehicleType': instance.vehicleType,
       'licensePlate': instance.licensePlate,
+      'parked': instance.parked,
     };

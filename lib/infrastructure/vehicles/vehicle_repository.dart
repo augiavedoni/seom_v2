@@ -47,4 +47,46 @@ class VehicleRepository implements IVehicleRepository {
       },
     );
   }
+
+  @override
+  Future<Either<VehicleFailure, Vehicle>> park(Vehicle vehicle) async {
+    final response = await _client.patch(
+      "vehicles/park",
+      parameters: {
+        "licensePlate": vehicle.licensePlate.getOrCrash(),
+        "parked": true,
+      },
+    );
+
+    return response.map(
+      ok: (response) {
+        final VehicleDto vehicleDto = VehicleDto.fromJson(response);
+        final Vehicle vehicle = vehicleDto.toDomain();
+
+        return right<VehicleFailure, Vehicle>(vehicle);
+      },
+      error: (_, __) => left(const VehicleFailure.unexpected()),
+    );
+  }
+
+  @override
+  Future<Either<VehicleFailure, Vehicle>> unpark(Vehicle vehicle) async {
+    final response = await _client.patch(
+      "vehicles/unpark",
+      parameters: {
+        "licensePlate": vehicle.licensePlate.getOrCrash(),
+        "parked": false,
+      },
+    );
+
+    return response.map(
+      ok: (response) {
+        final VehicleDto vehicleDto = VehicleDto.fromJson(response);
+        final Vehicle vehicle = vehicleDto.toDomain();
+
+        return right<VehicleFailure, Vehicle>(vehicle);
+      },
+      error: (_, __) => left(const VehicleFailure.unexpected()),
+    );
+  }
 }

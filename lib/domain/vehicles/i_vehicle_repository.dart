@@ -6,4 +6,6 @@ import 'vehicle_failure.dart';
 
 abstract class IVehicleRepository {
   Future<Either<VehicleFailure, KtList<Vehicle>>> getAll();
+  Future<Either<VehicleFailure, Vehicle>> park(Vehicle vehicle);
+  Future<Either<VehicleFailure, Vehicle>> unpark(Vehicle vehicle);
 }

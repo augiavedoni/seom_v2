@@ -26,6 +26,7 @@ mixin _$VehicleDto {
   int get year => throw _privateConstructorUsedError;
   String get vehicleType => throw _privateConstructorUsedError;
   String get licensePlate => throw _privateConstructorUsedError;
+  bool get parked => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +45,8 @@ abstract class $VehicleDtoCopyWith<$Res> {
       String model,
       int year,
       String vehicleType,
-      String licensePlate});
+      String licensePlate,
+      bool parked});
 }
 
 /// @nodoc
@@ -63,6 +65,7 @@ class _$VehicleDtoCopyWithImpl<$Res> implements $VehicleDtoCopyWith<$Res> {
     Object? year = freezed,
     Object? vehicleType = freezed,
     Object? licensePlate = freezed,
+    Object? parked = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -89,6 +92,10 @@ class _$VehicleDtoCopyWithImpl<$Res> implements $VehicleDtoCopyWith<$Res> {
           ? _value.licensePlate
           : licensePlate // ignore: cast_nullable_to_non_nullable
               as String,
+      parked: parked == freezed
+          ? _value.parked
+          : parked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -106,7 +113,8 @@ abstract class _$$_VehicleDTOCopyWith<$Res>
       String model,
       int year,
       String vehicleType,
-      String licensePlate});
+      String licensePlate,
+      bool parked});
 }
 
 /// @nodoc
@@ -127,6 +135,7 @@ class __$$_VehicleDTOCopyWithImpl<$Res> extends _$VehicleDtoCopyWithImpl<$Res>
     Object? year = freezed,
     Object? vehicleType = freezed,
     Object? licensePlate = freezed,
+    Object? parked = freezed,
   }) {
     return _then(_$_VehicleDTO(
       id: id == freezed
@@ -153,6 +162,10 @@ class __$$_VehicleDTOCopyWithImpl<$Res> extends _$VehicleDtoCopyWithImpl<$Res>
           ? _value.licensePlate
           : licensePlate // ignore: cast_nullable_to_non_nullable
               as String,
+      parked: parked == freezed
+          ? _value.parked
+          : parked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -167,7 +180,8 @@ class _$_VehicleDTO extends _VehicleDTO {
       required this.model,
       required this.year,
       required this.vehicleType,
-      required this.licensePlate})
+      required this.licensePlate,
+      required this.parked})
       : super._();
 
   factory _$_VehicleDTO.fromJson(Map<String, dynamic> json) =>
@@ -185,10 +199,12 @@ class _$_VehicleDTO extends _VehicleDTO {
   final String vehicleType;
   @override
   final String licensePlate;
+  @override
+  final bool parked;
 
   @override
   String toString() {
-    return 'VehicleDto(id: $id, make: $make, model: $model, year: $year, vehicleType: $vehicleType, licensePlate: $licensePlate)';
+    return 'VehicleDto(id: $id, make: $make, model: $model, year: $year, vehicleType: $vehicleType, licensePlate: $licensePlate, parked: $parked)';
   }
 
   @override
@@ -203,7 +219,8 @@ class _$_VehicleDTO extends _VehicleDTO {
             const DeepCollectionEquality()
                 .equals(other.vehicleType, vehicleType) &&
             const DeepCollectionEquality()
-                .equals(other.licensePlate, licensePlate));
+                .equals(other.licensePlate, licensePlate) &&
+            const DeepCollectionEquality().equals(other.parked, parked));
   }
 
   @JsonKey(ignore: true)
@@ -215,7 +232,8 @@ class _$_VehicleDTO extends _VehicleDTO {
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(vehicleType),
-      const DeepCollectionEquality().hash(licensePlate));
+      const DeepCollectionEquality().hash(licensePlate),
+      const DeepCollectionEquality().hash(parked));
 
   @JsonKey(ignore: true)
   @override
@@ -237,7 +255,8 @@ abstract class _VehicleDTO extends VehicleDto {
       required final String model,
       required final int year,
       required final String vehicleType,
-      required final String licensePlate}) = _$_VehicleDTO;
+      required final String licensePlate,
+      required final bool parked}) = _$_VehicleDTO;
   const _VehicleDTO._() : super._();
 
   factory _VehicleDTO.fromJson(Map<String, dynamic> json) =
@@ -255,6 +274,8 @@ abstract class _VehicleDTO extends VehicleDto {
   String get vehicleType;
   @override
   String get licensePlate;
+  @override
+  bool get parked;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleDTOCopyWith<_$_VehicleDTO> get copyWith =>

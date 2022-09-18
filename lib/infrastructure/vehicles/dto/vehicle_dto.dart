@@ -24,6 +24,7 @@ abstract class VehicleDto implements _$VehicleDto {
     required int year,
     required String vehicleType,
     required String licensePlate,
+    required bool parked,
   }) = _VehicleDTO;
 
   factory VehicleDto.fromDomain(Vehicle vehicle) {
@@ -34,6 +35,7 @@ abstract class VehicleDto implements _$VehicleDto {
       year: vehicle.year.getOrCrash(),
       vehicleType: vehicle.vehicleType.getOrCrash(),
       licensePlate: vehicle.licensePlate.getOrCrash(),
+      parked: vehicle.parked,
     );
   }
 
@@ -45,6 +47,7 @@ abstract class VehicleDto implements _$VehicleDto {
       year: Year(year),
       vehicleType: VehicleType(vehicleType),
       licensePlate: LicensePlate(licensePlate),
+      parked: parked,
     );
   }
 

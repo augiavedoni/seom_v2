@@ -22,6 +22,7 @@ mixin _$Vehicle {
   Year get year => throw _privateConstructorUsedError;
   LicensePlate get licensePlate => throw _privateConstructorUsedError;
   VehicleType get vehicleType => throw _privateConstructorUsedError;
+  bool get parked => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $VehicleCopyWith<Vehicle> get copyWith => throw _privateConstructorUsedError;
@@ -37,7 +38,8 @@ abstract class $VehicleCopyWith<$Res> {
       Model model,
       Year year,
       LicensePlate licensePlate,
-      VehicleType vehicleType});
+      VehicleType vehicleType,
+      bool parked});
 }
 
 /// @nodoc
@@ -56,6 +58,7 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
     Object? year = freezed,
     Object? licensePlate = freezed,
     Object? vehicleType = freezed,
+    Object? parked = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -82,6 +85,10 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
               as VehicleType,
+      parked: parked == freezed
+          ? _value.parked
+          : parked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -98,7 +105,8 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
       Model model,
       Year year,
       LicensePlate licensePlate,
-      VehicleType vehicleType});
+      VehicleType vehicleType,
+      bool parked});
 }
 
 /// @nodoc
@@ -118,6 +126,7 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
     Object? year = freezed,
     Object? licensePlate = freezed,
     Object? vehicleType = freezed,
+    Object? parked = freezed,
   }) {
     return _then(_$_Vehicle(
       id: id == freezed
@@ -144,6 +153,10 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
               as VehicleType,
+      parked: parked == freezed
+          ? _value.parked
+          : parked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -157,7 +170,8 @@ class _$_Vehicle extends _Vehicle {
       required this.model,
       required this.year,
       required this.licensePlate,
-      required this.vehicleType})
+      required this.vehicleType,
+      required this.parked})
       : super._();
 
   @override
@@ -172,10 +186,12 @@ class _$_Vehicle extends _Vehicle {
   final LicensePlate licensePlate;
   @override
   final VehicleType vehicleType;
+  @override
+  final bool parked;
 
   @override
   String toString() {
-    return 'Vehicle(id: $id, make: $make, model: $model, year: $year, licensePlate: $licensePlate, vehicleType: $vehicleType)';
+    return 'Vehicle(id: $id, make: $make, model: $model, year: $year, licensePlate: $licensePlate, vehicleType: $vehicleType, parked: $parked)';
   }
 
   @override
@@ -190,7 +206,8 @@ class _$_Vehicle extends _Vehicle {
             const DeepCollectionEquality()
                 .equals(other.licensePlate, licensePlate) &&
             const DeepCollectionEquality()
-                .equals(other.vehicleType, vehicleType));
+                .equals(other.vehicleType, vehicleType) &&
+            const DeepCollectionEquality().equals(other.parked, parked));
   }
 
   @override
@@ -201,7 +218,8 @@ class _$_Vehicle extends _Vehicle {
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(licensePlate),
-      const DeepCollectionEquality().hash(vehicleType));
+      const DeepCollectionEquality().hash(vehicleType),
+      const DeepCollectionEquality().hash(parked));
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +234,8 @@ abstract class _Vehicle extends Vehicle {
       required final Model model,
       required final Year year,
       required final LicensePlate licensePlate,
-      required final VehicleType vehicleType}) = _$_Vehicle;
+      required final VehicleType vehicleType,
+      required final bool parked}) = _$_Vehicle;
   const _Vehicle._() : super._();
 
   @override
@@ -231,6 +250,8 @@ abstract class _Vehicle extends Vehicle {
   LicensePlate get licensePlate;
   @override
   VehicleType get vehicleType;
+  @override
+  bool get parked;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>

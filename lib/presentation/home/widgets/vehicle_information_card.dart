@@ -1,6 +1,6 @@
 part of 'vehicles_carousel.dart';
 
-class _VehicleInformationCard extends StatelessWidget {
+class _VehicleInformationCard extends HookWidget {
   final Vehicle vehicle;
 
   const _VehicleInformationCard({
@@ -11,64 +11,132 @@ class _VehicleInformationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final hookedVehicle = useState<Vehicle>(vehicle);
 
-    return Container(
-      width: size.width * 0.8,
-      height: size.height * 0.2,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: black,
-      ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: NavigationToolbar.kMiddleSpacing,
-      ),
-      padding: const EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            "${vehicle.make.getOrCrash()} ${vehicle.model.getOrCrash()}",
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+    return BlocProvider(
+      create: (context) => getIt<VehicleActorBloc>()
+        ..add(
+          VehicleActorEvent.initialized(optionOf(vehicle)),
+        ),
+      child: BlocConsumer<VehicleActorBloc, VehicleActorState>(
+        listenWhen: (previous, current) =>
+            previous.saveFailureOrSucessOption !=
+            current.saveFailureOrSucessOption,
+        listener: (context, state) => state.saveFailureOrSucessOption.fold(
+          () {},
+          (either) => either.fold(
+            (failure) => _showFailureDialog(context, failure),
+            (editedVehicle) {
+              hookedVehicle.value = editedVehicle;
+              state.copyWith(vehicle: editedVehicle);
+            },
+          ),
+        ),
+        buildWhen: (previous, current) =>
+            previous.isChangingParkingStatus != current.isChangingParkingStatus,
+        builder: (context, state) => state.isChangingParkingStatus
+            ? const _LoadingInProgressCard()
+            : Container(
+                width: size.width * 0.8,
+                height: size.height * 0.2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: black,
                 ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            "${vehicle.year.getOrCrash()}",
-            style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  color: Colors.white,
+                margin: const EdgeInsets.symmetric(
+                  horizontal: NavigationToolbar.kMiddleSpacing,
                 ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                vehicle.licensePlate.getOrCrash(),
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      color: Colors.white,
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "${hookedVehicle.value.make.getOrCrash()} ${hookedVehicle.value.model.getOrCrash()}",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                     ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Estacionar",
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        color: green,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "${hookedVehicle.value.year.getOrCrash()}",
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: Colors.white,
+                              ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          hookedVehicle.value.licensePlate.getOrCrash(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                color: Colors.white,
+                              ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            if (hookedVehicle.value.parked) {
+                              context.read<VehicleActorBloc>().add(
+                                    const VehicleActorEvent.unparked(),
+                                  );
+                            } else {
+                              context.read<VehicleActorBloc>().add(
+                                    const VehicleActorEvent.parked(),
+                                  );
+                            }
+                          },
+                          child: Text(
+                            hookedVehicle.value.parked
+                                ? "Finalizar"
+                                : "Estacionar",
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge!
+                                .copyWith(
+                                  color: green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ],
       ),
+    );
+  }
+
+  Future<dynamic> _showFailureDialog(
+    BuildContext context,
+    VehicleFailure failure,
+  ) {
+    final String description = failure.map(
+      unexpected: (_) => "Unexpected error occured, please contact support.",
+    );
+
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return CustomDialog(
+          title: "Something happened",
+          description: description,
+          mainButtonText: "Go back",
+          mainButtonFunctionality: () => Navigator.of(context).pop(),
+          dialogStatus: DialogStatus.error,
+        );
+      },
     );
   }
 }

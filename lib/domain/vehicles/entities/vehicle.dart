@@ -21,6 +21,7 @@ abstract class Vehicle implements _$Vehicle {
     required Year year,
     required LicensePlate licensePlate,
     required VehicleType vehicleType,
+    required bool parked,
   }) = _Vehicle;
 
   factory Vehicle.empty() => Vehicle(
@@ -30,6 +31,7 @@ abstract class Vehicle implements _$Vehicle {
         year: Year(0),
         licensePlate: LicensePlate(""),
         vehicleType: VehicleType(""),
+        parked: false,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
