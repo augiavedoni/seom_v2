@@ -72,6 +72,9 @@ class _SignUpFormState extends State<SignUpForm> {
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
               child: SingleChildScrollView(
+                physics: !_isSignUpShowing
+                    ? const NeverScrollableScrollPhysics()
+                    : null,
                 child: Column(
                   children: <Widget>[
                     SizedBox(
