@@ -86,6 +86,7 @@ class _VehicleInformationCard extends HookWidget {
                         ),
                         TextButton(
                           onPressed: () {
+                            //TODO: verificar permisos de ubicación
                             if (hookedVehicle.value.parked) {
                               context.read<VehicleActorBloc>().add(
                                     const VehicleActorEvent.unparked(),
@@ -123,16 +124,22 @@ class _VehicleInformationCard extends HookWidget {
     VehicleFailure failure,
   ) {
     final String description = failure.map(
-      unexpected: (_) => "Unexpected error occured, please contact support.",
+      unexpected: (_) => "Oops! Algó falló... ¡Volvé a intentarlo!",
+      alreadyParked: (_) =>
+          "Este vehículo ya se encuentra estacionado. Por favor, contactate con soporte.",
+      vehicleNotFound: (_) =>
+          "Este vehículo no existe en nuestros registros. Por favor, contacte con soporte.",
+      parkingTicketNotFound: (_) =>
+          "Este vehículo no se encuentra estacionado. Por favor, contactate con soporte.",
     );
 
     return showDialog(
       context: context,
       builder: (context) {
         return CustomDialog(
-          title: "Something happened",
+          title: "Algo ocurrió...",
           description: description,
-          mainButtonText: "Go back",
+          mainButtonText: "Volver",
           mainButtonFunctionality: () => Navigator.of(context).pop(),
           dialogStatus: DialogStatus.error,
         );

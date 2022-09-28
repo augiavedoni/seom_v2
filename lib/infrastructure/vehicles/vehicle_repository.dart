@@ -54,7 +54,9 @@ class VehicleRepository implements IVehicleRepository {
       "vehicles/park",
       parameters: {
         "licensePlate": vehicle.licensePlate.getOrCrash(),
-        "parked": true,
+        //TODO: reemplazar valores hardcodeados
+        "latitude": -31.654157061689624,
+        "longitude": -60.71091002950457
       },
     );
 
@@ -65,7 +67,19 @@ class VehicleRepository implements IVehicleRepository {
 
         return right<VehicleFailure, Vehicle>(vehicle);
       },
-      error: (_, __) => left(const VehicleFailure.unexpected()),
+      error: (error, statusCode) {
+        late final VehicleFailure failure;
+
+        if (error.error == "vehicle-already-parked") {
+          failure = const VehicleFailure.alreadyParked();
+        } else if (error.error == "vehicle-not-found") {
+          failure = const VehicleFailure.vehicleNotFound();
+        } else {
+          failure = const VehicleFailure.unexpected();
+        }
+
+        return left(failure);
+      },
     );
   }
 
@@ -86,7 +100,17 @@ class VehicleRepository implements IVehicleRepository {
 
         return right<VehicleFailure, Vehicle>(vehicle);
       },
-      error: (_, __) => left(const VehicleFailure.unexpected()),
+      error: (error, statusCode) {
+        late final VehicleFailure failure;
+
+        if (error.error == "parking-ticket-not-found") {
+          failure = const VehicleFailure.parkingTicketNotFound();
+        } else {
+          failure = const VehicleFailure.unexpected();
+        }
+
+        return left(failure);
+      },
     );
   }
 }
