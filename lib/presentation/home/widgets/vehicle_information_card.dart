@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 part of 'vehicles_carousel.dart';
 
 class _VehicleInformationCard extends HookWidget {
@@ -12,111 +14,149 @@ class _VehicleInformationCard extends HookWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final hookedVehicle = useState<Vehicle>(vehicle);
+    final hookedPosition = useState<Position?>(null);
 
-    return BlocProvider(
-      create: (context) => getIt<VehicleActorBloc>()
-        ..add(
-          VehicleActorEvent.initialized(optionOf(vehicle)),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<VehicleActorBloc>()
+            ..add(
+              VehicleActorEvent.initialized(optionOf(vehicle)),
+            ),
         ),
-      child: BlocConsumer<VehicleActorBloc, VehicleActorState>(
-        listenWhen: (previous, current) =>
-            previous.saveFailureOrSucessOption !=
-            current.saveFailureOrSucessOption,
-        listener: (context, state) => state.saveFailureOrSucessOption.fold(
+        BlocProvider(
+          create: (context) => getIt<PermissionsBloc>(),
+        ),
+      ],
+      child: BlocListener<PermissionsBloc, PermissionsState>(
+        listener: (context, state) =>
+            state.verificationFailureOrSucessOption.fold(
           () {},
           (either) => either.fold(
-            (failure) => _showFailureDialog(context, failure),
-            (editedVehicle) {
-              hookedVehicle.value = editedVehicle;
-              state.copyWith(vehicle: editedVehicle);
+            (failure) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ErrorScreen(),
+                ),
+              );
+            },
+            (_) async {
+              hookedPosition.value = await Geolocator.getCurrentPosition();
+
+              context.read<VehicleActorBloc>().add(
+                    VehicleActorEvent.parked(hookedPosition.value),
+                  );
             },
           ),
         ),
-        buildWhen: (previous, current) =>
-            previous.isChangingParkingStatus != current.isChangingParkingStatus,
-        builder: (context, state) => state.isChangingParkingStatus
-            ? const _LoadingInProgressCard()
-            : Container(
-                width: size.width * 0.8,
-                height: size.height * 0.2,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: black,
-                ),
-                margin: const EdgeInsets.symmetric(
-                  horizontal: NavigationToolbar.kMiddleSpacing,
-                ),
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "${hookedVehicle.value.make.getOrCrash()} ${hookedVehicle.value.model.getOrCrash()}",
-                      style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "${hookedVehicle.value.year.getOrCrash()}",
-                      style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                color: Colors.white,
-                              ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          hookedVehicle.value.licensePlate.getOrCrash(),
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(
-                                color: Colors.white,
-                              ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            //TODO: verificar permisos de ubicación
-                            if (hookedVehicle.value.parked) {
-                              context.read<VehicleActorBloc>().add(
-                                    const VehicleActorEvent.unparked(),
-                                  );
-                            } else {
-                              context.read<VehicleActorBloc>().add(
-                                    const VehicleActorEvent.parked(),
-                                  );
-                            }
-                          },
-                          child: Text(
-                            hookedVehicle.value.parked
-                                ? "Finalizar"
-                                : "Estacionar",
+        child: BlocConsumer<VehicleActorBloc, VehicleActorState>(
+          listenWhen: (previous, current) =>
+              previous.saveFailureOrSucessOption !=
+              current.saveFailureOrSucessOption,
+          listener: (context, state) => state.saveFailureOrSucessOption.fold(
+            () {},
+            (either) => either.fold(
+              (failure) => _showFailureDialog(context, failure),
+              (editedVehicle) {
+                hookedVehicle.value = editedVehicle;
+                state.copyWith(vehicle: editedVehicle);
+              },
+            ),
+          ),
+          buildWhen: (previous, current) =>
+              previous.isChangingParkingStatus !=
+              current.isChangingParkingStatus,
+          builder: (context, state) => state.isChangingParkingStatus
+              ? const _LoadingInProgressCard()
+              : Container(
+                  width: size.width * 0.8,
+                  height: size.height * 0.2,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: black,
+                  ),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: NavigationToolbar.kMiddleSpacing,
+                  ),
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "${hookedVehicle.value.make.getOrCrash()} ${hookedVehicle.value.model.getOrCrash()}",
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "${hookedVehicle.value.year.getOrCrash()}",
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: Colors.white,
+                                ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            hookedVehicle.value.licensePlate.getOrCrash(),
                             style: Theme.of(context)
                                 .textTheme
-                                .labelLarge!
+                                .headlineSmall!
                                 .copyWith(
-                                  color: green,
-                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          TextButton(
+                            onPressed: () => _changeParkingStatus(
+                              context,
+                              hookedVehicle,
+                            ),
+                            child: Text(
+                              hookedVehicle.value.parked
+                                  ? "Finalizar"
+                                  : "Estacionar",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge!
+                                  .copyWith(
+                                    color: green,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+        ),
       ),
     );
+  }
+
+  Future<void> _changeParkingStatus(
+    BuildContext context,
+    ValueNotifier<Vehicle> hookedVehicle,
+  ) async {
+    if (hookedVehicle.value.parked) {
+      context.read<VehicleActorBloc>().add(
+            const VehicleActorEvent.unparked(),
+          );
+    } else {
+      BlocProvider.of<PermissionsBloc>(context).add(
+        const PermissionsEvent.locationVerificationStarted(),
+      );
+    }
   }
 
   Future<dynamic> _showFailureDialog(

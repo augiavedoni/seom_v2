@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:seom_v2/domain/vehicles/vehicle_failure.dart';
@@ -49,14 +50,16 @@ class VehicleRepository implements IVehicleRepository {
   }
 
   @override
-  Future<Either<VehicleFailure, Vehicle>> park(Vehicle vehicle) async {
+  Future<Either<VehicleFailure, Vehicle>> park(
+    Vehicle vehicle,
+    Position? position,
+  ) async {
     final response = await _client.patch(
       "vehicles/park",
       parameters: {
         "licensePlate": vehicle.licensePlate.getOrCrash(),
-        //TODO: reemplazar valores hardcodeados
-        "latitude": -31.654157061689624,
-        "longitude": -60.71091002950457
+        "latitude": position?.latitude,
+        "longitude": position?.longitude,
       },
     );
 

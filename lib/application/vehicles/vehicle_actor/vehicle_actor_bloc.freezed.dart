@@ -19,21 +19,21 @@ mixin _$VehicleActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Vehicle> initialVehicleOption) initialized,
-    required TResult Function() parked,
+    required TResult Function(Position? position) parked,
     required TResult Function() unparked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
     required TResult orElse(),
   }) =>
@@ -146,7 +146,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Vehicle> initialVehicleOption) initialized,
-    required TResult Function() parked,
+    required TResult Function(Position? position) parked,
     required TResult Function() unparked,
   }) {
     return initialized(initialVehicleOption);
@@ -156,7 +156,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
   }) {
     return initialized?.call(initialVehicleOption);
@@ -166,7 +166,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
     required TResult orElse(),
   }) {
@@ -225,6 +225,7 @@ abstract class _Initialized implements VehicleActorEvent {
 abstract class _$$_ParkedCopyWith<$Res> {
   factory _$$_ParkedCopyWith(_$_Parked value, $Res Function(_$_Parked) then) =
       __$$_ParkedCopyWithImpl<$Res>;
+  $Res call({Position? position});
 }
 
 /// @nodoc
@@ -236,57 +237,80 @@ class __$$_ParkedCopyWithImpl<$Res>
 
   @override
   _$_Parked get _value => super._value as _$_Parked;
+
+  @override
+  $Res call({
+    Object? position = freezed,
+  }) {
+    return _then(_$_Parked(
+      position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Position?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Parked implements _Parked {
-  const _$_Parked();
+  const _$_Parked(this.position);
+
+  @override
+  final Position? position;
 
   @override
   String toString() {
-    return 'VehicleActorEvent.parked()';
+    return 'VehicleActorEvent.parked(position: $position)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Parked);
+        (other.runtimeType == runtimeType &&
+            other is _$_Parked &&
+            const DeepCollectionEquality().equals(other.position, position));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(position));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ParkedCopyWith<_$_Parked> get copyWith =>
+      __$$_ParkedCopyWithImpl<_$_Parked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Vehicle> initialVehicleOption) initialized,
-    required TResult Function() parked,
+    required TResult Function(Position? position) parked,
     required TResult Function() unparked,
   }) {
-    return parked();
+    return parked(position);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
   }) {
-    return parked?.call();
+    return parked?.call(position);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
     required TResult orElse(),
   }) {
     if (parked != null) {
-      return parked();
+      return parked(position);
     }
     return orElse();
   }
@@ -327,7 +351,12 @@ class _$_Parked implements _Parked {
 }
 
 abstract class _Parked implements VehicleActorEvent {
-  const factory _Parked() = _$_Parked;
+  const factory _Parked(final Position? position) = _$_Parked;
+
+  Position? get position;
+  @JsonKey(ignore: true)
+  _$$_ParkedCopyWith<_$_Parked> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -372,7 +401,7 @@ class _$_Unparked implements _Unparked {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Vehicle> initialVehicleOption) initialized,
-    required TResult Function() parked,
+    required TResult Function(Position? position) parked,
     required TResult Function() unparked,
   }) {
     return unparked();
@@ -382,7 +411,7 @@ class _$_Unparked implements _Unparked {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
   }) {
     return unparked?.call();
@@ -392,7 +421,7 @@ class _$_Unparked implements _Unparked {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function()? parked,
+    TResult Function(Position? position)? parked,
     TResult Function()? unparked,
     required TResult orElse(),
   }) {

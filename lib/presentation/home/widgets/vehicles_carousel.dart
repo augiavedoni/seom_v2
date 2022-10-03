@@ -3,8 +3,10 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../application/permissions/permissions_bloc.dart';
 import '../../../application/vehicles/vehicle_actor/vehicle_actor_bloc.dart';
 import '../../../application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
 import '../../../domain/vehicles/entities/vehicle.dart';
@@ -12,6 +14,7 @@ import '../../../domain/vehicles/vehicle_failure.dart';
 import '../../../injection.dart';
 import '../../common_widgets/custom_dialog.dart';
 import '../../core/theme/app_colors.dart';
+import '../../error/error_screen.dart';
 
 part 'loading_in_progress_card.dart';
 part 'vehicle_information_card.dart';

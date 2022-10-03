@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/vehicles/entities/vehicle.dart';
@@ -42,6 +43,7 @@ class VehicleActorBloc extends Bloc<VehicleActorEvent, VehicleActorState> {
 
           failureOrSuccess = await _vehicleRepository.park(
             state.vehicle,
+            event.position,
           );
 
           emit(
