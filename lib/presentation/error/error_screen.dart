@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../common_widgets/rounded_button.dart';
+
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({super.key});
 
@@ -43,13 +45,13 @@ class ErrorScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              TextButton(
+              RoundedButton.fill(
+                text: "Permitir acceso",
                 onPressed: () async => await Geolocator.openLocationSettings(),
-                child: const Text("Permitir acceso"),
               ),
-              TextButton(
+              RoundedButton.translucent(
+                text: "Volver",
                 onPressed: () => Navigator.of(context).pop(),
-                child: const Text("Volver"),
               ),
             ],
           ),

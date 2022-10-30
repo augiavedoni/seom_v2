@@ -8,3 +8,4 @@ const Color yellow = Color(0XFFFEB52D);
 const Color darkblue = Color(0XFF171D26);
 const Color lightblue = Color(0XFFB3C4FF);
 const Color green = Color(0XFF15BC8E);
+const Color lightGreen = Color(0xFF29DAAA);

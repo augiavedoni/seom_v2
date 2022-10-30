@@ -28,9 +28,16 @@ import 'infrastructure/vehicles/vehicle_repository.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final seomInjectableModules = _$SeomInjectableModules();
   gh.factory<_i3.IPermissionsManager>(() => _i4.PermissionsRepository());
   gh.factory<_i5.PermissionsBloc>(
@@ -40,10 +47,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => seomInjectableModules.tokenDataSource);
   gh.lazySingleton<_i8.UserDataSource>(
       () => seomInjectableModules.userDataSource);
-  gh.factory<_i9.IAuthFacade>(() => _i10.SeomAuthFacade(get<_i6.SeomClient>(),
-      get<_i8.UserDataSource>(), get<_i7.TokenDataSource>()));
-  gh.factory<_i11.IVehicleRepository>(() =>
-      _i12.VehicleRepository(get<_i6.SeomClient>(), get<_i8.UserDataSource>()));
+  gh.factory<_i9.IAuthFacade>(() => _i10.SeomAuthFacade(
+        get<_i6.SeomClient>(),
+        get<_i8.UserDataSource>(),
+        get<_i7.TokenDataSource>(),
+      ));
+  gh.factory<_i11.IVehicleRepository>(() => _i12.VehicleRepository(
+        get<_i6.SeomClientContract>(),
+        get<_i8.UserDataSource>(),
+      ));
   gh.factory<_i13.SignInFormBloc>(
       () => _i13.SignInFormBloc(get<_i9.IAuthFacade>()));
   gh.factory<_i14.SignUpFormBloc>(

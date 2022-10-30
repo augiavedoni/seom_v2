@@ -32,7 +32,8 @@ mixin _$SeomUser {
 /// @nodoc
 abstract class $SeomUserCopyWith<$Res> {
   factory $SeomUserCopyWith(SeomUser value, $Res Function(SeomUser) then) =
-      _$SeomUserCopyWithImpl<$Res>;
+      _$SeomUserCopyWithImpl<$Res, SeomUser>;
+  @useResult
   $Res call(
       {int id,
       FirstName firstName,
@@ -44,53 +45,56 @@ abstract class $SeomUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SeomUserCopyWithImpl<$Res> implements $SeomUserCopyWith<$Res> {
+class _$SeomUserCopyWithImpl<$Res, $Val extends SeomUser>
+    implements $SeomUserCopyWith<$Res> {
   _$SeomUserCopyWithImpl(this._value, this._then);
 
-  final SeomUser _value;
   // ignore: unused_field
-  final $Res Function(SeomUser) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? cuil = freezed,
-    Object? birthdate = freezed,
-    Object? token = freezed,
-    Object? refreshToken = freezed,
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? cuil = null,
+    Object? birthdate = null,
+    Object? token = null,
+    Object? refreshToken = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      firstName: firstName == freezed
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as FirstName,
-      lastName: lastName == freezed
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as LastName,
-      cuil: cuil == freezed
+      cuil: null == cuil
           ? _value.cuil
           : cuil // ignore: cast_nullable_to_non_nullable
               as Cuil,
-      birthdate: birthdate == freezed
+      birthdate: null == birthdate
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token,
-      refreshToken: refreshToken == freezed
+      refreshToken: null == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as RefreshToken,
-    ));
+    ) as $Val);
   }
 }
 
@@ -100,6 +104,7 @@ abstract class _$$_SeomUserCopyWith<$Res> implements $SeomUserCopyWith<$Res> {
           _$_SeomUser value, $Res Function(_$_SeomUser) then) =
       __$$_SeomUserCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       FirstName firstName,
@@ -111,51 +116,50 @@ abstract class _$$_SeomUserCopyWith<$Res> implements $SeomUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SeomUserCopyWithImpl<$Res> extends _$SeomUserCopyWithImpl<$Res>
+class __$$_SeomUserCopyWithImpl<$Res>
+    extends _$SeomUserCopyWithImpl<$Res, _$_SeomUser>
     implements _$$_SeomUserCopyWith<$Res> {
   __$$_SeomUserCopyWithImpl(
       _$_SeomUser _value, $Res Function(_$_SeomUser) _then)
-      : super(_value, (v) => _then(v as _$_SeomUser));
+      : super(_value, _then);
 
-  @override
-  _$_SeomUser get _value => super._value as _$_SeomUser;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? cuil = freezed,
-    Object? birthdate = freezed,
-    Object? token = freezed,
-    Object? refreshToken = freezed,
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? cuil = null,
+    Object? birthdate = null,
+    Object? token = null,
+    Object? refreshToken = null,
   }) {
     return _then(_$_SeomUser(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      firstName: firstName == freezed
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as FirstName,
-      lastName: lastName == freezed
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as LastName,
-      cuil: cuil == freezed
+      cuil: null == cuil
           ? _value.cuil
           : cuil // ignore: cast_nullable_to_non_nullable
               as Cuil,
-      birthdate: birthdate == freezed
+      birthdate: null == birthdate
           ? _value.birthdate
           : birthdate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token,
-      refreshToken: refreshToken == freezed
+      refreshToken: null == refreshToken
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as RefreshToken,
@@ -200,29 +204,26 @@ class _$_SeomUser implements _SeomUser {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SeomUser &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.firstName, firstName) &&
-            const DeepCollectionEquality().equals(other.lastName, lastName) &&
-            const DeepCollectionEquality().equals(other.cuil, cuil) &&
-            const DeepCollectionEquality().equals(other.birthdate, birthdate) &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality()
-                .equals(other.refreshToken, refreshToken));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.cuil, cuil) || other.cuil == cuil) &&
+            (identical(other.birthdate, birthdate) ||
+                other.birthdate == birthdate) &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(firstName),
-      const DeepCollectionEquality().hash(lastName),
-      const DeepCollectionEquality().hash(cuil),
-      const DeepCollectionEquality().hash(birthdate),
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(refreshToken));
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, cuil,
+      birthdate, token, refreshToken);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SeomUserCopyWith<_$_SeomUser> get copyWith =>
       __$$_SeomUserCopyWithImpl<_$_SeomUser>(this, _$identity);
 }

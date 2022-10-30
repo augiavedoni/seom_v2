@@ -33,13 +33,7 @@ class _VehicleInformationCard extends HookWidget {
             state.verificationFailureOrSucessOption.fold(
           () {},
           (either) => either.fold(
-            (failure) {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ErrorScreen(),
-                ),
-              );
-            },
+            (failure) => _navigateToErrorScreen(context, failure),
             (_) async {
               hookedPosition.value = await Geolocator.getCurrentPosition();
 
@@ -140,6 +134,32 @@ class _VehicleInformationCard extends HookWidget {
                   ),
                 ),
         ),
+      ),
+    );
+  }
+
+  void _navigateToErrorScreen(
+    BuildContext context,
+    PermissionFailure failure,
+  ) {
+    context.router.push(
+      FeedbackScreenRoute(
+        mainImagePath:
+            "lib/presentation/core/assets/undraw_my_location_re_r52x.svg",
+        title: "Oops... algo ocurrió",
+        description:
+            "Necesitamos acceso a tu ubicación para poder ofrecerte un mejor servicio y poder asistirte mejor en caso de que sea necesario",
+        primaryButton: FeedbackButton(
+          text: "Permitir acceso",
+          onPressed: () async => await Geolocator.openLocationSettings(),
+        ),
+        secondaryButton: FeedbackButton(
+          text: "Volver",
+          onPressed: () => context.router.pop(),
+        ),
+        showClose: false,
+        willPop: true,
+        onWillPop: () => context.router.pop(),
       ),
     );
   }

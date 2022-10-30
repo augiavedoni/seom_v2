@@ -25,9 +25,9 @@ mixin _$VehicleActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function(Position? position)? parked,
-    TResult Function()? unparked,
+    TResult? Function(Option<Vehicle> initialVehicleOption)? initialized,
+    TResult? Function(Position? position)? parked,
+    TResult? Function()? unparked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$VehicleActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_Parked value)? parked,
-    TResult Function(_Unparked value)? unparked,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_Parked value)? parked,
+    TResult? Function(_Unparked value)? unparked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,17 +66,18 @@ mixin _$VehicleActorEvent {
 abstract class $VehicleActorEventCopyWith<$Res> {
   factory $VehicleActorEventCopyWith(
           VehicleActorEvent value, $Res Function(VehicleActorEvent) then) =
-      _$VehicleActorEventCopyWithImpl<$Res>;
+      _$VehicleActorEventCopyWithImpl<$Res, VehicleActorEvent>;
 }
 
 /// @nodoc
-class _$VehicleActorEventCopyWithImpl<$Res>
+class _$VehicleActorEventCopyWithImpl<$Res, $Val extends VehicleActorEvent>
     implements $VehicleActorEventCopyWith<$Res> {
   _$VehicleActorEventCopyWithImpl(this._value, this._then);
 
-  final VehicleActorEvent _value;
   // ignore: unused_field
-  final $Res Function(VehicleActorEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -84,26 +85,25 @@ abstract class _$$_InitializedCopyWith<$Res> {
   factory _$$_InitializedCopyWith(
           _$_Initialized value, $Res Function(_$_Initialized) then) =
       __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Option<Vehicle> initialVehicleOption});
 }
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$VehicleActorEventCopyWithImpl<$Res>
+    extends _$VehicleActorEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
+      : super(_value, _then);
 
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialVehicleOption = freezed,
+    Object? initialVehicleOption = null,
   }) {
     return _then(_$_Initialized(
-      initialVehicleOption == freezed
+      null == initialVehicleOption
           ? _value.initialVehicleOption
           : initialVehicleOption // ignore: cast_nullable_to_non_nullable
               as Option<Vehicle>,
@@ -129,16 +129,16 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initialized &&
-            const DeepCollectionEquality()
-                .equals(other.initialVehicleOption, initialVehicleOption));
+            (identical(other.initialVehicleOption, initialVehicleOption) ||
+                other.initialVehicleOption == initialVehicleOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(initialVehicleOption));
+  int get hashCode => Object.hash(runtimeType, initialVehicleOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
@@ -155,9 +155,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function(Position? position)? parked,
-    TResult Function()? unparked,
+    TResult? Function(Option<Vehicle> initialVehicleOption)? initialized,
+    TResult? Function(Position? position)? parked,
+    TResult? Function()? unparked,
   }) {
     return initialized?.call(initialVehicleOption);
   }
@@ -189,9 +189,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_Parked value)? parked,
-    TResult Function(_Unparked value)? unparked,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_Parked value)? parked,
+    TResult? Function(_Unparked value)? unparked,
   }) {
     return initialized?.call(this);
   }
@@ -225,25 +225,24 @@ abstract class _Initialized implements VehicleActorEvent {
 abstract class _$$_ParkedCopyWith<$Res> {
   factory _$$_ParkedCopyWith(_$_Parked value, $Res Function(_$_Parked) then) =
       __$$_ParkedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Position? position});
 }
 
 /// @nodoc
 class __$$_ParkedCopyWithImpl<$Res>
-    extends _$VehicleActorEventCopyWithImpl<$Res>
+    extends _$VehicleActorEventCopyWithImpl<$Res, _$_Parked>
     implements _$$_ParkedCopyWith<$Res> {
   __$$_ParkedCopyWithImpl(_$_Parked _value, $Res Function(_$_Parked) _then)
-      : super(_value, (v) => _then(v as _$_Parked));
+      : super(_value, _then);
 
-  @override
-  _$_Parked get _value => super._value as _$_Parked;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? position = freezed,
   }) {
     return _then(_$_Parked(
-      position == freezed
+      freezed == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Position?,
@@ -269,15 +268,16 @@ class _$_Parked implements _Parked {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Parked &&
-            const DeepCollectionEquality().equals(other.position, position));
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(position));
+  int get hashCode => Object.hash(runtimeType, position);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ParkedCopyWith<_$_Parked> get copyWith =>
       __$$_ParkedCopyWithImpl<_$_Parked>(this, _$identity);
 
@@ -294,9 +294,9 @@ class _$_Parked implements _Parked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function(Position? position)? parked,
-    TResult Function()? unparked,
+    TResult? Function(Option<Vehicle> initialVehicleOption)? initialized,
+    TResult? Function(Position? position)? parked,
+    TResult? Function()? unparked,
   }) {
     return parked?.call(position);
   }
@@ -328,9 +328,9 @@ class _$_Parked implements _Parked {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_Parked value)? parked,
-    TResult Function(_Unparked value)? unparked,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_Parked value)? parked,
+    TResult? Function(_Unparked value)? unparked,
   }) {
     return parked?.call(this);
   }
@@ -368,14 +368,11 @@ abstract class _$$_UnparkedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnparkedCopyWithImpl<$Res>
-    extends _$VehicleActorEventCopyWithImpl<$Res>
+    extends _$VehicleActorEventCopyWithImpl<$Res, _$_Unparked>
     implements _$$_UnparkedCopyWith<$Res> {
   __$$_UnparkedCopyWithImpl(
       _$_Unparked _value, $Res Function(_$_Unparked) _then)
-      : super(_value, (v) => _then(v as _$_Unparked));
-
-  @override
-  _$_Unparked get _value => super._value as _$_Unparked;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -410,9 +407,9 @@ class _$_Unparked implements _Unparked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<Vehicle> initialVehicleOption)? initialized,
-    TResult Function(Position? position)? parked,
-    TResult Function()? unparked,
+    TResult? Function(Option<Vehicle> initialVehicleOption)? initialized,
+    TResult? Function(Position? position)? parked,
+    TResult? Function()? unparked,
   }) {
     return unparked?.call();
   }
@@ -444,9 +441,9 @@ class _$_Unparked implements _Unparked {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_Parked value)? parked,
-    TResult Function(_Unparked value)? unparked,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_Parked value)? parked,
+    TResult? Function(_Unparked value)? unparked,
   }) {
     return unparked?.call(this);
   }
@@ -486,7 +483,8 @@ mixin _$VehicleActorState {
 abstract class $VehicleActorStateCopyWith<$Res> {
   factory $VehicleActorStateCopyWith(
           VehicleActorState value, $Res Function(VehicleActorState) then) =
-      _$VehicleActorStateCopyWithImpl<$Res>;
+      _$VehicleActorStateCopyWithImpl<$Res, VehicleActorState>;
+  @useResult
   $Res call(
       {Vehicle vehicle,
       bool isChangingParkingStatus,
@@ -496,40 +494,43 @@ abstract class $VehicleActorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VehicleActorStateCopyWithImpl<$Res>
+class _$VehicleActorStateCopyWithImpl<$Res, $Val extends VehicleActorState>
     implements $VehicleActorStateCopyWith<$Res> {
   _$VehicleActorStateCopyWithImpl(this._value, this._then);
 
-  final VehicleActorState _value;
   // ignore: unused_field
-  final $Res Function(VehicleActorState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? vehicle = freezed,
-    Object? isChangingParkingStatus = freezed,
-    Object? saveFailureOrSucessOption = freezed,
+    Object? vehicle = null,
+    Object? isChangingParkingStatus = null,
+    Object? saveFailureOrSucessOption = null,
   }) {
     return _then(_value.copyWith(
-      vehicle: vehicle == freezed
+      vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
               as Vehicle,
-      isChangingParkingStatus: isChangingParkingStatus == freezed
+      isChangingParkingStatus: null == isChangingParkingStatus
           ? _value.isChangingParkingStatus
           : isChangingParkingStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSucessOption: saveFailureOrSucessOption == freezed
+      saveFailureOrSucessOption: null == saveFailureOrSucessOption
           ? _value.saveFailureOrSucessOption
           : saveFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<VehicleFailure, Vehicle>>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $VehicleCopyWith<$Res> get vehicle {
     return $VehicleCopyWith<$Res>(_value.vehicle, (value) {
-      return _then(_value.copyWith(vehicle: value));
+      return _then(_value.copyWith(vehicle: value) as $Val);
     });
   }
 }
@@ -541,6 +542,7 @@ abstract class _$$_InitialCopyWith<$Res>
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Vehicle vehicle,
       bool isChangingParkingStatus,
@@ -552,30 +554,28 @@ abstract class _$$_InitialCopyWith<$Res>
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$VehicleActorStateCopyWithImpl<$Res>
+    extends _$VehicleActorStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
+      : super(_value, _then);
 
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? vehicle = freezed,
-    Object? isChangingParkingStatus = freezed,
-    Object? saveFailureOrSucessOption = freezed,
+    Object? vehicle = null,
+    Object? isChangingParkingStatus = null,
+    Object? saveFailureOrSucessOption = null,
   }) {
     return _then(_$_Initial(
-      vehicle: vehicle == freezed
+      vehicle: null == vehicle
           ? _value.vehicle
           : vehicle // ignore: cast_nullable_to_non_nullable
               as Vehicle,
-      isChangingParkingStatus: isChangingParkingStatus == freezed
+      isChangingParkingStatus: null == isChangingParkingStatus
           ? _value.isChangingParkingStatus
           : isChangingParkingStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSucessOption: saveFailureOrSucessOption == freezed
+      saveFailureOrSucessOption: null == saveFailureOrSucessOption
           ? _value.saveFailureOrSucessOption
           : saveFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<VehicleFailure, Vehicle>>,
@@ -608,22 +608,22 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            const DeepCollectionEquality().equals(other.vehicle, vehicle) &&
-            const DeepCollectionEquality().equals(
-                other.isChangingParkingStatus, isChangingParkingStatus) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSucessOption, saveFailureOrSucessOption));
+            (identical(other.vehicle, vehicle) || other.vehicle == vehicle) &&
+            (identical(
+                    other.isChangingParkingStatus, isChangingParkingStatus) ||
+                other.isChangingParkingStatus == isChangingParkingStatus) &&
+            (identical(other.saveFailureOrSucessOption,
+                    saveFailureOrSucessOption) ||
+                other.saveFailureOrSucessOption == saveFailureOrSucessOption));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(vehicle),
-      const DeepCollectionEquality().hash(isChangingParkingStatus),
-      const DeepCollectionEquality().hash(saveFailureOrSucessOption));
+      runtimeType, vehicle, isChangingParkingStatus, saveFailureOrSucessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
       __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }

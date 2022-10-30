@@ -23,7 +23,7 @@ mixin _$PermissionsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? locationVerificationStarted,
+    TResult? Function()? locationVerificationStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$PermissionsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LocationVerificationStarted value)?
+    TResult? Function(LocationVerificationStarted value)?
         locationVerificationStarted,
   }) =>
       throw _privateConstructorUsedError;
@@ -57,17 +57,18 @@ mixin _$PermissionsEvent {
 abstract class $PermissionsEventCopyWith<$Res> {
   factory $PermissionsEventCopyWith(
           PermissionsEvent value, $Res Function(PermissionsEvent) then) =
-      _$PermissionsEventCopyWithImpl<$Res>;
+      _$PermissionsEventCopyWithImpl<$Res, PermissionsEvent>;
 }
 
 /// @nodoc
-class _$PermissionsEventCopyWithImpl<$Res>
+class _$PermissionsEventCopyWithImpl<$Res, $Val extends PermissionsEvent>
     implements $PermissionsEventCopyWith<$Res> {
   _$PermissionsEventCopyWithImpl(this._value, this._then);
 
-  final PermissionsEvent _value;
   // ignore: unused_field
-  final $Res Function(PermissionsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -80,16 +81,12 @@ abstract class _$$LocationVerificationStartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LocationVerificationStartedCopyWithImpl<$Res>
-    extends _$PermissionsEventCopyWithImpl<$Res>
+    extends _$PermissionsEventCopyWithImpl<$Res, _$LocationVerificationStarted>
     implements _$$LocationVerificationStartedCopyWith<$Res> {
   __$$LocationVerificationStartedCopyWithImpl(
       _$LocationVerificationStarted _value,
       $Res Function(_$LocationVerificationStarted) _then)
-      : super(_value, (v) => _then(v as _$LocationVerificationStarted));
-
-  @override
-  _$LocationVerificationStarted get _value =>
-      super._value as _$LocationVerificationStarted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -123,7 +120,7 @@ class _$LocationVerificationStarted implements LocationVerificationStarted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? locationVerificationStarted,
+    TResult? Function()? locationVerificationStarted,
   }) {
     return locationVerificationStarted?.call();
   }
@@ -152,7 +149,7 @@ class _$LocationVerificationStarted implements LocationVerificationStarted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LocationVerificationStarted value)?
+    TResult? Function(LocationVerificationStarted value)?
         locationVerificationStarted,
   }) {
     return locationVerificationStarted?.call(this);
@@ -192,7 +189,8 @@ mixin _$PermissionsState {
 abstract class $PermissionsStateCopyWith<$Res> {
   factory $PermissionsStateCopyWith(
           PermissionsState value, $Res Function(PermissionsState) then) =
-      _$PermissionsStateCopyWithImpl<$Res>;
+      _$PermissionsStateCopyWithImpl<$Res, PermissionsState>;
+  @useResult
   $Res call(
       {Option<Either<PermissionFailure, Unit>>
           verificationFailureOrSucessOption,
@@ -200,30 +198,32 @@ abstract class $PermissionsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PermissionsStateCopyWithImpl<$Res>
+class _$PermissionsStateCopyWithImpl<$Res, $Val extends PermissionsState>
     implements $PermissionsStateCopyWith<$Res> {
   _$PermissionsStateCopyWithImpl(this._value, this._then);
 
-  final PermissionsState _value;
   // ignore: unused_field
-  final $Res Function(PermissionsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? verificationFailureOrSucessOption = freezed,
-    Object? verificationInProgress = freezed,
+    Object? verificationFailureOrSucessOption = null,
+    Object? verificationInProgress = null,
   }) {
     return _then(_value.copyWith(
-      verificationFailureOrSucessOption: verificationFailureOrSucessOption ==
-              freezed
+      verificationFailureOrSucessOption: null ==
+              verificationFailureOrSucessOption
           ? _value.verificationFailureOrSucessOption
           : verificationFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<PermissionFailure, Unit>>,
-      verificationInProgress: verificationInProgress == freezed
+      verificationInProgress: null == verificationInProgress
           ? _value.verificationInProgress
           : verificationInProgress // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -234,6 +234,7 @@ abstract class _$$_InitialCopyWith<$Res>
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Option<Either<PermissionFailure, Unit>>
           verificationFailureOrSucessOption,
@@ -242,26 +243,24 @@ abstract class _$$_InitialCopyWith<$Res>
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$PermissionsStateCopyWithImpl<$Res>
+    extends _$PermissionsStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
+      : super(_value, _then);
 
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? verificationFailureOrSucessOption = freezed,
-    Object? verificationInProgress = freezed,
+    Object? verificationFailureOrSucessOption = null,
+    Object? verificationInProgress = null,
   }) {
     return _then(_$_Initial(
-      verificationFailureOrSucessOption: verificationFailureOrSucessOption ==
-              freezed
+      verificationFailureOrSucessOption: null ==
+              verificationFailureOrSucessOption
           ? _value.verificationFailureOrSucessOption
           : verificationFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<PermissionFailure, Unit>>,
-      verificationInProgress: verificationInProgress == freezed
+      verificationInProgress: null == verificationInProgress
           ? _value.verificationInProgress
           : verificationInProgress // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -292,21 +291,21 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            const DeepCollectionEquality().equals(
-                other.verificationFailureOrSucessOption,
-                verificationFailureOrSucessOption) &&
-            const DeepCollectionEquality()
-                .equals(other.verificationInProgress, verificationInProgress));
+            (identical(other.verificationFailureOrSucessOption,
+                    verificationFailureOrSucessOption) ||
+                other.verificationFailureOrSucessOption ==
+                    verificationFailureOrSucessOption) &&
+            (identical(other.verificationInProgress, verificationInProgress) ||
+                other.verificationInProgress == verificationInProgress));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(verificationFailureOrSucessOption),
-      const DeepCollectionEquality().hash(verificationInProgress));
+      runtimeType, verificationFailureOrSucessOption, verificationInProgress);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
       __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }

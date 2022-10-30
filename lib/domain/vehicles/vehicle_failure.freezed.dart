@@ -26,10 +26,10 @@ mixin _$VehicleFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? vehicleNotFound,
-    TResult Function()? alreadyParked,
-    TResult Function()? parkingTicketNotFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? vehicleNotFound,
+    TResult? Function()? alreadyParked,
+    TResult? Function()? parkingTicketNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,27 +43,30 @@ mixin _$VehicleFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_VehicleNotFound value) vehicleNotFound,
-    required TResult Function(_AlreadyParked value) alreadyParked,
-    required TResult Function(_ParkingTicketNotFound value)
+    required TResult Function(VehicleFailureUnexpected value) unexpected,
+    required TResult Function(VehicleFailureVehicleNotFound value)
+        vehicleNotFound,
+    required TResult Function(VehicleFailureAlreadyParked value) alreadyParked,
+    required TResult Function(VehicleFailureParkingTicketNotFound value)
         parkingTicketNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult? Function(VehicleFailureUnexpected value)? unexpected,
+    TResult? Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult? Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult? Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult Function(VehicleFailureUnexpected value)? unexpected,
+    TResult Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,42 +76,40 @@ mixin _$VehicleFailure {
 abstract class $VehicleFailureCopyWith<$Res> {
   factory $VehicleFailureCopyWith(
           VehicleFailure value, $Res Function(VehicleFailure) then) =
-      _$VehicleFailureCopyWithImpl<$Res>;
+      _$VehicleFailureCopyWithImpl<$Res, VehicleFailure>;
 }
 
 /// @nodoc
-class _$VehicleFailureCopyWithImpl<$Res>
+class _$VehicleFailureCopyWithImpl<$Res, $Val extends VehicleFailure>
     implements $VehicleFailureCopyWith<$Res> {
   _$VehicleFailureCopyWithImpl(this._value, this._then);
 
-  final VehicleFailure _value;
   // ignore: unused_field
-  final $Res Function(VehicleFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_UnexpectedCopyWith<$Res> {
-  factory _$$_UnexpectedCopyWith(
-          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
-      __$$_UnexpectedCopyWithImpl<$Res>;
+abstract class _$$VehicleFailureUnexpectedCopyWith<$Res> {
+  factory _$$VehicleFailureUnexpectedCopyWith(_$VehicleFailureUnexpected value,
+          $Res Function(_$VehicleFailureUnexpected) then) =
+      __$$VehicleFailureUnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnexpectedCopyWithImpl<$Res>
-    extends _$VehicleFailureCopyWithImpl<$Res>
-    implements _$$_UnexpectedCopyWith<$Res> {
-  __$$_UnexpectedCopyWithImpl(
-      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
-      : super(_value, (v) => _then(v as _$_Unexpected));
-
-  @override
-  _$_Unexpected get _value => super._value as _$_Unexpected;
+class __$$VehicleFailureUnexpectedCopyWithImpl<$Res>
+    extends _$VehicleFailureCopyWithImpl<$Res, _$VehicleFailureUnexpected>
+    implements _$$VehicleFailureUnexpectedCopyWith<$Res> {
+  __$$VehicleFailureUnexpectedCopyWithImpl(_$VehicleFailureUnexpected _value,
+      $Res Function(_$VehicleFailureUnexpected) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Unexpected implements _Unexpected {
-  const _$_Unexpected();
+class _$VehicleFailureUnexpected implements VehicleFailureUnexpected {
+  const _$VehicleFailureUnexpected();
 
   @override
   String toString() {
@@ -118,7 +119,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unexpected);
+        (other.runtimeType == runtimeType &&
+            other is _$VehicleFailureUnexpected);
   }
 
   @override
@@ -138,10 +140,10 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? vehicleNotFound,
-    TResult Function()? alreadyParked,
-    TResult Function()? parkingTicketNotFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? vehicleNotFound,
+    TResult? Function()? alreadyParked,
+    TResult? Function()? parkingTicketNotFound,
   }) {
     return unexpected?.call();
   }
@@ -164,10 +166,11 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_VehicleNotFound value) vehicleNotFound,
-    required TResult Function(_AlreadyParked value) alreadyParked,
-    required TResult Function(_ParkingTicketNotFound value)
+    required TResult Function(VehicleFailureUnexpected value) unexpected,
+    required TResult Function(VehicleFailureVehicleNotFound value)
+        vehicleNotFound,
+    required TResult Function(VehicleFailureAlreadyParked value) alreadyParked,
+    required TResult Function(VehicleFailureParkingTicketNotFound value)
         parkingTicketNotFound,
   }) {
     return unexpected(this);
@@ -176,10 +179,11 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult? Function(VehicleFailureUnexpected value)? unexpected,
+    TResult? Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult? Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult? Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
   }) {
     return unexpected?.call(this);
   }
@@ -187,10 +191,11 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult Function(VehicleFailureUnexpected value)? unexpected,
+    TResult Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -200,33 +205,32 @@ class _$_Unexpected implements _Unexpected {
   }
 }
 
-abstract class _Unexpected implements VehicleFailure {
-  const factory _Unexpected() = _$_Unexpected;
+abstract class VehicleFailureUnexpected implements VehicleFailure {
+  const factory VehicleFailureUnexpected() = _$VehicleFailureUnexpected;
 }
 
 /// @nodoc
-abstract class _$$_VehicleNotFoundCopyWith<$Res> {
-  factory _$$_VehicleNotFoundCopyWith(
-          _$_VehicleNotFound value, $Res Function(_$_VehicleNotFound) then) =
-      __$$_VehicleNotFoundCopyWithImpl<$Res>;
+abstract class _$$VehicleFailureVehicleNotFoundCopyWith<$Res> {
+  factory _$$VehicleFailureVehicleNotFoundCopyWith(
+          _$VehicleFailureVehicleNotFound value,
+          $Res Function(_$VehicleFailureVehicleNotFound) then) =
+      __$$VehicleFailureVehicleNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_VehicleNotFoundCopyWithImpl<$Res>
-    extends _$VehicleFailureCopyWithImpl<$Res>
-    implements _$$_VehicleNotFoundCopyWith<$Res> {
-  __$$_VehicleNotFoundCopyWithImpl(
-      _$_VehicleNotFound _value, $Res Function(_$_VehicleNotFound) _then)
-      : super(_value, (v) => _then(v as _$_VehicleNotFound));
-
-  @override
-  _$_VehicleNotFound get _value => super._value as _$_VehicleNotFound;
+class __$$VehicleFailureVehicleNotFoundCopyWithImpl<$Res>
+    extends _$VehicleFailureCopyWithImpl<$Res, _$VehicleFailureVehicleNotFound>
+    implements _$$VehicleFailureVehicleNotFoundCopyWith<$Res> {
+  __$$VehicleFailureVehicleNotFoundCopyWithImpl(
+      _$VehicleFailureVehicleNotFound _value,
+      $Res Function(_$VehicleFailureVehicleNotFound) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_VehicleNotFound implements _VehicleNotFound {
-  const _$_VehicleNotFound();
+class _$VehicleFailureVehicleNotFound implements VehicleFailureVehicleNotFound {
+  const _$VehicleFailureVehicleNotFound();
 
   @override
   String toString() {
@@ -236,7 +240,8 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_VehicleNotFound);
+        (other.runtimeType == runtimeType &&
+            other is _$VehicleFailureVehicleNotFound);
   }
 
   @override
@@ -256,10 +261,10 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? vehicleNotFound,
-    TResult Function()? alreadyParked,
-    TResult Function()? parkingTicketNotFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? vehicleNotFound,
+    TResult? Function()? alreadyParked,
+    TResult? Function()? parkingTicketNotFound,
   }) {
     return vehicleNotFound?.call();
   }
@@ -282,10 +287,11 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_VehicleNotFound value) vehicleNotFound,
-    required TResult Function(_AlreadyParked value) alreadyParked,
-    required TResult Function(_ParkingTicketNotFound value)
+    required TResult Function(VehicleFailureUnexpected value) unexpected,
+    required TResult Function(VehicleFailureVehicleNotFound value)
+        vehicleNotFound,
+    required TResult Function(VehicleFailureAlreadyParked value) alreadyParked,
+    required TResult Function(VehicleFailureParkingTicketNotFound value)
         parkingTicketNotFound,
   }) {
     return vehicleNotFound(this);
@@ -294,10 +300,11 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult? Function(VehicleFailureUnexpected value)? unexpected,
+    TResult? Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult? Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult? Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
   }) {
     return vehicleNotFound?.call(this);
   }
@@ -305,10 +312,11 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult Function(VehicleFailureUnexpected value)? unexpected,
+    TResult Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
     required TResult orElse(),
   }) {
     if (vehicleNotFound != null) {
@@ -318,33 +326,33 @@ class _$_VehicleNotFound implements _VehicleNotFound {
   }
 }
 
-abstract class _VehicleNotFound implements VehicleFailure {
-  const factory _VehicleNotFound() = _$_VehicleNotFound;
+abstract class VehicleFailureVehicleNotFound implements VehicleFailure {
+  const factory VehicleFailureVehicleNotFound() =
+      _$VehicleFailureVehicleNotFound;
 }
 
 /// @nodoc
-abstract class _$$_AlreadyParkedCopyWith<$Res> {
-  factory _$$_AlreadyParkedCopyWith(
-          _$_AlreadyParked value, $Res Function(_$_AlreadyParked) then) =
-      __$$_AlreadyParkedCopyWithImpl<$Res>;
+abstract class _$$VehicleFailureAlreadyParkedCopyWith<$Res> {
+  factory _$$VehicleFailureAlreadyParkedCopyWith(
+          _$VehicleFailureAlreadyParked value,
+          $Res Function(_$VehicleFailureAlreadyParked) then) =
+      __$$VehicleFailureAlreadyParkedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AlreadyParkedCopyWithImpl<$Res>
-    extends _$VehicleFailureCopyWithImpl<$Res>
-    implements _$$_AlreadyParkedCopyWith<$Res> {
-  __$$_AlreadyParkedCopyWithImpl(
-      _$_AlreadyParked _value, $Res Function(_$_AlreadyParked) _then)
-      : super(_value, (v) => _then(v as _$_AlreadyParked));
-
-  @override
-  _$_AlreadyParked get _value => super._value as _$_AlreadyParked;
+class __$$VehicleFailureAlreadyParkedCopyWithImpl<$Res>
+    extends _$VehicleFailureCopyWithImpl<$Res, _$VehicleFailureAlreadyParked>
+    implements _$$VehicleFailureAlreadyParkedCopyWith<$Res> {
+  __$$VehicleFailureAlreadyParkedCopyWithImpl(
+      _$VehicleFailureAlreadyParked _value,
+      $Res Function(_$VehicleFailureAlreadyParked) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AlreadyParked implements _AlreadyParked {
-  const _$_AlreadyParked();
+class _$VehicleFailureAlreadyParked implements VehicleFailureAlreadyParked {
+  const _$VehicleFailureAlreadyParked();
 
   @override
   String toString() {
@@ -354,7 +362,8 @@ class _$_AlreadyParked implements _AlreadyParked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AlreadyParked);
+        (other.runtimeType == runtimeType &&
+            other is _$VehicleFailureAlreadyParked);
   }
 
   @override
@@ -374,10 +383,10 @@ class _$_AlreadyParked implements _AlreadyParked {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? vehicleNotFound,
-    TResult Function()? alreadyParked,
-    TResult Function()? parkingTicketNotFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? vehicleNotFound,
+    TResult? Function()? alreadyParked,
+    TResult? Function()? parkingTicketNotFound,
   }) {
     return alreadyParked?.call();
   }
@@ -400,10 +409,11 @@ class _$_AlreadyParked implements _AlreadyParked {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_VehicleNotFound value) vehicleNotFound,
-    required TResult Function(_AlreadyParked value) alreadyParked,
-    required TResult Function(_ParkingTicketNotFound value)
+    required TResult Function(VehicleFailureUnexpected value) unexpected,
+    required TResult Function(VehicleFailureVehicleNotFound value)
+        vehicleNotFound,
+    required TResult Function(VehicleFailureAlreadyParked value) alreadyParked,
+    required TResult Function(VehicleFailureParkingTicketNotFound value)
         parkingTicketNotFound,
   }) {
     return alreadyParked(this);
@@ -412,10 +422,11 @@ class _$_AlreadyParked implements _AlreadyParked {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult? Function(VehicleFailureUnexpected value)? unexpected,
+    TResult? Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult? Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult? Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
   }) {
     return alreadyParked?.call(this);
   }
@@ -423,10 +434,11 @@ class _$_AlreadyParked implements _AlreadyParked {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult Function(VehicleFailureUnexpected value)? unexpected,
+    TResult Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
     required TResult orElse(),
   }) {
     if (alreadyParked != null) {
@@ -436,34 +448,34 @@ class _$_AlreadyParked implements _AlreadyParked {
   }
 }
 
-abstract class _AlreadyParked implements VehicleFailure {
-  const factory _AlreadyParked() = _$_AlreadyParked;
+abstract class VehicleFailureAlreadyParked implements VehicleFailure {
+  const factory VehicleFailureAlreadyParked() = _$VehicleFailureAlreadyParked;
 }
 
 /// @nodoc
-abstract class _$$_ParkingTicketNotFoundCopyWith<$Res> {
-  factory _$$_ParkingTicketNotFoundCopyWith(_$_ParkingTicketNotFound value,
-          $Res Function(_$_ParkingTicketNotFound) then) =
-      __$$_ParkingTicketNotFoundCopyWithImpl<$Res>;
+abstract class _$$VehicleFailureParkingTicketNotFoundCopyWith<$Res> {
+  factory _$$VehicleFailureParkingTicketNotFoundCopyWith(
+          _$VehicleFailureParkingTicketNotFound value,
+          $Res Function(_$VehicleFailureParkingTicketNotFound) then) =
+      __$$VehicleFailureParkingTicketNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ParkingTicketNotFoundCopyWithImpl<$Res>
-    extends _$VehicleFailureCopyWithImpl<$Res>
-    implements _$$_ParkingTicketNotFoundCopyWith<$Res> {
-  __$$_ParkingTicketNotFoundCopyWithImpl(_$_ParkingTicketNotFound _value,
-      $Res Function(_$_ParkingTicketNotFound) _then)
-      : super(_value, (v) => _then(v as _$_ParkingTicketNotFound));
-
-  @override
-  _$_ParkingTicketNotFound get _value =>
-      super._value as _$_ParkingTicketNotFound;
+class __$$VehicleFailureParkingTicketNotFoundCopyWithImpl<$Res>
+    extends _$VehicleFailureCopyWithImpl<$Res,
+        _$VehicleFailureParkingTicketNotFound>
+    implements _$$VehicleFailureParkingTicketNotFoundCopyWith<$Res> {
+  __$$VehicleFailureParkingTicketNotFoundCopyWithImpl(
+      _$VehicleFailureParkingTicketNotFound _value,
+      $Res Function(_$VehicleFailureParkingTicketNotFound) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
-  const _$_ParkingTicketNotFound();
+class _$VehicleFailureParkingTicketNotFound
+    implements VehicleFailureParkingTicketNotFound {
+  const _$VehicleFailureParkingTicketNotFound();
 
   @override
   String toString() {
@@ -473,7 +485,8 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ParkingTicketNotFound);
+        (other.runtimeType == runtimeType &&
+            other is _$VehicleFailureParkingTicketNotFound);
   }
 
   @override
@@ -493,10 +506,10 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? vehicleNotFound,
-    TResult Function()? alreadyParked,
-    TResult Function()? parkingTicketNotFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? vehicleNotFound,
+    TResult? Function()? alreadyParked,
+    TResult? Function()? parkingTicketNotFound,
   }) {
     return parkingTicketNotFound?.call();
   }
@@ -519,10 +532,11 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_VehicleNotFound value) vehicleNotFound,
-    required TResult Function(_AlreadyParked value) alreadyParked,
-    required TResult Function(_ParkingTicketNotFound value)
+    required TResult Function(VehicleFailureUnexpected value) unexpected,
+    required TResult Function(VehicleFailureVehicleNotFound value)
+        vehicleNotFound,
+    required TResult Function(VehicleFailureAlreadyParked value) alreadyParked,
+    required TResult Function(VehicleFailureParkingTicketNotFound value)
         parkingTicketNotFound,
   }) {
     return parkingTicketNotFound(this);
@@ -531,10 +545,11 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult? Function(VehicleFailureUnexpected value)? unexpected,
+    TResult? Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult? Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult? Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
   }) {
     return parkingTicketNotFound?.call(this);
   }
@@ -542,10 +557,11 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_VehicleNotFound value)? vehicleNotFound,
-    TResult Function(_AlreadyParked value)? alreadyParked,
-    TResult Function(_ParkingTicketNotFound value)? parkingTicketNotFound,
+    TResult Function(VehicleFailureUnexpected value)? unexpected,
+    TResult Function(VehicleFailureVehicleNotFound value)? vehicleNotFound,
+    TResult Function(VehicleFailureAlreadyParked value)? alreadyParked,
+    TResult Function(VehicleFailureParkingTicketNotFound value)?
+        parkingTicketNotFound,
     required TResult orElse(),
   }) {
     if (parkingTicketNotFound != null) {
@@ -555,6 +571,7 @@ class _$_ParkingTicketNotFound implements _ParkingTicketNotFound {
   }
 }
 
-abstract class _ParkingTicketNotFound implements VehicleFailure {
-  const factory _ParkingTicketNotFound() = _$_ParkingTicketNotFound;
+abstract class VehicleFailureParkingTicketNotFound implements VehicleFailure {
+  const factory VehicleFailureParkingTicketNotFound() =
+      _$VehicleFailureParkingTicketNotFound;
 }

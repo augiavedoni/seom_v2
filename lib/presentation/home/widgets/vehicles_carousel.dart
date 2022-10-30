@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -9,12 +10,14 @@ import 'package:shimmer/shimmer.dart';
 import '../../../application/permissions/permissions_bloc.dart';
 import '../../../application/vehicles/vehicle_actor/vehicle_actor_bloc.dart';
 import '../../../application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
+import '../../../domain/permissions/permission_failure.dart';
 import '../../../domain/vehicles/entities/vehicle.dart';
 import '../../../domain/vehicles/vehicle_failure.dart';
 import '../../../injection.dart';
 import '../../common_widgets/custom_dialog.dart';
 import '../../core/theme/app_colors.dart';
-import '../../error/error_screen.dart';
+import '../../feedback/feedback_screen.dart';
+import '../../routes/router.gr.dart';
 
 part 'loading_in_progress_card.dart';
 part 'vehicle_information_card.dart';

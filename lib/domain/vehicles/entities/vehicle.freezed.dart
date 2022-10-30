@@ -31,7 +31,8 @@ mixin _$Vehicle {
 /// @nodoc
 abstract class $VehicleCopyWith<$Res> {
   factory $VehicleCopyWith(Vehicle value, $Res Function(Vehicle) then) =
-      _$VehicleCopyWithImpl<$Res>;
+      _$VehicleCopyWithImpl<$Res, Vehicle>;
+  @useResult
   $Res call(
       {int id,
       Make make,
@@ -43,53 +44,56 @@ abstract class $VehicleCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
+class _$VehicleCopyWithImpl<$Res, $Val extends Vehicle>
+    implements $VehicleCopyWith<$Res> {
   _$VehicleCopyWithImpl(this._value, this._then);
 
-  final Vehicle _value;
   // ignore: unused_field
-  final $Res Function(Vehicle) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? make = freezed,
-    Object? model = freezed,
-    Object? year = freezed,
-    Object? licensePlate = freezed,
-    Object? vehicleType = freezed,
-    Object? parked = freezed,
+    Object? id = null,
+    Object? make = null,
+    Object? model = null,
+    Object? year = null,
+    Object? licensePlate = null,
+    Object? vehicleType = null,
+    Object? parked = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      make: make == freezed
+      make: null == make
           ? _value.make
           : make // ignore: cast_nullable_to_non_nullable
               as Make,
-      model: model == freezed
+      model: null == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as Model,
-      year: year == freezed
+      year: null == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as Year,
-      licensePlate: licensePlate == freezed
+      licensePlate: null == licensePlate
           ? _value.licensePlate
           : licensePlate // ignore: cast_nullable_to_non_nullable
               as LicensePlate,
-      vehicleType: vehicleType == freezed
+      vehicleType: null == vehicleType
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
               as VehicleType,
-      parked: parked == freezed
+      parked: null == parked
           ? _value.parked
           : parked // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -99,6 +103,7 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
           _$_Vehicle value, $Res Function(_$_Vehicle) then) =
       __$$_VehicleCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int id,
       Make make,
@@ -110,50 +115,49 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
+class __$$_VehicleCopyWithImpl<$Res>
+    extends _$VehicleCopyWithImpl<$Res, _$_Vehicle>
     implements _$$_VehicleCopyWith<$Res> {
   __$$_VehicleCopyWithImpl(_$_Vehicle _value, $Res Function(_$_Vehicle) _then)
-      : super(_value, (v) => _then(v as _$_Vehicle));
+      : super(_value, _then);
 
-  @override
-  _$_Vehicle get _value => super._value as _$_Vehicle;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? make = freezed,
-    Object? model = freezed,
-    Object? year = freezed,
-    Object? licensePlate = freezed,
-    Object? vehicleType = freezed,
-    Object? parked = freezed,
+    Object? id = null,
+    Object? make = null,
+    Object? model = null,
+    Object? year = null,
+    Object? licensePlate = null,
+    Object? vehicleType = null,
+    Object? parked = null,
   }) {
     return _then(_$_Vehicle(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      make: make == freezed
+      make: null == make
           ? _value.make
           : make // ignore: cast_nullable_to_non_nullable
               as Make,
-      model: model == freezed
+      model: null == model
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as Model,
-      year: year == freezed
+      year: null == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as Year,
-      licensePlate: licensePlate == freezed
+      licensePlate: null == licensePlate
           ? _value.licensePlate
           : licensePlate // ignore: cast_nullable_to_non_nullable
               as LicensePlate,
-      vehicleType: vehicleType == freezed
+      vehicleType: null == vehicleType
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
               as VehicleType,
-      parked: parked == freezed
+      parked: null == parked
           ? _value.parked
           : parked // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -199,30 +203,24 @@ class _$_Vehicle extends _Vehicle {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Vehicle &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.make, make) &&
-            const DeepCollectionEquality().equals(other.model, model) &&
-            const DeepCollectionEquality().equals(other.year, year) &&
-            const DeepCollectionEquality()
-                .equals(other.licensePlate, licensePlate) &&
-            const DeepCollectionEquality()
-                .equals(other.vehicleType, vehicleType) &&
-            const DeepCollectionEquality().equals(other.parked, parked));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.make, make) || other.make == make) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.licensePlate, licensePlate) ||
+                other.licensePlate == licensePlate) &&
+            (identical(other.vehicleType, vehicleType) ||
+                other.vehicleType == vehicleType) &&
+            (identical(other.parked, parked) || other.parked == parked));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(make),
-      const DeepCollectionEquality().hash(model),
-      const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(licensePlate),
-      const DeepCollectionEquality().hash(vehicleType),
-      const DeepCollectionEquality().hash(parked));
+      runtimeType, id, make, model, year, licensePlate, vehicleType, parked);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>
       __$$_VehicleCopyWithImpl<_$_Vehicle>(this, _$identity);
 }

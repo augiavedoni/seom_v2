@@ -26,10 +26,10 @@ mixin _$PermissionFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? serviceNotEnabled,
-    TResult Function()? permissionDenied,
-    TResult Function()? permissionDeniedForever,
+    TResult? Function()? unexpected,
+    TResult? Function()? serviceNotEnabled,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? permissionDeniedForever,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,10 +52,10 @@ mixin _$PermissionFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ServiceNotEnabled value)? serviceNotEnabled,
-    TResult Function(_PermissionDenied value)? permissionDenied,
-    TResult Function(_PermissionDeniedForever value)? permissionDeniedForever,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ServiceNotEnabled value)? serviceNotEnabled,
+    TResult? Function(_PermissionDenied value)? permissionDenied,
+    TResult? Function(_PermissionDeniedForever value)? permissionDeniedForever,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,17 +73,18 @@ mixin _$PermissionFailure {
 abstract class $PermissionFailureCopyWith<$Res> {
   factory $PermissionFailureCopyWith(
           PermissionFailure value, $Res Function(PermissionFailure) then) =
-      _$PermissionFailureCopyWithImpl<$Res>;
+      _$PermissionFailureCopyWithImpl<$Res, PermissionFailure>;
 }
 
 /// @nodoc
-class _$PermissionFailureCopyWithImpl<$Res>
+class _$PermissionFailureCopyWithImpl<$Res, $Val extends PermissionFailure>
     implements $PermissionFailureCopyWith<$Res> {
   _$PermissionFailureCopyWithImpl(this._value, this._then);
 
-  final PermissionFailure _value;
   // ignore: unused_field
-  final $Res Function(PermissionFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -95,14 +96,11 @@ abstract class _$$_UnexpectedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnexpectedCopyWithImpl<$Res>
-    extends _$PermissionFailureCopyWithImpl<$Res>
+    extends _$PermissionFailureCopyWithImpl<$Res, _$_Unexpected>
     implements _$$_UnexpectedCopyWith<$Res> {
   __$$_UnexpectedCopyWithImpl(
       _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
-      : super(_value, (v) => _then(v as _$_Unexpected));
-
-  @override
-  _$_Unexpected get _value => super._value as _$_Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -138,10 +136,10 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? serviceNotEnabled,
-    TResult Function()? permissionDenied,
-    TResult Function()? permissionDeniedForever,
+    TResult? Function()? unexpected,
+    TResult? Function()? serviceNotEnabled,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? permissionDeniedForever,
   }) {
     return unexpected?.call();
   }
@@ -176,10 +174,10 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ServiceNotEnabled value)? serviceNotEnabled,
-    TResult Function(_PermissionDenied value)? permissionDenied,
-    TResult Function(_PermissionDeniedForever value)? permissionDeniedForever,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ServiceNotEnabled value)? serviceNotEnabled,
+    TResult? Function(_PermissionDenied value)? permissionDenied,
+    TResult? Function(_PermissionDeniedForever value)? permissionDeniedForever,
   }) {
     return unexpected?.call(this);
   }
@@ -213,14 +211,11 @@ abstract class _$$_ServiceNotEnabledCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ServiceNotEnabledCopyWithImpl<$Res>
-    extends _$PermissionFailureCopyWithImpl<$Res>
+    extends _$PermissionFailureCopyWithImpl<$Res, _$_ServiceNotEnabled>
     implements _$$_ServiceNotEnabledCopyWith<$Res> {
   __$$_ServiceNotEnabledCopyWithImpl(
       _$_ServiceNotEnabled _value, $Res Function(_$_ServiceNotEnabled) _then)
-      : super(_value, (v) => _then(v as _$_ServiceNotEnabled));
-
-  @override
-  _$_ServiceNotEnabled get _value => super._value as _$_ServiceNotEnabled;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -256,10 +251,10 @@ class _$_ServiceNotEnabled implements _ServiceNotEnabled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? serviceNotEnabled,
-    TResult Function()? permissionDenied,
-    TResult Function()? permissionDeniedForever,
+    TResult? Function()? unexpected,
+    TResult? Function()? serviceNotEnabled,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? permissionDeniedForever,
   }) {
     return serviceNotEnabled?.call();
   }
@@ -294,10 +289,10 @@ class _$_ServiceNotEnabled implements _ServiceNotEnabled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ServiceNotEnabled value)? serviceNotEnabled,
-    TResult Function(_PermissionDenied value)? permissionDenied,
-    TResult Function(_PermissionDeniedForever value)? permissionDeniedForever,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ServiceNotEnabled value)? serviceNotEnabled,
+    TResult? Function(_PermissionDenied value)? permissionDenied,
+    TResult? Function(_PermissionDeniedForever value)? permissionDeniedForever,
   }) {
     return serviceNotEnabled?.call(this);
   }
@@ -331,14 +326,11 @@ abstract class _$$_PermissionDeniedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PermissionDeniedCopyWithImpl<$Res>
-    extends _$PermissionFailureCopyWithImpl<$Res>
+    extends _$PermissionFailureCopyWithImpl<$Res, _$_PermissionDenied>
     implements _$$_PermissionDeniedCopyWith<$Res> {
   __$$_PermissionDeniedCopyWithImpl(
       _$_PermissionDenied _value, $Res Function(_$_PermissionDenied) _then)
-      : super(_value, (v) => _then(v as _$_PermissionDenied));
-
-  @override
-  _$_PermissionDenied get _value => super._value as _$_PermissionDenied;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -374,10 +366,10 @@ class _$_PermissionDenied implements _PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? serviceNotEnabled,
-    TResult Function()? permissionDenied,
-    TResult Function()? permissionDeniedForever,
+    TResult? Function()? unexpected,
+    TResult? Function()? serviceNotEnabled,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? permissionDeniedForever,
   }) {
     return permissionDenied?.call();
   }
@@ -412,10 +404,10 @@ class _$_PermissionDenied implements _PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ServiceNotEnabled value)? serviceNotEnabled,
-    TResult Function(_PermissionDenied value)? permissionDenied,
-    TResult Function(_PermissionDeniedForever value)? permissionDeniedForever,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ServiceNotEnabled value)? serviceNotEnabled,
+    TResult? Function(_PermissionDenied value)? permissionDenied,
+    TResult? Function(_PermissionDeniedForever value)? permissionDeniedForever,
   }) {
     return permissionDenied?.call(this);
   }
@@ -449,15 +441,11 @@ abstract class _$$_PermissionDeniedForeverCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PermissionDeniedForeverCopyWithImpl<$Res>
-    extends _$PermissionFailureCopyWithImpl<$Res>
+    extends _$PermissionFailureCopyWithImpl<$Res, _$_PermissionDeniedForever>
     implements _$$_PermissionDeniedForeverCopyWith<$Res> {
   __$$_PermissionDeniedForeverCopyWithImpl(_$_PermissionDeniedForever _value,
       $Res Function(_$_PermissionDeniedForever) _then)
-      : super(_value, (v) => _then(v as _$_PermissionDeniedForever));
-
-  @override
-  _$_PermissionDeniedForever get _value =>
-      super._value as _$_PermissionDeniedForever;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -494,10 +482,10 @@ class _$_PermissionDeniedForever implements _PermissionDeniedForever {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? serviceNotEnabled,
-    TResult Function()? permissionDenied,
-    TResult Function()? permissionDeniedForever,
+    TResult? Function()? unexpected,
+    TResult? Function()? serviceNotEnabled,
+    TResult? Function()? permissionDenied,
+    TResult? Function()? permissionDeniedForever,
   }) {
     return permissionDeniedForever?.call();
   }
@@ -532,10 +520,10 @@ class _$_PermissionDeniedForever implements _PermissionDeniedForever {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_ServiceNotEnabled value)? serviceNotEnabled,
-    TResult Function(_PermissionDenied value)? permissionDenied,
-    TResult Function(_PermissionDeniedForever value)? permissionDeniedForever,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_ServiceNotEnabled value)? serviceNotEnabled,
+    TResult? Function(_PermissionDenied value)? permissionDenied,
+    TResult? Function(_PermissionDeniedForever value)? permissionDeniedForever,
   }) {
     return permissionDeniedForever?.call(this);
   }

@@ -14,7 +14,7 @@ import 'dto/vehicle_dto.dart';
 @Injectable(as: IVehicleRepository)
 @lazySingleton
 class VehicleRepository implements IVehicleRepository {
-  final SeomClient _client;
+  final SeomClientContract _client;
   final UserDataSource _userDataSource;
 
   VehicleRepository(
