@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:seom_v2/domain/vehicles/entities/vehicle.dart';
@@ -11,8 +12,8 @@ import 'package:seom_v2/infrastructure/datasource/user_data_source.dart';
 import 'package:seom_v2/infrastructure/vehicles/dto/vehicle_dto.dart';
 import 'package:seom_v2/infrastructure/vehicles/vehicle_repository.dart';
 
-import '../../../infrastructure/core/http/seom_client_mock.dart';
-import 'vehicle_actor_bloc_test.mocks.dart';
+import '../auth/seom_auth_facade_test.mocks.dart';
+import '../core/http/seom_client_mock.dart';
 
 @GenerateMocks([UserDataSource])
 main() {
@@ -38,7 +39,7 @@ main() {
   final userDataSource = MockUserDataSource();
 
   group(
-    'VehicleActorBloc success cases tests',
+    'VehicleRepository success cases tests',
     () {
       const ten = 10.0;
       final position = Position(
@@ -60,6 +61,18 @@ main() {
         seomClientMock,
         userDataSource,
       );
+
+      test('Should receive empty KtList when we call getAll', () async {
+        when(userDataSource.user).thenReturn(seomUser.toDomain());
+
+        final result = await vehicleRepository.getAll();
+
+        expect(result.isRight(), true);
+        expect(
+          result.getOrElse(() => const KtList.empty()),
+          const KtList.empty(),
+        );
+      });
 
       test(
         'Should receive a vehicle when we call park',
@@ -93,7 +106,7 @@ main() {
   );
 
   group(
-    'VehicleActorBloc VehicleFailureUnexpected error cases tests',
+    'VehicleRepository VehicleFailureUnexpected error case tests',
     () {
       const error = HTTPErrorDto(
         error: 'test',
@@ -110,6 +123,23 @@ main() {
         userDataSource,
       );
 
+      test(
+        'Should receive VehicleFailureUnexpected when we call getAll',
+        () async {
+          when(userDataSource.user).thenReturn(seomUser.toDomain());
+
+          final result = await vehicleRepository.getAll();
+
+          expect(result.isLeft(), true);
+          expect(
+            result.fold(
+              (failure) => failure,
+              (_) => null,
+            ),
+            isA<VehicleFailureUnexpected>(),
+          );
+        },
+      );
       test(
         'Should receive VehicleFailureUnexpected when we call park',
         () async {
@@ -149,7 +179,7 @@ main() {
   );
 
   group(
-    'VehicleActorBloc VehicleFailureAlreadyParked error case test',
+    'VehicleRepository VehicleFailureAlreadyParked error case test',
     () {
       const error = HTTPErrorDto(
         error: 'vehicle-already-parked',
@@ -186,7 +216,7 @@ main() {
   );
 
   group(
-    'VehicleActorBloc VehicleFailureVehicleNotFound error case test',
+    'VehicleRepository VehicleFailureVehicleNotFound error case test',
     () {
       const error = HTTPErrorDto(
         error: 'vehicle-not-found',
@@ -223,7 +253,7 @@ main() {
   );
 
   group(
-    'VehicleActorBloc VehicleFailureParkingTicketNotFound error case test',
+    'VehicleRepository VehicleFailureParkingTicketNotFound error case test',
     () {
       const error = HTTPErrorDto(
         error: 'parking-ticket-not-found',
