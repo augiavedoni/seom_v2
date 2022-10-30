@@ -15,7 +15,7 @@ import 'dto/seom_user_dto.dart';
 @Injectable(as: IAuthFacade)
 @lazySingleton
 class SeomAuthFacade implements IAuthFacade {
-  final SeomClient _client;
+  final SeomClientContract _client;
   final UserDataSource _userDataSource;
   final TokenDataSource _tokenDataSource;
 

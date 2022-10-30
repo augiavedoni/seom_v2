@@ -48,7 +48,7 @@ _i1.GetIt $initGetIt(
   gh.lazySingleton<_i8.UserDataSource>(
       () => seomInjectableModules.userDataSource);
   gh.factory<_i9.IAuthFacade>(() => _i10.SeomAuthFacade(
-        get<_i6.SeomClient>(),
+        get<_i6.SeomClientContract>(),
         get<_i8.UserDataSource>(),
         get<_i7.TokenDataSource>(),
       ));
