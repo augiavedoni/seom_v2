@@ -12,7 +12,7 @@ import 'package:seom_v2/infrastructure/vehicles/dto/vehicle_dto.dart';
 import 'package:seom_v2/infrastructure/vehicles/vehicle_repository.dart';
 
 import '../../../infrastructure/core/http/seom_client_mock.dart';
-import 'vehicle_actor_test.mocks.dart';
+import 'vehicle_actor_bloc_test.mocks.dart';
 
 @GenerateMocks([UserDataSource])
 main() {

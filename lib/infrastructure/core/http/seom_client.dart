@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:http_interceptor/http_interceptor.dart';
-import 'package:injectable/injectable.dart';
 
 import 'dto/http_response_type.dart';
 import 'seom_interceptor.dart';
