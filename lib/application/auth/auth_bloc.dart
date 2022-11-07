@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -17,22 +19,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(
     this._authFacade,
   ) : super(const AuthState.initial()) {
-    on<AuthEvent>((event, emit) async {
-      if (event is AuthCheckedRequested) {
-        final Option<SeomUser> userOption = _authFacade.getSignedInUser();
+    on<AuthEvent>(
+      (event, emit) async => await event.map<FutureOr<void>>(
+        authCheckedRequested: (event) {
+          final Option<SeomUser> userOption = _authFacade.getSignedInUser();
 
-        emit(
-          userOption.fold(
-            () => const AuthState.unauthenticated(),
-            (_) => const AuthState.authenticated(),
-          ),
-        );
-      } else if (event is SignedOut) {
-        await _authFacade.signOut();
-        emit(
-          const AuthState.unauthenticated(),
-        );
-      }
-    });
+          emit(
+            userOption.fold(
+              () => const AuthState.unauthenticated(),
+              (_) => const AuthState.authenticated(),
+            ),
+          );
+        },
+        signedOut: (event) async {
+          await _authFacade.signOut();
+          emit(
+            const AuthState.unauthenticated(),
+          );
+        },
+      ),
+    );
   }
 }
