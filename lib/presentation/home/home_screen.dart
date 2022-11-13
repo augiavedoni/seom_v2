@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/auth/auth_bloc.dart';
+import '../../application/parking_tickets/parking_ticket_watcher/parking_ticket_watcher_bloc.dart';
 import '../../application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/core/errors.dart';
@@ -38,6 +39,12 @@ class _HomeScreenState extends State<HomeScreen> {
           create: (context) => getIt<VehicleWatcherBloc>()
             ..add(
               const VehicleWatcherEvent.getAllStarted(),
+            ),
+        ),
+        BlocProvider<ParkingTicketWatcherBloc>(
+          create: (context) => getIt<ParkingTicketWatcherBloc>()
+            ..add(
+              const ParkingTicketWatcherEvent.getAllStarted(),
             ),
         ),
       ],

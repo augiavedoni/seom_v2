@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 
 import 'failures.dart';
 
@@ -140,5 +141,46 @@ Either<ValueFailure<String>, String> validateVehicleType(
         failedValue: vehicleType,
       ),
     );
+  }
+}
+
+Either<ValueFailure<DateTime>, DateTime> validateDate(
+  String date,
+) {
+  final parsedDate = DateTime.tryParse(date);
+
+  if (parsedDate != null) {
+    return right(parsedDate);
+  } else {
+    return left(const ValueFailure.invalidDate());
+  }
+}
+
+Either<ValueFailure<TimeOfDay>, TimeOfDay> validateTimeOfDay(
+  String time,
+) {
+  final separator = time.indexOf(':');
+
+  if (separator != -1) {
+    final hour = int.tryParse(time.substring(0, separator + 1));
+    final minute = int.tryParse(time.substring(separator + 1, separator + 3));
+
+    if (hour != null && minute != null) {
+      return right(TimeOfDay(hour: hour, minute: minute));
+    } else {
+      return left(const ValueFailure.invalidTime());
+    }
+  } else {
+    return left(const ValueFailure.invalidTime());
+  }
+}
+
+Either<ValueFailure<double>, double> validatePositionValue(
+  double position,
+) {
+  if (position != 0) {
+    return right(position);
+  } else {
+    return left(ValueFailure.invalidPositionValue(failedValue: position));
   }
 }

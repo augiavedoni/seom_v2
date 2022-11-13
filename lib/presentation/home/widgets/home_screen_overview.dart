@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seom_v2/presentation/home/widgets/recent_activity_list.dart';
 
 import 'vehicles_carousel.dart';
 
@@ -8,8 +9,10 @@ class HomeScreenOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: const <Widget>[
         VehiclesCarousel(),
+        RecentActivityList(),
       ],
     );
   }

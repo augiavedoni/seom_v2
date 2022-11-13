@@ -49,5 +49,13 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = InvalidVehicleType<T>;
 
+  const factory ValueFailure.invalidDate() = InvalidDate<T>;
+
+  const factory ValueFailure.invalidTime() = InvalidTime<T>;
+
+  const factory ValueFailure.invalidPositionValue({
+    required T failedValue,
+  }) = InvalidPosition<T>;
+
   const factory ValueFailure.empty() = Empty<T>;
 }
