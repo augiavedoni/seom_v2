@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http_interceptor/http_interceptor.dart';
+import 'package:injectable/injectable.dart';
 
 import 'dto/http_response_type.dart';
 import 'seom_interceptor.dart';
@@ -32,6 +33,7 @@ abstract class SeomClientContract {
   });
 }
 
+@Injectable(as: SeomClientContract)
 class SeomClient implements SeomClientContract {
   static const _serverUrl = "http://localhost:8080/api/";
 

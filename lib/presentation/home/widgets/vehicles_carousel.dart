@@ -73,7 +73,6 @@ class VehiclesCarousel extends StatelessWidget {
                   )
                 : CarouselSlider(
                     options: CarouselOptions(
-                      height: size.height * 0.2,
                       enableInfiniteScroll: false,
                       viewportFraction: 0.8,
                       padEnds: false,

@@ -64,7 +64,6 @@ class _VehicleInformationCard extends HookWidget {
               ? const _LoadingInProgressCard()
               : Container(
                   width: size.width * 0.8,
-                  height: size.height * 0.2,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: black,

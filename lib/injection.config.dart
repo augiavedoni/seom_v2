@@ -43,6 +43,7 @@ _i1.GetIt $initGetIt(
   gh.factory<_i5.PermissionsBloc>(
       () => _i5.PermissionsBloc(get<_i3.IPermissionsManager>()));
   gh.lazySingleton<_i6.SeomClient>(() => seomInjectableModules.seomClient);
+  gh.factory<_i6.SeomClientContract>(() => _i6.SeomClient());
   gh.lazySingleton<_i7.TokenDataSource>(
       () => seomInjectableModules.tokenDataSource);
   gh.lazySingleton<_i8.UserDataSource>(
