@@ -40,7 +40,7 @@ class ParkingTicketRepository implements IParkingTicketRepository {
             .toList();
 
         return right<ParkingTicketFailure, KtList<ParkingTicket>>(
-          parkingTickets.toImmutableList(),
+          parkingTickets.reversed.toImmutableList(),
         );
       },
       error: (_, __) {

@@ -7,9 +7,9 @@ class ParkingTicketWatcherState with _$ParkingTicketWatcherState {
   const factory ParkingTicketWatcherState.loadInProgress() =
       ParkingTicketWatcherStateLoadInProgress;
   const factory ParkingTicketWatcherState.loadSuccess(
-    KtList<ParkingTicket> vehicles,
+    KtList<ParkingTicket> parkingTickets,
   ) = ParkingTicketWatcherStateLoadSuccess;
   const factory ParkingTicketWatcherState.loadFailure(
-    ParkingTicketFailure vehicleFailure,
+    ParkingTicketFailure parkingTicketFailure,
   ) = ParkingTicketWatcherStateLoadFailure;
 }

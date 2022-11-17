@@ -53,7 +53,12 @@ class _VehicleInformationCard extends HookWidget {
               (failure) => _showFailureDialog(context, failure),
               (editedVehicle) {
                 hookedVehicle.value = editedVehicle;
-                state.copyWith(vehicle: editedVehicle);
+
+                if (!editedVehicle.parked) {
+                  context.read<ParkingTicketWatcherBloc>().add(
+                        const ParkingTicketWatcherEvent.getAllStarted(),
+                      );
+                }
               },
             ),
           ),

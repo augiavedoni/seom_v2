@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:seom_v2/domain/core/failures.dart';
 
 import '../../auth/value_objects/cuil.dart';
 import '../../vehicles/value_objects/license_plate.dart';
@@ -24,4 +26,18 @@ abstract class ParkingTicket implements _$ParkingTicket {
     required Longitude longitude,
     required Cuil userCuil,
   }) = _ParkingTicket;
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    return licensePlate.failureOrUnit
+        .andThen(date.failureOrUnit)
+        .andThen(startTime.failureOrUnit)
+        .andThen(endTime.failureOrUnit)
+        .andThen(latitude.failureOrUnit)
+        .andThen(longitude.failureOrUnit)
+        .andThen(userCuil.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
+  }
 }

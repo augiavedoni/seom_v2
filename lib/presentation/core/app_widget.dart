@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../application/auth/auth_bloc.dart';
-
-import '../../injection.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:seom_v2/application/auth/auth_bloc.dart';
+import 'package:seom_v2/injection.dart';
 
 import '../routes/router.gr.dart' as app_router;
 
@@ -31,6 +30,14 @@ class AppWidget extends StatelessWidget {
         routeInformationParser: appRouter.defaultRouteParser(),
         theme: SeomTheme.light(context),
         title: "SEOM",
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('es', 'AR'),
+        ],
       ),
     );
   }

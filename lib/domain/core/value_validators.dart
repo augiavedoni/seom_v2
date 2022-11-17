@@ -162,7 +162,7 @@ Either<ValueFailure<TimeOfDay>, TimeOfDay> validateTimeOfDay(
   final separator = time.indexOf(':');
 
   if (separator != -1) {
-    final hour = int.tryParse(time.substring(0, separator + 1));
+    final hour = int.tryParse(time.substring(0, separator));
     final minute = int.tryParse(time.substring(separator + 1, separator + 3));
 
     if (hour != null && minute != null) {

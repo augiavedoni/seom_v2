@@ -171,24 +171,25 @@ mixin _$ParkingTicketWatcherState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<ParkingTicket> vehicles) loadSuccess,
-    required TResult Function(ParkingTicketFailure vehicleFailure) loadFailure,
+    required TResult Function(KtList<ParkingTicket> parkingTickets) loadSuccess,
+    required TResult Function(ParkingTicketFailure parkingTicketFailure)
+        loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult? Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult? Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult? Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -288,8 +289,9 @@ class _$ParkingTicketWatcherStateInitial
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<ParkingTicket> vehicles) loadSuccess,
-    required TResult Function(ParkingTicketFailure vehicleFailure) loadFailure,
+    required TResult Function(KtList<ParkingTicket> parkingTickets) loadSuccess,
+    required TResult Function(ParkingTicketFailure parkingTicketFailure)
+        loadFailure,
   }) {
     return initial();
   }
@@ -299,8 +301,8 @@ class _$ParkingTicketWatcherStateInitial
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult? Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult? Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult? Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -310,8 +312,8 @@ class _$ParkingTicketWatcherStateInitial
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -414,8 +416,9 @@ class _$ParkingTicketWatcherStateLoadInProgress
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<ParkingTicket> vehicles) loadSuccess,
-    required TResult Function(ParkingTicketFailure vehicleFailure) loadFailure,
+    required TResult Function(KtList<ParkingTicket> parkingTickets) loadSuccess,
+    required TResult Function(ParkingTicketFailure parkingTicketFailure)
+        loadFailure,
   }) {
     return loadInProgress();
   }
@@ -425,8 +428,8 @@ class _$ParkingTicketWatcherStateLoadInProgress
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult? Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult? Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult? Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -436,8 +439,8 @@ class _$ParkingTicketWatcherStateLoadInProgress
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -502,7 +505,7 @@ abstract class _$$ParkingTicketWatcherStateLoadSuccessCopyWith<$Res> {
           $Res Function(_$ParkingTicketWatcherStateLoadSuccess) then) =
       __$$ParkingTicketWatcherStateLoadSuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({KtList<ParkingTicket> vehicles});
+  $Res call({KtList<ParkingTicket> parkingTickets});
 }
 
 /// @nodoc
@@ -518,12 +521,12 @@ class __$$ParkingTicketWatcherStateLoadSuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? vehicles = null,
+    Object? parkingTickets = null,
   }) {
     return _then(_$ParkingTicketWatcherStateLoadSuccess(
-      null == vehicles
-          ? _value.vehicles
-          : vehicles // ignore: cast_nullable_to_non_nullable
+      null == parkingTickets
+          ? _value.parkingTickets
+          : parkingTickets // ignore: cast_nullable_to_non_nullable
               as KtList<ParkingTicket>,
     ));
   }
@@ -533,14 +536,14 @@ class __$$ParkingTicketWatcherStateLoadSuccessCopyWithImpl<$Res>
 
 class _$ParkingTicketWatcherStateLoadSuccess
     implements ParkingTicketWatcherStateLoadSuccess {
-  const _$ParkingTicketWatcherStateLoadSuccess(this.vehicles);
+  const _$ParkingTicketWatcherStateLoadSuccess(this.parkingTickets);
 
   @override
-  final KtList<ParkingTicket> vehicles;
+  final KtList<ParkingTicket> parkingTickets;
 
   @override
   String toString() {
-    return 'ParkingTicketWatcherState.loadSuccess(vehicles: $vehicles)';
+    return 'ParkingTicketWatcherState.loadSuccess(parkingTickets: $parkingTickets)';
   }
 
   @override
@@ -548,12 +551,12 @@ class _$ParkingTicketWatcherStateLoadSuccess
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParkingTicketWatcherStateLoadSuccess &&
-            (identical(other.vehicles, vehicles) ||
-                other.vehicles == vehicles));
+            (identical(other.parkingTickets, parkingTickets) ||
+                other.parkingTickets == parkingTickets));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, vehicles);
+  int get hashCode => Object.hash(runtimeType, parkingTickets);
 
   @JsonKey(ignore: true)
   @override
@@ -568,10 +571,11 @@ class _$ParkingTicketWatcherStateLoadSuccess
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<ParkingTicket> vehicles) loadSuccess,
-    required TResult Function(ParkingTicketFailure vehicleFailure) loadFailure,
+    required TResult Function(KtList<ParkingTicket> parkingTickets) loadSuccess,
+    required TResult Function(ParkingTicketFailure parkingTicketFailure)
+        loadFailure,
   }) {
-    return loadSuccess(vehicles);
+    return loadSuccess(parkingTickets);
   }
 
   @override
@@ -579,10 +583,10 @@ class _$ParkingTicketWatcherStateLoadSuccess
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult? Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult? Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult? Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
   }) {
-    return loadSuccess?.call(vehicles);
+    return loadSuccess?.call(parkingTickets);
   }
 
   @override
@@ -590,12 +594,12 @@ class _$ParkingTicketWatcherStateLoadSuccess
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(vehicles);
+      return loadSuccess(parkingTickets);
     }
     return orElse();
   }
@@ -646,10 +650,10 @@ class _$ParkingTicketWatcherStateLoadSuccess
 abstract class ParkingTicketWatcherStateLoadSuccess
     implements ParkingTicketWatcherState {
   const factory ParkingTicketWatcherStateLoadSuccess(
-          final KtList<ParkingTicket> vehicles) =
+          final KtList<ParkingTicket> parkingTickets) =
       _$ParkingTicketWatcherStateLoadSuccess;
 
-  KtList<ParkingTicket> get vehicles;
+  KtList<ParkingTicket> get parkingTickets;
   @JsonKey(ignore: true)
   _$$ParkingTicketWatcherStateLoadSuccessCopyWith<
           _$ParkingTicketWatcherStateLoadSuccess>
@@ -663,9 +667,9 @@ abstract class _$$ParkingTicketWatcherStateLoadFailureCopyWith<$Res> {
           $Res Function(_$ParkingTicketWatcherStateLoadFailure) then) =
       __$$ParkingTicketWatcherStateLoadFailureCopyWithImpl<$Res>;
   @useResult
-  $Res call({ParkingTicketFailure vehicleFailure});
+  $Res call({ParkingTicketFailure parkingTicketFailure});
 
-  $ParkingTicketFailureCopyWith<$Res> get vehicleFailure;
+  $ParkingTicketFailureCopyWith<$Res> get parkingTicketFailure;
 }
 
 /// @nodoc
@@ -681,21 +685,22 @@ class __$$ParkingTicketWatcherStateLoadFailureCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? vehicleFailure = null,
+    Object? parkingTicketFailure = null,
   }) {
     return _then(_$ParkingTicketWatcherStateLoadFailure(
-      null == vehicleFailure
-          ? _value.vehicleFailure
-          : vehicleFailure // ignore: cast_nullable_to_non_nullable
+      null == parkingTicketFailure
+          ? _value.parkingTicketFailure
+          : parkingTicketFailure // ignore: cast_nullable_to_non_nullable
               as ParkingTicketFailure,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ParkingTicketFailureCopyWith<$Res> get vehicleFailure {
-    return $ParkingTicketFailureCopyWith<$Res>(_value.vehicleFailure, (value) {
-      return _then(_value.copyWith(vehicleFailure: value));
+  $ParkingTicketFailureCopyWith<$Res> get parkingTicketFailure {
+    return $ParkingTicketFailureCopyWith<$Res>(_value.parkingTicketFailure,
+        (value) {
+      return _then(_value.copyWith(parkingTicketFailure: value));
     });
   }
 }
@@ -704,14 +709,14 @@ class __$$ParkingTicketWatcherStateLoadFailureCopyWithImpl<$Res>
 
 class _$ParkingTicketWatcherStateLoadFailure
     implements ParkingTicketWatcherStateLoadFailure {
-  const _$ParkingTicketWatcherStateLoadFailure(this.vehicleFailure);
+  const _$ParkingTicketWatcherStateLoadFailure(this.parkingTicketFailure);
 
   @override
-  final ParkingTicketFailure vehicleFailure;
+  final ParkingTicketFailure parkingTicketFailure;
 
   @override
   String toString() {
-    return 'ParkingTicketWatcherState.loadFailure(vehicleFailure: $vehicleFailure)';
+    return 'ParkingTicketWatcherState.loadFailure(parkingTicketFailure: $parkingTicketFailure)';
   }
 
   @override
@@ -719,12 +724,12 @@ class _$ParkingTicketWatcherStateLoadFailure
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParkingTicketWatcherStateLoadFailure &&
-            (identical(other.vehicleFailure, vehicleFailure) ||
-                other.vehicleFailure == vehicleFailure));
+            (identical(other.parkingTicketFailure, parkingTicketFailure) ||
+                other.parkingTicketFailure == parkingTicketFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, vehicleFailure);
+  int get hashCode => Object.hash(runtimeType, parkingTicketFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -739,10 +744,11 @@ class _$ParkingTicketWatcherStateLoadFailure
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<ParkingTicket> vehicles) loadSuccess,
-    required TResult Function(ParkingTicketFailure vehicleFailure) loadFailure,
+    required TResult Function(KtList<ParkingTicket> parkingTickets) loadSuccess,
+    required TResult Function(ParkingTicketFailure parkingTicketFailure)
+        loadFailure,
   }) {
-    return loadFailure(vehicleFailure);
+    return loadFailure(parkingTicketFailure);
   }
 
   @override
@@ -750,10 +756,10 @@ class _$ParkingTicketWatcherStateLoadFailure
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult? Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult? Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult? Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
   }) {
-    return loadFailure?.call(vehicleFailure);
+    return loadFailure?.call(parkingTicketFailure);
   }
 
   @override
@@ -761,12 +767,12 @@ class _$ParkingTicketWatcherStateLoadFailure
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<ParkingTicket> vehicles)? loadSuccess,
-    TResult Function(ParkingTicketFailure vehicleFailure)? loadFailure,
+    TResult Function(KtList<ParkingTicket> parkingTickets)? loadSuccess,
+    TResult Function(ParkingTicketFailure parkingTicketFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(vehicleFailure);
+      return loadFailure(parkingTicketFailure);
     }
     return orElse();
   }
@@ -817,10 +823,10 @@ class _$ParkingTicketWatcherStateLoadFailure
 abstract class ParkingTicketWatcherStateLoadFailure
     implements ParkingTicketWatcherState {
   const factory ParkingTicketWatcherStateLoadFailure(
-          final ParkingTicketFailure vehicleFailure) =
+          final ParkingTicketFailure parkingTicketFailure) =
       _$ParkingTicketWatcherStateLoadFailure;
 
-  ParkingTicketFailure get vehicleFailure;
+  ParkingTicketFailure get parkingTicketFailure;
   @JsonKey(ignore: true)
   _$$ParkingTicketWatcherStateLoadFailureCopyWith<
           _$ParkingTicketWatcherStateLoadFailure>
