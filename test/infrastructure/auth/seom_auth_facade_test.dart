@@ -28,6 +28,7 @@ main() {
     birthdate: DateTime.now(),
     refreshToken: 'Test',
     token: 'Test',
+    stripeId: 'my-really-long-id',
   );
   final emailAddress = EmailAddress('test@test.com');
   final password = Password('Test12345');

@@ -26,6 +26,7 @@ main() {
     birthdate: DateTime.now(),
     refreshToken: 'Test',
     token: 'Test',
+    stripeId: 'my-really-long-id',
   );
   final vehicle = VehicleDto(
     id: 1,
