@@ -35,7 +35,7 @@ mixin _$PaymentMethod {
             ExpiryYear expiryYear,
             LastFourDigits lastFourDigits)
         debitCard,
-    required TResult Function(Type type) accountBalance,
+    required TResult Function(Type type, Balance balance) accountBalance,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +46,7 @@ mixin _$PaymentMethod {
     TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult? Function(Type type)? accountBalance,
+    TResult? Function(Type type, Balance balance)? accountBalance,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,29 +57,29 @@ mixin _$PaymentMethod {
     TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult Function(Type type)? accountBalance,
+    TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCard value) creditCard,
-    required TResult Function(_DebitCard value) debitCard,
-    required TResult Function(_AccountBalance value) accountBalance,
+    required TResult Function(CreditCard value) creditCard,
+    required TResult Function(DebitCard value) debitCard,
+    required TResult Function(AccountBalance value) accountBalance,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCard value)? creditCard,
-    TResult? Function(_DebitCard value)? debitCard,
-    TResult? Function(_AccountBalance value)? accountBalance,
+    TResult? Function(CreditCard value)? creditCard,
+    TResult? Function(DebitCard value)? debitCard,
+    TResult? Function(AccountBalance value)? accountBalance,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCard value)? creditCard,
-    TResult Function(_DebitCard value)? debitCard,
-    TResult Function(_AccountBalance value)? accountBalance,
+    TResult Function(CreditCard value)? creditCard,
+    TResult Function(DebitCard value)? debitCard,
+    TResult Function(AccountBalance value)? accountBalance,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,11 +123,11 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
 }
 
 /// @nodoc
-abstract class _$$_CreditCardCopyWith<$Res>
+abstract class _$$CreditCardCopyWith<$Res>
     implements $PaymentMethodCopyWith<$Res> {
-  factory _$$_CreditCardCopyWith(
-          _$_CreditCard value, $Res Function(_$_CreditCard) then) =
-      __$$_CreditCardCopyWithImpl<$Res>;
+  factory _$$CreditCardCopyWith(
+          _$CreditCard value, $Res Function(_$CreditCard) then) =
+      __$$CreditCardCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -140,11 +140,11 @@ abstract class _$$_CreditCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreditCardCopyWithImpl<$Res>
-    extends _$PaymentMethodCopyWithImpl<$Res, _$_CreditCard>
-    implements _$$_CreditCardCopyWith<$Res> {
-  __$$_CreditCardCopyWithImpl(
-      _$_CreditCard _value, $Res Function(_$_CreditCard) _then)
+class __$$CreditCardCopyWithImpl<$Res>
+    extends _$PaymentMethodCopyWithImpl<$Res, _$CreditCard>
+    implements _$$CreditCardCopyWith<$Res> {
+  __$$CreditCardCopyWithImpl(
+      _$CreditCard _value, $Res Function(_$CreditCard) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -157,7 +157,7 @@ class __$$_CreditCardCopyWithImpl<$Res>
     Object? expiryYear = null,
     Object? lastFourDigits = null,
   }) {
-    return _then(_$_CreditCard(
+    return _then(_$CreditCard(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -188,8 +188,8 @@ class __$$_CreditCardCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreditCard extends _CreditCard {
-  const _$_CreditCard(
+class _$CreditCard extends CreditCard {
+  const _$CreditCard(
       {required this.type,
       required this.id,
       required this.brand,
@@ -220,7 +220,7 @@ class _$_CreditCard extends _CreditCard {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreditCard &&
+            other is _$CreditCard &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.brand, brand) || other.brand == brand) &&
@@ -239,8 +239,8 @@ class _$_CreditCard extends _CreditCard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditCardCopyWith<_$_CreditCard> get copyWith =>
-      __$$_CreditCardCopyWithImpl<_$_CreditCard>(this, _$identity);
+  _$$CreditCardCopyWith<_$CreditCard> get copyWith =>
+      __$$CreditCardCopyWithImpl<_$CreditCard>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -261,7 +261,7 @@ class _$_CreditCard extends _CreditCard {
             ExpiryYear expiryYear,
             LastFourDigits lastFourDigits)
         debitCard,
-    required TResult Function(Type type) accountBalance,
+    required TResult Function(Type type, Balance balance) accountBalance,
   }) {
     return creditCard(type, id, brand, expiryMonth, expiryYear, lastFourDigits);
   }
@@ -275,7 +275,7 @@ class _$_CreditCard extends _CreditCard {
     TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult? Function(Type type)? accountBalance,
+    TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
     return creditCard?.call(
         type, id, brand, expiryMonth, expiryYear, lastFourDigits);
@@ -290,7 +290,7 @@ class _$_CreditCard extends _CreditCard {
     TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult Function(Type type)? accountBalance,
+    TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) {
     if (creditCard != null) {
@@ -303,9 +303,9 @@ class _$_CreditCard extends _CreditCard {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCard value) creditCard,
-    required TResult Function(_DebitCard value) debitCard,
-    required TResult Function(_AccountBalance value) accountBalance,
+    required TResult Function(CreditCard value) creditCard,
+    required TResult Function(DebitCard value) debitCard,
+    required TResult Function(AccountBalance value) accountBalance,
   }) {
     return creditCard(this);
   }
@@ -313,9 +313,9 @@ class _$_CreditCard extends _CreditCard {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCard value)? creditCard,
-    TResult? Function(_DebitCard value)? debitCard,
-    TResult? Function(_AccountBalance value)? accountBalance,
+    TResult? Function(CreditCard value)? creditCard,
+    TResult? Function(DebitCard value)? debitCard,
+    TResult? Function(AccountBalance value)? accountBalance,
   }) {
     return creditCard?.call(this);
   }
@@ -323,9 +323,9 @@ class _$_CreditCard extends _CreditCard {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCard value)? creditCard,
-    TResult Function(_DebitCard value)? debitCard,
-    TResult Function(_AccountBalance value)? accountBalance,
+    TResult Function(CreditCard value)? creditCard,
+    TResult Function(DebitCard value)? debitCard,
+    TResult Function(AccountBalance value)? accountBalance,
     required TResult orElse(),
   }) {
     if (creditCard != null) {
@@ -335,15 +335,15 @@ class _$_CreditCard extends _CreditCard {
   }
 }
 
-abstract class _CreditCard extends PaymentMethod {
-  const factory _CreditCard(
+abstract class CreditCard extends PaymentMethod {
+  const factory CreditCard(
       {required final Type type,
       required final Id id,
       required final Brand brand,
       required final ExpiryMonth expiryMonth,
       required final ExpiryYear expiryYear,
-      required final LastFourDigits lastFourDigits}) = _$_CreditCard;
-  const _CreditCard._() : super._();
+      required final LastFourDigits lastFourDigits}) = _$CreditCard;
+  const CreditCard._() : super._();
 
   @override
   Type get type;
@@ -354,16 +354,16 @@ abstract class _CreditCard extends PaymentMethod {
   LastFourDigits get lastFourDigits;
   @override
   @JsonKey(ignore: true)
-  _$$_CreditCardCopyWith<_$_CreditCard> get copyWith =>
+  _$$CreditCardCopyWith<_$CreditCard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DebitCardCopyWith<$Res>
+abstract class _$$DebitCardCopyWith<$Res>
     implements $PaymentMethodCopyWith<$Res> {
-  factory _$$_DebitCardCopyWith(
-          _$_DebitCard value, $Res Function(_$_DebitCard) then) =
-      __$$_DebitCardCopyWithImpl<$Res>;
+  factory _$$DebitCardCopyWith(
+          _$DebitCard value, $Res Function(_$DebitCard) then) =
+      __$$DebitCardCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -376,11 +376,11 @@ abstract class _$$_DebitCardCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DebitCardCopyWithImpl<$Res>
-    extends _$PaymentMethodCopyWithImpl<$Res, _$_DebitCard>
-    implements _$$_DebitCardCopyWith<$Res> {
-  __$$_DebitCardCopyWithImpl(
-      _$_DebitCard _value, $Res Function(_$_DebitCard) _then)
+class __$$DebitCardCopyWithImpl<$Res>
+    extends _$PaymentMethodCopyWithImpl<$Res, _$DebitCard>
+    implements _$$DebitCardCopyWith<$Res> {
+  __$$DebitCardCopyWithImpl(
+      _$DebitCard _value, $Res Function(_$DebitCard) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -393,7 +393,7 @@ class __$$_DebitCardCopyWithImpl<$Res>
     Object? expiryYear = null,
     Object? lastFourDigits = null,
   }) {
-    return _then(_$_DebitCard(
+    return _then(_$DebitCard(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -424,8 +424,8 @@ class __$$_DebitCardCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DebitCard extends _DebitCard {
-  const _$_DebitCard(
+class _$DebitCard extends DebitCard {
+  const _$DebitCard(
       {required this.type,
       required this.id,
       required this.brand,
@@ -456,7 +456,7 @@ class _$_DebitCard extends _DebitCard {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DebitCard &&
+            other is _$DebitCard &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.brand, brand) || other.brand == brand) &&
@@ -475,8 +475,8 @@ class _$_DebitCard extends _DebitCard {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DebitCardCopyWith<_$_DebitCard> get copyWith =>
-      __$$_DebitCardCopyWithImpl<_$_DebitCard>(this, _$identity);
+  _$$DebitCardCopyWith<_$DebitCard> get copyWith =>
+      __$$DebitCardCopyWithImpl<_$DebitCard>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -497,7 +497,7 @@ class _$_DebitCard extends _DebitCard {
             ExpiryYear expiryYear,
             LastFourDigits lastFourDigits)
         debitCard,
-    required TResult Function(Type type) accountBalance,
+    required TResult Function(Type type, Balance balance) accountBalance,
   }) {
     return debitCard(type, id, brand, expiryMonth, expiryYear, lastFourDigits);
   }
@@ -511,7 +511,7 @@ class _$_DebitCard extends _DebitCard {
     TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult? Function(Type type)? accountBalance,
+    TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
     return debitCard?.call(
         type, id, brand, expiryMonth, expiryYear, lastFourDigits);
@@ -526,7 +526,7 @@ class _$_DebitCard extends _DebitCard {
     TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult Function(Type type)? accountBalance,
+    TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) {
     if (debitCard != null) {
@@ -539,9 +539,9 @@ class _$_DebitCard extends _DebitCard {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCard value) creditCard,
-    required TResult Function(_DebitCard value) debitCard,
-    required TResult Function(_AccountBalance value) accountBalance,
+    required TResult Function(CreditCard value) creditCard,
+    required TResult Function(DebitCard value) debitCard,
+    required TResult Function(AccountBalance value) accountBalance,
   }) {
     return debitCard(this);
   }
@@ -549,9 +549,9 @@ class _$_DebitCard extends _DebitCard {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCard value)? creditCard,
-    TResult? Function(_DebitCard value)? debitCard,
-    TResult? Function(_AccountBalance value)? accountBalance,
+    TResult? Function(CreditCard value)? creditCard,
+    TResult? Function(DebitCard value)? debitCard,
+    TResult? Function(AccountBalance value)? accountBalance,
   }) {
     return debitCard?.call(this);
   }
@@ -559,9 +559,9 @@ class _$_DebitCard extends _DebitCard {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCard value)? creditCard,
-    TResult Function(_DebitCard value)? debitCard,
-    TResult Function(_AccountBalance value)? accountBalance,
+    TResult Function(CreditCard value)? creditCard,
+    TResult Function(DebitCard value)? debitCard,
+    TResult Function(AccountBalance value)? accountBalance,
     required TResult orElse(),
   }) {
     if (debitCard != null) {
@@ -571,15 +571,15 @@ class _$_DebitCard extends _DebitCard {
   }
 }
 
-abstract class _DebitCard extends PaymentMethod {
-  const factory _DebitCard(
+abstract class DebitCard extends PaymentMethod {
+  const factory DebitCard(
       {required final Type type,
       required final Id id,
       required final Brand brand,
       required final ExpiryMonth expiryMonth,
       required final ExpiryYear expiryYear,
-      required final LastFourDigits lastFourDigits}) = _$_DebitCard;
-  const _DebitCard._() : super._();
+      required final LastFourDigits lastFourDigits}) = _$DebitCard;
+  const DebitCard._() : super._();
 
   @override
   Type get type;
@@ -590,72 +590,81 @@ abstract class _DebitCard extends PaymentMethod {
   LastFourDigits get lastFourDigits;
   @override
   @JsonKey(ignore: true)
-  _$$_DebitCardCopyWith<_$_DebitCard> get copyWith =>
+  _$$DebitCardCopyWith<_$DebitCard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AccountBalanceCopyWith<$Res>
+abstract class _$$AccountBalanceCopyWith<$Res>
     implements $PaymentMethodCopyWith<$Res> {
-  factory _$$_AccountBalanceCopyWith(
-          _$_AccountBalance value, $Res Function(_$_AccountBalance) then) =
-      __$$_AccountBalanceCopyWithImpl<$Res>;
+  factory _$$AccountBalanceCopyWith(
+          _$AccountBalance value, $Res Function(_$AccountBalance) then) =
+      __$$AccountBalanceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Type type});
+  $Res call({Type type, Balance balance});
 }
 
 /// @nodoc
-class __$$_AccountBalanceCopyWithImpl<$Res>
-    extends _$PaymentMethodCopyWithImpl<$Res, _$_AccountBalance>
-    implements _$$_AccountBalanceCopyWith<$Res> {
-  __$$_AccountBalanceCopyWithImpl(
-      _$_AccountBalance _value, $Res Function(_$_AccountBalance) _then)
+class __$$AccountBalanceCopyWithImpl<$Res>
+    extends _$PaymentMethodCopyWithImpl<$Res, _$AccountBalance>
+    implements _$$AccountBalanceCopyWith<$Res> {
+  __$$AccountBalanceCopyWithImpl(
+      _$AccountBalance _value, $Res Function(_$AccountBalance) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? type = null,
+    Object? balance = null,
   }) {
-    return _then(_$_AccountBalance(
+    return _then(_$AccountBalance(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as Type,
+      balance: null == balance
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as Balance,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AccountBalance extends _AccountBalance {
-  const _$_AccountBalance({required this.type}) : super._();
+class _$AccountBalance extends AccountBalance {
+  const _$AccountBalance({required this.type, required this.balance})
+      : super._();
 
   @override
   final Type type;
+  @override
+  final Balance balance;
 
   @override
   String toString() {
-    return 'PaymentMethod.accountBalance(type: $type)';
+    return 'PaymentMethod.accountBalance(type: $type, balance: $balance)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AccountBalance &&
-            (identical(other.type, type) || other.type == type));
+            other is _$AccountBalance &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.balance, balance) || other.balance == balance));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type);
+  int get hashCode => Object.hash(runtimeType, type, balance);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AccountBalanceCopyWith<_$_AccountBalance> get copyWith =>
-      __$$_AccountBalanceCopyWithImpl<_$_AccountBalance>(this, _$identity);
+  _$$AccountBalanceCopyWith<_$AccountBalance> get copyWith =>
+      __$$AccountBalanceCopyWithImpl<_$AccountBalance>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -676,9 +685,9 @@ class _$_AccountBalance extends _AccountBalance {
             ExpiryYear expiryYear,
             LastFourDigits lastFourDigits)
         debitCard,
-    required TResult Function(Type type) accountBalance,
+    required TResult Function(Type type, Balance balance) accountBalance,
   }) {
-    return accountBalance(type);
+    return accountBalance(type, balance);
   }
 
   @override
@@ -690,9 +699,9 @@ class _$_AccountBalance extends _AccountBalance {
     TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult? Function(Type type)? accountBalance,
+    TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
-    return accountBalance?.call(type);
+    return accountBalance?.call(type, balance);
   }
 
   @override
@@ -704,11 +713,11 @@ class _$_AccountBalance extends _AccountBalance {
     TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
             ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
         debitCard,
-    TResult Function(Type type)? accountBalance,
+    TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) {
     if (accountBalance != null) {
-      return accountBalance(type);
+      return accountBalance(type, balance);
     }
     return orElse();
   }
@@ -716,9 +725,9 @@ class _$_AccountBalance extends _AccountBalance {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCard value) creditCard,
-    required TResult Function(_DebitCard value) debitCard,
-    required TResult Function(_AccountBalance value) accountBalance,
+    required TResult Function(CreditCard value) creditCard,
+    required TResult Function(DebitCard value) debitCard,
+    required TResult Function(AccountBalance value) accountBalance,
   }) {
     return accountBalance(this);
   }
@@ -726,9 +735,9 @@ class _$_AccountBalance extends _AccountBalance {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCard value)? creditCard,
-    TResult? Function(_DebitCard value)? debitCard,
-    TResult? Function(_AccountBalance value)? accountBalance,
+    TResult? Function(CreditCard value)? creditCard,
+    TResult? Function(DebitCard value)? debitCard,
+    TResult? Function(AccountBalance value)? accountBalance,
   }) {
     return accountBalance?.call(this);
   }
@@ -736,9 +745,9 @@ class _$_AccountBalance extends _AccountBalance {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCard value)? creditCard,
-    TResult Function(_DebitCard value)? debitCard,
-    TResult Function(_AccountBalance value)? accountBalance,
+    TResult Function(CreditCard value)? creditCard,
+    TResult Function(DebitCard value)? debitCard,
+    TResult Function(AccountBalance value)? accountBalance,
     required TResult orElse(),
   }) {
     if (accountBalance != null) {
@@ -748,14 +757,17 @@ class _$_AccountBalance extends _AccountBalance {
   }
 }
 
-abstract class _AccountBalance extends PaymentMethod {
-  const factory _AccountBalance({required final Type type}) = _$_AccountBalance;
-  const _AccountBalance._() : super._();
+abstract class AccountBalance extends PaymentMethod {
+  const factory AccountBalance(
+      {required final Type type,
+      required final Balance balance}) = _$AccountBalance;
+  const AccountBalance._() : super._();
 
   @override
   Type get type;
+  Balance get balance;
   @override
   @JsonKey(ignore: true)
-  _$$_AccountBalanceCopyWith<_$_AccountBalance> get copyWith =>
+  _$$AccountBalanceCopyWith<_$AccountBalance> get copyWith =>
       throw _privateConstructorUsedError;
 }

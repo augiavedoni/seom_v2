@@ -23,6 +23,7 @@ mixin _$SeomUser {
   DateTime get birthdate => throw _privateConstructorUsedError;
   Token get token => throw _privateConstructorUsedError;
   RefreshToken get refreshToken => throw _privateConstructorUsedError;
+  StripeId get stripeId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeomUserCopyWith<SeomUser> get copyWith =>
@@ -41,7 +42,8 @@ abstract class $SeomUserCopyWith<$Res> {
       Cuil cuil,
       DateTime birthdate,
       Token token,
-      RefreshToken refreshToken});
+      RefreshToken refreshToken,
+      StripeId stripeId});
 }
 
 /// @nodoc
@@ -64,6 +66,7 @@ class _$SeomUserCopyWithImpl<$Res, $Val extends SeomUser>
     Object? birthdate = null,
     Object? token = null,
     Object? refreshToken = null,
+    Object? stripeId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -94,6 +97,10 @@ class _$SeomUserCopyWithImpl<$Res, $Val extends SeomUser>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as RefreshToken,
+      stripeId: null == stripeId
+          ? _value.stripeId
+          : stripeId // ignore: cast_nullable_to_non_nullable
+              as StripeId,
     ) as $Val);
   }
 }
@@ -112,7 +119,8 @@ abstract class _$$_SeomUserCopyWith<$Res> implements $SeomUserCopyWith<$Res> {
       Cuil cuil,
       DateTime birthdate,
       Token token,
-      RefreshToken refreshToken});
+      RefreshToken refreshToken,
+      StripeId stripeId});
 }
 
 /// @nodoc
@@ -133,6 +141,7 @@ class __$$_SeomUserCopyWithImpl<$Res>
     Object? birthdate = null,
     Object? token = null,
     Object? refreshToken = null,
+    Object? stripeId = null,
   }) {
     return _then(_$_SeomUser(
       id: null == id
@@ -163,6 +172,10 @@ class __$$_SeomUserCopyWithImpl<$Res>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as RefreshToken,
+      stripeId: null == stripeId
+          ? _value.stripeId
+          : stripeId // ignore: cast_nullable_to_non_nullable
+              as StripeId,
     ));
   }
 }
@@ -177,7 +190,8 @@ class _$_SeomUser implements _SeomUser {
       required this.cuil,
       required this.birthdate,
       required this.token,
-      required this.refreshToken});
+      required this.refreshToken,
+      required this.stripeId});
 
   @override
   final int id;
@@ -193,10 +207,12 @@ class _$_SeomUser implements _SeomUser {
   final Token token;
   @override
   final RefreshToken refreshToken;
+  @override
+  final StripeId stripeId;
 
   @override
   String toString() {
-    return 'SeomUser(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
+    return 'SeomUser(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken, stripeId: $stripeId)';
   }
 
   @override
@@ -214,12 +230,14 @@ class _$_SeomUser implements _SeomUser {
                 other.birthdate == birthdate) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken));
+                other.refreshToken == refreshToken) &&
+            (identical(other.stripeId, stripeId) ||
+                other.stripeId == stripeId));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, firstName, lastName, cuil,
-      birthdate, token, refreshToken);
+      birthdate, token, refreshToken, stripeId);
 
   @JsonKey(ignore: true)
   @override
@@ -236,7 +254,8 @@ abstract class _SeomUser implements SeomUser {
       required final Cuil cuil,
       required final DateTime birthdate,
       required final Token token,
-      required final RefreshToken refreshToken}) = _$_SeomUser;
+      required final RefreshToken refreshToken,
+      required final StripeId stripeId}) = _$_SeomUser;
 
   @override
   int get id;
@@ -252,6 +271,8 @@ abstract class _SeomUser implements SeomUser {
   Token get token;
   @override
   RefreshToken get refreshToken;
+  @override
+  StripeId get stripeId;
   @override
   @JsonKey(ignore: true)
   _$$_SeomUserCopyWith<_$_SeomUser> get copyWith =>

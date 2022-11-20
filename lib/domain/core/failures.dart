@@ -73,5 +73,9 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = InvalidLastFourDigits<T>;
 
+  const factory ValueFailure.invalidAccountBalance({
+    required T failedValue,
+  }) = InvalidAccountBalance<T>;
+
   const factory ValueFailure.empty() = Empty<T>;
 }

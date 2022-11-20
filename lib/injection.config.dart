@@ -8,27 +8,29 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/auth_bloc.dart' as _i20;
-import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i16;
-import 'application/auth/sign_up_form/sign_up_form_bloc.dart' as _i17;
+import 'application/auth/auth_bloc.dart' as _i22;
+import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i18;
+import 'application/auth/sign_up_form/sign_up_form_bloc.dart' as _i19;
 import 'application/parking_tickets/parking_ticket_watcher/parking_ticket_watcher_bloc.dart'
-    as _i15;
+    as _i17;
 import 'application/permissions/permissions_bloc.dart' as _i5;
-import 'application/vehicles/vehicle_actor/vehicle_actor_bloc.dart' as _i18;
-import 'application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart' as _i19;
+import 'application/vehicles/vehicle_actor/vehicle_actor_bloc.dart' as _i20;
+import 'application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart' as _i21;
 import 'domain/auth/i_auth_facade.dart' as _i9;
 import 'domain/parking_tickets/i_parking_ticket_repository.dart' as _i11;
+import 'domain/payment_methods/i_payment_method_repository.dart' as _i13;
 import 'domain/permissions/i_permissions_manager.dart' as _i3;
-import 'domain/vehicles/i_vehicle_repository.dart' as _i13;
+import 'domain/vehicles/i_vehicle_repository.dart' as _i15;
 import 'infrastructure/auth/seom_auth_facade.dart' as _i10;
 import 'infrastructure/core/http/seom_client.dart' as _i6;
-import 'infrastructure/core/seom_injectable_modules.dart' as _i21;
+import 'infrastructure/core/seom_injectable_modules.dart' as _i23;
 import 'infrastructure/datasource/token_data_source.dart' as _i7;
 import 'infrastructure/datasource/user_data_source.dart' as _i8;
 import 'infrastructure/parking_tickets/parking_ticket_repository.dart' as _i12;
+import 'infrastructure/payment_methods/payment_method_repository.dart' as _i14;
 import 'infrastructure/permissions/permissions_repository.dart' as _i4;
 import 'infrastructure/vehicles/vehicle_repository.dart'
-    as _i14; // ignore_for_file: unnecessary_lambdas
+    as _i16; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -61,22 +63,26 @@ _i1.GetIt $initGetIt(
         get<_i6.SeomClientContract>(),
         get<_i8.UserDataSource>(),
       ));
-  gh.factory<_i13.IVehicleRepository>(() => _i14.VehicleRepository(
+  gh.factory<_i13.IPaymentMethodRepository>(() => _i14.PaymentMethodRepository(
         get<_i6.SeomClientContract>(),
         get<_i8.UserDataSource>(),
       ));
-  gh.factory<_i15.ParkingTicketWatcherBloc>(() =>
-      _i15.ParkingTicketWatcherBloc(get<_i11.IParkingTicketRepository>()));
-  gh.factory<_i16.SignInFormBloc>(
-      () => _i16.SignInFormBloc(get<_i9.IAuthFacade>()));
-  gh.factory<_i17.SignUpFormBloc>(
-      () => _i17.SignUpFormBloc(get<_i9.IAuthFacade>()));
-  gh.factory<_i18.VehicleActorBloc>(
-      () => _i18.VehicleActorBloc(get<_i13.IVehicleRepository>()));
-  gh.factory<_i19.VehicleWatcherBloc>(
-      () => _i19.VehicleWatcherBloc(get<_i13.IVehicleRepository>()));
-  gh.factory<_i20.AuthBloc>(() => _i20.AuthBloc(get<_i9.IAuthFacade>()));
+  gh.factory<_i15.IVehicleRepository>(() => _i16.VehicleRepository(
+        get<_i6.SeomClientContract>(),
+        get<_i8.UserDataSource>(),
+      ));
+  gh.factory<_i17.ParkingTicketWatcherBloc>(() =>
+      _i17.ParkingTicketWatcherBloc(get<_i11.IParkingTicketRepository>()));
+  gh.factory<_i18.SignInFormBloc>(
+      () => _i18.SignInFormBloc(get<_i9.IAuthFacade>()));
+  gh.factory<_i19.SignUpFormBloc>(
+      () => _i19.SignUpFormBloc(get<_i9.IAuthFacade>()));
+  gh.factory<_i20.VehicleActorBloc>(
+      () => _i20.VehicleActorBloc(get<_i15.IVehicleRepository>()));
+  gh.factory<_i21.VehicleWatcherBloc>(
+      () => _i21.VehicleWatcherBloc(get<_i15.IVehicleRepository>()));
+  gh.factory<_i22.AuthBloc>(() => _i22.AuthBloc(get<_i9.IAuthFacade>()));
   return get;
 }
 
-class _$SeomInjectableModules extends _i21.SeomInjectableModules {}
+class _$SeomInjectableModules extends _i23.SeomInjectableModules {}

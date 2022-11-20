@@ -27,6 +27,7 @@ mixin _$SeomUserDto {
   DateTime get birthdate => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String get refreshToken => throw _privateConstructorUsedError;
+  String get stripeId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +48,8 @@ abstract class $SeomUserDtoCopyWith<$Res> {
       String cuil,
       DateTime birthdate,
       String token,
-      String refreshToken});
+      String refreshToken,
+      String stripeId});
 }
 
 /// @nodoc
@@ -70,6 +72,7 @@ class _$SeomUserDtoCopyWithImpl<$Res, $Val extends SeomUserDto>
     Object? birthdate = null,
     Object? token = null,
     Object? refreshToken = null,
+    Object? stripeId = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -100,6 +103,10 @@ class _$SeomUserDtoCopyWithImpl<$Res, $Val extends SeomUserDto>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
+      stripeId: null == stripeId
+          ? _value.stripeId
+          : stripeId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -119,7 +126,8 @@ abstract class _$$_SeomUserDTOCopyWith<$Res>
       String cuil,
       DateTime birthdate,
       String token,
-      String refreshToken});
+      String refreshToken,
+      String stripeId});
 }
 
 /// @nodoc
@@ -140,6 +148,7 @@ class __$$_SeomUserDTOCopyWithImpl<$Res>
     Object? birthdate = null,
     Object? token = null,
     Object? refreshToken = null,
+    Object? stripeId = null,
   }) {
     return _then(_$_SeomUserDTO(
       id: null == id
@@ -170,6 +179,10 @@ class __$$_SeomUserDTOCopyWithImpl<$Res>
           ? _value.refreshToken
           : refreshToken // ignore: cast_nullable_to_non_nullable
               as String,
+      stripeId: null == stripeId
+          ? _value.stripeId
+          : stripeId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -185,7 +198,8 @@ class _$_SeomUserDTO extends _SeomUserDTO {
       required this.cuil,
       required this.birthdate,
       required this.token,
-      required this.refreshToken})
+      required this.refreshToken,
+      required this.stripeId})
       : super._();
 
   factory _$_SeomUserDTO.fromJson(Map<String, dynamic> json) =>
@@ -205,10 +219,12 @@ class _$_SeomUserDTO extends _SeomUserDTO {
   final String token;
   @override
   final String refreshToken;
+  @override
+  final String stripeId;
 
   @override
   String toString() {
-    return 'SeomUserDto(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken)';
+    return 'SeomUserDto(id: $id, firstName: $firstName, lastName: $lastName, cuil: $cuil, birthdate: $birthdate, token: $token, refreshToken: $refreshToken, stripeId: $stripeId)';
   }
 
   @override
@@ -226,13 +242,15 @@ class _$_SeomUserDTO extends _SeomUserDTO {
                 other.birthdate == birthdate) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken));
+                other.refreshToken == refreshToken) &&
+            (identical(other.stripeId, stripeId) ||
+                other.stripeId == stripeId));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, firstName, lastName, cuil,
-      birthdate, token, refreshToken);
+      birthdate, token, refreshToken, stripeId);
 
   @JsonKey(ignore: true)
   @override
@@ -256,7 +274,8 @@ abstract class _SeomUserDTO extends SeomUserDto {
       required final String cuil,
       required final DateTime birthdate,
       required final String token,
-      required final String refreshToken}) = _$_SeomUserDTO;
+      required final String refreshToken,
+      required final String stripeId}) = _$_SeomUserDTO;
   const _SeomUserDTO._() : super._();
 
   factory _SeomUserDTO.fromJson(Map<String, dynamic> json) =
@@ -276,6 +295,8 @@ abstract class _SeomUserDTO extends SeomUserDto {
   String get token;
   @override
   String get refreshToken;
+  @override
+  String get stripeId;
   @override
   @JsonKey(ignore: true)
   _$$_SeomUserDTOCopyWith<_$_SeomUserDTO> get copyWith =>

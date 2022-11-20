@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/balance.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_month.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_year.dart';
@@ -19,7 +20,7 @@ abstract class PaymentMethod implements _$PaymentMethod {
     required ExpiryMonth expiryMonth,
     required ExpiryYear expiryYear,
     required LastFourDigits lastFourDigits,
-  }) = _CreditCard;
+  }) = CreditCard;
 
   const factory PaymentMethod.debitCard({
     required Type type,
@@ -28,9 +29,10 @@ abstract class PaymentMethod implements _$PaymentMethod {
     required ExpiryMonth expiryMonth,
     required ExpiryYear expiryYear,
     required LastFourDigits lastFourDigits,
-  }) = _DebitCard;
+  }) = DebitCard;
 
   const factory PaymentMethod.accountBalance({
     required Type type,
-  }) = _AccountBalance;
+    required Balance balance,
+  }) = AccountBalance;
 }
