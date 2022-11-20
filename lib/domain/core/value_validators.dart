@@ -184,3 +184,51 @@ Either<ValueFailure<double>, double> validatePositionValue(
     return left(ValueFailure.invalidPositionValue(failedValue: position));
   }
 }
+
+Either<ValueFailure<String>, String> validateCardBrand(String brand) {
+  if (brand.isEmpty) {
+    return left(const ValueFailure.empty());
+  } else if (brand != "visa" || brand != "mastercard") {
+    return left(
+      ValueFailure.invalidCardBrand(failedValue: brand),
+    );
+  } else {
+    return right(brand);
+  }
+}
+
+Either<ValueFailure<int>, int> validateExpiryMonth(
+  int expiryMonth,
+) {
+  if (expiryMonth < 1 || expiryMonth > 12) {
+    return left(ValueFailure.invalidExpiryMonth(failedValue: expiryMonth));
+  } else {
+    return right(expiryMonth);
+  }
+}
+
+Either<ValueFailure<int>, int> validateExpiryYear(
+  int expiryYear,
+) {
+  final today = DateTime.now();
+
+  if (expiryYear < today.year) {
+    return left(ValueFailure.invalidExpiryYear(failedValue: expiryYear));
+  } else {
+    return right(expiryYear);
+  }
+}
+
+Either<ValueFailure<String>, String> validateLastFourDigits(
+  String lastFourDigits,
+) {
+  if (lastFourDigits.isEmpty) {
+    return left(const ValueFailure.empty());
+  } else if (lastFourDigits.length != 4) {
+    return left(
+      ValueFailure.invalidLastFourDigits(failedValue: lastFourDigits),
+    );
+  } else {
+    return right(lastFourDigits);
+  }
+}

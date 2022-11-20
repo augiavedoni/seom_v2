@@ -36,7 +36,7 @@ class SeomAuthFacade implements IAuthFacade {
     final String passwordString = password.getOrCrash();
 
     final response = await _client.post(
-      "auth/signup",
+      "auth/sign-up",
       parameters: {
         "email": emailAddressString,
         "password": passwordString,
@@ -82,7 +82,7 @@ class SeomAuthFacade implements IAuthFacade {
     final String passwordString = password.getOrCrash();
 
     final response = await _client.post(
-      "auth/signin",
+      "auth/sign-in",
       parameters: {
         "email": emailAddressString,
         "password": passwordString,
@@ -118,7 +118,7 @@ class SeomAuthFacade implements IAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> signOut() async {
     final response = await _client.post(
-      "auth/logout",
+      "auth/sign-out",
       parameters: {
         "userId": _userDataSource.user!.id,
       },

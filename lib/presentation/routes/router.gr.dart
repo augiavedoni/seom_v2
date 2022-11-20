@@ -11,34 +11,35 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i5;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
+import 'package:seom_v2/presentation/feedback/feedback_screen.dart' as _i3;
+import 'package:seom_v2/presentation/home/home_screen.dart' as _i2;
+import 'package:seom_v2/presentation/payment_methods_management/payment_methods_management_screen.dart'
+    as _i4;
+import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart' as _i1;
 
-import '../feedback/feedback_screen.dart' as _i3;
-import '../home/home_screen.dart' as _i2;
-import '../sign_in/sign_in_screen.dart' as _i1;
-
-class Router extends _i4.RootStackRouter {
-  Router([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
+class Router extends _i5.RootStackRouter {
+  Router([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i4.PageFactory> pagesMap = {
+  final Map<String, _i5.PageFactory> pagesMap = {
     SignInScreenRoute.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SignInScreen(),
       );
     },
     HomeScreenRoute.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.HomeScreen(),
       );
     },
     FeedbackScreenRoute.name: (routeData) {
       final args = routeData.argsAs<FeedbackScreenRouteArgs>();
-      return _i4.MaterialPageX<dynamic>(
+      return _i5.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i3.FeedbackScreen(
           key: args.key,
@@ -54,28 +55,38 @@ class Router extends _i4.RootStackRouter {
         ),
       );
     },
+    PaymentMethodsManagementScreenRoute.name: (routeData) {
+      return _i5.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i4.PaymentMethodsManagementScreen(),
+      );
+    },
   };
 
   @override
-  List<_i4.RouteConfig> get routes => [
-        _i4.RouteConfig(
+  List<_i5.RouteConfig> get routes => [
+        _i5.RouteConfig(
           SignInScreenRoute.name,
           path: '/',
         ),
-        _i4.RouteConfig(
+        _i5.RouteConfig(
           HomeScreenRoute.name,
           path: '/home-screen',
         ),
-        _i4.RouteConfig(
+        _i5.RouteConfig(
           FeedbackScreenRoute.name,
           path: '/feedback-screen',
+        ),
+        _i5.RouteConfig(
+          PaymentMethodsManagementScreenRoute.name,
+          path: '/payment-methods-management-screen',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.SignInScreen]
-class SignInScreenRoute extends _i4.PageRouteInfo<void> {
+class SignInScreenRoute extends _i5.PageRouteInfo<void> {
   const SignInScreenRoute()
       : super(
           SignInScreenRoute.name,
@@ -87,7 +98,7 @@ class SignInScreenRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.HomeScreen]
-class HomeScreenRoute extends _i4.PageRouteInfo<void> {
+class HomeScreenRoute extends _i5.PageRouteInfo<void> {
   const HomeScreenRoute()
       : super(
           HomeScreenRoute.name,
@@ -99,9 +110,9 @@ class HomeScreenRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.FeedbackScreen]
-class FeedbackScreenRoute extends _i4.PageRouteInfo<FeedbackScreenRouteArgs> {
+class FeedbackScreenRoute extends _i5.PageRouteInfo<FeedbackScreenRouteArgs> {
   FeedbackScreenRoute({
-    _i5.Key? key,
+    _i6.Key? key,
     required String mainImagePath,
     required String title,
     String? description,
@@ -145,7 +156,7 @@ class FeedbackScreenRouteArgs {
     this.onClose,
   });
 
-  final _i5.Key? key;
+  final _i6.Key? key;
 
   final String mainImagePath;
 
@@ -169,4 +180,16 @@ class FeedbackScreenRouteArgs {
   String toString() {
     return 'FeedbackScreenRouteArgs{key: $key, mainImagePath: $mainImagePath, title: $title, description: $description, willPop: $willPop, onWillPop: $onWillPop, primaryButton: $primaryButton, secondaryButton: $secondaryButton, showClose: $showClose, onClose: $onClose}';
   }
+}
+
+/// generated route for
+/// [_i4.PaymentMethodsManagementScreen]
+class PaymentMethodsManagementScreenRoute extends _i5.PageRouteInfo<void> {
+  const PaymentMethodsManagementScreenRoute()
+      : super(
+          PaymentMethodsManagementScreenRoute.name,
+          path: '/payment-methods-management-screen',
+        );
+
+  static const String name = 'PaymentMethodsManagementScreenRoute';
 }

@@ -57,5 +57,21 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = InvalidPosition<T>;
 
+  const factory ValueFailure.invalidCardBrand({
+    required T failedValue,
+  }) = InvalidCardBrand<T>;
+
+  const factory ValueFailure.invalidExpiryMonth({
+    required T failedValue,
+  }) = InvalidExpiryMonth<T>;
+
+  const factory ValueFailure.invalidExpiryYear({
+    required T failedValue,
+  }) = InvalidExpiryYear<T>;
+
+  const factory ValueFailure.invalidLastFourDigits({
+    required T failedValue,
+  }) = InvalidLastFourDigits<T>;
+
   const factory ValueFailure.empty() = Empty<T>;
 }
