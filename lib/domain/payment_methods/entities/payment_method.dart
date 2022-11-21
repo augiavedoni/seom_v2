@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:seom_v2/domain/core/failures.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/balance.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_month.dart';
@@ -35,4 +37,54 @@ abstract class PaymentMethod implements _$PaymentMethod {
     required Type type,
     required Balance balance,
   }) = AccountBalance;
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    if (this is CreditCard) {
+      final creditCard = this as CreditCard;
+
+      return creditCard.type.failureOrUnit
+          .andThen(
+            creditCard.id.failureOrUnit,
+          )
+          .andThen(
+            creditCard.brand.failureOrUnit,
+          )
+          .andThen(
+            creditCard.expiryMonth.failureOrUnit,
+          )
+          .andThen(
+            creditCard.expiryYear.failureOrUnit,
+          )
+          .andThen(
+            creditCard.lastFourDigits.failureOrUnit,
+          )
+          .fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
+    } else {
+      final debitCard = this as DebitCard;
+
+      return debitCard.type.failureOrUnit
+          .andThen(
+            debitCard.id.failureOrUnit,
+          )
+          .andThen(
+            debitCard.brand.failureOrUnit,
+          )
+          .andThen(
+            debitCard.expiryMonth.failureOrUnit,
+          )
+          .andThen(
+            debitCard.expiryYear.failureOrUnit,
+          )
+          .andThen(
+            debitCard.lastFourDigits.failureOrUnit,
+          )
+          .fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
+    }
+  }
 }
