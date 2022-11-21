@@ -15,17 +15,17 @@ part 'payment_method_watcher_bloc.freezed.dart';
 @injectable
 class PaymentMethodWatcherBloc
     extends Bloc<PaymentMethodWatcherEvent, PaymentMethodWatcherState> {
-  final IPaymentMethodRepository paymentMethodRepository;
+  final IPaymentMethodRepository _paymentMethodRepository;
 
   PaymentMethodWatcherBloc(
-    this.paymentMethodRepository,
+    this._paymentMethodRepository,
   ) : super(const PaymentMethodWatcherState.initial()) {
-    on<PaymentMethodWatcherEvent>((event, emit) async {
-      await event.map<FutureOr<void>>(
+    on<PaymentMethodWatcherEvent>(
+      (event, emit) async => await event.map<FutureOr<void>>(
         getAllStarted: (event) async {
           emit(const PaymentMethodWatcherState.loadInProgress());
 
-          final failureOrSuccess = await paymentMethodRepository.getAll();
+          final failureOrSuccess = await _paymentMethodRepository.getAll();
 
           emit(
             failureOrSuccess.fold(
@@ -36,7 +36,7 @@ class PaymentMethodWatcherBloc
             ),
           );
         },
-      );
-    });
+      ),
+    );
   }
 }
