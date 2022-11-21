@@ -21,9 +21,9 @@ abstract class CreditCardDto implements _$CreditCardDto {
     required String id,
     required String type,
     required String brand,
-    required int expiryMonth,
-    required int expiryYear,
-    required String lastFourDigits,
+    @JsonKey(name: 'expiry_month') required int expiryMonth,
+    @JsonKey(name: 'expiry_year') required int expiryYear,
+    @JsonKey(name: 'last_four_digits') required String lastFourDigits,
   }) = _CreditCardDTO;
 
   factory CreditCardDto.fromDomain(CreditCard creditCard) {

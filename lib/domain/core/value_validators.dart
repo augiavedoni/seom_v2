@@ -188,12 +188,12 @@ Either<ValueFailure<double>, double> validatePositionValue(
 Either<ValueFailure<String>, String> validateCardBrand(String brand) {
   if (brand.isEmpty) {
     return left(const ValueFailure.empty());
-  } else if (brand != "visa" || brand != "mastercard") {
+  } else if (brand == "visa" || brand == "mastercard") {
+    return right(brand);
+  } else {
     return left(
       ValueFailure.invalidCardBrand(failedValue: brand),
     );
-  } else {
-    return right(brand);
   }
 }
 

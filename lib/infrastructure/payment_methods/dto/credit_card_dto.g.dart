@@ -11,9 +11,9 @@ _$_CreditCardDTO _$$_CreditCardDTOFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       type: json['type'] as String,
       brand: json['brand'] as String,
-      expiryMonth: json['expiryMonth'] as int,
-      expiryYear: json['expiryYear'] as int,
-      lastFourDigits: json['lastFourDigits'] as String,
+      expiryMonth: json['expiry_month'] as int,
+      expiryYear: json['expiry_year'] as int,
+      lastFourDigits: json['last_four_digits'] as String,
     );
 
 Map<String, dynamic> _$$_CreditCardDTOToJson(_$_CreditCardDTO instance) =>
@@ -21,7 +21,7 @@ Map<String, dynamic> _$$_CreditCardDTOToJson(_$_CreditCardDTO instance) =>
       'id': instance.id,
       'type': instance.type,
       'brand': instance.brand,
-      'expiryMonth': instance.expiryMonth,
-      'expiryYear': instance.expiryYear,
-      'lastFourDigits': instance.lastFourDigits,
+      'expiry_month': instance.expiryMonth,
+      'expiry_year': instance.expiryYear,
+      'last_four_digits': instance.lastFourDigits,
     };

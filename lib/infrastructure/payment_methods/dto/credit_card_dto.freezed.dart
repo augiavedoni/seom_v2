@@ -23,8 +23,11 @@ mixin _$CreditCardDto {
   String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get brand => throw _privateConstructorUsedError;
+  @JsonKey(name: 'expiry_month')
   int get expiryMonth => throw _privateConstructorUsedError;
+  @JsonKey(name: 'expiry_year')
   int get expiryYear => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_four_digits')
   String get lastFourDigits => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,9 +46,9 @@ abstract class $CreditCardDtoCopyWith<$Res> {
       {String id,
       String type,
       String brand,
-      int expiryMonth,
-      int expiryYear,
-      String lastFourDigits});
+      @JsonKey(name: 'expiry_month') int expiryMonth,
+      @JsonKey(name: 'expiry_year') int expiryYear,
+      @JsonKey(name: 'last_four_digits') String lastFourDigits});
 }
 
 /// @nodoc
@@ -109,9 +112,9 @@ abstract class _$$_CreditCardDTOCopyWith<$Res>
       {String id,
       String type,
       String brand,
-      int expiryMonth,
-      int expiryYear,
-      String lastFourDigits});
+      @JsonKey(name: 'expiry_month') int expiryMonth,
+      @JsonKey(name: 'expiry_year') int expiryYear,
+      @JsonKey(name: 'last_four_digits') String lastFourDigits});
 }
 
 /// @nodoc
@@ -169,9 +172,9 @@ class _$_CreditCardDTO extends _CreditCardDTO {
       {required this.id,
       required this.type,
       required this.brand,
-      required this.expiryMonth,
-      required this.expiryYear,
-      required this.lastFourDigits})
+      @JsonKey(name: 'expiry_month') required this.expiryMonth,
+      @JsonKey(name: 'expiry_year') required this.expiryYear,
+      @JsonKey(name: 'last_four_digits') required this.lastFourDigits})
       : super._();
 
   factory _$_CreditCardDTO.fromJson(Map<String, dynamic> json) =>
@@ -184,10 +187,13 @@ class _$_CreditCardDTO extends _CreditCardDTO {
   @override
   final String brand;
   @override
+  @JsonKey(name: 'expiry_month')
   final int expiryMonth;
   @override
+  @JsonKey(name: 'expiry_year')
   final int expiryYear;
   @override
+  @JsonKey(name: 'last_four_digits')
   final String lastFourDigits;
 
   @override
@@ -235,9 +241,12 @@ abstract class _CreditCardDTO extends CreditCardDto {
       {required final String id,
       required final String type,
       required final String brand,
-      required final int expiryMonth,
-      required final int expiryYear,
-      required final String lastFourDigits}) = _$_CreditCardDTO;
+      @JsonKey(name: 'expiry_month')
+          required final int expiryMonth,
+      @JsonKey(name: 'expiry_year')
+          required final int expiryYear,
+      @JsonKey(name: 'last_four_digits')
+          required final String lastFourDigits}) = _$_CreditCardDTO;
   const _CreditCardDTO._() : super._();
 
   factory _CreditCardDTO.fromJson(Map<String, dynamic> json) =
@@ -250,10 +259,13 @@ abstract class _CreditCardDTO extends CreditCardDto {
   @override
   String get brand;
   @override
+  @JsonKey(name: 'expiry_month')
   int get expiryMonth;
   @override
+  @JsonKey(name: 'expiry_year')
   int get expiryYear;
   @override
+  @JsonKey(name: 'last_four_digits')
   String get lastFourDigits;
   @override
   @JsonKey(ignore: true)

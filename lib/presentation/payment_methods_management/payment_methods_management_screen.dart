@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
+import 'package:seom_v2/injection.dart';
 
 class PaymentMethodsManagementScreen extends StatelessWidget {
   const PaymentMethodsManagementScreen({super.key});
@@ -29,6 +32,24 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
+      body: BlocProvider(
+        create: (_) => getIt<PaymentMethodWatcherBloc>()
+          ..add(
+            const PaymentMethodWatcherEvent.getAllStarted(),
+          ),
+        child:
+            BlocListener<PaymentMethodWatcherBloc, PaymentMethodWatcherState>(
+          listenWhen: (previous, current) => previous != current,
+          listener: (context, state) {
+            state.maybeMap(
+              loadSuccess: (state) => print(state.paymentMethods.toString()),
+              loadFailure: (state) => print(state.paymentMethodFailure),
+              orElse: () {},
+            );
+          },
+          child: const SizedBox(),
+        ),
+      ),
     );
   }
 }
