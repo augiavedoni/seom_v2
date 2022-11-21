@@ -20,12 +20,14 @@ class PaymentMethodRepository implements IPaymentMethodRepository {
 
   PaymentMethodRepository(this._client, this._userDataSource);
 
+  static const controllerPath = "payment-methods";
+
   @override
   Future<Either<PaymentMethodFailure, KtList<PaymentMethod>>> getAll() async {
     final SeomUser? seomUser = _userDataSource.user;
 
     final response = await _client.get(
-      "payment-methods",
+      controllerPath,
       parameters: {
         "customerId": seomUser!.stripeId.getOrCrash(),
       },
@@ -48,25 +50,58 @@ class PaymentMethodRepository implements IPaymentMethodRepository {
           paymentMethods.toImmutableList(),
         );
       },
-      error: (_, __) {
-        return left(const PaymentMethodFailure.unexpected());
-      },
+      error: (_, __) => left(const PaymentMethodFailure.unexpected()),
     );
   }
 
   @override
   Future<Either<PaymentMethodFailure, Unit>> add({
     required PaymentMethod paymentMethod,
-  }) {
-    // TODO: implement add
-    throw UnimplementedError();
+  }) async {
+    final SeomUser? seomUser = _userDataSource.user;
+    late final Map<String, dynamic> paymentMethodInformation;
+
+    if (PaymentMethod is CreditCard) {
+      paymentMethodInformation = CreditCardDto.fromDomain(
+        paymentMethod as CreditCard,
+      ).toJson();
+    } else {
+      paymentMethodInformation = DebitCardDto.fromDomain(
+        paymentMethod as DebitCard,
+      ).toJson();
+    }
+
+    paymentMethodInformation.addAll(
+      {
+        "customer_id": seomUser?.stripeId.getOrCrash(),
+      },
+    );
+
+    final response = await _client.post(
+      controllerPath,
+      parameters: paymentMethodInformation,
+    );
+
+    return response.map(
+      ok: (_) => right(unit),
+      error: (_, __) => left(const PaymentMethodFailure.unexpected()),
+    );
   }
 
   @override
   Future<Either<PaymentMethodFailure, Unit>> delete({
     required String paymentMethodId,
-  }) {
-    // TODO: implement delete
-    throw UnimplementedError();
+  }) async {
+    final response = await _client.delete(
+      controllerPath,
+      parameters: {
+        "paymentMethodId": paymentMethodId,
+      },
+    );
+
+    return response.map(
+      ok: (_) => right(unit),
+      error: (_, __) => left(const PaymentMethodFailure.unexpected()),
+    );
   }
 }
