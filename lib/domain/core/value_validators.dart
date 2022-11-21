@@ -232,17 +232,3 @@ Either<ValueFailure<String>, String> validateLastFourDigits(
     return right(lastFourDigits);
   }
 }
-
-Either<ValueFailure<double>, double> validateAccountBalance(
-  double accountBalance,
-) {
-  if (accountBalance < 0) {
-    return left(
-      ValueFailure.invalidAccountBalance(
-        failedValue: accountBalance,
-      ),
-    );
-  } else {
-    return right(accountBalance);
-  }
-}

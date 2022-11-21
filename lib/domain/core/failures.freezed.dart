@@ -39,7 +39,6 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -66,7 +65,6 @@ mixin _$ValueFailure<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -93,7 +91,6 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) =>
@@ -122,8 +119,6 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -150,7 +145,6 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) =>
       throw _privateConstructorUsedError;
@@ -177,7 +171,6 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) =>
@@ -289,7 +282,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidCuil(failedValue);
@@ -319,7 +311,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidCuil?.call(failedValue);
@@ -349,7 +340,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -384,8 +374,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidCuil(this);
@@ -415,7 +403,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidCuil?.call(this);
@@ -445,7 +432,6 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -524,7 +510,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyCuil();
@@ -554,7 +539,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyCuil?.call();
@@ -584,7 +568,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -619,8 +602,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyCuil(this);
@@ -650,7 +631,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyCuil?.call(this);
@@ -680,7 +660,6 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -782,7 +761,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidName(failedValue);
@@ -812,7 +790,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidName?.call(failedValue);
@@ -842,7 +819,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -877,8 +853,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidName(this);
@@ -908,7 +882,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidName?.call(this);
@@ -938,7 +911,6 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1017,7 +989,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyName();
@@ -1047,7 +1018,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyName?.call();
@@ -1077,7 +1047,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1112,8 +1081,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyName(this);
@@ -1143,7 +1110,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyName?.call(this);
@@ -1173,7 +1139,6 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1275,7 +1240,6 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return shortName(failedValue);
@@ -1305,7 +1269,6 @@ class _$ShortName<T> implements ShortName<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return shortName?.call(failedValue);
@@ -1335,7 +1298,6 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1370,8 +1332,6 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return shortName(this);
@@ -1401,7 +1361,6 @@ class _$ShortName<T> implements ShortName<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return shortName?.call(this);
@@ -1431,7 +1390,6 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1538,7 +1496,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidEmail(failedValue);
@@ -1568,7 +1525,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidEmail?.call(failedValue);
@@ -1598,7 +1554,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1633,8 +1588,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidEmail(this);
@@ -1664,7 +1617,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidEmail?.call(this);
@@ -1694,7 +1646,6 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -1774,7 +1725,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyEmail();
@@ -1804,7 +1754,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyEmail?.call();
@@ -1834,7 +1783,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -1869,8 +1817,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyEmail(this);
@@ -1900,7 +1846,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyEmail?.call(this);
@@ -1930,7 +1875,6 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2032,7 +1976,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return shortPassword(failedValue);
@@ -2062,7 +2005,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return shortPassword?.call(failedValue);
@@ -2092,7 +2034,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2127,8 +2068,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return shortPassword(this);
@@ -2158,7 +2097,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return shortPassword?.call(this);
@@ -2188,7 +2126,6 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2268,7 +2205,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyPassword();
@@ -2298,7 +2234,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyPassword?.call();
@@ -2328,7 +2263,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2363,8 +2297,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyPassword(this);
@@ -2394,7 +2326,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyPassword?.call(this);
@@ -2424,7 +2355,6 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2498,7 +2428,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyToken();
@@ -2528,7 +2457,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyToken?.call();
@@ -2558,7 +2486,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2593,8 +2520,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyToken(this);
@@ -2624,7 +2549,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyToken?.call(this);
@@ -2654,7 +2578,6 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2728,7 +2651,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return emptyRefreshToken();
@@ -2758,7 +2680,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return emptyRefreshToken?.call();
@@ -2788,7 +2709,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -2823,8 +2743,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return emptyRefreshToken(this);
@@ -2854,7 +2772,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return emptyRefreshToken?.call(this);
@@ -2884,7 +2801,6 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -2996,7 +2912,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return exceedingLength(failedValue, maxLength);
@@ -3026,7 +2941,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return exceedingLength?.call(failedValue, maxLength);
@@ -3056,7 +2970,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -3091,8 +3004,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return exceedingLength(this);
@@ -3122,7 +3033,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return exceedingLength?.call(this);
@@ -3152,7 +3062,6 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -3262,7 +3171,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidYear(failedValue);
@@ -3292,7 +3200,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidYear?.call(failedValue);
@@ -3322,7 +3229,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -3357,8 +3263,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidYear(this);
@@ -3388,7 +3292,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidYear?.call(this);
@@ -3418,7 +3321,6 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -3526,7 +3428,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidVehicleType(failedValue);
@@ -3556,7 +3457,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidVehicleType?.call(failedValue);
@@ -3586,7 +3486,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -3621,8 +3520,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidVehicleType(this);
@@ -3652,7 +3549,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidVehicleType?.call(this);
@@ -3682,7 +3578,6 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -3762,7 +3657,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidDate();
@@ -3792,7 +3686,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidDate?.call();
@@ -3822,7 +3715,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -3857,8 +3749,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidDate(this);
@@ -3888,7 +3778,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidDate?.call(this);
@@ -3918,7 +3807,6 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -3992,7 +3880,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidTime();
@@ -4022,7 +3909,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidTime?.call();
@@ -4052,7 +3938,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -4087,8 +3972,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidTime(this);
@@ -4118,7 +4001,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidTime?.call(this);
@@ -4148,7 +4030,6 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -4251,7 +4132,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidPositionValue(failedValue);
@@ -4281,7 +4161,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidPositionValue?.call(failedValue);
@@ -4311,7 +4190,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -4346,8 +4224,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidPositionValue(this);
@@ -4377,7 +4253,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidPositionValue?.call(this);
@@ -4407,7 +4282,6 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -4516,7 +4390,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidCardBrand(failedValue);
@@ -4546,7 +4419,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidCardBrand?.call(failedValue);
@@ -4576,7 +4448,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -4611,8 +4482,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidCardBrand(this);
@@ -4642,7 +4511,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidCardBrand?.call(this);
@@ -4672,7 +4540,6 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -4781,7 +4648,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidExpiryMonth(failedValue);
@@ -4811,7 +4677,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidExpiryMonth?.call(failedValue);
@@ -4841,7 +4706,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -4876,8 +4740,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidExpiryMonth(this);
@@ -4907,7 +4769,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidExpiryMonth?.call(this);
@@ -4937,7 +4798,6 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -5046,7 +4906,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidExpiryYear(failedValue);
@@ -5076,7 +4935,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidExpiryYear?.call(failedValue);
@@ -5106,7 +4964,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -5141,8 +4998,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidExpiryYear(this);
@@ -5172,7 +5027,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidExpiryYear?.call(this);
@@ -5202,7 +5056,6 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -5312,7 +5165,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return invalidLastFourDigits(failedValue);
@@ -5342,7 +5194,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return invalidLastFourDigits?.call(failedValue);
@@ -5372,7 +5223,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -5407,8 +5257,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidLastFourDigits(this);
@@ -5438,7 +5286,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidLastFourDigits?.call(this);
@@ -5468,7 +5315,6 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
@@ -5486,272 +5332,6 @@ abstract class InvalidLastFourDigits<T> implements ValueFailure<T> {
   T get failedValue;
   @JsonKey(ignore: true)
   _$$InvalidLastFourDigitsCopyWith<T, _$InvalidLastFourDigits<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InvalidAccountBalanceCopyWith<T, $Res> {
-  factory _$$InvalidAccountBalanceCopyWith(_$InvalidAccountBalance<T> value,
-          $Res Function(_$InvalidAccountBalance<T>) then) =
-      __$$InvalidAccountBalanceCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T failedValue});
-}
-
-/// @nodoc
-class __$$InvalidAccountBalanceCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidAccountBalance<T>>
-    implements _$$InvalidAccountBalanceCopyWith<T, $Res> {
-  __$$InvalidAccountBalanceCopyWithImpl(_$InvalidAccountBalance<T> _value,
-      $Res Function(_$InvalidAccountBalance<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failedValue = null,
-  }) {
-    return _then(_$InvalidAccountBalance<T>(
-      failedValue: null == failedValue
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$InvalidAccountBalance<T> implements InvalidAccountBalance<T> {
-  const _$InvalidAccountBalance({required this.failedValue});
-
-  @override
-  final T failedValue;
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.invalidAccountBalance(failedValue: $failedValue)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InvalidAccountBalance<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InvalidAccountBalanceCopyWith<T, _$InvalidAccountBalance<T>>
-      get copyWith =>
-          __$$InvalidAccountBalanceCopyWithImpl<T, _$InvalidAccountBalance<T>>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T failedValue) invalidCuil,
-    required TResult Function() emptyCuil,
-    required TResult Function(T failedValue) invalidName,
-    required TResult Function() emptyName,
-    required TResult Function(T failedValue) shortName,
-    required TResult Function(T failedValue) invalidEmail,
-    required TResult Function() emptyEmail,
-    required TResult Function(T failedValue) shortPassword,
-    required TResult Function() emptyPassword,
-    required TResult Function() emptyToken,
-    required TResult Function() emptyRefreshToken,
-    required TResult Function(T failedValue, int maxLength) exceedingLength,
-    required TResult Function(T failedValue) invalidYear,
-    required TResult Function(T failedValue) invalidVehicleType,
-    required TResult Function() invalidDate,
-    required TResult Function() invalidTime,
-    required TResult Function(T failedValue) invalidPositionValue,
-    required TResult Function(T failedValue) invalidCardBrand,
-    required TResult Function(T failedValue) invalidExpiryMonth,
-    required TResult Function(T failedValue) invalidExpiryYear,
-    required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
-    required TResult Function() empty,
-  }) {
-    return invalidAccountBalance(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(T failedValue)? invalidCuil,
-    TResult? Function()? emptyCuil,
-    TResult? Function(T failedValue)? invalidName,
-    TResult? Function()? emptyName,
-    TResult? Function(T failedValue)? shortName,
-    TResult? Function(T failedValue)? invalidEmail,
-    TResult? Function()? emptyEmail,
-    TResult? Function(T failedValue)? shortPassword,
-    TResult? Function()? emptyPassword,
-    TResult? Function()? emptyToken,
-    TResult? Function()? emptyRefreshToken,
-    TResult? Function(T failedValue, int maxLength)? exceedingLength,
-    TResult? Function(T failedValue)? invalidYear,
-    TResult? Function(T failedValue)? invalidVehicleType,
-    TResult? Function()? invalidDate,
-    TResult? Function()? invalidTime,
-    TResult? Function(T failedValue)? invalidPositionValue,
-    TResult? Function(T failedValue)? invalidCardBrand,
-    TResult? Function(T failedValue)? invalidExpiryMonth,
-    TResult? Function(T failedValue)? invalidExpiryYear,
-    TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
-    TResult? Function()? empty,
-  }) {
-    return invalidAccountBalance?.call(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T failedValue)? invalidCuil,
-    TResult Function()? emptyCuil,
-    TResult Function(T failedValue)? invalidName,
-    TResult Function()? emptyName,
-    TResult Function(T failedValue)? shortName,
-    TResult Function(T failedValue)? invalidEmail,
-    TResult Function()? emptyEmail,
-    TResult Function(T failedValue)? shortPassword,
-    TResult Function()? emptyPassword,
-    TResult Function()? emptyToken,
-    TResult Function()? emptyRefreshToken,
-    TResult Function(T failedValue, int maxLength)? exceedingLength,
-    TResult Function(T failedValue)? invalidYear,
-    TResult Function(T failedValue)? invalidVehicleType,
-    TResult Function()? invalidDate,
-    TResult Function()? invalidTime,
-    TResult Function(T failedValue)? invalidPositionValue,
-    TResult Function(T failedValue)? invalidCardBrand,
-    TResult Function(T failedValue)? invalidExpiryMonth,
-    TResult Function(T failedValue)? invalidExpiryYear,
-    TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
-    TResult Function()? empty,
-    required TResult orElse(),
-  }) {
-    if (invalidAccountBalance != null) {
-      return invalidAccountBalance(failedValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InvaliCuil<T> value) invalidCuil,
-    required TResult Function(EmptyCuil<T> value) emptyCuil,
-    required TResult Function(InvalidName<T> value) invalidName,
-    required TResult Function(EmptyName<T> value) emptyName,
-    required TResult Function(ShortName<T> value) shortName,
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(EmptyEmail<T> value) emptyEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
-    required TResult Function(EmptyPassword<T> value) emptyPassword,
-    required TResult Function(EmptyToken<T> value) emptyToken,
-    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
-    required TResult Function(ExceedingLength<T> value) exceedingLength,
-    required TResult Function(InvalidYear<T> value) invalidYear,
-    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
-    required TResult Function(InvalidDate<T> value) invalidDate,
-    required TResult Function(InvalidTime<T> value) invalidTime,
-    required TResult Function(InvalidPosition<T> value) invalidPositionValue,
-    required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
-    required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
-    required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
-    required TResult Function(InvalidLastFourDigits<T> value)
-        invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
-    required TResult Function(Empty<T> value) empty,
-  }) {
-    return invalidAccountBalance(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InvaliCuil<T> value)? invalidCuil,
-    TResult? Function(EmptyCuil<T> value)? emptyCuil,
-    TResult? Function(InvalidName<T> value)? invalidName,
-    TResult? Function(EmptyName<T> value)? emptyName,
-    TResult? Function(ShortName<T> value)? shortName,
-    TResult? Function(InvalidEmail<T> value)? invalidEmail,
-    TResult? Function(EmptyEmail<T> value)? emptyEmail,
-    TResult? Function(ShortPassword<T> value)? shortPassword,
-    TResult? Function(EmptyPassword<T> value)? emptyPassword,
-    TResult? Function(EmptyToken<T> value)? emptyToken,
-    TResult? Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
-    TResult? Function(ExceedingLength<T> value)? exceedingLength,
-    TResult? Function(InvalidYear<T> value)? invalidYear,
-    TResult? Function(InvalidVehicleType<T> value)? invalidVehicleType,
-    TResult? Function(InvalidDate<T> value)? invalidDate,
-    TResult? Function(InvalidTime<T> value)? invalidTime,
-    TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
-    TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
-    TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
-    TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
-    TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
-    TResult? Function(Empty<T> value)? empty,
-  }) {
-    return invalidAccountBalance?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvaliCuil<T> value)? invalidCuil,
-    TResult Function(EmptyCuil<T> value)? emptyCuil,
-    TResult Function(InvalidName<T> value)? invalidName,
-    TResult Function(EmptyName<T> value)? emptyName,
-    TResult Function(ShortName<T> value)? shortName,
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(EmptyEmail<T> value)? emptyEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
-    TResult Function(EmptyPassword<T> value)? emptyPassword,
-    TResult Function(EmptyToken<T> value)? emptyToken,
-    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
-    TResult Function(ExceedingLength<T> value)? exceedingLength,
-    TResult Function(InvalidYear<T> value)? invalidYear,
-    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
-    TResult Function(InvalidDate<T> value)? invalidDate,
-    TResult Function(InvalidTime<T> value)? invalidTime,
-    TResult Function(InvalidPosition<T> value)? invalidPositionValue,
-    TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
-    TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
-    TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
-    TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
-    TResult Function(Empty<T> value)? empty,
-    required TResult orElse(),
-  }) {
-    if (invalidAccountBalance != null) {
-      return invalidAccountBalance(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidAccountBalance<T> implements ValueFailure<T> {
-  const factory InvalidAccountBalance({required final T failedValue}) =
-      _$InvalidAccountBalance<T>;
-
-  T get failedValue;
-  @JsonKey(ignore: true)
-  _$$InvalidAccountBalanceCopyWith<T, _$InvalidAccountBalance<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -5812,7 +5392,6 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
     required TResult Function(T failedValue) invalidLastFourDigits,
-    required TResult Function(T failedValue) invalidAccountBalance,
     required TResult Function() empty,
   }) {
     return empty();
@@ -5842,7 +5421,6 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
     TResult? Function(T failedValue)? invalidLastFourDigits,
-    TResult? Function(T failedValue)? invalidAccountBalance,
     TResult? Function()? empty,
   }) {
     return empty?.call();
@@ -5872,7 +5450,6 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
     TResult Function(T failedValue)? invalidLastFourDigits,
-    TResult Function(T failedValue)? invalidAccountBalance,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
@@ -5907,8 +5484,6 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
     required TResult Function(InvalidLastFourDigits<T> value)
         invalidLastFourDigits,
-    required TResult Function(InvalidAccountBalance<T> value)
-        invalidAccountBalance,
     required TResult Function(Empty<T> value) empty,
   }) {
     return empty(this);
@@ -5938,7 +5513,6 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult? Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return empty?.call(this);
@@ -5968,7 +5542,6 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
     TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
-    TResult Function(InvalidAccountBalance<T> value)? invalidAccountBalance,
     TResult Function(Empty<T> value)? empty,
     required TResult orElse(),
   }) {
