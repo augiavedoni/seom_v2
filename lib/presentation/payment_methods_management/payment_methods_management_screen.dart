@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seom_v2/application/payment_methods/payment_method_actor/payment_method_actor_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/injection.dart';
+import 'package:seom_v2/presentation/payment_methods_management/widgets/add_payment_method_button.dart';
+import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_methods_overview.dart';
 
 class PaymentMethodsManagementScreen extends StatelessWidget {
   const PaymentMethodsManagementScreen({super.key});
@@ -18,7 +21,7 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: Text(
-                "Medios de pago",
+                'Medios de pago',
                 style: theme.textTheme.headline5!.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -32,22 +35,30 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
-      body: BlocProvider(
-        create: (_) => getIt<PaymentMethodWatcherBloc>()
-          ..add(
-            const PaymentMethodWatcherEvent.getAllStarted(),
+      floatingActionButton: const AddPaymentMethodButton(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => getIt<PaymentMethodWatcherBloc>()
+              ..add(
+                const PaymentMethodWatcherEvent.getAllStarted(),
+              ),
           ),
-        child:
-            BlocListener<PaymentMethodWatcherBloc, PaymentMethodWatcherState>(
+          BlocProvider(
+            create: (_) => getIt<PaymentMethodActorBloc>(),
+          ),
+        ],
+        child: BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
           listenWhen: (previous, current) => previous != current,
-          listener: (context, state) {
-            state.maybeMap(
-              loadSuccess: (state) => print(state.paymentMethods.toString()),
-              loadFailure: (state) => print(state.paymentMethodFailure),
-              orElse: () {},
-            );
-          },
-          child: const SizedBox(),
+          listener: (context, state) => state.maybeMap(
+            deleteFailure: (failure) {
+              // TODO(augiavedoni): implement failure handling
+              print(failure);
+              return null;
+            },
+            orElse: () => null,
+          ),
+          child: const PaymentMethodsOverview(),
         ),
       ),
     );

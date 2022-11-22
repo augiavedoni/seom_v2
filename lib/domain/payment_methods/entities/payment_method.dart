@@ -62,7 +62,7 @@ abstract class PaymentMethod implements _$PaymentMethod {
             (failure) => some(failure),
             (_) => none(),
           );
-    } else {
+    } else if (this is DebitCard) {
       final debitCard = this as DebitCard;
 
       return debitCard.type.failureOrUnit
@@ -81,6 +81,15 @@ abstract class PaymentMethod implements _$PaymentMethod {
           .andThen(
             debitCard.lastFourDigits.failureOrUnit,
           )
+          .fold(
+            (failure) => some(failure),
+            (_) => none(),
+          );
+    } else {
+      final accountBalance = this as AccountBalance;
+
+      return accountBalance.type.failureOrUnit
+          .andThen(accountBalance.balance.failureOrUnit)
           .fold(
             (failure) => some(failure),
             (_) => none(),

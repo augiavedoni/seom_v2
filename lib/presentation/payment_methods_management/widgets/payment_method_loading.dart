@@ -1,7 +1,9 @@
-part of 'vehicles_carousel.dart';
+import 'package:flutter/material.dart';
+import 'package:seom_v2/presentation/core/theme/app_colors.dart';
+import 'package:shimmer/shimmer.dart';
 
-class _LoadingInProgressCard extends StatelessWidget {
-  const _LoadingInProgressCard({Key? key}) : super(key: key);
+class PaymentMethodsLoading extends StatelessWidget {
+  const PaymentMethodsLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +23,14 @@ class _LoadingInProgressCard extends StatelessWidget {
           padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 3,
+          itemCount: 1,
           itemBuilder: (_, __) => Card(
             margin: EdgeInsets.zero,
             elevation: 1.0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const SizedBox(height: 40),
+            child: const SizedBox(height: 50),
           ),
           separatorBuilder: (_, __) => const SizedBox(height: 10),
         ),
