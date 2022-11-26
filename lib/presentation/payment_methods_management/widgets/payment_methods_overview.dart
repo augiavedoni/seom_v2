@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_method_loading.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_methods_list.dart';
+import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_methods_load_failure_card.dart';
 
 class PaymentMethodsOverview extends StatelessWidget {
   const PaymentMethodsOverview({
@@ -17,8 +18,10 @@ class PaymentMethodsOverview extends StatelessWidget {
         loadSuccess: (state) => PaymentMethodsList(
           paymentMethods: state.paymentMethods,
         ),
-        // TODO(augiavedoni): implement loading failure handling
-        /* loadFailure: (state) => print(state.paymentMethodFailure), */
+        loadFailure: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
+          value: context.read<PaymentMethodWatcherBloc>(),
+          child: const PaymentMethodsLoadFailureCard(),
+        ),
         orElse: () => const SizedBox(),
       ),
     );

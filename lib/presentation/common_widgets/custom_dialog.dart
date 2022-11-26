@@ -56,14 +56,15 @@ class CustomDialog extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 Text(
                   description,
-                  textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyText2!.copyWith(
                         color: Colors.grey[700],
                       ),
+                  textAlign: TextAlign.center,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -79,9 +80,6 @@ class CustomDialog extends StatelessWidget {
                       onPressed: () => mainButtonFunctionality(),
                       child: Text(
                         mainButtonText,
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                              color: const Color(0XFF22A45D),
-                            ),
                       ),
                     ),
                   ],

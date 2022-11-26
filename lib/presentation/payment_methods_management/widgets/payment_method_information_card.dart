@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_actor/payment_method_actor_bloc.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
+import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 
 class PaymentMethodInformationCard extends StatelessWidget {
@@ -148,11 +150,28 @@ class PaymentMethodInformationCard extends StatelessWidget {
             Icons.delete_outline_rounded,
             color: Colors.white,
           ),
-          onPressed: () {
-            // TODO(augiavedoni): add Dialog to confirm that the user wants to delete the payment method.
-            context.read<PaymentMethodActorBloc>().add(
-                  PaymentMethodActorEvent.delete(paymentMethod),
-                );
+          onPressed: () async {
+            final paymentMethodActorBloc =
+                context.read<PaymentMethodActorBloc>();
+
+            return await showDialog(
+              context: context,
+              builder: (_) => BlocProvider<PaymentMethodActorBloc>.value(
+                value: paymentMethodActorBloc,
+                child: CustomDialog(
+                  dialogStatus: DialogStatus.warning,
+                  title: '¿Estás seguro que querés borrar este medio de pago?',
+                  description: 'Esta acción no es reversible',
+                  mainButtonText: 'Borrar',
+                  mainButtonFunctionality: () =>
+                      context.read<PaymentMethodActorBloc>().add(
+                            PaymentMethodActorEvent.delete(paymentMethod),
+                          ),
+                  secondaryButtonText: 'Cancelar',
+                  secondaryButtonFunctionality: () => context.router.pop(),
+                ),
+              ),
+            );
           },
         ),
       );
