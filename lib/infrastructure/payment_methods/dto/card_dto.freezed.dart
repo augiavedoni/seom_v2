@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'debit_card_dto.dart';
+part of 'card_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-DebitCardDto _$DebitCardDtoFromJson(Map<String, dynamic> json) {
-  return _DebitCardDTO.fromJson(json);
+CardDto _$CardDtoFromJson(Map<String, dynamic> json) {
+  return _CardDTO.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DebitCardDto {
+mixin _$CardDto {
   String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get brand => throw _privateConstructorUsedError;
@@ -32,15 +32,13 @@ mixin _$DebitCardDto {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DebitCardDtoCopyWith<DebitCardDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CardDtoCopyWith<CardDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DebitCardDtoCopyWith<$Res> {
-  factory $DebitCardDtoCopyWith(
-          DebitCardDto value, $Res Function(DebitCardDto) then) =
-      _$DebitCardDtoCopyWithImpl<$Res, DebitCardDto>;
+abstract class $CardDtoCopyWith<$Res> {
+  factory $CardDtoCopyWith(CardDto value, $Res Function(CardDto) then) =
+      _$CardDtoCopyWithImpl<$Res, CardDto>;
   @useResult
   $Res call(
       {String id,
@@ -52,9 +50,9 @@ abstract class $DebitCardDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DebitCardDtoCopyWithImpl<$Res, $Val extends DebitCardDto>
-    implements $DebitCardDtoCopyWith<$Res> {
-  _$DebitCardDtoCopyWithImpl(this._value, this._then);
+class _$CardDtoCopyWithImpl<$Res, $Val extends CardDto>
+    implements $CardDtoCopyWith<$Res> {
+  _$CardDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -101,11 +99,10 @@ class _$DebitCardDtoCopyWithImpl<$Res, $Val extends DebitCardDto>
 }
 
 /// @nodoc
-abstract class _$$_DebitCardDTOCopyWith<$Res>
-    implements $DebitCardDtoCopyWith<$Res> {
-  factory _$$_DebitCardDTOCopyWith(
-          _$_DebitCardDTO value, $Res Function(_$_DebitCardDTO) then) =
-      __$$_DebitCardDTOCopyWithImpl<$Res>;
+abstract class _$$_CardDTOCopyWith<$Res> implements $CardDtoCopyWith<$Res> {
+  factory _$$_CardDTOCopyWith(
+          _$_CardDTO value, $Res Function(_$_CardDTO) then) =
+      __$$_CardDTOCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -118,11 +115,10 @@ abstract class _$$_DebitCardDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DebitCardDTOCopyWithImpl<$Res>
-    extends _$DebitCardDtoCopyWithImpl<$Res, _$_DebitCardDTO>
-    implements _$$_DebitCardDTOCopyWith<$Res> {
-  __$$_DebitCardDTOCopyWithImpl(
-      _$_DebitCardDTO _value, $Res Function(_$_DebitCardDTO) _then)
+class __$$_CardDTOCopyWithImpl<$Res>
+    extends _$CardDtoCopyWithImpl<$Res, _$_CardDTO>
+    implements _$$_CardDTOCopyWith<$Res> {
+  __$$_CardDTOCopyWithImpl(_$_CardDTO _value, $Res Function(_$_CardDTO) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -135,7 +131,7 @@ class __$$_DebitCardDTOCopyWithImpl<$Res>
     Object? expiryYear = null,
     Object? lastFourDigits = null,
   }) {
-    return _then(_$_DebitCardDTO(
+    return _then(_$_CardDTO(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -167,8 +163,8 @@ class __$$_DebitCardDTOCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_DebitCardDTO extends _DebitCardDTO {
-  const _$_DebitCardDTO(
+class _$_CardDTO extends _CardDTO {
+  const _$_CardDTO(
       {required this.id,
       required this.type,
       required this.brand,
@@ -177,8 +173,8 @@ class _$_DebitCardDTO extends _DebitCardDTO {
       @JsonKey(name: 'last_four_digits') required this.lastFourDigits})
       : super._();
 
-  factory _$_DebitCardDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_DebitCardDTOFromJson(json);
+  factory _$_CardDTO.fromJson(Map<String, dynamic> json) =>
+      _$$_CardDTOFromJson(json);
 
   @override
   final String id;
@@ -198,14 +194,14 @@ class _$_DebitCardDTO extends _DebitCardDTO {
 
   @override
   String toString() {
-    return 'DebitCardDto(id: $id, type: $type, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
+    return 'CardDto(id: $id, type: $type, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DebitCardDTO &&
+            other is _$_CardDTO &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.brand, brand) || other.brand == brand) &&
@@ -225,19 +221,19 @@ class _$_DebitCardDTO extends _DebitCardDTO {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DebitCardDTOCopyWith<_$_DebitCardDTO> get copyWith =>
-      __$$_DebitCardDTOCopyWithImpl<_$_DebitCardDTO>(this, _$identity);
+  _$$_CardDTOCopyWith<_$_CardDTO> get copyWith =>
+      __$$_CardDTOCopyWithImpl<_$_CardDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DebitCardDTOToJson(
+    return _$$_CardDTOToJson(
       this,
     );
   }
 }
 
-abstract class _DebitCardDTO extends DebitCardDto {
-  const factory _DebitCardDTO(
+abstract class _CardDTO extends CardDto {
+  const factory _CardDTO(
       {required final String id,
       required final String type,
       required final String brand,
@@ -246,11 +242,10 @@ abstract class _DebitCardDTO extends DebitCardDto {
       @JsonKey(name: 'expiry_year')
           required final int expiryYear,
       @JsonKey(name: 'last_four_digits')
-          required final String lastFourDigits}) = _$_DebitCardDTO;
-  const _DebitCardDTO._() : super._();
+          required final String lastFourDigits}) = _$_CardDTO;
+  const _CardDTO._() : super._();
 
-  factory _DebitCardDTO.fromJson(Map<String, dynamic> json) =
-      _$_DebitCardDTO.fromJson;
+  factory _CardDTO.fromJson(Map<String, dynamic> json) = _$_CardDTO.fromJson;
 
   @override
   String get id;
@@ -269,6 +264,6 @@ abstract class _DebitCardDTO extends DebitCardDto {
   String get lastFourDigits;
   @override
   @JsonKey(ignore: true)
-  _$$_DebitCardDTOCopyWith<_$_DebitCardDTO> get copyWith =>
+  _$$_CardDTOCopyWith<_$_CardDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

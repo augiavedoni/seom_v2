@@ -44,94 +44,38 @@ class PaymentMethodFormBloc
             saveFailureOrSucessOption: none(),
           ),
         ),
-        cardNumberChanged: (event) {
-          late final PaymentMethodFormState newState;
-          final paymentMethod = state.paymentMethod;
-
-          if (paymentMethod is CreditCard) {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod).copyWith(
-                cardNumber: CardNumber(event.cardNumber),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          } else {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod as DebitCard).copyWith(
-                cardNumber: CardNumber(event.cardNumber),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          }
-
-          emit(newState);
-        },
-        securityCodeChanged: (event) {
-          late final PaymentMethodFormState newState;
-          final paymentMethod = state.paymentMethod;
-
-          if (paymentMethod is CreditCard) {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod).copyWith(
-                securityCode: SecurityCode(event.securityCode),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          } else {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod as DebitCard).copyWith(
-                securityCode: SecurityCode(event.securityCode),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          }
-
-          emit(newState);
-        },
-        expiryMonthChanged: (event) {
-          late final PaymentMethodFormState newState;
-          final paymentMethod = state.paymentMethod;
-
-          if (paymentMethod is CreditCard) {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod).copyWith(
-                expiryMonth: ExpiryMonth(event.expiryMonth),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          } else {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod as DebitCard).copyWith(
-                expiryMonth: ExpiryMonth(event.expiryMonth),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          }
-
-          emit(newState);
-        },
-        expiryYearChanged: (event) {
-          late final PaymentMethodFormState newState;
-          final paymentMethod = state.paymentMethod;
-
-          if (paymentMethod is CreditCard) {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod).copyWith(
-                expiryYear: ExpiryYear(event.expiryYear),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          } else {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod as DebitCard).copyWith(
-                expiryYear: ExpiryYear(event.expiryYear),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          }
-
-          emit(newState);
-        },
+        cardNumberChanged: (event) => emit(
+          state.copyWith(
+            paymentMethod: (state.paymentMethod as Card).copyWith(
+              cardNumber: CardNumber(event.cardNumber),
+            ),
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
+        securityCodeChanged: (event) => emit(
+          state.copyWith(
+            paymentMethod: (state.paymentMethod as Card).copyWith(
+              securityCode: SecurityCode(event.securityCode),
+            ),
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
+        expiryMonthChanged: (event) => emit(
+          state.copyWith(
+            paymentMethod: (state.paymentMethod as Card).copyWith(
+              expiryMonth: ExpiryMonth(event.expiryMonth),
+            ),
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
+        expiryYearChanged: (event) => emit(
+          state.copyWith(
+            paymentMethod: (state.paymentMethod as Card).copyWith(
+              expiryYear: ExpiryYear(event.expiryYear),
+            ),
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
         saved: (event) async {
           Either<PaymentMethodFailure, Unit>? failureOrSuccess;
 

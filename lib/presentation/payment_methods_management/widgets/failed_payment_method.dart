@@ -67,8 +67,7 @@ class FailedPaymentMethodCard extends StatelessWidget {
   }
 
   String _getPaymentMethodKeyValue() => paymentMethod.map(
-        creditCard: (creditCard) => creditCard.id.getOrCrash(),
-        debitCard: (debitCard) => debitCard.id.getOrCrash(),
+        card: (card) => card.id.getOrCrash(),
         accountBalance: (_) => 'account-balance',
       );
 }

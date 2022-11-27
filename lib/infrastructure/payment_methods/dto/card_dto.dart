@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
@@ -9,36 +7,36 @@ import 'package:seom_v2/domain/payment_methods/value_objects/id.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/last_four_digits.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/type.dart';
 
-part 'credit_card_dto.freezed.dart';
-part 'credit_card_dto.g.dart';
+part 'card_dto.freezed.dart';
+part 'card_dto.g.dart';
 
 @freezed
-abstract class CreditCardDto implements _$CreditCardDto {
-  const CreditCardDto._();
+abstract class CardDto implements _$CardDto {
+  const CardDto._();
 
   @JsonSerializable(explicitToJson: true)
-  const factory CreditCardDto({
+  const factory CardDto({
     required String id,
     required String type,
     required String brand,
     @JsonKey(name: 'expiry_month') required int expiryMonth,
     @JsonKey(name: 'expiry_year') required int expiryYear,
     @JsonKey(name: 'last_four_digits') required String lastFourDigits,
-  }) = _CreditCardDTO;
+  }) = _CardDTO;
 
-  factory CreditCardDto.fromDomain(CreditCard creditCard) {
-    return CreditCardDto(
-      id: creditCard.id.getOrCrash(),
-      type: creditCard.type.getOrCrash(),
-      brand: creditCard.brand.getOrCrash(),
-      expiryMonth: creditCard.expiryMonth.getOrCrash(),
-      expiryYear: creditCard.expiryYear.getOrCrash(),
-      lastFourDigits: creditCard.lastFourDigits.getOrCrash(),
+  factory CardDto.fromDomain(Card card) {
+    return CardDto(
+      id: card.id.getOrCrash(),
+      type: card.type.getOrCrash(),
+      brand: card.brand.getOrCrash(),
+      expiryMonth: card.expiryMonth.getOrCrash(),
+      expiryYear: card.expiryYear.getOrCrash(),
+      lastFourDigits: card.lastFourDigits.getOrCrash(),
     );
   }
 
   PaymentMethod toDomain() {
-    return PaymentMethod.creditCard(
+    return PaymentMethod.card(
       id: Id(id),
       type: Type(type),
       brand: Brand(brand),
@@ -48,6 +46,6 @@ abstract class CreditCardDto implements _$CreditCardDto {
     );
   }
 
-  factory CreditCardDto.fromJson(Map<String, dynamic> json) =>
-      _$CreditCardDtoFromJson(json);
+  factory CardDto.fromJson(Map<String, dynamic> json) =>
+      _$CardDtoFromJson(json);
 }

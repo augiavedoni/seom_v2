@@ -63,21 +63,13 @@ class PaymentMethodInformationCard extends StatelessWidget {
   }
 
   String _getPaymentMethodKeyValue() => paymentMethod.map(
-        creditCard: (creditCard) => creditCard.id.getOrCrash(),
-        debitCard: (debitCard) => debitCard.id.getOrCrash(),
+        card: (card) => card.id.getOrCrash(),
         accountBalance: (_) => 'account-balance',
       );
 
   Widget _getPaymentMethodLogo() => paymentMethod.map(
-        creditCard: (creditCard) {
-          final isVisa = creditCard.brand.getOrCrash() == "visa";
-          final assetPath =
-              'lib/presentation/core/assets/logos/${isVisa ? "visa" : "mastercard"}.svg';
-
-          return SvgPicture.asset(assetPath);
-        },
-        debitCard: (debitCard) {
-          final isVisa = debitCard.brand.getOrCrash() == "visa";
+        card: (card) {
+          final isVisa = card.brand.getOrCrash() == "visa";
           final assetPath =
               'lib/presentation/core/assets/logos/${isVisa ? "visa" : "mastercard"}.svg';
 
@@ -87,15 +79,8 @@ class PaymentMethodInformationCard extends StatelessWidget {
       );
 
   Widget _getPaymentMethodTitle(ThemeData theme) => paymentMethod.map(
-        creditCard: (creditCard) => Text(
-          '**** **** **** ${creditCard.lastFourDigits.getOrCrash()}',
-          style: theme.textTheme.headlineSmall!.copyWith(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        debitCard: (debitCard) => Text(
-          '**** **** **** ${debitCard.lastFourDigits.getOrCrash()}',
+        card: (card) => Text(
+          '**** **** **** ${card.lastFourDigits.getOrCrash()}',
           style: theme.textTheme.headlineSmall!.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -127,16 +112,13 @@ class PaymentMethodInformationCard extends StatelessWidget {
       );
 
   Widget _getPaymentMethodSubtitle(ThemeData theme) => paymentMethod.map(
-        creditCard: (_) => Text(
-          'Crédito',
-          style: theme.textTheme.bodyText2!.copyWith(
-            color: Colors.white,
-          ),
-        ),
-        debitCard: (_) => Text(
-          'Débito',
-          style: theme.textTheme.bodyText2!.copyWith(
-            color: Colors.white,
+        card: (card) => card.type.value.fold(
+          (_) => const SizedBox(),
+          (cardType) => Text(
+            cardType == 'credit' ? 'Crédito' : 'Débito',
+            style: theme.textTheme.bodyText2!.copyWith(
+              color: Colors.white,
+            ),
           ),
         ),
         accountBalance: (_) => const SizedBox(),

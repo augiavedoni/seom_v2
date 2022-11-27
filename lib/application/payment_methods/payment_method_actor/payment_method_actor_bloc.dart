@@ -23,15 +23,9 @@ class PaymentMethodActorBloc
       (event, emit) async => await event.map<FutureOr<void>>(
         delete: (event) async {
           emit(const PaymentMethodActorState.actionInProgress());
-          late final String paymentMethodId;
 
-          if (event.paymentMethod is CreditCard) {
-            paymentMethodId =
-                (event.paymentMethod as CreditCard).id.getOrCrash();
-          } else {
-            paymentMethodId =
-                (event.paymentMethod as DebitCard).id.getOrCrash();
-          }
+          final String paymentMethodId =
+              (event.paymentMethod as Card).id.getOrCrash();
 
           final failureOrSuccess = await _paymentMethodRepository.delete(
             paymentMethodId: paymentMethodId,

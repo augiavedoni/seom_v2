@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'credit_card_dto.dart';
+part of 'card_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CreditCardDTO _$$_CreditCardDTOFromJson(Map<String, dynamic> json) =>
-    _$_CreditCardDTO(
+_$_CardDTO _$$_CardDTOFromJson(Map<String, dynamic> json) => _$_CardDTO(
       id: json['id'] as String,
       type: json['type'] as String,
       brand: json['brand'] as String,
@@ -16,7 +15,7 @@ _$_CreditCardDTO _$$_CreditCardDTOFromJson(Map<String, dynamic> json) =>
       lastFourDigits: json['last_four_digits'] as String,
     );
 
-Map<String, dynamic> _$$_CreditCardDTOToJson(_$_CreditCardDTO instance) =>
+Map<String, dynamic> _$$_CardDTOToJson(_$_CardDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': instance.type,

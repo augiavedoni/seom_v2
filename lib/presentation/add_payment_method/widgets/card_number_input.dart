@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
-import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
+import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart'
+    as payment_method;
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 
 class CardNumberInput extends HookWidget {
@@ -17,14 +18,11 @@ class CardNumberInput extends HookWidget {
       listenWhen: (previous, current) =>
           previous.isEditing != current.isEditing,
       listener: (context, state) {
-        if (state.paymentMethod is CreditCard) {
-          textEditingController.text =
-              (state.paymentMethod as CreditCard).cardNumber?.getOrCrash() ??
-                  "";
-        } else {
-          textEditingController.text =
-              (state.paymentMethod as DebitCard).cardNumber?.getOrCrash() ?? "";
-        }
+        textEditingController.text =
+            (state.paymentMethod as payment_method.Card)
+                    .cardNumber
+                    ?.getOrCrash() ??
+                "";
       },
       child: TextFormField(
         controller: textEditingController,
@@ -69,24 +67,13 @@ class CardNumberInput extends HookWidget {
               PaymentMethodFormEvent.cardNumberChanged(value),
             ),
         validator: (_) {
-          CreditCard? creditCard;
-          DebitCard? debitCard;
+          final payment_method.Card? card = context
+              .read<PaymentMethodFormBloc>()
+              .state
+              .paymentMethod as payment_method.Card;
 
-          if (context.read<PaymentMethodFormBloc>().state.paymentMethod
-              is CreditCard) {
-            creditCard = context
-                .read<PaymentMethodFormBloc>()
-                .state
-                .paymentMethod as CreditCard;
-          } else {
-            debitCard = context
-                .read<PaymentMethodFormBloc>()
-                .state
-                .paymentMethod as DebitCard;
-          }
-
-          if (creditCard != null) {
-            return creditCard.cardNumber?.value.fold(
+          if (card != null) {
+            return card.cardNumber?.value.fold(
               (failure) => failure.maybeMap(
                 empty: (_) => 'No puede estar vacío',
                 invalidCardBrand: (_) => 'El número de tarjeta es inválido',
@@ -95,14 +82,7 @@ class CardNumberInput extends HookWidget {
               (_) => null,
             );
           } else {
-            return debitCard?.cardNumber?.value.fold(
-              (failure) => failure.maybeMap(
-                empty: (_) => 'No puede estar vacío',
-                invalidCardBrand: (_) => 'El número de tarjeta es inválido',
-                orElse: () => null,
-              ),
-              (_) => null,
-            );
+            return null;
           }
         },
       ),

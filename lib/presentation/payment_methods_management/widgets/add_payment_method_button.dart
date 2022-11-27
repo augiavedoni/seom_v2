@@ -31,86 +31,73 @@ class AddPaymentMethodButton extends StatelessWidget {
 
   Future<PaymentMethod?> _showPaymentMethodTypeSelector(
     BuildContext context,
-  ) async {
-    PaymentMethod? paymentMethod;
-
-    Platform.isIOS
-        ? await showCupertinoModalPopup<void>(
-            context: context,
-            builder: (_) => CupertinoActionSheet(
-              title: const Text('Añadir medio de pago'),
-              message: const Text(
-                '¿Qué tipo de medio de pago deseas añadir?',
-              ),
-              actions: <CupertinoActionSheetAction>[
-                CupertinoActionSheetAction(
-                  onPressed: () {
-                    paymentMethod = PaymentMethod.emptyDebitCard();
-
-                    context.router.pop();
-                  },
-                  child: const Text('Tarjeta de débito'),
+  ) async =>
+      Platform.isIOS
+          ? await showCupertinoModalPopup<PaymentMethod?>(
+              context: context,
+              builder: (_) => CupertinoActionSheet(
+                title: const Text('Añadir medio de pago'),
+                message: const Text(
+                  '¿Qué tipo de medio de pago deseas añadir?',
                 ),
-                CupertinoActionSheetAction(
-                  onPressed: () {
-                    paymentMethod = PaymentMethod.emptyCreditCard();
-
-                    context.router.pop();
-                  },
-                  child: const Text('Tarjeta de crédito'),
-                ),
-              ],
-              cancelButton: CupertinoActionSheetAction(
-                onPressed: () => context.router.pop(),
-                child: const Text('Volver'),
-              ),
-            ),
-          )
-        : await showDialog(
-            context: context,
-            builder: (_) => AlertDialog(
-              title: const Text(
-                'Añadir medio de pago',
-              ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const Text(
-                    '¿Qué tipo de medio de pago deseas añadir?',
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      paymentMethod = PaymentMethod.emptyDebitCard();
-
-                      context.router.pop();
-                    },
+                actions: <CupertinoActionSheetAction>[
+                  CupertinoActionSheetAction(
+                    onPressed: () => context.router.pop(
+                      PaymentMethod.emptyCard(),
+                    ),
                     child: const Text('Tarjeta de débito'),
                   ),
-                  TextButton(
-                    child: const Text('Tarjeta de crédito'),
-                    onPressed: () {
-                      paymentMethod = PaymentMethod.emptyCreditCard();
-
-                      context.router.pop();
-                    },
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  TextButton(
-                    child: const Text(
-                      "Volver",
-                      style: TextStyle(
-                        color: grey,
-                      ),
+                  CupertinoActionSheetAction(
+                    onPressed: () => context.router.pop(
+                      PaymentMethod.emptyCard(),
                     ),
-                    onPressed: () => context.router.pop(),
+                    child: const Text('Tarjeta de crédito'),
                   ),
                 ],
+                cancelButton: CupertinoActionSheetAction(
+                  onPressed: () => context.router.pop(),
+                  child: const Text('Volver'),
+                ),
               ),
-            ),
-          );
-
-    return paymentMethod;
-  }
+            )
+          : await showDialog<PaymentMethod?>(
+              context: context,
+              builder: (_) => AlertDialog(
+                title: const Text(
+                  'Añadir medio de pago',
+                ),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const Text(
+                      '¿Qué tipo de medio de pago deseas añadir?',
+                    ),
+                    TextButton(
+                      onPressed: () => context.router.pop(
+                        PaymentMethod.emptyCard(),
+                      ),
+                      child: const Text('Tarjeta de débito'),
+                    ),
+                    TextButton(
+                      child: const Text('Tarjeta de crédito'),
+                      onPressed: () => context.router.pop(
+                        PaymentMethod.emptyCard(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextButton(
+                      child: const Text(
+                        "Volver",
+                        style: TextStyle(
+                          color: grey,
+                        ),
+                      ),
+                      onPressed: () => context.router.pop(),
+                    ),
+                  ],
+                ),
+              ),
+            );
 }

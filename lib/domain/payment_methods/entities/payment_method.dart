@@ -17,7 +17,7 @@ part 'payment_method.freezed.dart';
 abstract class PaymentMethod implements _$PaymentMethod {
   const PaymentMethod._();
 
-  const factory PaymentMethod.creditCard({
+  const factory PaymentMethod.card({
     required Type type,
     required Id id,
     CardNumber? cardNumber,
@@ -26,31 +26,13 @@ abstract class PaymentMethod implements _$PaymentMethod {
     required ExpiryMonth expiryMonth,
     required ExpiryYear expiryYear,
     required LastFourDigits lastFourDigits,
-  }) = CreditCard;
+  }) = Card;
 
-  factory PaymentMethod.emptyCreditCard() => PaymentMethod.creditCard(
+  factory PaymentMethod.emptyCard() => PaymentMethod.card(
         type: Type('credit'),
         id: Id(''),
-        brand: Brand(''),
-        expiryMonth: ExpiryMonth(0),
-        expiryYear: ExpiryYear(0),
-        lastFourDigits: LastFourDigits(''),
-      );
-
-  const factory PaymentMethod.debitCard({
-    required Type type,
-    required Id id,
-    CardNumber? cardNumber,
-    SecurityCode? securityCode,
-    required Brand brand,
-    required ExpiryMonth expiryMonth,
-    required ExpiryYear expiryYear,
-    required LastFourDigits lastFourDigits,
-  }) = DebitCard;
-
-  factory PaymentMethod.emptyDebitCard() => PaymentMethod.debitCard(
-        type: Type('debit'),
-        id: Id(''),
+        cardNumber: CardNumber(''),
+        securityCode: SecurityCode(''),
         brand: Brand(''),
         expiryMonth: ExpiryMonth(0),
         expiryYear: ExpiryYear(0),
@@ -63,47 +45,24 @@ abstract class PaymentMethod implements _$PaymentMethod {
   }) = AccountBalance;
 
   Option<ValueFailure<dynamic>> get failureOption {
-    if (this is CreditCard) {
-      final creditCard = this as CreditCard;
+    if (this is Card) {
+      final card = this as Card;
 
-      return creditCard.type.failureOrUnit
+      return card.type.failureOrUnit
           .andThen(
-            creditCard.id.failureOrUnit,
+            card.id.failureOrUnit,
           )
           .andThen(
-            creditCard.brand.failureOrUnit,
+            card.brand.failureOrUnit,
           )
           .andThen(
-            creditCard.expiryMonth.failureOrUnit,
+            card.expiryMonth.failureOrUnit,
           )
           .andThen(
-            creditCard.expiryYear.failureOrUnit,
+            card.expiryYear.failureOrUnit,
           )
           .andThen(
-            creditCard.lastFourDigits.failureOrUnit,
-          )
-          .fold(
-            (failure) => some(failure),
-            (_) => none(),
-          );
-    } else if (this is DebitCard) {
-      final debitCard = this as DebitCard;
-
-      return debitCard.type.failureOrUnit
-          .andThen(
-            debitCard.id.failureOrUnit,
-          )
-          .andThen(
-            debitCard.brand.failureOrUnit,
-          )
-          .andThen(
-            debitCard.expiryMonth.failureOrUnit,
-          )
-          .andThen(
-            debitCard.expiryYear.failureOrUnit,
-          )
-          .andThen(
-            debitCard.lastFourDigits.failureOrUnit,
+            card.lastFourDigits.failureOrUnit,
           )
           .fold(
             (failure) => some(failure),

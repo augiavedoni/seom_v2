@@ -9,8 +9,7 @@ import 'package:seom_v2/domain/payment_methods/payment_method_failure.dart';
 import 'package:seom_v2/infrastructure/core/http/seom_client.dart';
 import 'package:seom_v2/infrastructure/datasource/user_data_source.dart';
 import 'package:seom_v2/infrastructure/payment_methods/dto/account_balance_dto.dart';
-import 'package:seom_v2/infrastructure/payment_methods/dto/credit_card_dto.dart';
-import 'package:seom_v2/infrastructure/payment_methods/dto/debit_card_dto.dart';
+import 'package:seom_v2/infrastructure/payment_methods/dto/card_dto.dart';
 
 @Injectable(as: IPaymentMethodRepository)
 @lazySingleton
@@ -37,10 +36,9 @@ class PaymentMethodRepository implements IPaymentMethodRepository {
       ok: (response) {
         final List<PaymentMethod> paymentMethods =
             response.map<PaymentMethod>((paymentMethod) {
-          if (paymentMethod["type"] == "credit") {
-            return CreditCardDto.fromJson(paymentMethod).toDomain();
-          } else if (paymentMethod["type"] == "debit") {
-            return DebitCardDto.fromJson(paymentMethod).toDomain();
+          if (paymentMethod["type"] == "credit" ||
+              paymentMethod["type"] == "debit") {
+            return CardDto.fromJson(paymentMethod).toDomain();
           } else {
             return AccountBalanceDto.fromJson(paymentMethod).toDomain();
           }
@@ -59,17 +57,8 @@ class PaymentMethodRepository implements IPaymentMethodRepository {
     required PaymentMethod paymentMethod,
   }) async {
     final SeomUser? seomUser = _userDataSource.user;
-    late final Map<String, dynamic> paymentMethodInformation;
-
-    if (PaymentMethod is CreditCard) {
-      paymentMethodInformation = CreditCardDto.fromDomain(
-        paymentMethod as CreditCard,
-      ).toJson();
-    } else {
-      paymentMethodInformation = DebitCardDto.fromDomain(
-        paymentMethod as DebitCard,
-      ).toJson();
-    }
+    final Map<String, dynamic> paymentMethodInformation =
+        CardDto.fromDomain(paymentMethod as Card).toJson();
 
     paymentMethodInformation.addAll(
       {
