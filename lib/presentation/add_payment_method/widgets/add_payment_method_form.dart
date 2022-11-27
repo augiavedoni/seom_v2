@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
 import 'package:seom_v2/presentation/add_payment_method/widgets/card_number_input.dart';
+import 'package:seom_v2/presentation/add_payment_method/widgets/security_code_input.dart';
 import 'package:seom_v2/presentation/common_widgets/rounded_button.dart';
 
 class AddPaymentMethodForm extends StatelessWidget {
@@ -26,6 +27,10 @@ class AddPaymentMethodForm extends StatelessWidget {
             child: Column(
               children: [
                 const CardNumberInput(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const SecurityCodeInput(),
                 const SizedBox(
                   height: 20,
                 ),

@@ -7,8 +7,8 @@ import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart'
     as payment_method;
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 
-class CardNumberInput extends HookWidget {
-  const CardNumberInput({Key? key}) : super(key: key);
+class SecurityCodeInput extends HookWidget {
+  const SecurityCodeInput({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class CardNumberInput extends HookWidget {
       controller: textEditingController,
       decoration: InputDecoration(
         prefixIcon: const Icon(
-          Icons.credit_card_rounded,
+          Icons.lock_outline_rounded,
           color: Colors.black,
         ),
-        labelText: 'Número de tarjeta',
+        labelText: 'Código de seguridad',
         labelStyle: Theme.of(context).textTheme.bodyText2!.copyWith(
               color: Colors.black,
             ),
@@ -47,14 +47,16 @@ class CardNumberInput extends HookWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         focusColor: green,
+        counterText: '',
       ),
+      maxLength: 3,
       cursorColor: green,
       keyboardType: TextInputType.number,
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
       ],
       onChanged: (value) => context.read<PaymentMethodFormBloc>().add(
-            PaymentMethodFormEvent.cardNumberChanged(value),
+            PaymentMethodFormEvent.securityCodeChanged(value),
           ),
       validator: (_) {
         final payment_method.Card? card = context
@@ -63,10 +65,10 @@ class CardNumberInput extends HookWidget {
             .paymentMethod as payment_method.Card;
 
         if (card != null) {
-          return card.cardNumber?.value.fold(
+          return card.securityCode?.value.fold(
             (failure) => failure.maybeMap(
               empty: (_) => 'No puede estar vacío',
-              invalidCardBrand: (_) => 'El número de tarjeta es inválido',
+              invalidSecurityCode: (_) => 'El código de seguridad es inválido',
               orElse: () => null,
             ),
             (_) => null,
