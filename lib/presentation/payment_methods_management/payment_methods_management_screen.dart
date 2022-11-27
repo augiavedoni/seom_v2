@@ -17,77 +17,77 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Medios de pago',
-                style: theme.textTheme.headline5!.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => getIt<PaymentMethodWatcherBloc>()
+            ..add(
+              const PaymentMethodWatcherEvent.getAllStarted(),
+            ),
+        ),
+        BlocProvider(
+          create: (_) => getIt<PaymentMethodActorBloc>(),
+        ),
+      ],
+      child: MultiBlocListener(
+        listeners: [
+          BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
+            listenWhen: (previous, current) => previous != current,
+            listener: (context, state) => state.maybeMap(
+              deleteFailure: (_) async => showDialog(
+                context: context,
+                builder: (_) => const PaymentMethodDeleteFailureDialog(),
               ),
+              orElse: () => null,
             ),
           ),
-        ],
-        iconTheme: theme.iconTheme.copyWith(color: Colors.black),
-        centerTitle: false,
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
-      backgroundColor: Colors.white,
-      floatingActionButton: const AddPaymentMethodButton(),
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (_) => getIt<PaymentMethodWatcherBloc>()
-              ..add(
-                const PaymentMethodWatcherEvent.getAllStarted(),
-              ),
-          ),
-          BlocProvider(
-            create: (_) => getIt<PaymentMethodActorBloc>(),
-          ),
-        ],
-        child: MultiBlocListener(
-          listeners: [
-            BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
-              listenWhen: (previous, current) => previous != current,
-              listener: (context, state) => state.maybeMap(
-                deleteFailure: (_) async => showDialog(
-                  context: context,
-                  builder: (_) => const PaymentMethodDeleteFailureDialog(),
-                ),
-                orElse: () => null,
-              ),
-            ),
-            BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
-              listenWhen: (previous, current) => previous != current,
-              listener: (context, state) => state.maybeMap(
-                actionInProgress: (_) async {
-                  await context.router.pop();
+          BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
+            listenWhen: (previous, current) => previous != current,
+            listener: (context, state) => state.maybeMap(
+              actionInProgress: (_) async {
+                await context.router.pop();
 
-                  return await showDialog(
-                    barrierDismissible: false,
-                    context: context,
-                    builder: (context) => const LoadingDialog(),
-                  );
-                },
-                deleteSuccess: (_) async => showDialog(
+                return await showDialog(
+                  barrierDismissible: false,
                   context: context,
-                  builder: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
-                    value: context.read<PaymentMethodWatcherBloc>(),
-                    child: const PaymentMethodDeleteSuccessDialog(),
+                  builder: (context) => const LoadingDialog(),
+                );
+              },
+              deleteSuccess: (_) async => showDialog(
+                context: context,
+                builder: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
+                  value: context.read<PaymentMethodWatcherBloc>(),
+                  child: const PaymentMethodDeleteSuccessDialog(),
+                ),
+              ),
+              orElse: () => null,
+            ),
+          ),
+        ],
+        child: Scaffold(
+          appBar: AppBar(
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    'Medios de pago',
+                    style: theme.textTheme.headline5!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-                orElse: () => null,
               ),
-            ),
-          ],
-          child: const PaymentMethodsOverview(),
+            ],
+            iconTheme: theme.iconTheme.copyWith(color: Colors.black),
+            centerTitle: false,
+            elevation: 0,
+            backgroundColor: Colors.white,
+          ),
+          backgroundColor: Colors.white,
+          floatingActionButton: const AddPaymentMethodButton(),
+          body: const PaymentMethodsOverview(),
         ),
       ),
     );

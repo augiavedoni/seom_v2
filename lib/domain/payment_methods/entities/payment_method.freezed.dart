@@ -22,6 +22,8 @@ mixin _$PaymentMethod {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -30,6 +32,8 @@ mixin _$PaymentMethod {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -40,22 +44,50 @@ mixin _$PaymentMethod {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult? Function(Type type, Balance balance)? accountBalance,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
@@ -133,6 +165,8 @@ abstract class _$$CreditCardCopyWith<$Res>
   $Res call(
       {Type type,
       Id id,
+      CardNumber? cardNumber,
+      SecurityCode? securityCode,
       Brand brand,
       ExpiryMonth expiryMonth,
       ExpiryYear expiryYear,
@@ -152,6 +186,8 @@ class __$$CreditCardCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? id = null,
+    Object? cardNumber = freezed,
+    Object? securityCode = freezed,
     Object? brand = null,
     Object? expiryMonth = null,
     Object? expiryYear = null,
@@ -166,6 +202,14 @@ class __$$CreditCardCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as Id,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as CardNumber?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as SecurityCode?,
       brand: null == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
@@ -192,6 +236,8 @@ class _$CreditCard extends CreditCard {
   const _$CreditCard(
       {required this.type,
       required this.id,
+      this.cardNumber,
+      this.securityCode,
       required this.brand,
       required this.expiryMonth,
       required this.expiryYear,
@@ -203,6 +249,10 @@ class _$CreditCard extends CreditCard {
   @override
   final Id id;
   @override
+  final CardNumber? cardNumber;
+  @override
+  final SecurityCode? securityCode;
+  @override
   final Brand brand;
   @override
   final ExpiryMonth expiryMonth;
@@ -213,7 +263,7 @@ class _$CreditCard extends CreditCard {
 
   @override
   String toString() {
-    return 'PaymentMethod.creditCard(type: $type, id: $id, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
+    return 'PaymentMethod.creditCard(type: $type, id: $id, cardNumber: $cardNumber, securityCode: $securityCode, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
   }
 
   @override
@@ -223,6 +273,10 @@ class _$CreditCard extends CreditCard {
             other is _$CreditCard &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.cardNumber, cardNumber) ||
+                other.cardNumber == cardNumber) &&
+            (identical(other.securityCode, securityCode) ||
+                other.securityCode == securityCode) &&
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.expiryMonth, expiryMonth) ||
                 other.expiryMonth == expiryMonth) &&
@@ -233,8 +287,8 @@ class _$CreditCard extends CreditCard {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+  int get hashCode => Object.hash(runtimeType, type, id, cardNumber,
+      securityCode, brand, expiryMonth, expiryYear, lastFourDigits);
 
   @JsonKey(ignore: true)
   @override
@@ -248,6 +302,8 @@ class _$CreditCard extends CreditCard {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -256,6 +312,8 @@ class _$CreditCard extends CreditCard {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -263,39 +321,68 @@ class _$CreditCard extends CreditCard {
         debitCard,
     required TResult Function(Type type, Balance balance) accountBalance,
   }) {
-    return creditCard(type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+    return creditCard(type, id, cardNumber, securityCode, brand, expiryMonth,
+        expiryYear, lastFourDigits);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
-    return creditCard?.call(
-        type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+    return creditCard?.call(type, id, cardNumber, securityCode, brand,
+        expiryMonth, expiryYear, lastFourDigits);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) {
     if (creditCard != null) {
-      return creditCard(
-          type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+      return creditCard(type, id, cardNumber, securityCode, brand, expiryMonth,
+          expiryYear, lastFourDigits);
     }
     return orElse();
   }
@@ -339,6 +426,8 @@ abstract class CreditCard extends PaymentMethod {
   const factory CreditCard(
       {required final Type type,
       required final Id id,
+      final CardNumber? cardNumber,
+      final SecurityCode? securityCode,
       required final Brand brand,
       required final ExpiryMonth expiryMonth,
       required final ExpiryYear expiryYear,
@@ -348,6 +437,8 @@ abstract class CreditCard extends PaymentMethod {
   @override
   Type get type;
   Id get id;
+  CardNumber? get cardNumber;
+  SecurityCode? get securityCode;
   Brand get brand;
   ExpiryMonth get expiryMonth;
   ExpiryYear get expiryYear;
@@ -369,6 +460,8 @@ abstract class _$$DebitCardCopyWith<$Res>
   $Res call(
       {Type type,
       Id id,
+      CardNumber? cardNumber,
+      SecurityCode? securityCode,
       Brand brand,
       ExpiryMonth expiryMonth,
       ExpiryYear expiryYear,
@@ -388,6 +481,8 @@ class __$$DebitCardCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
     Object? id = null,
+    Object? cardNumber = freezed,
+    Object? securityCode = freezed,
     Object? brand = null,
     Object? expiryMonth = null,
     Object? expiryYear = null,
@@ -402,6 +497,14 @@ class __$$DebitCardCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as Id,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as CardNumber?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as SecurityCode?,
       brand: null == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
@@ -428,6 +531,8 @@ class _$DebitCard extends DebitCard {
   const _$DebitCard(
       {required this.type,
       required this.id,
+      this.cardNumber,
+      this.securityCode,
       required this.brand,
       required this.expiryMonth,
       required this.expiryYear,
@@ -439,6 +544,10 @@ class _$DebitCard extends DebitCard {
   @override
   final Id id;
   @override
+  final CardNumber? cardNumber;
+  @override
+  final SecurityCode? securityCode;
+  @override
   final Brand brand;
   @override
   final ExpiryMonth expiryMonth;
@@ -449,7 +558,7 @@ class _$DebitCard extends DebitCard {
 
   @override
   String toString() {
-    return 'PaymentMethod.debitCard(type: $type, id: $id, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
+    return 'PaymentMethod.debitCard(type: $type, id: $id, cardNumber: $cardNumber, securityCode: $securityCode, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
   }
 
   @override
@@ -459,6 +568,10 @@ class _$DebitCard extends DebitCard {
             other is _$DebitCard &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.cardNumber, cardNumber) ||
+                other.cardNumber == cardNumber) &&
+            (identical(other.securityCode, securityCode) ||
+                other.securityCode == securityCode) &&
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.expiryMonth, expiryMonth) ||
                 other.expiryMonth == expiryMonth) &&
@@ -469,8 +582,8 @@ class _$DebitCard extends DebitCard {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+  int get hashCode => Object.hash(runtimeType, type, id, cardNumber,
+      securityCode, brand, expiryMonth, expiryYear, lastFourDigits);
 
   @JsonKey(ignore: true)
   @override
@@ -484,6 +597,8 @@ class _$DebitCard extends DebitCard {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -492,6 +607,8 @@ class _$DebitCard extends DebitCard {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -499,39 +616,68 @@ class _$DebitCard extends DebitCard {
         debitCard,
     required TResult Function(Type type, Balance balance) accountBalance,
   }) {
-    return debitCard(type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+    return debitCard(type, id, cardNumber, securityCode, brand, expiryMonth,
+        expiryYear, lastFourDigits);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
-    return debitCard?.call(
-        type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+    return debitCard?.call(type, id, cardNumber, securityCode, brand,
+        expiryMonth, expiryYear, lastFourDigits);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),
   }) {
     if (debitCard != null) {
-      return debitCard(
-          type, id, brand, expiryMonth, expiryYear, lastFourDigits);
+      return debitCard(type, id, cardNumber, securityCode, brand, expiryMonth,
+          expiryYear, lastFourDigits);
     }
     return orElse();
   }
@@ -575,6 +721,8 @@ abstract class DebitCard extends PaymentMethod {
   const factory DebitCard(
       {required final Type type,
       required final Id id,
+      final CardNumber? cardNumber,
+      final SecurityCode? securityCode,
       required final Brand brand,
       required final ExpiryMonth expiryMonth,
       required final ExpiryYear expiryYear,
@@ -584,6 +732,8 @@ abstract class DebitCard extends PaymentMethod {
   @override
   Type get type;
   Id get id;
+  CardNumber? get cardNumber;
+  SecurityCode? get securityCode;
   Brand get brand;
   ExpiryMonth get expiryMonth;
   ExpiryYear get expiryYear;
@@ -672,6 +822,8 @@ class _$AccountBalance extends AccountBalance {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -680,6 +832,8 @@ class _$AccountBalance extends AccountBalance {
     required TResult Function(
             Type type,
             Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
             Brand brand,
             ExpiryMonth expiryMonth,
             ExpiryYear expiryYear,
@@ -693,11 +847,25 @@ class _$AccountBalance extends AccountBalance {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult? Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult? Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult? Function(Type type, Balance balance)? accountBalance,
   }) {
@@ -707,11 +875,25 @@ class _$AccountBalance extends AccountBalance {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         creditCard,
-    TResult Function(Type type, Id id, Brand brand, ExpiryMonth expiryMonth,
-            ExpiryYear expiryYear, LastFourDigits lastFourDigits)?
+    TResult Function(
+            Type type,
+            Id id,
+            CardNumber? cardNumber,
+            SecurityCode? securityCode,
+            Brand brand,
+            ExpiryMonth expiryMonth,
+            ExpiryYear expiryYear,
+            LastFourDigits lastFourDigits)?
         debitCard,
     TResult Function(Type type, Balance balance)? accountBalance,
     required TResult orElse(),

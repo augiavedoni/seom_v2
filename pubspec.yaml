@@ -12,6 +12,7 @@ dependencies:
   auto_route: ^5.0.2
   bloc: ^8.1.0
   carousel_slider: ^4.1.1
+  credit_card_type_detector: ^2.0.0
   cupertino_icons: ^1.0.5
   dartz: ^0.10.1
   flutter:
@@ -57,4 +58,3 @@ flutter:
   assets:
     - lib/presentation/core/assets/
     - lib/presentation/core/assets/logos/
-

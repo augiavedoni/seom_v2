@@ -83,7 +83,6 @@ abstract class RoundedButton extends StatelessWidget {
             ),
           ),
         ),
-        // textStyle: MaterialStateProperty.all<TextStyle>(),
         foregroundColor: MaterialStateProperty.resolveWith<Color?>(
           (states) {
             if (states.contains(MaterialState.disabled)) {

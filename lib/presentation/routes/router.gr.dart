@@ -11,35 +11,39 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
+import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart'
+    as _i8;
+import 'package:seom_v2/presentation/add_payment_method/add_payment_method_screen.dart'
+    as _i5;
 import 'package:seom_v2/presentation/feedback/feedback_screen.dart' as _i3;
 import 'package:seom_v2/presentation/home/home_screen.dart' as _i2;
 import 'package:seom_v2/presentation/payment_methods_management/payment_methods_management_screen.dart'
     as _i4;
 import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart' as _i1;
 
-class Router extends _i5.RootStackRouter {
-  Router([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])
+class Router extends _i6.RootStackRouter {
+  Router([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i5.PageFactory> pagesMap = {
+  final Map<String, _i6.PageFactory> pagesMap = {
     SignInScreenRoute.name: (routeData) {
-      return _i5.MaterialPageX<dynamic>(
+      return _i6.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SignInScreen(),
       );
     },
     HomeScreenRoute.name: (routeData) {
-      return _i5.MaterialPageX<dynamic>(
+      return _i6.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.HomeScreen(),
       );
     },
     FeedbackScreenRoute.name: (routeData) {
       final args = routeData.argsAs<FeedbackScreenRouteArgs>();
-      return _i5.MaterialPageX<dynamic>(
+      return _i6.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i3.FeedbackScreen(
           key: args.key,
@@ -56,37 +60,51 @@ class Router extends _i5.RootStackRouter {
       );
     },
     PaymentMethodsManagementScreenRoute.name: (routeData) {
-      return _i5.MaterialPageX<dynamic>(
+      return _i6.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i4.PaymentMethodsManagementScreen(),
+      );
+    },
+    AddPaymentMethodScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<AddPaymentMethodScreenRouteArgs>();
+      return _i6.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i5.AddPaymentMethodScreen(
+          key: args.key,
+          paymentMethod: args.paymentMethod,
+        ),
       );
     },
   };
 
   @override
-  List<_i5.RouteConfig> get routes => [
-        _i5.RouteConfig(
+  List<_i6.RouteConfig> get routes => [
+        _i6.RouteConfig(
           SignInScreenRoute.name,
           path: '/',
         ),
-        _i5.RouteConfig(
+        _i6.RouteConfig(
           HomeScreenRoute.name,
           path: '/home-screen',
         ),
-        _i5.RouteConfig(
+        _i6.RouteConfig(
           FeedbackScreenRoute.name,
           path: '/feedback-screen',
         ),
-        _i5.RouteConfig(
+        _i6.RouteConfig(
           PaymentMethodsManagementScreenRoute.name,
           path: '/payment-methods-management-screen',
+        ),
+        _i6.RouteConfig(
+          AddPaymentMethodScreenRoute.name,
+          path: '/add-payment-method-screen',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.SignInScreen]
-class SignInScreenRoute extends _i5.PageRouteInfo<void> {
+class SignInScreenRoute extends _i6.PageRouteInfo<void> {
   const SignInScreenRoute()
       : super(
           SignInScreenRoute.name,
@@ -98,7 +116,7 @@ class SignInScreenRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.HomeScreen]
-class HomeScreenRoute extends _i5.PageRouteInfo<void> {
+class HomeScreenRoute extends _i6.PageRouteInfo<void> {
   const HomeScreenRoute()
       : super(
           HomeScreenRoute.name,
@@ -110,9 +128,9 @@ class HomeScreenRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.FeedbackScreen]
-class FeedbackScreenRoute extends _i5.PageRouteInfo<FeedbackScreenRouteArgs> {
+class FeedbackScreenRoute extends _i6.PageRouteInfo<FeedbackScreenRouteArgs> {
   FeedbackScreenRoute({
-    _i6.Key? key,
+    _i7.Key? key,
     required String mainImagePath,
     required String title,
     String? description,
@@ -156,7 +174,7 @@ class FeedbackScreenRouteArgs {
     this.onClose,
   });
 
-  final _i6.Key? key;
+  final _i7.Key? key;
 
   final String mainImagePath;
 
@@ -184,7 +202,7 @@ class FeedbackScreenRouteArgs {
 
 /// generated route for
 /// [_i4.PaymentMethodsManagementScreen]
-class PaymentMethodsManagementScreenRoute extends _i5.PageRouteInfo<void> {
+class PaymentMethodsManagementScreenRoute extends _i6.PageRouteInfo<void> {
   const PaymentMethodsManagementScreenRoute()
       : super(
           PaymentMethodsManagementScreenRoute.name,
@@ -192,4 +210,39 @@ class PaymentMethodsManagementScreenRoute extends _i5.PageRouteInfo<void> {
         );
 
   static const String name = 'PaymentMethodsManagementScreenRoute';
+}
+
+/// generated route for
+/// [_i5.AddPaymentMethodScreen]
+class AddPaymentMethodScreenRoute
+    extends _i6.PageRouteInfo<AddPaymentMethodScreenRouteArgs> {
+  AddPaymentMethodScreenRoute({
+    _i7.Key? key,
+    required _i8.PaymentMethod paymentMethod,
+  }) : super(
+          AddPaymentMethodScreenRoute.name,
+          path: '/add-payment-method-screen',
+          args: AddPaymentMethodScreenRouteArgs(
+            key: key,
+            paymentMethod: paymentMethod,
+          ),
+        );
+
+  static const String name = 'AddPaymentMethodScreenRoute';
+}
+
+class AddPaymentMethodScreenRouteArgs {
+  const AddPaymentMethodScreenRouteArgs({
+    this.key,
+    required this.paymentMethod,
+  });
+
+  final _i7.Key? key;
+
+  final _i8.PaymentMethod paymentMethod;
+
+  @override
+  String toString() {
+    return 'AddPaymentMethodScreenRouteArgs{key: $key, paymentMethod: $paymentMethod}';
+  }
 }

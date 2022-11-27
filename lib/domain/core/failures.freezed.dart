@@ -35,6 +35,8 @@ mixin _$ValueFailure<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -61,6 +63,8 @@ mixin _$ValueFailure<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -87,6 +91,8 @@ mixin _$ValueFailure<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -114,6 +120,8 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -141,6 +149,8 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -167,6 +177,8 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -278,6 +290,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -307,6 +321,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -336,6 +352,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -369,6 +387,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -399,6 +419,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -428,6 +450,8 @@ class _$InvaliCuil<T> implements InvaliCuil<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -506,6 +530,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -535,6 +561,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -564,6 +592,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -597,6 +627,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -627,6 +659,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -656,6 +690,8 @@ class _$EmptyCuil<T> implements EmptyCuil<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -757,6 +793,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -786,6 +824,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -815,6 +855,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -848,6 +890,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -878,6 +922,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -907,6 +953,8 @@ class _$InvalidName<T> implements InvalidName<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -985,6 +1033,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -1014,6 +1064,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -1043,6 +1095,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -1076,6 +1130,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -1106,6 +1162,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1135,6 +1193,8 @@ class _$EmptyName<T> implements EmptyName<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1236,6 +1296,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -1265,6 +1327,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -1294,6 +1358,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -1327,6 +1393,8 @@ class _$ShortName<T> implements ShortName<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -1357,6 +1425,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1386,6 +1456,8 @@ class _$ShortName<T> implements ShortName<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1492,6 +1564,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -1521,6 +1595,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -1550,6 +1626,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -1583,6 +1661,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -1613,6 +1693,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1642,6 +1724,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1721,6 +1805,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -1750,6 +1836,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -1779,6 +1867,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -1812,6 +1902,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -1842,6 +1934,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1871,6 +1965,8 @@ class _$EmptyEmail<T> implements EmptyEmail<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -1972,6 +2068,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -2001,6 +2099,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -2030,6 +2130,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -2063,6 +2165,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -2093,6 +2197,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2122,6 +2228,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2201,6 +2309,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -2230,6 +2340,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -2259,6 +2371,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -2292,6 +2406,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -2322,6 +2438,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2351,6 +2469,8 @@ class _$EmptyPassword<T> implements EmptyPassword<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2424,6 +2544,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -2453,6 +2575,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -2482,6 +2606,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -2515,6 +2641,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -2545,6 +2673,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2574,6 +2704,8 @@ class _$EmptyToken<T> implements EmptyToken<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2647,6 +2779,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -2676,6 +2810,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -2705,6 +2841,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -2738,6 +2876,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -2768,6 +2908,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2797,6 +2939,8 @@ class _$EmptyRefreshToken<T> implements EmptyRefreshToken<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -2908,6 +3052,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -2937,6 +3083,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -2966,6 +3114,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -2999,6 +3149,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -3029,6 +3181,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3058,6 +3212,8 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3167,6 +3323,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -3196,6 +3354,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -3225,6 +3385,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -3258,6 +3420,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -3288,6 +3452,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3317,6 +3483,8 @@ class _$InvalidYear<T> implements InvalidYear<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3424,6 +3592,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -3453,6 +3623,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -3482,6 +3654,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -3515,6 +3689,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -3545,6 +3721,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3574,6 +3752,8 @@ class _$InvalidVehicleType<T> implements InvalidVehicleType<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3653,6 +3833,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -3682,6 +3864,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -3711,6 +3895,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -3744,6 +3930,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -3774,6 +3962,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3803,6 +3993,8 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -3876,6 +4068,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -3905,6 +4099,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -3934,6 +4130,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -3967,6 +4165,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -3997,6 +4197,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4026,6 +4228,8 @@ class _$InvalidTime<T> implements InvalidTime<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4128,6 +4332,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -4157,6 +4363,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -4186,6 +4394,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -4219,6 +4429,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -4249,6 +4461,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4278,6 +4492,8 @@ class _$InvalidPosition<T> implements InvalidPosition<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4299,6 +4515,546 @@ abstract class InvalidPosition<T> implements ValueFailure<T> {
   T get failedValue;
   @JsonKey(ignore: true)
   _$$InvalidPositionCopyWith<T, _$InvalidPosition<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidCardNumberCopyWith<T, $Res> {
+  factory _$$InvalidCardNumberCopyWith(_$InvalidCardNumber<T> value,
+          $Res Function(_$InvalidCardNumber<T>) then) =
+      __$$InvalidCardNumberCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidCardNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidCardNumber<T>>
+    implements _$$InvalidCardNumberCopyWith<T, $Res> {
+  __$$InvalidCardNumberCopyWithImpl(_$InvalidCardNumber<T> _value,
+      $Res Function(_$InvalidCardNumber<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = null,
+  }) {
+    return _then(_$InvalidCardNumber<T>(
+      failedValue: null == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidCardNumber<T> implements InvalidCardNumber<T> {
+  const _$InvalidCardNumber({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidCardNumber(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidCardNumber<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidCardNumberCopyWith<T, _$InvalidCardNumber<T>> get copyWith =>
+      __$$InvalidCardNumberCopyWithImpl<T, _$InvalidCardNumber<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
+    required TResult Function() invalidDate,
+    required TResult Function() invalidTime,
+    required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
+    required TResult Function(T failedValue) invalidCardBrand,
+    required TResult Function(T failedValue) invalidExpiryMonth,
+    required TResult Function(T failedValue) invalidExpiryYear,
+    required TResult Function(T failedValue) invalidLastFourDigits,
+    required TResult Function() empty,
+  }) {
+    return invalidCardNumber(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? invalidCuil,
+    TResult? Function()? emptyCuil,
+    TResult? Function(T failedValue)? invalidName,
+    TResult? Function()? emptyName,
+    TResult? Function(T failedValue)? shortName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function()? emptyEmail,
+    TResult? Function(T failedValue)? shortPassword,
+    TResult? Function()? emptyPassword,
+    TResult? Function()? emptyToken,
+    TResult? Function()? emptyRefreshToken,
+    TResult? Function(T failedValue, int maxLength)? exceedingLength,
+    TResult? Function(T failedValue)? invalidYear,
+    TResult? Function(T failedValue)? invalidVehicleType,
+    TResult? Function()? invalidDate,
+    TResult? Function()? invalidTime,
+    TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
+    TResult? Function(T failedValue)? invalidCardBrand,
+    TResult? Function(T failedValue)? invalidExpiryMonth,
+    TResult? Function(T failedValue)? invalidExpiryYear,
+    TResult? Function(T failedValue)? invalidLastFourDigits,
+    TResult? Function()? empty,
+  }) {
+    return invalidCardNumber?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? invalidDate,
+    TResult Function()? invalidTime,
+    TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
+    TResult Function(T failedValue)? invalidCardBrand,
+    TResult Function(T failedValue)? invalidExpiryMonth,
+    TResult Function(T failedValue)? invalidExpiryYear,
+    TResult Function(T failedValue)? invalidLastFourDigits,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidCardNumber != null) {
+      return invalidCardNumber(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidTime<T> value) invalidTime,
+    required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
+    required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
+    required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
+    required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
+    required TResult Function(InvalidLastFourDigits<T> value)
+        invalidLastFourDigits,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidCardNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvaliCuil<T> value)? invalidCuil,
+    TResult? Function(EmptyCuil<T> value)? emptyCuil,
+    TResult? Function(InvalidName<T> value)? invalidName,
+    TResult? Function(EmptyName<T> value)? emptyName,
+    TResult? Function(ShortName<T> value)? shortName,
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(EmptyEmail<T> value)? emptyEmail,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(EmptyPassword<T> value)? emptyPassword,
+    TResult? Function(EmptyToken<T> value)? emptyToken,
+    TResult? Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult? Function(ExceedingLength<T> value)? exceedingLength,
+    TResult? Function(InvalidYear<T> value)? invalidYear,
+    TResult? Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(InvalidTime<T> value)? invalidTime,
+    TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
+    TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
+    TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
+    TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
+    TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
+    TResult? Function(Empty<T> value)? empty,
+  }) {
+    return invalidCardNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidTime<T> value)? invalidTime,
+    TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
+    TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
+    TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
+    TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
+    TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidCardNumber != null) {
+      return invalidCardNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidCardNumber<T> implements ValueFailure<T> {
+  const factory InvalidCardNumber({required final T failedValue}) =
+      _$InvalidCardNumber<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  _$$InvalidCardNumberCopyWith<T, _$InvalidCardNumber<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidSecurityCodeCopyWith<T, $Res> {
+  factory _$$InvalidSecurityCodeCopyWith(_$InvalidSecurityCode<T> value,
+          $Res Function(_$InvalidSecurityCode<T>) then) =
+      __$$InvalidSecurityCodeCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidSecurityCodeCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidSecurityCode<T>>
+    implements _$$InvalidSecurityCodeCopyWith<T, $Res> {
+  __$$InvalidSecurityCodeCopyWithImpl(_$InvalidSecurityCode<T> _value,
+      $Res Function(_$InvalidSecurityCode<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = null,
+  }) {
+    return _then(_$InvalidSecurityCode<T>(
+      failedValue: null == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidSecurityCode<T> implements InvalidSecurityCode<T> {
+  const _$InvalidSecurityCode({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidSecurityCode(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidSecurityCode<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidSecurityCodeCopyWith<T, _$InvalidSecurityCode<T>> get copyWith =>
+      __$$InvalidSecurityCodeCopyWithImpl<T, _$InvalidSecurityCode<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidCuil,
+    required TResult Function() emptyCuil,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function() emptyName,
+    required TResult Function(T failedValue) shortName,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function() emptyEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function() emptyPassword,
+    required TResult Function() emptyToken,
+    required TResult Function() emptyRefreshToken,
+    required TResult Function(T failedValue, int maxLength) exceedingLength,
+    required TResult Function(T failedValue) invalidYear,
+    required TResult Function(T failedValue) invalidVehicleType,
+    required TResult Function() invalidDate,
+    required TResult Function() invalidTime,
+    required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
+    required TResult Function(T failedValue) invalidCardBrand,
+    required TResult Function(T failedValue) invalidExpiryMonth,
+    required TResult Function(T failedValue) invalidExpiryYear,
+    required TResult Function(T failedValue) invalidLastFourDigits,
+    required TResult Function() empty,
+  }) {
+    return invalidSecurityCode(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? invalidCuil,
+    TResult? Function()? emptyCuil,
+    TResult? Function(T failedValue)? invalidName,
+    TResult? Function()? emptyName,
+    TResult? Function(T failedValue)? shortName,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function()? emptyEmail,
+    TResult? Function(T failedValue)? shortPassword,
+    TResult? Function()? emptyPassword,
+    TResult? Function()? emptyToken,
+    TResult? Function()? emptyRefreshToken,
+    TResult? Function(T failedValue, int maxLength)? exceedingLength,
+    TResult? Function(T failedValue)? invalidYear,
+    TResult? Function(T failedValue)? invalidVehicleType,
+    TResult? Function()? invalidDate,
+    TResult? Function()? invalidTime,
+    TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
+    TResult? Function(T failedValue)? invalidCardBrand,
+    TResult? Function(T failedValue)? invalidExpiryMonth,
+    TResult? Function(T failedValue)? invalidExpiryYear,
+    TResult? Function(T failedValue)? invalidLastFourDigits,
+    TResult? Function()? empty,
+  }) {
+    return invalidSecurityCode?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidCuil,
+    TResult Function()? emptyCuil,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function()? emptyName,
+    TResult Function(T failedValue)? shortName,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function()? emptyEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function()? emptyPassword,
+    TResult Function()? emptyToken,
+    TResult Function()? emptyRefreshToken,
+    TResult Function(T failedValue, int maxLength)? exceedingLength,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invalidVehicleType,
+    TResult Function()? invalidDate,
+    TResult Function()? invalidTime,
+    TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
+    TResult Function(T failedValue)? invalidCardBrand,
+    TResult Function(T failedValue)? invalidExpiryMonth,
+    TResult Function(T failedValue)? invalidExpiryYear,
+    TResult Function(T failedValue)? invalidLastFourDigits,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidSecurityCode != null) {
+      return invalidSecurityCode(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvaliCuil<T> value) invalidCuil,
+    required TResult Function(EmptyCuil<T> value) emptyCuil,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(EmptyName<T> value) emptyName,
+    required TResult Function(ShortName<T> value) shortName,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(EmptyEmail<T> value) emptyEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(EmptyPassword<T> value) emptyPassword,
+    required TResult Function(EmptyToken<T> value) emptyToken,
+    required TResult Function(EmptyRefreshToken<T> value) emptyRefreshToken,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InvalidYear<T> value) invalidYear,
+    required TResult Function(InvalidVehicleType<T> value) invalidVehicleType,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidTime<T> value) invalidTime,
+    required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
+    required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
+    required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
+    required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
+    required TResult Function(InvalidLastFourDigits<T> value)
+        invalidLastFourDigits,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidSecurityCode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvaliCuil<T> value)? invalidCuil,
+    TResult? Function(EmptyCuil<T> value)? emptyCuil,
+    TResult? Function(InvalidName<T> value)? invalidName,
+    TResult? Function(EmptyName<T> value)? emptyName,
+    TResult? Function(ShortName<T> value)? shortName,
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(EmptyEmail<T> value)? emptyEmail,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(EmptyPassword<T> value)? emptyPassword,
+    TResult? Function(EmptyToken<T> value)? emptyToken,
+    TResult? Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult? Function(ExceedingLength<T> value)? exceedingLength,
+    TResult? Function(InvalidYear<T> value)? invalidYear,
+    TResult? Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(InvalidTime<T> value)? invalidTime,
+    TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
+    TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
+    TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
+    TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
+    TResult? Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
+    TResult? Function(Empty<T> value)? empty,
+  }) {
+    return invalidSecurityCode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvaliCuil<T> value)? invalidCuil,
+    TResult Function(EmptyCuil<T> value)? emptyCuil,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(EmptyName<T> value)? emptyName,
+    TResult Function(ShortName<T> value)? shortName,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(EmptyEmail<T> value)? emptyEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(EmptyPassword<T> value)? emptyPassword,
+    TResult Function(EmptyToken<T> value)? emptyToken,
+    TResult Function(EmptyRefreshToken<T> value)? emptyRefreshToken,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidVehicleType<T> value)? invalidVehicleType,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidTime<T> value)? invalidTime,
+    TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
+    TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
+    TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
+    TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
+    TResult Function(InvalidLastFourDigits<T> value)? invalidLastFourDigits,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidSecurityCode != null) {
+      return invalidSecurityCode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidSecurityCode<T> implements ValueFailure<T> {
+  const factory InvalidSecurityCode({required final T failedValue}) =
+      _$InvalidSecurityCode<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  _$$InvalidSecurityCodeCopyWith<T, _$InvalidSecurityCode<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4386,6 +5142,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -4415,6 +5173,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -4444,6 +5204,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -4477,6 +5239,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -4507,6 +5271,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4536,6 +5302,8 @@ class _$InvalidCardBrand<T> implements InvalidCardBrand<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4644,6 +5412,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -4673,6 +5443,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -4702,6 +5474,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -4735,6 +5509,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -4765,6 +5541,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4794,6 +5572,8 @@ class _$InvalidExpiryMonth<T> implements InvalidExpiryMonth<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -4902,6 +5682,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -4931,6 +5713,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -4960,6 +5744,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -4993,6 +5779,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -5023,6 +5811,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -5052,6 +5842,8 @@ class _$InvalidExpiryYear<T> implements InvalidExpiryYear<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -5161,6 +5953,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -5190,6 +5984,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -5219,6 +6015,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -5252,6 +6050,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -5282,6 +6082,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -5311,6 +6113,8 @@ class _$InvalidLastFourDigits<T> implements InvalidLastFourDigits<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -5388,6 +6192,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function() invalidDate,
     required TResult Function() invalidTime,
     required TResult Function(T failedValue) invalidPositionValue,
+    required TResult Function(T failedValue) invalidCardNumber,
+    required TResult Function(T failedValue) invalidSecurityCode,
     required TResult Function(T failedValue) invalidCardBrand,
     required TResult Function(T failedValue) invalidExpiryMonth,
     required TResult Function(T failedValue) invalidExpiryYear,
@@ -5417,6 +6223,8 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function()? invalidDate,
     TResult? Function()? invalidTime,
     TResult? Function(T failedValue)? invalidPositionValue,
+    TResult? Function(T failedValue)? invalidCardNumber,
+    TResult? Function(T failedValue)? invalidSecurityCode,
     TResult? Function(T failedValue)? invalidCardBrand,
     TResult? Function(T failedValue)? invalidExpiryMonth,
     TResult? Function(T failedValue)? invalidExpiryYear,
@@ -5446,6 +6254,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? invalidDate,
     TResult Function()? invalidTime,
     TResult Function(T failedValue)? invalidPositionValue,
+    TResult Function(T failedValue)? invalidCardNumber,
+    TResult Function(T failedValue)? invalidSecurityCode,
     TResult Function(T failedValue)? invalidCardBrand,
     TResult Function(T failedValue)? invalidExpiryMonth,
     TResult Function(T failedValue)? invalidExpiryYear,
@@ -5479,6 +6289,8 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidTime<T> value) invalidTime,
     required TResult Function(InvalidPosition<T> value) invalidPositionValue,
+    required TResult Function(InvalidCardNumber<T> value) invalidCardNumber,
+    required TResult Function(InvalidSecurityCode<T> value) invalidSecurityCode,
     required TResult Function(InvalidCardBrand<T> value) invalidCardBrand,
     required TResult Function(InvalidExpiryMonth<T> value) invalidExpiryMonth,
     required TResult Function(InvalidExpiryYear<T> value) invalidExpiryYear,
@@ -5509,6 +6321,8 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidTime<T> value)? invalidTime,
     TResult? Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult? Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult? Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult? Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult? Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult? Function(InvalidExpiryYear<T> value)? invalidExpiryYear,
@@ -5538,6 +6352,8 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidTime<T> value)? invalidTime,
     TResult Function(InvalidPosition<T> value)? invalidPositionValue,
+    TResult Function(InvalidCardNumber<T> value)? invalidCardNumber,
+    TResult Function(InvalidSecurityCode<T> value)? invalidSecurityCode,
     TResult Function(InvalidCardBrand<T> value)? invalidCardBrand,
     TResult Function(InvalidExpiryMonth<T> value)? invalidExpiryMonth,
     TResult Function(InvalidExpiryYear<T> value)? invalidExpiryYear,

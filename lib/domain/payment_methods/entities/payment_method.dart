@@ -3,10 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:seom_v2/domain/core/failures.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/balance.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/card_numer.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_month.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_year.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/id.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/last_four_digits.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/security_code.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/type.dart';
 
 part 'payment_method.freezed.dart';
@@ -18,20 +20,42 @@ abstract class PaymentMethod implements _$PaymentMethod {
   const factory PaymentMethod.creditCard({
     required Type type,
     required Id id,
+    CardNumber? cardNumber,
+    SecurityCode? securityCode,
     required Brand brand,
     required ExpiryMonth expiryMonth,
     required ExpiryYear expiryYear,
     required LastFourDigits lastFourDigits,
   }) = CreditCard;
 
+  factory PaymentMethod.emptyCreditCard() => PaymentMethod.creditCard(
+        type: Type('credit'),
+        id: Id(''),
+        brand: Brand(''),
+        expiryMonth: ExpiryMonth(0),
+        expiryYear: ExpiryYear(0),
+        lastFourDigits: LastFourDigits(''),
+      );
+
   const factory PaymentMethod.debitCard({
     required Type type,
     required Id id,
+    CardNumber? cardNumber,
+    SecurityCode? securityCode,
     required Brand brand,
     required ExpiryMonth expiryMonth,
     required ExpiryYear expiryYear,
     required LastFourDigits lastFourDigits,
   }) = DebitCard;
+
+  factory PaymentMethod.emptyDebitCard() => PaymentMethod.debitCard(
+        type: Type('debit'),
+        id: Id(''),
+        brand: Brand(''),
+        expiryMonth: ExpiryMonth(0),
+        expiryYear: ExpiryYear(0),
+        lastFourDigits: LastFourDigits(''),
+      );
 
   const factory PaymentMethod.accountBalance({
     required Type type,

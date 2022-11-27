@@ -57,6 +57,14 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
   }) = InvalidPosition<T>;
 
+  const factory ValueFailure.invalidCardNumber({
+    required T failedValue,
+  }) = InvalidCardNumber<T>;
+
+  const factory ValueFailure.invalidSecurityCode({
+    required T failedValue,
+  }) = InvalidSecurityCode<T>;
+
   const factory ValueFailure.invalidCardBrand({
     required T failedValue,
   }) = InvalidCardBrand<T>;

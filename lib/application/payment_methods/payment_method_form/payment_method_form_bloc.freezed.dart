@@ -20,10 +20,11 @@ mixin _$PaymentMethodFormEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,10 +32,11 @@ mixin _$PaymentMethodFormEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,10 +44,11 @@ mixin _$PaymentMethodFormEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) =>
@@ -53,31 +56,33 @@ mixin _$PaymentMethodFormEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) =>
@@ -172,10 +177,11 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) {
     return initialized(initialPaymentMethodOption);
@@ -186,10 +192,11 @@ class _$_Initialized implements _Initialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) {
     return initialized?.call(initialPaymentMethodOption);
@@ -200,10 +207,11 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -217,11 +225,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return initialized(this);
@@ -231,10 +239,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) {
     return initialized?.call(this);
@@ -244,10 +253,11 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -269,31 +279,31 @@ abstract class _Initialized implements PaymentMethodFormEvent {
 }
 
 /// @nodoc
-abstract class _$$_BrandChangedCopyWith<$Res> {
-  factory _$$_BrandChangedCopyWith(
-          _$_BrandChanged value, $Res Function(_$_BrandChanged) then) =
-      __$$_BrandChangedCopyWithImpl<$Res>;
+abstract class _$$_CardTypeChangedCopyWith<$Res> {
+  factory _$$_CardTypeChangedCopyWith(
+          _$_CardTypeChanged value, $Res Function(_$_CardTypeChanged) then) =
+      __$$_CardTypeChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String brand});
+  $Res call({String cardType});
 }
 
 /// @nodoc
-class __$$_BrandChangedCopyWithImpl<$Res>
-    extends _$PaymentMethodFormEventCopyWithImpl<$Res, _$_BrandChanged>
-    implements _$$_BrandChangedCopyWith<$Res> {
-  __$$_BrandChangedCopyWithImpl(
-      _$_BrandChanged _value, $Res Function(_$_BrandChanged) _then)
+class __$$_CardTypeChangedCopyWithImpl<$Res>
+    extends _$PaymentMethodFormEventCopyWithImpl<$Res, _$_CardTypeChanged>
+    implements _$$_CardTypeChangedCopyWith<$Res> {
+  __$$_CardTypeChangedCopyWithImpl(
+      _$_CardTypeChanged _value, $Res Function(_$_CardTypeChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? brand = null,
+    Object? cardType = null,
   }) {
-    return _then(_$_BrandChanged(
-      null == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
+    return _then(_$_CardTypeChanged(
+      null == cardType
+          ? _value.cardType
+          : cardType // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -301,46 +311,48 @@ class __$$_BrandChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BrandChanged implements _BrandChanged {
-  const _$_BrandChanged(this.brand);
+class _$_CardTypeChanged implements _CardTypeChanged {
+  const _$_CardTypeChanged(this.cardType);
 
   @override
-  final String brand;
+  final String cardType;
 
   @override
   String toString() {
-    return 'PaymentMethodFormEvent.brandChanged(brand: $brand)';
+    return 'PaymentMethodFormEvent.cardTypeChanged(cardType: $cardType)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BrandChanged &&
-            (identical(other.brand, brand) || other.brand == brand));
+            other is _$_CardTypeChanged &&
+            (identical(other.cardType, cardType) ||
+                other.cardType == cardType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, brand);
+  int get hashCode => Object.hash(runtimeType, cardType);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BrandChangedCopyWith<_$_BrandChanged> get copyWith =>
-      __$$_BrandChangedCopyWithImpl<_$_BrandChanged>(this, _$identity);
+  _$$_CardTypeChangedCopyWith<_$_CardTypeChanged> get copyWith =>
+      __$$_CardTypeChangedCopyWithImpl<_$_CardTypeChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) {
-    return brandChanged(brand);
+    return cardTypeChanged(cardType);
   }
 
   @override
@@ -348,13 +360,14 @@ class _$_BrandChanged implements _BrandChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) {
-    return brandChanged?.call(brand);
+    return cardTypeChanged?.call(cardType);
   }
 
   @override
@@ -362,15 +375,16 @@ class _$_BrandChanged implements _BrandChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
-    if (brandChanged != null) {
-      return brandChanged(brand);
+    if (cardTypeChanged != null) {
+      return cardTypeChanged(cardType);
     }
     return orElse();
   }
@@ -379,53 +393,393 @@ class _$_BrandChanged implements _BrandChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) {
-    return brandChanged(this);
+    return cardTypeChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) {
-    return brandChanged?.call(this);
+    return cardTypeChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
-    if (brandChanged != null) {
-      return brandChanged(this);
+    if (cardTypeChanged != null) {
+      return cardTypeChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _BrandChanged implements PaymentMethodFormEvent {
-  const factory _BrandChanged(final String brand) = _$_BrandChanged;
+abstract class _CardTypeChanged implements PaymentMethodFormEvent {
+  const factory _CardTypeChanged(final String cardType) = _$_CardTypeChanged;
 
-  String get brand;
+  String get cardType;
   @JsonKey(ignore: true)
-  _$$_BrandChangedCopyWith<_$_BrandChanged> get copyWith =>
+  _$$_CardTypeChangedCopyWith<_$_CardTypeChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CardNumberChangedCopyWith<$Res> {
+  factory _$$_CardNumberChangedCopyWith(_$_CardNumberChanged value,
+          $Res Function(_$_CardNumberChanged) then) =
+      __$$_CardNumberChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String cardNumber});
+}
+
+/// @nodoc
+class __$$_CardNumberChangedCopyWithImpl<$Res>
+    extends _$PaymentMethodFormEventCopyWithImpl<$Res, _$_CardNumberChanged>
+    implements _$$_CardNumberChangedCopyWith<$Res> {
+  __$$_CardNumberChangedCopyWithImpl(
+      _$_CardNumberChanged _value, $Res Function(_$_CardNumberChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cardNumber = null,
+  }) {
+    return _then(_$_CardNumberChanged(
+      null == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CardNumberChanged implements _CardNumberChanged {
+  const _$_CardNumberChanged(this.cardNumber);
+
+  @override
+  final String cardNumber;
+
+  @override
+  String toString() {
+    return 'PaymentMethodFormEvent.cardNumberChanged(cardNumber: $cardNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CardNumberChanged &&
+            (identical(other.cardNumber, cardNumber) ||
+                other.cardNumber == cardNumber));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, cardNumber);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CardNumberChangedCopyWith<_$_CardNumberChanged> get copyWith =>
+      __$$_CardNumberChangedCopyWithImpl<_$_CardNumberChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
+        initialized,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
+    required TResult Function(int expiryMonth) expiryMonthChanged,
+    required TResult Function(int expiryYear) expiryYearChanged,
+    required TResult Function() saved,
+  }) {
+    return cardNumberChanged(cardNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
+        initialized,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
+    TResult? Function(int expiryMonth)? expiryMonthChanged,
+    TResult? Function(int expiryYear)? expiryYearChanged,
+    TResult? Function()? saved,
+  }) {
+    return cardNumberChanged?.call(cardNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
+        initialized,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
+    TResult Function(int expiryMonth)? expiryMonthChanged,
+    TResult Function(int expiryYear)? expiryYearChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (cardNumberChanged != null) {
+      return cardNumberChanged(cardNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
+    required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
+    required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return cardNumberChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
+    TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
+    TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return cardNumberChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
+    TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
+    TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (cardNumberChanged != null) {
+      return cardNumberChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CardNumberChanged implements PaymentMethodFormEvent {
+  const factory _CardNumberChanged(final String cardNumber) =
+      _$_CardNumberChanged;
+
+  String get cardNumber;
+  @JsonKey(ignore: true)
+  _$$_CardNumberChangedCopyWith<_$_CardNumberChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SecurityCodeChangedCopyWith<$Res> {
+  factory _$$_SecurityCodeChangedCopyWith(_$_SecurityCodeChanged value,
+          $Res Function(_$_SecurityCodeChanged) then) =
+      __$$_SecurityCodeChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String securityCode});
+}
+
+/// @nodoc
+class __$$_SecurityCodeChangedCopyWithImpl<$Res>
+    extends _$PaymentMethodFormEventCopyWithImpl<$Res, _$_SecurityCodeChanged>
+    implements _$$_SecurityCodeChangedCopyWith<$Res> {
+  __$$_SecurityCodeChangedCopyWithImpl(_$_SecurityCodeChanged _value,
+      $Res Function(_$_SecurityCodeChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? securityCode = null,
+  }) {
+    return _then(_$_SecurityCodeChanged(
+      null == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SecurityCodeChanged implements _SecurityCodeChanged {
+  const _$_SecurityCodeChanged(this.securityCode);
+
+  @override
+  final String securityCode;
+
+  @override
+  String toString() {
+    return 'PaymentMethodFormEvent.securityCodeChanged(securityCode: $securityCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SecurityCodeChanged &&
+            (identical(other.securityCode, securityCode) ||
+                other.securityCode == securityCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, securityCode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SecurityCodeChangedCopyWith<_$_SecurityCodeChanged> get copyWith =>
+      __$$_SecurityCodeChangedCopyWithImpl<_$_SecurityCodeChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
+        initialized,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
+    required TResult Function(int expiryMonth) expiryMonthChanged,
+    required TResult Function(int expiryYear) expiryYearChanged,
+    required TResult Function() saved,
+  }) {
+    return securityCodeChanged(securityCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
+        initialized,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
+    TResult? Function(int expiryMonth)? expiryMonthChanged,
+    TResult? Function(int expiryYear)? expiryYearChanged,
+    TResult? Function()? saved,
+  }) {
+    return securityCodeChanged?.call(securityCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
+        initialized,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
+    TResult Function(int expiryMonth)? expiryMonthChanged,
+    TResult Function(int expiryYear)? expiryYearChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (securityCodeChanged != null) {
+      return securityCodeChanged(securityCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
+    required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
+    required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return securityCodeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
+    TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
+    TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return securityCodeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
+    TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
+    TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (securityCodeChanged != null) {
+      return securityCodeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SecurityCodeChanged implements PaymentMethodFormEvent {
+  const factory _SecurityCodeChanged(final String securityCode) =
+      _$_SecurityCodeChanged;
+
+  String get securityCode;
+  @JsonKey(ignore: true)
+  _$$_SecurityCodeChangedCopyWith<_$_SecurityCodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -497,10 +851,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) {
     return expiryMonthChanged(expiryMonth);
@@ -511,10 +866,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) {
     return expiryMonthChanged?.call(expiryMonth);
@@ -525,10 +881,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -542,11 +899,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return expiryMonthChanged(this);
@@ -556,10 +913,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) {
     return expiryMonthChanged?.call(this);
@@ -569,10 +927,11 @@ class _$_ExpiryMonthChanged implements _ExpiryMonthChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -661,10 +1020,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) {
     return expiryYearChanged(expiryYear);
@@ -675,10 +1035,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) {
     return expiryYearChanged?.call(expiryYear);
@@ -689,10 +1050,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -706,11 +1068,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return expiryYearChanged(this);
@@ -720,10 +1082,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) {
     return expiryYearChanged?.call(this);
@@ -733,10 +1096,11 @@ class _$_ExpiryYearChanged implements _ExpiryYearChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -753,170 +1117,6 @@ abstract class _ExpiryYearChanged implements PaymentMethodFormEvent {
   int get expiryYear;
   @JsonKey(ignore: true)
   _$$_ExpiryYearChangedCopyWith<_$_ExpiryYearChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_LastFourDigitsChangedCopyWith<$Res> {
-  factory _$$_LastFourDigitsChangedCopyWith(_$_LastFourDigitsChanged value,
-          $Res Function(_$_LastFourDigitsChanged) then) =
-      __$$_LastFourDigitsChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String lastFourDigits});
-}
-
-/// @nodoc
-class __$$_LastFourDigitsChangedCopyWithImpl<$Res>
-    extends _$PaymentMethodFormEventCopyWithImpl<$Res, _$_LastFourDigitsChanged>
-    implements _$$_LastFourDigitsChangedCopyWith<$Res> {
-  __$$_LastFourDigitsChangedCopyWithImpl(_$_LastFourDigitsChanged _value,
-      $Res Function(_$_LastFourDigitsChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lastFourDigits = null,
-  }) {
-    return _then(_$_LastFourDigitsChanged(
-      null == lastFourDigits
-          ? _value.lastFourDigits
-          : lastFourDigits // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_LastFourDigitsChanged implements _LastFourDigitsChanged {
-  const _$_LastFourDigitsChanged(this.lastFourDigits);
-
-  @override
-  final String lastFourDigits;
-
-  @override
-  String toString() {
-    return 'PaymentMethodFormEvent.lastFourDigitsChanged(lastFourDigits: $lastFourDigits)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LastFourDigitsChanged &&
-            (identical(other.lastFourDigits, lastFourDigits) ||
-                other.lastFourDigits == lastFourDigits));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, lastFourDigits);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LastFourDigitsChangedCopyWith<_$_LastFourDigitsChanged> get copyWith =>
-      __$$_LastFourDigitsChangedCopyWithImpl<_$_LastFourDigitsChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
-        initialized,
-    required TResult Function(String brand) brandChanged,
-    required TResult Function(int expiryMonth) expiryMonthChanged,
-    required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
-    required TResult Function() saved,
-  }) {
-    return lastFourDigitsChanged(lastFourDigits);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
-        initialized,
-    TResult? Function(String brand)? brandChanged,
-    TResult? Function(int expiryMonth)? expiryMonthChanged,
-    TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
-    TResult? Function()? saved,
-  }) {
-    return lastFourDigitsChanged?.call(lastFourDigits);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
-        initialized,
-    TResult Function(String brand)? brandChanged,
-    TResult Function(int expiryMonth)? expiryMonthChanged,
-    TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
-    TResult Function()? saved,
-    required TResult orElse(),
-  }) {
-    if (lastFourDigitsChanged != null) {
-      return lastFourDigitsChanged(lastFourDigits);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
-    required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
-    required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
-    required TResult Function(_Saved value) saved,
-  }) {
-    return lastFourDigitsChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
-    TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
-    TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
-    TResult? Function(_Saved value)? saved,
-  }) {
-    return lastFourDigitsChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
-    TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
-    TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
-    TResult Function(_Saved value)? saved,
-    required TResult orElse(),
-  }) {
-    if (lastFourDigitsChanged != null) {
-      return lastFourDigitsChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LastFourDigitsChanged implements PaymentMethodFormEvent {
-  const factory _LastFourDigitsChanged(final String lastFourDigits) =
-      _$_LastFourDigitsChanged;
-
-  String get lastFourDigits;
-  @JsonKey(ignore: true)
-  _$$_LastFourDigitsChangedCopyWith<_$_LastFourDigitsChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -958,10 +1158,11 @@ class _$_Saved implements _Saved {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(String brand) brandChanged,
+    required TResult Function(String cardType) cardTypeChanged,
+    required TResult Function(String cardNumber) cardNumberChanged,
+    required TResult Function(String securityCode) securityCodeChanged,
     required TResult Function(int expiryMonth) expiryMonthChanged,
     required TResult Function(int expiryYear) expiryYearChanged,
-    required TResult Function(String lastFourDigits) lastFourDigitsChanged,
     required TResult Function() saved,
   }) {
     return saved();
@@ -972,10 +1173,11 @@ class _$_Saved implements _Saved {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(String brand)? brandChanged,
+    TResult? Function(String cardType)? cardTypeChanged,
+    TResult? Function(String cardNumber)? cardNumberChanged,
+    TResult? Function(String securityCode)? securityCodeChanged,
     TResult? Function(int expiryMonth)? expiryMonthChanged,
     TResult? Function(int expiryYear)? expiryYearChanged,
-    TResult? Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult? Function()? saved,
   }) {
     return saved?.call();
@@ -986,10 +1188,11 @@ class _$_Saved implements _Saved {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(String brand)? brandChanged,
+    TResult Function(String cardType)? cardTypeChanged,
+    TResult Function(String cardNumber)? cardNumberChanged,
+    TResult Function(String securityCode)? securityCodeChanged,
     TResult Function(int expiryMonth)? expiryMonthChanged,
     TResult Function(int expiryYear)? expiryYearChanged,
-    TResult Function(String lastFourDigits)? lastFourDigitsChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -1003,11 +1206,11 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_BrandChanged value) brandChanged,
+    required TResult Function(_CardTypeChanged value) cardTypeChanged,
+    required TResult Function(_CardNumberChanged value) cardNumberChanged,
+    required TResult Function(_SecurityCodeChanged value) securityCodeChanged,
     required TResult Function(_ExpiryMonthChanged value) expiryMonthChanged,
     required TResult Function(_ExpiryYearChanged value) expiryYearChanged,
-    required TResult Function(_LastFourDigitsChanged value)
-        lastFourDigitsChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return saved(this);
@@ -1017,10 +1220,11 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_BrandChanged value)? brandChanged,
+    TResult? Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult? Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult? Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult? Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult? Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult? Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult? Function(_Saved value)? saved,
   }) {
     return saved?.call(this);
@@ -1030,10 +1234,11 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_BrandChanged value)? brandChanged,
+    TResult Function(_CardTypeChanged value)? cardTypeChanged,
+    TResult Function(_CardNumberChanged value)? cardNumberChanged,
+    TResult Function(_SecurityCodeChanged value)? securityCodeChanged,
     TResult Function(_ExpiryMonthChanged value)? expiryMonthChanged,
     TResult Function(_ExpiryYearChanged value)? expiryYearChanged,
-    TResult Function(_LastFourDigitsChanged value)? lastFourDigitsChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {

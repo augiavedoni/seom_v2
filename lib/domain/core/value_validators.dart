@@ -185,6 +185,56 @@ Either<ValueFailure<double>, double> validatePositionValue(
   }
 }
 
+Either<ValueFailure<String>, String> validateCardNumber(String cardNumber) {
+  if (cardNumber.isEmpty) {
+    return left(const ValueFailure.empty());
+  } else {
+    int sum = 0;
+
+    for (int i = cardNumber.length - 1; i >= 0; i--) {
+      int digit = int.parse(cardNumber.substring(i, i + 1));
+
+      if ((cardNumber.length - i) % 2 == 0) {
+        digit = _doubleAndSumDigits(digit);
+      }
+
+      sum += digit;
+    }
+
+    if (sum % 10 == 0) {
+      return right(cardNumber);
+    } else {
+      return left(
+        ValueFailure.invalidCardNumber(failedValue: cardNumber),
+      );
+    }
+  }
+}
+
+int _doubleAndSumDigits(int digit) {
+  int ret = digit * 2;
+
+  if (ret > 9) {
+    ret = digit - 9;
+  }
+
+  return ret;
+}
+
+Either<ValueFailure<String>, String> validateSecurityCode(String securityCode) {
+  if (securityCode.isEmpty) {
+    return left(const ValueFailure.empty());
+  } else {
+    if (securityCode.length != 3) {
+      return left(
+        ValueFailure.invalidSecurityCode(failedValue: securityCode),
+      );
+    } else {
+      return right(securityCode);
+    }
+  }
+}
+
 Either<ValueFailure<String>, String> validateCardBrand(String brand) {
   if (brand.isEmpty) {
     return left(const ValueFailure.empty());

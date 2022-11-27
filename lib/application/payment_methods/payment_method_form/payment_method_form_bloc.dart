@@ -7,10 +7,11 @@ import 'package:injectable/injectable.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/domain/payment_methods/i_payment_method_repository.dart';
 import 'package:seom_v2/domain/payment_methods/payment_method_failure.dart';
-import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/type.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/card_numer.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_month.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_year.dart';
-import 'package:seom_v2/domain/payment_methods/value_objects/last_four_digits.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/security_code.dart';
 
 part 'payment_method_form_event.dart';
 part 'payment_method_form_state.dart';
@@ -35,21 +36,51 @@ class PaymentMethodFormBloc
             ),
           ),
         ),
-        brandChanged: (event) {
+        cardTypeChanged: (event) => emit(
+          state.copyWith(
+            paymentMethod: (state.paymentMethod)?.copyWith(
+              type: Type(event.cardType),
+            ),
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
+        cardNumberChanged: (event) {
           late final PaymentMethodFormState newState;
           final paymentMethod = state.paymentMethod;
 
           if (paymentMethod is CreditCard) {
             newState = state.copyWith(
               paymentMethod: (paymentMethod).copyWith(
-                brand: Brand(event.brand),
+                cardNumber: CardNumber(event.cardNumber),
               ),
               saveFailureOrSucessOption: none(),
             );
           } else {
             newState = state.copyWith(
               paymentMethod: (paymentMethod as DebitCard).copyWith(
-                brand: Brand(event.brand),
+                cardNumber: CardNumber(event.cardNumber),
+              ),
+              saveFailureOrSucessOption: none(),
+            );
+          }
+
+          emit(newState);
+        },
+        securityCodeChanged: (event) {
+          late final PaymentMethodFormState newState;
+          final paymentMethod = state.paymentMethod;
+
+          if (paymentMethod is CreditCard) {
+            newState = state.copyWith(
+              paymentMethod: (paymentMethod).copyWith(
+                securityCode: SecurityCode(event.securityCode),
+              ),
+              saveFailureOrSucessOption: none(),
+            );
+          } else {
+            newState = state.copyWith(
+              paymentMethod: (paymentMethod as DebitCard).copyWith(
+                securityCode: SecurityCode(event.securityCode),
               ),
               saveFailureOrSucessOption: none(),
             );
@@ -94,28 +125,6 @@ class PaymentMethodFormBloc
             newState = state.copyWith(
               paymentMethod: (paymentMethod as DebitCard).copyWith(
                 expiryYear: ExpiryYear(event.expiryYear),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          }
-
-          emit(newState);
-        },
-        lastFourDigitsChanged: (event) {
-          late final PaymentMethodFormState newState;
-          final paymentMethod = state.paymentMethod;
-
-          if (paymentMethod is CreditCard) {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod).copyWith(
-                lastFourDigits: LastFourDigits(event.lastFourDigits),
-              ),
-              saveFailureOrSucessOption: none(),
-            );
-          } else {
-            newState = state.copyWith(
-              paymentMethod: (paymentMethod as DebitCard).copyWith(
-                lastFourDigits: LastFourDigits(event.lastFourDigits),
               ),
               saveFailureOrSucessOption: none(),
             );
