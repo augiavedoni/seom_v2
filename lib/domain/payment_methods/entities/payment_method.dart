@@ -34,8 +34,8 @@ abstract class PaymentMethod implements _$PaymentMethod {
         cardNumber: CardNumber(''),
         securityCode: SecurityCode(''),
         brand: Brand(''),
-        expiryMonth: ExpiryMonth(0),
-        expiryYear: ExpiryYear(0),
+        expiryMonth: ExpiryMonth(''),
+        expiryYear: ExpiryYear(''),
         lastFourDigits: LastFourDigits(''),
       );
 

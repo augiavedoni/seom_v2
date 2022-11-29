@@ -1,7 +1,9 @@
+import 'package:credit_card_type_detector/credit_card_type_detector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart'
     as payment_method;
@@ -12,11 +14,43 @@ class CardNumberInput extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textEditingController = useTextEditingController();
+    final cardNumberController = useTextEditingController();
+    final cardBrand = useState<String>('');
+
+    useEffect(
+      () {
+        cardNumberController.addListener(() {
+          if (cardNumberController.text.isNotEmpty) {
+            cardBrand.value = detectCCType(cardNumberController.text).name;
+          } else {
+            cardBrand.value = '';
+          }
+        });
+
+        return;
+      },
+      [
+        cardNumberController,
+      ],
+    );
 
     return TextFormField(
-      controller: textEditingController,
+      controller: cardNumberController,
       decoration: InputDecoration(
+        suffixIcon: SizedBox(
+          width: 24.0,
+          height: 24.0,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: cardBrand.value.isEmpty
+                ? const SizedBox()
+                : cardBrand.value == 'visa' || cardBrand.value == 'mastercard'
+                    ? SvgPicture.asset(
+                        'lib/presentation/core/assets/logos/${cardBrand.value}.svg',
+                      )
+                    : const SizedBox(),
+          ),
+        ),
         prefixIcon: const Icon(
           Icons.credit_card_rounded,
           color: Colors.black,
@@ -47,7 +81,9 @@ class CardNumberInput extends HookWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         focusColor: green,
+        counterText: '',
       ),
+      maxLength: 16,
       cursorColor: green,
       keyboardType: TextInputType.number,
       inputFormatters: [
@@ -66,7 +102,7 @@ class CardNumberInput extends HookWidget {
           return card.cardNumber?.value.fold(
             (failure) => failure.maybeMap(
               empty: (_) => 'No puede estar vacío',
-              invalidCardBrand: (_) => 'El número de tarjeta es inválido',
+              invalidCardNumber: (_) => 'El número de tarjeta es inválido',
               orElse: () => null,
             ),
             (_) => null,

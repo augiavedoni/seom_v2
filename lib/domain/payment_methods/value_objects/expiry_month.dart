@@ -4,11 +4,11 @@ import '../../core/failures.dart';
 import '../../core/value_object.dart';
 import '../../core/value_validators.dart';
 
-class ExpiryMonth extends ValueObject<int> {
+class ExpiryMonth extends ValueObject<String> {
   @override
-  final Either<ValueFailure<int>, int> value;
+  final Either<ValueFailure<String>, String> value;
 
-  factory ExpiryMonth(int input) {
+  factory ExpiryMonth(String input) {
     return ExpiryMonth._(validateExpiryMonth(input));
   }
 

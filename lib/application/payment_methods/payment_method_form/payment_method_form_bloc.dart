@@ -4,9 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:credit_card_type_detector/credit_card_type_detector.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/domain/payment_methods/i_payment_method_repository.dart';
 import 'package:seom_v2/domain/payment_methods/payment_method_failure.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/brand.dart';
+import 'package:seom_v2/domain/payment_methods/value_objects/last_four_digits.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/type.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/card_numer.dart';
 import 'package:seom_v2/domain/payment_methods/value_objects/expiry_month.dart';
@@ -48,6 +51,16 @@ class PaymentMethodFormBloc
           state.copyWith(
             paymentMethod: (state.paymentMethod as Card).copyWith(
               cardNumber: CardNumber(event.cardNumber),
+              brand: Brand(
+                detectCCType(event.cardNumber) == CreditCardType.visa
+                    ? 'visa'
+                    : 'mastercard',
+              ),
+              lastFourDigits: LastFourDigits(
+                event.cardNumber.isNotEmpty && event.cardNumber.length >= 4
+                    ? event.cardNumber.substring(event.cardNumber.length - 4)
+                    : '',
+              ),
             ),
             saveFailureOrSucessOption: none(),
           ),
@@ -63,7 +76,7 @@ class PaymentMethodFormBloc
         expiryMonthChanged: (event) => emit(
           state.copyWith(
             paymentMethod: (state.paymentMethod as Card).copyWith(
-              expiryMonth: ExpiryMonth(event.expiryMonth),
+              expiryMonth: ExpiryMonth(event.expiryMonth.toString()),
             ),
             saveFailureOrSucessOption: none(),
           ),
@@ -71,7 +84,7 @@ class PaymentMethodFormBloc
         expiryYearChanged: (event) => emit(
           state.copyWith(
             paymentMethod: (state.paymentMethod as Card).copyWith(
-              expiryYear: ExpiryYear(event.expiryYear),
+              expiryYear: ExpiryYear(event.expiryYear.toString()),
             ),
             saveFailureOrSucessOption: none(),
           ),

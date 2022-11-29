@@ -29,8 +29,8 @@ abstract class CardDto implements _$CardDto {
       id: card.id.getOrCrash(),
       type: card.type.getOrCrash(),
       brand: card.brand.getOrCrash(),
-      expiryMonth: card.expiryMonth.getOrCrash(),
-      expiryYear: card.expiryYear.getOrCrash(),
+      expiryMonth: int.parse(card.expiryMonth.getOrCrash()),
+      expiryYear: int.parse(card.expiryYear.getOrCrash()),
       lastFourDigits: card.lastFourDigits.getOrCrash(),
     );
   }
@@ -40,8 +40,8 @@ abstract class CardDto implements _$CardDto {
       id: Id(id),
       type: Type(type),
       brand: Brand(brand),
-      expiryMonth: ExpiryMonth(expiryMonth),
-      expiryYear: ExpiryYear(expiryYear),
+      expiryMonth: ExpiryMonth(expiryMonth.toString()),
+      expiryYear: ExpiryYear(expiryYear.toString()),
       lastFourDigits: LastFourDigits(lastFourDigits),
     );
   }

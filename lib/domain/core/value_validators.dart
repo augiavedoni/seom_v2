@@ -188,37 +188,13 @@ Either<ValueFailure<double>, double> validatePositionValue(
 Either<ValueFailure<String>, String> validateCardNumber(String cardNumber) {
   if (cardNumber.isEmpty) {
     return left(const ValueFailure.empty());
+  } else if (cardNumber.length != 16) {
+    return left(
+      ValueFailure.invalidCardNumber(failedValue: cardNumber),
+    );
   } else {
-    int sum = 0;
-
-    for (int i = cardNumber.length - 1; i >= 0; i--) {
-      int digit = int.parse(cardNumber.substring(i, i + 1));
-
-      if ((cardNumber.length - i) % 2 == 0) {
-        digit = _doubleAndSumDigits(digit);
-      }
-
-      sum += digit;
-    }
-
-    if (sum % 10 == 0) {
-      return right(cardNumber);
-    } else {
-      return left(
-        ValueFailure.invalidCardNumber(failedValue: cardNumber),
-      );
-    }
+    return right(cardNumber);
   }
-}
-
-int _doubleAndSumDigits(int digit) {
-  int ret = digit * 2;
-
-  if (ret > 9) {
-    ret = digit - 9;
-  }
-
-  return ret;
 }
 
 Either<ValueFailure<String>, String> validateSecurityCode(String securityCode) {
@@ -247,25 +223,36 @@ Either<ValueFailure<String>, String> validateCardBrand(String brand) {
   }
 }
 
-Either<ValueFailure<int>, int> validateExpiryMonth(
-  int expiryMonth,
+Either<ValueFailure<String>, String> validateExpiryMonth(
+  String expiryMonth,
 ) {
-  if (expiryMonth < 1 || expiryMonth > 12) {
-    return left(ValueFailure.invalidExpiryMonth(failedValue: expiryMonth));
+  if (expiryMonth.isNotEmpty) {
+    final month = int.parse(expiryMonth);
+
+    if (month < 1 || month > 12) {
+      return left(ValueFailure.invalidExpiryMonth(failedValue: expiryMonth));
+    } else {
+      return right(expiryMonth);
+    }
   } else {
-    return right(expiryMonth);
+    return left(ValueFailure.empty());
   }
 }
 
-Either<ValueFailure<int>, int> validateExpiryYear(
-  int expiryYear,
+Either<ValueFailure<String>, String> validateExpiryYear(
+  String expiryYear,
 ) {
-  final today = DateTime.now();
+  if (expiryYear.isNotEmpty) {
+    final year = int.parse(expiryYear) + 2000;
+    final today = DateTime.now();
 
-  if (expiryYear < today.year) {
-    return left(ValueFailure.invalidExpiryYear(failedValue: expiryYear));
+    if (year < today.year) {
+      return left(ValueFailure.invalidExpiryYear(failedValue: expiryYear));
+    } else {
+      return right(expiryYear);
+    }
   } else {
-    return right(expiryYear);
+    return left(ValueFailure.empty());
   }
 }
 

@@ -4,11 +4,11 @@ import '../../core/failures.dart';
 import '../../core/value_object.dart';
 import '../../core/value_validators.dart';
 
-class ExpiryYear extends ValueObject<int> {
+class ExpiryYear extends ValueObject<String> {
   @override
-  final Either<ValueFailure<int>, int> value;
+  final Either<ValueFailure<String>, String> value;
 
-  factory ExpiryYear(int input) {
+  factory ExpiryYear(String input) {
     return ExpiryYear._(validateExpiryYear(input));
   }
 
