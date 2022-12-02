@@ -28,8 +28,8 @@ abstract class PaymentMethod implements _$PaymentMethod {
     required LastFourDigits lastFourDigits,
   }) = Card;
 
-  factory PaymentMethod.emptyCard() => PaymentMethod.card(
-        type: Type('credit'),
+  factory PaymentMethod.emptyCard(String type) => PaymentMethod.card(
+        type: Type(type),
         id: Id('unknown'),
         cardNumber: CardNumber(''),
         securityCode: SecurityCode(''),

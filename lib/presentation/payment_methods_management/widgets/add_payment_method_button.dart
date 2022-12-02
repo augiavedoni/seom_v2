@@ -19,8 +19,9 @@ class AddPaymentMethodButton extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return FloatingActionButton(
-            /* onPressed: () async {
-              final paymentMethod = await _showPaymentMethodTypeSelector(context);
+            onPressed: () async {
+              final paymentMethod =
+                  await _showPaymentMethodTypeSelector(context);
 
               if (paymentMethod != null) {
                 context.router.push(
@@ -29,12 +30,7 @@ class AddPaymentMethodButton extends StatelessWidget {
                   ),
                 );
               }
-            }, */
-            onPressed: () => context.router.push(
-              AddPaymentMethodScreenRoute(
-                paymentMethod: PaymentMethod.emptyCard(),
-              ),
-            ),
+            },
             backgroundColor: green,
             child: const Icon(Icons.add_rounded),
           );
@@ -57,13 +53,13 @@ class AddPaymentMethodButton extends StatelessWidget {
                 actions: <CupertinoActionSheetAction>[
                   CupertinoActionSheetAction(
                     onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard(),
+                      PaymentMethod.emptyCard('debit'),
                     ),
                     child: const Text('Tarjeta de débito'),
                   ),
                   CupertinoActionSheetAction(
                     onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard(),
+                      PaymentMethod.emptyCard('credit'),
                     ),
                     child: const Text('Tarjeta de crédito'),
                   ),
@@ -88,14 +84,14 @@ class AddPaymentMethodButton extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard(),
+                        PaymentMethod.emptyCard('debit'),
                       ),
                       child: const Text('Tarjeta de débito'),
                     ),
                     TextButton(
                       child: const Text('Tarjeta de crédito'),
                       onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard(),
+                        PaymentMethod.emptyCard('credit'),
                       ),
                     ),
                     const SizedBox(
