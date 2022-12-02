@@ -16,6 +16,7 @@ _$_ParkingTicketDto _$$_ParkingTicketDtoFromJson(Map<String, dynamic> json) =>
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       userCuil: json['userCuil'] as String,
+      receipt: ReceiptDto.fromJson(json['receipt'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ParkingTicketDtoToJson(_$_ParkingTicketDto instance) =>
@@ -28,4 +29,5 @@ Map<String, dynamic> _$$_ParkingTicketDtoToJson(_$_ParkingTicketDto instance) =>
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'userCuil': instance.userCuil,
+      'receipt': instance.receipt.toJson(),
     };

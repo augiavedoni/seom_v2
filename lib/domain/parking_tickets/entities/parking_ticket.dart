@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:seom_v2/domain/core/failures.dart';
+import 'package:seom_v2/domain/receipts/entities/receipt.dart';
 
 import '../../auth/value_objects/cuil.dart';
 import '../../vehicles/value_objects/license_plate.dart';
@@ -25,6 +26,7 @@ abstract class ParkingTicket implements _$ParkingTicket {
     required Latitude latitude,
     required Longitude longitude,
     required Cuil userCuil,
+    required Receipt receipt,
   }) = _ParkingTicket;
 
   Option<ValueFailure<dynamic>> get failureOption {

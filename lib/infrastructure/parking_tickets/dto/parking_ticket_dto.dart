@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:seom_v2/infrastructure/receipts/dto/receipt_dto.dart';
 
 import '../../../domain/auth/value_objects/cuil.dart';
 import '../../../domain/parking_tickets/entities/parking_ticket.dart';
@@ -15,7 +16,7 @@ part 'parking_ticket_dto.freezed.dart';
 part 'parking_ticket_dto.g.dart';
 
 @freezed
-abstract class ParkingTicketDto implements _$ParkingTicketDto {
+class ParkingTicketDto with _$ParkingTicketDto {
   const ParkingTicketDto._();
 
   @JsonSerializable(explicitToJson: true)
@@ -28,6 +29,7 @@ abstract class ParkingTicketDto implements _$ParkingTicketDto {
     required double latitude,
     required double longitude,
     required String userCuil,
+    required ReceiptDto receipt,
   }) = _ParkingTicketDto;
 
   factory ParkingTicketDto.fromDomain(ParkingTicket parkingTicket) {
@@ -40,6 +42,7 @@ abstract class ParkingTicketDto implements _$ParkingTicketDto {
       latitude: parkingTicket.latitude.getOrCrash(),
       longitude: parkingTicket.longitude.getOrCrash(),
       userCuil: parkingTicket.userCuil.getOrCrash(),
+      receipt: ReceiptDto.fromDomain(parkingTicket.receipt),
     );
   }
 
@@ -53,6 +56,7 @@ abstract class ParkingTicketDto implements _$ParkingTicketDto {
       latitude: Latitude(latitude),
       longitude: Longitude(longitude),
       userCuil: Cuil(userCuil),
+      receipt: receipt.toDomain(),
     );
   }
 

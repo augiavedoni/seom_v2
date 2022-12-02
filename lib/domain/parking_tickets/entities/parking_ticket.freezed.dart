@@ -24,6 +24,7 @@ mixin _$ParkingTicket {
   Latitude get latitude => throw _privateConstructorUsedError;
   Longitude get longitude => throw _privateConstructorUsedError;
   Cuil get userCuil => throw _privateConstructorUsedError;
+  Receipt get receipt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ParkingTicketCopyWith<ParkingTicket> get copyWith =>
@@ -44,7 +45,10 @@ abstract class $ParkingTicketCopyWith<$Res> {
       EndTime endTime,
       Latitude latitude,
       Longitude longitude,
-      Cuil userCuil});
+      Cuil userCuil,
+      Receipt receipt});
+
+  $ReceiptCopyWith<$Res> get receipt;
 }
 
 /// @nodoc
@@ -68,6 +72,7 @@ class _$ParkingTicketCopyWithImpl<$Res, $Val extends ParkingTicket>
     Object? latitude = null,
     Object? longitude = null,
     Object? userCuil = null,
+    Object? receipt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -102,7 +107,19 @@ class _$ParkingTicketCopyWithImpl<$Res, $Val extends ParkingTicket>
           ? _value.userCuil
           : userCuil // ignore: cast_nullable_to_non_nullable
               as Cuil,
+      receipt: null == receipt
+          ? _value.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as Receipt,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ReceiptCopyWith<$Res> get receipt {
+    return $ReceiptCopyWith<$Res>(_value.receipt, (value) {
+      return _then(_value.copyWith(receipt: value) as $Val);
+    });
   }
 }
 
@@ -122,7 +139,11 @@ abstract class _$$_ParkingTicketCopyWith<$Res>
       EndTime endTime,
       Latitude latitude,
       Longitude longitude,
-      Cuil userCuil});
+      Cuil userCuil,
+      Receipt receipt});
+
+  @override
+  $ReceiptCopyWith<$Res> get receipt;
 }
 
 /// @nodoc
@@ -144,6 +165,7 @@ class __$$_ParkingTicketCopyWithImpl<$Res>
     Object? latitude = null,
     Object? longitude = null,
     Object? userCuil = null,
+    Object? receipt = null,
   }) {
     return _then(_$_ParkingTicket(
       id: null == id
@@ -178,6 +200,10 @@ class __$$_ParkingTicketCopyWithImpl<$Res>
           ? _value.userCuil
           : userCuil // ignore: cast_nullable_to_non_nullable
               as Cuil,
+      receipt: null == receipt
+          ? _value.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as Receipt,
     ));
   }
 }
@@ -193,7 +219,8 @@ class _$_ParkingTicket extends _ParkingTicket {
       required this.endTime,
       required this.latitude,
       required this.longitude,
-      required this.userCuil})
+      required this.userCuil,
+      required this.receipt})
       : super._();
 
   @override
@@ -212,10 +239,12 @@ class _$_ParkingTicket extends _ParkingTicket {
   final Longitude longitude;
   @override
   final Cuil userCuil;
+  @override
+  final Receipt receipt;
 
   @override
   String toString() {
-    return 'ParkingTicket(id: $id, licensePlate: $licensePlate, date: $date, startTime: $startTime, endTime: $endTime, latitude: $latitude, longitude: $longitude, userCuil: $userCuil)';
+    return 'ParkingTicket(id: $id, licensePlate: $licensePlate, date: $date, startTime: $startTime, endTime: $endTime, latitude: $latitude, longitude: $longitude, userCuil: $userCuil, receipt: $receipt)';
   }
 
   @override
@@ -235,12 +264,13 @@ class _$_ParkingTicket extends _ParkingTicket {
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
             (identical(other.userCuil, userCuil) ||
-                other.userCuil == userCuil));
+                other.userCuil == userCuil) &&
+            (identical(other.receipt, receipt) || other.receipt == receipt));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, licensePlate, date,
-      startTime, endTime, latitude, longitude, userCuil);
+      startTime, endTime, latitude, longitude, userCuil, receipt);
 
   @JsonKey(ignore: true)
   @override
@@ -258,7 +288,8 @@ abstract class _ParkingTicket extends ParkingTicket {
       required final EndTime endTime,
       required final Latitude latitude,
       required final Longitude longitude,
-      required final Cuil userCuil}) = _$_ParkingTicket;
+      required final Cuil userCuil,
+      required final Receipt receipt}) = _$_ParkingTicket;
   const _ParkingTicket._() : super._();
 
   @override
@@ -277,6 +308,8 @@ abstract class _ParkingTicket extends ParkingTicket {
   Longitude get longitude;
   @override
   Cuil get userCuil;
+  @override
+  Receipt get receipt;
   @override
   @JsonKey(ignore: true)
   _$$_ParkingTicketCopyWith<_$_ParkingTicket> get copyWith =>

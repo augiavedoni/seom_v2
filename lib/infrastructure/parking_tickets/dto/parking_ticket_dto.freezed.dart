@@ -29,6 +29,7 @@ mixin _$ParkingTicketDto {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
   String get userCuil => throw _privateConstructorUsedError;
+  ReceiptDto get receipt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,7 +51,10 @@ abstract class $ParkingTicketDtoCopyWith<$Res> {
       String endTime,
       double latitude,
       double longitude,
-      String userCuil});
+      String userCuil,
+      ReceiptDto receipt});
+
+  $ReceiptDtoCopyWith<$Res> get receipt;
 }
 
 /// @nodoc
@@ -74,6 +78,7 @@ class _$ParkingTicketDtoCopyWithImpl<$Res, $Val extends ParkingTicketDto>
     Object? latitude = null,
     Object? longitude = null,
     Object? userCuil = null,
+    Object? receipt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -108,7 +113,19 @@ class _$ParkingTicketDtoCopyWithImpl<$Res, $Val extends ParkingTicketDto>
           ? _value.userCuil
           : userCuil // ignore: cast_nullable_to_non_nullable
               as String,
+      receipt: null == receipt
+          ? _value.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as ReceiptDto,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ReceiptDtoCopyWith<$Res> get receipt {
+    return $ReceiptDtoCopyWith<$Res>(_value.receipt, (value) {
+      return _then(_value.copyWith(receipt: value) as $Val);
+    });
   }
 }
 
@@ -128,7 +145,11 @@ abstract class _$$_ParkingTicketDtoCopyWith<$Res>
       String endTime,
       double latitude,
       double longitude,
-      String userCuil});
+      String userCuil,
+      ReceiptDto receipt});
+
+  @override
+  $ReceiptDtoCopyWith<$Res> get receipt;
 }
 
 /// @nodoc
@@ -150,6 +171,7 @@ class __$$_ParkingTicketDtoCopyWithImpl<$Res>
     Object? latitude = null,
     Object? longitude = null,
     Object? userCuil = null,
+    Object? receipt = null,
   }) {
     return _then(_$_ParkingTicketDto(
       id: null == id
@@ -184,6 +206,10 @@ class __$$_ParkingTicketDtoCopyWithImpl<$Res>
           ? _value.userCuil
           : userCuil // ignore: cast_nullable_to_non_nullable
               as String,
+      receipt: null == receipt
+          ? _value.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as ReceiptDto,
     ));
   }
 }
@@ -200,7 +226,8 @@ class _$_ParkingTicketDto extends _ParkingTicketDto {
       required this.endTime,
       required this.latitude,
       required this.longitude,
-      required this.userCuil})
+      required this.userCuil,
+      required this.receipt})
       : super._();
 
   factory _$_ParkingTicketDto.fromJson(Map<String, dynamic> json) =>
@@ -223,10 +250,12 @@ class _$_ParkingTicketDto extends _ParkingTicketDto {
   final double longitude;
   @override
   final String userCuil;
+  @override
+  final ReceiptDto receipt;
 
   @override
   String toString() {
-    return 'ParkingTicketDto(id: $id, licensePlate: $licensePlate, parkingDate: $parkingDate, startTime: $startTime, endTime: $endTime, latitude: $latitude, longitude: $longitude, userCuil: $userCuil)';
+    return 'ParkingTicketDto(id: $id, licensePlate: $licensePlate, parkingDate: $parkingDate, startTime: $startTime, endTime: $endTime, latitude: $latitude, longitude: $longitude, userCuil: $userCuil, receipt: $receipt)';
   }
 
   @override
@@ -247,13 +276,14 @@ class _$_ParkingTicketDto extends _ParkingTicketDto {
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
             (identical(other.userCuil, userCuil) ||
-                other.userCuil == userCuil));
+                other.userCuil == userCuil) &&
+            (identical(other.receipt, receipt) || other.receipt == receipt));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, licensePlate, parkingDate,
-      startTime, endTime, latitude, longitude, userCuil);
+      startTime, endTime, latitude, longitude, userCuil, receipt);
 
   @JsonKey(ignore: true)
   @override
@@ -278,7 +308,8 @@ abstract class _ParkingTicketDto extends ParkingTicketDto {
       required final String endTime,
       required final double latitude,
       required final double longitude,
-      required final String userCuil}) = _$_ParkingTicketDto;
+      required final String userCuil,
+      required final ReceiptDto receipt}) = _$_ParkingTicketDto;
   const _ParkingTicketDto._() : super._();
 
   factory _ParkingTicketDto.fromJson(Map<String, dynamic> json) =
@@ -301,6 +332,8 @@ abstract class _ParkingTicketDto extends ParkingTicketDto {
   double get longitude;
   @override
   String get userCuil;
+  @override
+  ReceiptDto get receipt;
   @override
   @JsonKey(ignore: true)
   _$$_ParkingTicketDtoCopyWith<_$_ParkingTicketDto> get copyWith =>
