@@ -23,6 +23,8 @@ mixin _$CardDto {
   String get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get brand => throw _privateConstructorUsedError;
+  String? get cardNumber => throw _privateConstructorUsedError;
+  String? get securityCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'expiry_month')
   int get expiryMonth => throw _privateConstructorUsedError;
   @JsonKey(name: 'expiry_year')
@@ -44,6 +46,8 @@ abstract class $CardDtoCopyWith<$Res> {
       {String id,
       String type,
       String brand,
+      String? cardNumber,
+      String? securityCode,
       @JsonKey(name: 'expiry_month') int expiryMonth,
       @JsonKey(name: 'expiry_year') int expiryYear,
       @JsonKey(name: 'last_four_digits') String lastFourDigits});
@@ -65,6 +69,8 @@ class _$CardDtoCopyWithImpl<$Res, $Val extends CardDto>
     Object? id = null,
     Object? type = null,
     Object? brand = null,
+    Object? cardNumber = freezed,
+    Object? securityCode = freezed,
     Object? expiryMonth = null,
     Object? expiryYear = null,
     Object? lastFourDigits = null,
@@ -82,6 +88,14 @@ class _$CardDtoCopyWithImpl<$Res, $Val extends CardDto>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as String,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       expiryMonth: null == expiryMonth
           ? _value.expiryMonth
           : expiryMonth // ignore: cast_nullable_to_non_nullable
@@ -109,6 +123,8 @@ abstract class _$$_CardDTOCopyWith<$Res> implements $CardDtoCopyWith<$Res> {
       {String id,
       String type,
       String brand,
+      String? cardNumber,
+      String? securityCode,
       @JsonKey(name: 'expiry_month') int expiryMonth,
       @JsonKey(name: 'expiry_year') int expiryYear,
       @JsonKey(name: 'last_four_digits') String lastFourDigits});
@@ -127,6 +143,8 @@ class __$$_CardDTOCopyWithImpl<$Res>
     Object? id = null,
     Object? type = null,
     Object? brand = null,
+    Object? cardNumber = freezed,
+    Object? securityCode = freezed,
     Object? expiryMonth = null,
     Object? expiryYear = null,
     Object? lastFourDigits = null,
@@ -144,6 +162,14 @@ class __$$_CardDTOCopyWithImpl<$Res>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as String,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       expiryMonth: null == expiryMonth
           ? _value.expiryMonth
           : expiryMonth // ignore: cast_nullable_to_non_nullable
@@ -168,6 +194,8 @@ class _$_CardDTO extends _CardDTO {
       {required this.id,
       required this.type,
       required this.brand,
+      this.cardNumber,
+      this.securityCode,
       @JsonKey(name: 'expiry_month') required this.expiryMonth,
       @JsonKey(name: 'expiry_year') required this.expiryYear,
       @JsonKey(name: 'last_four_digits') required this.lastFourDigits})
@@ -183,6 +211,10 @@ class _$_CardDTO extends _CardDTO {
   @override
   final String brand;
   @override
+  final String? cardNumber;
+  @override
+  final String? securityCode;
+  @override
   @JsonKey(name: 'expiry_month')
   final int expiryMonth;
   @override
@@ -194,7 +226,7 @@ class _$_CardDTO extends _CardDTO {
 
   @override
   String toString() {
-    return 'CardDto(id: $id, type: $type, brand: $brand, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
+    return 'CardDto(id: $id, type: $type, brand: $brand, cardNumber: $cardNumber, securityCode: $securityCode, expiryMonth: $expiryMonth, expiryYear: $expiryYear, lastFourDigits: $lastFourDigits)';
   }
 
   @override
@@ -205,6 +237,10 @@ class _$_CardDTO extends _CardDTO {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.cardNumber, cardNumber) ||
+                other.cardNumber == cardNumber) &&
+            (identical(other.securityCode, securityCode) ||
+                other.securityCode == securityCode) &&
             (identical(other.expiryMonth, expiryMonth) ||
                 other.expiryMonth == expiryMonth) &&
             (identical(other.expiryYear, expiryYear) ||
@@ -215,8 +251,8 @@ class _$_CardDTO extends _CardDTO {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, type, brand, expiryMonth, expiryYear, lastFourDigits);
+  int get hashCode => Object.hash(runtimeType, id, type, brand, cardNumber,
+      securityCode, expiryMonth, expiryYear, lastFourDigits);
 
   @JsonKey(ignore: true)
   @override
@@ -237,6 +273,8 @@ abstract class _CardDTO extends CardDto {
       {required final String id,
       required final String type,
       required final String brand,
+      final String? cardNumber,
+      final String? securityCode,
       @JsonKey(name: 'expiry_month')
           required final int expiryMonth,
       @JsonKey(name: 'expiry_year')
@@ -253,6 +291,10 @@ abstract class _CardDTO extends CardDto {
   String get type;
   @override
   String get brand;
+  @override
+  String? get cardNumber;
+  @override
+  String? get securityCode;
   @override
   @JsonKey(name: 'expiry_month')
   int get expiryMonth;

@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
@@ -12,20 +14,32 @@ class AddPaymentMethodButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () async {
-        final paymentMethod = await _showPaymentMethodTypeSelector(context);
+    return BlocProvider<PaymentMethodWatcherBloc>.value(
+      value: context.read<PaymentMethodWatcherBloc>(),
+      child: Builder(
+        builder: (context) {
+          return FloatingActionButton(
+            /* onPressed: () async {
+              final paymentMethod = await _showPaymentMethodTypeSelector(context);
 
-        if (paymentMethod != null) {
-          context.router.push(
-            AddPaymentMethodScreenRoute(
-              paymentMethod: paymentMethod,
+              if (paymentMethod != null) {
+                context.router.push(
+                  AddPaymentMethodScreenRoute(
+                    paymentMethod: paymentMethod,
+                  ),
+                );
+              }
+            }, */
+            onPressed: () => context.router.push(
+              AddPaymentMethodScreenRoute(
+                paymentMethod: PaymentMethod.emptyCard(),
+              ),
             ),
+            backgroundColor: green,
+            child: const Icon(Icons.add_rounded),
           );
-        }
-      },
-      backgroundColor: green,
-      child: const Icon(Icons.add_rounded),
+        },
+      ),
     );
   }
 

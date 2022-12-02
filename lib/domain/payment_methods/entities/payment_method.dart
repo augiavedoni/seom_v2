@@ -30,7 +30,7 @@ abstract class PaymentMethod implements _$PaymentMethod {
 
   factory PaymentMethod.emptyCard() => PaymentMethod.card(
         type: Type('credit'),
-        id: Id(''),
+        id: Id('unknown'),
         cardNumber: CardNumber(''),
         securityCode: SecurityCode(''),
         brand: Brand(''),
