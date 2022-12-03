@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/parking_tickets/parking_ticket_watcher/parking_ticket_watcher_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/home/widgets/parking_ticket_information_card.dart';
 import 'package:seom_v2/presentation/home/widgets/parking_ticket_with_error_card.dart';
 import 'package:seom_v2/presentation/home/widgets/recent_activity_load_failure_card.dart';
+import 'package:seom_v2/presentation/routes/router.gr.dart';
 
 class RecentActivityList extends StatelessWidget {
   const RecentActivityList({Key? key}) : super(key: key);
@@ -25,7 +27,25 @@ class RecentActivityList extends StatelessWidget {
             ),
           ),
         ),
-        BlocBuilder<ParkingTicketWatcherBloc, ParkingTicketWatcherState>(
+        BlocConsumer<ParkingTicketWatcherBloc, ParkingTicketWatcherState>(
+          listenWhen: (previous, current) => previous != current,
+          listener: (context, state) => state.maybeMap(
+            loadSuccess: (value) {
+              final parkingTicket = value.parkingTickets.get(0);
+
+              if (!parkingTicket.receipt.paid) {
+                context.router.push(
+                  PaymentProcessScreenRoute(
+                    parkingTicket: parkingTicket,
+                  ),
+                );
+              }
+
+              return;
+            },
+            orElse: () => null,
+          ),
+          buildWhen: (previous, current) => previous != current,
           builder: (context, state) => state.map(
             initial: (_) => const SizedBox(),
             loadInProgress: (_) => const SizedBox(),

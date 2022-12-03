@@ -11,8 +11,6 @@ class AddPaymentMethodForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return BlocBuilder<PaymentMethodFormBloc, PaymentMethodFormState>(
       buildWhen: (previous, current) =>
           previous.showErrorMessages != current.showErrorMessages,
@@ -37,7 +35,6 @@ class AddPaymentMethodForm extends StatelessWidget {
               const Spacer(),
               RoundedButton.fill(
                 text: 'Añadir',
-                minimunSize: Size.fromHeight(size.height * 0.075),
                 onPressed: () => context.read<PaymentMethodFormBloc>().add(
                       PaymentMethodFormEvent.saved(),
                     ),

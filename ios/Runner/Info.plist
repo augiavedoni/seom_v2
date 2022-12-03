@@ -47,5 +47,7 @@
 	<string>Es necesario acceder a tu ubicación para poderte ofrecer un mejor detalle sobre dónde estacionaste tu vehículo</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>googleMapsApiKey</key>
+	<string>$(GOOGLE_MAPS_API_KEY)</string>
 </dict>
 </plist>

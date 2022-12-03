@@ -73,9 +73,13 @@ abstract class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return TextButton(
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all<Size>(minimumSize),
+        minimumSize: MaterialStateProperty.all<Size>(
+          Size.fromHeight(size.height * 0.075),
+        ),
         shape: MaterialStateProperty.all<OutlinedBorder>(
           const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
