@@ -6,19 +6,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:seom_v2/application/parking_tickets/parking_ticket_watcher/parking_ticket_watcher_bloc.dart';
+import 'package:seom_v2/application/permissions/permissions_bloc.dart';
+import 'package:seom_v2/application/vehicles/vehicle_actor/vehicle_actor_bloc.dart';
+import 'package:seom_v2/application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
+import 'package:seom_v2/domain/permissions/permission_failure.dart';
+import 'package:seom_v2/domain/vehicles/entities/vehicle.dart';
+import 'package:seom_v2/domain/vehicles/vehicle_failure.dart';
+import 'package:seom_v2/injection.dart';
+import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
+import 'package:seom_v2/presentation/core/theme/app_colors.dart';
+import 'package:seom_v2/presentation/feedback/feedback_screen.dart';
+import 'package:seom_v2/presentation/routes/router.gr.dart';
 import 'package:shimmer/shimmer.dart';
-
-import '../../../application/permissions/permissions_bloc.dart';
-import '../../../application/vehicles/vehicle_actor/vehicle_actor_bloc.dart';
-import '../../../application/vehicles/vehicle_watcher/vehicle_watcher_bloc.dart';
-import '../../../domain/permissions/permission_failure.dart';
-import '../../../domain/vehicles/entities/vehicle.dart';
-import '../../../domain/vehicles/vehicle_failure.dart';
-import '../../../injection.dart';
-import '../../common_widgets/custom_dialog.dart';
-import '../../core/theme/app_colors.dart';
-import '../../feedback/feedback_screen.dart';
-import '../../routes/router.gr.dart';
 
 part 'loading_in_progress_card.dart';
 part 'vehicle_information_card.dart';
@@ -30,7 +29,8 @@ class VehiclesCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
+    final theme = Theme.of(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,9 +39,9 @@ class VehiclesCarousel extends StatelessWidget {
           padding: const EdgeInsets.all(NavigationToolbar.kMiddleSpacing),
           child: Text(
             "Tus vehículos",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: theme.textTheme.headline5!.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         BlocBuilder<VehicleWatcherBloc, VehicleWatcherState>(
@@ -64,10 +64,9 @@ class VehiclesCarousel extends StatelessWidget {
                         ),
                         Text(
                           "No tenés vehículos a tu nombre",
-                          style:
-                              Theme.of(context).textTheme.headline6!.copyWith(
-                                    color: black,
-                                  ),
+                          style: theme.textTheme.headline6!.copyWith(
+                            color: black,
+                          ),
                         ),
                       ],
                     ),

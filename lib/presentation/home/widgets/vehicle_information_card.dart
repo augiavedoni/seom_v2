@@ -12,7 +12,8 @@ class _VehicleInformationCard extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
     final hookedVehicle = useState<Vehicle>(vehicle);
     final hookedPosition = useState<Position?>(null);
 
@@ -83,21 +84,19 @@ class _VehicleInformationCard extends HookWidget {
                     children: <Widget>[
                       Text(
                         "${hookedVehicle.value.make.getOrCrash()} ${hookedVehicle.value.model.getOrCrash()}",
-                        style:
-                            Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                        style: theme.textTheme.headlineSmall!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       Text(
                         "${hookedVehicle.value.year.getOrCrash()}",
-                        style:
-                            Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                  color: Colors.white,
-                                ),
+                        style: theme.textTheme.headlineSmall!.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
@@ -107,12 +106,9 @@ class _VehicleInformationCard extends HookWidget {
                         children: <Widget>[
                           Text(
                             hookedVehicle.value.licensePlate.getOrCrash(),
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(
-                                  color: Colors.white,
-                                ),
+                            style: theme.textTheme.headlineSmall!.copyWith(
+                              color: Colors.white,
+                            ),
                           ),
                           TextButton(
                             onPressed: () => _changeParkingStatus(
@@ -123,13 +119,10 @@ class _VehicleInformationCard extends HookWidget {
                               hookedVehicle.value.parked
                                   ? "Finalizar"
                                   : "Estacionar",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                    color: green,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              style: theme.textTheme.labelLarge!.copyWith(
+                                color: green,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -204,7 +197,7 @@ class _VehicleInformationCard extends HookWidget {
           title: "Algo ocurrió...",
           description: description,
           mainButtonText: "Volver",
-          mainButtonFunctionality: () => Navigator.of(context).pop(),
+          mainButtonFunctionality: () => context.router.pop(),
           dialogStatus: DialogStatus.error,
         );
       },
