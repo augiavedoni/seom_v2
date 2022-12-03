@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
-import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/injection.dart';
 import 'package:seom_v2/presentation/add_payment_method/widgets/add_payment_method_form.dart';
@@ -45,20 +44,13 @@ class AddPaymentMethodScreen extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
-      body: MultiBlocProvider(
-        providers: [
-          BlocProvider<PaymentMethodFormBloc>(
-            create: (_) => getIt<PaymentMethodFormBloc>()
-              ..add(
-                PaymentMethodFormEvent.initialized(
-                  optionOf(paymentMethod),
-                ),
-              ),
+      body: BlocProvider<PaymentMethodFormBloc>(
+        create: (_) => getIt<PaymentMethodFormBloc>()
+          ..add(
+            PaymentMethodFormEvent.initialized(
+              optionOf(paymentMethod),
+            ),
           ),
-          BlocProvider<PaymentMethodWatcherBloc>.value(
-            value: context.read<PaymentMethodWatcherBloc>(),
-          ),
-        ],
         child: BlocConsumer<PaymentMethodFormBloc, PaymentMethodFormState>(
           listenWhen: (previous, current) =>
               previous.isSaving != current.isSaving,
@@ -98,15 +90,12 @@ class AddPaymentMethodScreen extends StatelessWidget {
                       description:
                           'Pudimos agregar el medio de pago correctamente. A partir de ahora vas a poder utilizarlo para abonar el SEOM.',
                       mainButtonText: 'Cerrar',
-                      mainButtonFunctionality: () {
-                        context.router.popUntilRouteWithName(
-                          PaymentMethodsManagementScreenRoute.name,
-                        );
-
-                        context.read<PaymentMethodWatcherBloc>().add(
-                              const PaymentMethodWatcherEvent.getAllStarted(),
-                            );
-                      },
+                      mainButtonFunctionality: () =>
+                          context.router.pushAndPopUntil(
+                        PaymentMethodsManagementScreenRoute(),
+                        predicate: (route) =>
+                            route.settings.name == HomeScreenRoute.name,
+                      ),
                     ),
                   ),
                 ),
