@@ -56,7 +56,7 @@ class AvatarOptions extends StatelessWidget {
                 ),
           ),
         ],
-        child: const NotUserAvatar(),
+        child: const SeomUserAvatar(),
       ),
     );
   }

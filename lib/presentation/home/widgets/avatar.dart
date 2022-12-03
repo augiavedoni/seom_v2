@@ -5,14 +5,14 @@ import '../../../../domain/core/errors.dart';
 import '../../../../injection.dart';
 import '../../core/theme/app_colors.dart';
 
-class NotUserAvatar extends StatefulWidget {
-  const NotUserAvatar({Key? key}) : super(key: key);
+class SeomUserAvatar extends StatefulWidget {
+  const SeomUserAvatar({Key? key}) : super(key: key);
 
   @override
-  State<NotUserAvatar> createState() => _NotUserAvatarState();
+  State<SeomUserAvatar> createState() => _SeomUserAvatarState();
 }
 
-class _NotUserAvatarState extends State<NotUserAvatar> {
+class _SeomUserAvatarState extends State<SeomUserAvatar> {
   late String initials;
 
   @override
