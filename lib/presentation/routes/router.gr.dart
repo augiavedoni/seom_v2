@@ -78,6 +78,7 @@ class Router extends _i8.RootStackRouter {
         child: _i5.AddPaymentMethodScreen(
           key: args.key,
           paymentMethod: args.paymentMethod,
+          isPaying: args.isPaying,
         ),
       );
     },
@@ -249,12 +250,14 @@ class AddPaymentMethodScreenRoute
   AddPaymentMethodScreenRoute({
     _i9.Key? key,
     required _i10.PaymentMethod paymentMethod,
+    required bool isPaying,
   }) : super(
           AddPaymentMethodScreenRoute.name,
           path: '/add-payment-method-screen',
           args: AddPaymentMethodScreenRouteArgs(
             key: key,
             paymentMethod: paymentMethod,
+            isPaying: isPaying,
           ),
         );
 
@@ -265,15 +268,18 @@ class AddPaymentMethodScreenRouteArgs {
   const AddPaymentMethodScreenRouteArgs({
     this.key,
     required this.paymentMethod,
+    required this.isPaying,
   });
 
   final _i9.Key? key;
 
   final _i10.PaymentMethod paymentMethod;
 
+  final bool isPaying;
+
   @override
   String toString() {
-    return 'AddPaymentMethodScreenRouteArgs{key: $key, paymentMethod: $paymentMethod}';
+    return 'AddPaymentMethodScreenRouteArgs{key: $key, paymentMethod: $paymentMethod, isPaying: $isPaying}';
   }
 }
 

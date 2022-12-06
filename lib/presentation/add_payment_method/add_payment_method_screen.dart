@@ -14,9 +14,11 @@ class AddPaymentMethodScreen extends StatelessWidget {
   const AddPaymentMethodScreen({
     super.key,
     required this.paymentMethod,
+    required this.isPaying,
   });
 
   final PaymentMethod paymentMethod;
+  final bool isPaying;
 
   @override
   Widget build(BuildContext context) {
@@ -89,13 +91,23 @@ class AddPaymentMethodScreen extends StatelessWidget {
                       title: '¡Listo!',
                       description:
                           'Pudimos agregar el medio de pago correctamente. A partir de ahora vas a poder utilizarlo para abonar el SEOM.',
-                      mainButtonText: 'Cerrar',
-                      mainButtonFunctionality: () =>
+                      mainButtonText: isPaying ? 'Volver' : 'Cerrar',
+                      mainButtonFunctionality: () {
+                        if (isPaying) {
                           context.router.pushAndPopUntil(
-                        PaymentMethodsManagementScreenRoute(),
-                        predicate: (route) =>
-                            route.settings.name == HomeScreenRoute.name,
-                      ),
+                            PaymentMethodChooserScreenRoute(),
+                            predicate: (route) =>
+                                route.settings.name ==
+                                ParkingDetailsScreenRoute.name,
+                          );
+                        } else {
+                          context.router.pushAndPopUntil(
+                            PaymentMethodsManagementScreenRoute(),
+                            predicate: (route) =>
+                                route.settings.name == HomeScreenRoute.name,
+                          );
+                        }
+                      },
                     ),
                   ),
                 ),

@@ -27,6 +27,7 @@ class AddPaymentMethodButton extends StatelessWidget {
                 context.router.push(
                   AddPaymentMethodScreenRoute(
                     paymentMethod: paymentMethod,
+                    isPaying: false,
                   ),
                 );
               }

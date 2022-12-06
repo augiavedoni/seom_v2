@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/application/payment_processor/payment_processor_bloc.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
+import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_method_information_card.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_method_loading.dart';
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/widgets/payment_methods_list.dart';
@@ -71,10 +72,37 @@ class PaymentMethodChooserCard extends StatelessWidget {
             child: BlocBuilder<PaymentProcessorBloc, PaymentProcessorState>(
               buildWhen: (previous, current) =>
                   previous.paymentMethod != current.paymentMethod,
-              builder: (_, state) => PaymentMethodInformationCard(
-                paymentMethod:
-                    state.paymentMethod ?? response.paymentMethods.get(0),
-              ),
+              builder: (_, state) {
+                final selectedPaymentMethod =
+                    state.paymentMethod ?? response.paymentMethods.get(0);
+
+                return Column(
+                  children: [
+                    PaymentMethodInformationCard(
+                      paymentMethod: selectedPaymentMethod,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    selectedPaymentMethod.type.getOrCrash() == 'credit'
+                        ? Row(
+                            children: [
+                              Icon(
+                                Icons.info_outline_rounded,
+                                color: black,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'El cobro se hará en un pago',
+                              ),
+                            ],
+                          )
+                        : const SizedBox(),
+                  ],
+                );
+              },
             ),
           );
         },
