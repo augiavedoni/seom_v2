@@ -11,9 +11,11 @@ class PaymentMethodInformationCard extends StatelessWidget {
   const PaymentMethodInformationCard({
     super.key,
     required this.paymentMethod,
+    this.canErase = false,
   });
 
   final PaymentMethod paymentMethod;
+  final bool canErase;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,6 @@ class PaymentMethodInformationCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: black,
-      ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: NavigationToolbar.kMiddleSpacing,
       ),
       padding: const EdgeInsets.all(10),
       child: Row(
@@ -56,7 +55,7 @@ class PaymentMethodInformationCard extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          _getPaymentMethodOptionsButton(context),
+          canErase ? _getPaymentMethodOptionsButton(context) : const SizedBox(),
         ],
       ),
     );

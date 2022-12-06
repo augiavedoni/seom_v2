@@ -12,17 +12,22 @@ class PaymentMethodsOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PaymentMethodWatcherBloc, PaymentMethodWatcherState>(
-      builder: (context, state) => state.maybeMap(
-        loadInProgress: (_) => const PaymentMethodsLoading(),
-        loadSuccess: (state) => PaymentMethodsList(
-          paymentMethods: state.paymentMethods,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: NavigationToolbar.kMiddleSpacing,
+      ),
+      child: BlocBuilder<PaymentMethodWatcherBloc, PaymentMethodWatcherState>(
+        builder: (context, state) => state.maybeMap(
+          loadInProgress: (_) => const PaymentMethodsLoading(),
+          loadSuccess: (state) => PaymentMethodsList(
+            paymentMethods: state.paymentMethods,
+          ),
+          loadFailure: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
+            value: context.read<PaymentMethodWatcherBloc>(),
+            child: const PaymentMethodsLoadFailureCard(),
+          ),
+          orElse: () => const SizedBox(),
         ),
-        loadFailure: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
-          value: context.read<PaymentMethodWatcherBloc>(),
-          child: const PaymentMethodsLoadFailureCard(),
-        ),
-        orElse: () => const SizedBox(),
       ),
     );
   }

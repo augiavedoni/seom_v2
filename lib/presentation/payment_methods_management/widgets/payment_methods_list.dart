@@ -22,6 +22,7 @@ class PaymentMethodsList extends StatelessWidget {
         if (paymentMethod.failureOption.isNone()) {
           return PaymentMethodInformationCard(
             paymentMethod: paymentMethod,
+            canErase: true,
           );
         } else if (paymentMethod.failureOption.isSome()) {
           return FailedPaymentMethodCard(

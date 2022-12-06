@@ -29,41 +29,31 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
           create: (_) => getIt<PaymentMethodActorBloc>(),
         ),
       ],
-      child: MultiBlocListener(
-        listeners: [
-          BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
-            listenWhen: (previous, current) => previous != current,
-            listener: (context, state) => state.maybeMap(
-              deleteFailure: (_) async => showDialog(
-                context: context,
-                builder: (_) => const PaymentMethodDeleteFailureDialog(),
-              ),
-              orElse: () => null,
-            ),
-          ),
-          BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
-            listenWhen: (previous, current) => previous != current,
-            listener: (context, state) => state.maybeMap(
-              actionInProgress: (_) async {
-                await context.router.pop();
+      child: BlocListener<PaymentMethodActorBloc, PaymentMethodActorState>(
+        listenWhen: (previous, current) => previous != current,
+        listener: (context, state) => state.maybeMap(
+          actionInProgress: (_) async {
+            await context.router.pop();
 
-                return await showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder: (context) => const LoadingDialog(),
-                );
-              },
-              deleteSuccess: (_) async => showDialog(
-                context: context,
-                builder: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
-                  value: context.read<PaymentMethodWatcherBloc>(),
-                  child: const PaymentMethodDeleteSuccessDialog(),
-                ),
-              ),
-              orElse: () => null,
+            return await showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (context) => const LoadingDialog(),
+            );
+          },
+          deleteSuccess: (_) async => showDialog(
+            context: context,
+            builder: (_) => BlocProvider<PaymentMethodWatcherBloc>.value(
+              value: context.read<PaymentMethodWatcherBloc>(),
+              child: const PaymentMethodDeleteSuccessDialog(),
             ),
           ),
-        ],
+          deleteFailure: (_) async => showDialog(
+            context: context,
+            builder: (_) => const PaymentMethodDeleteFailureDialog(),
+          ),
+          orElse: () => null,
+        ),
         child: Scaffold(
           appBar: AppBar(
             actions: [

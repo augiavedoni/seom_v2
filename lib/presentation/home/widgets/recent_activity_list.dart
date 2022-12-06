@@ -31,11 +31,15 @@ class RecentActivityList extends StatelessWidget {
           listenWhen: (previous, current) => previous != current,
           listener: (context, state) => state.maybeMap(
             loadSuccess: (value) {
+              if (value.parkingTickets.isEmpty()) {
+                return;
+              }
+
               final parkingTicket = value.parkingTickets.get(0);
 
               if (!parkingTicket.receipt.paid) {
                 context.router.push(
-                  PaymentProcessScreenRoute(
+                  ParkingDetailsScreenRoute(
                     parkingTicket: parkingTicket,
                   ),
                 );

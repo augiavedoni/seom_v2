@@ -7,32 +7,25 @@ class PaymentMethodsLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    
     return Container(
+      width: size.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: black,
-      ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: NavigationToolbar.kMiddleSpacing,
       ),
       padding: const EdgeInsets.all(10),
       child: Shimmer.fromColors(
         baseColor: black,
         highlightColor: Colors.grey[200]!,
-        child: ListView.separated(
-          padding: EdgeInsets.zero,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: 1,
-          itemBuilder: (_, __) => Card(
-            margin: EdgeInsets.zero,
-            elevation: 1.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: const SizedBox(height: 50),
+        child: Card(
+          margin: EdgeInsets.zero,
+          elevation: 1.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
           ),
-          separatorBuilder: (_, __) => const SizedBox(height: 10),
+          child: const SizedBox(height: 50),
         ),
       ),
     );

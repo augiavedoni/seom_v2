@@ -35,8 +35,10 @@ class ParkingTicketRepository implements IParkingTicketRepository {
     return response.map(
       ok: (response) {
         final List<ParkingTicket> parkingTickets = response
-            .map<ParkingTicket>((parkingTicket) =>
-                ParkingTicketDto.fromJson(parkingTicket).toDomain())
+            .map<ParkingTicket>(
+              (parkingTicket) =>
+                  ParkingTicketDto.fromJson(parkingTicket).toDomain(),
+            )
             .toList();
 
         return right<ParkingTicketFailure, KtList<ParkingTicket>>(

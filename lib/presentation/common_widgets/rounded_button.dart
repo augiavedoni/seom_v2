@@ -83,7 +83,7 @@ abstract class RoundedButton extends StatelessWidget {
         shape: MaterialStateProperty.all<OutlinedBorder>(
           const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(8.0),
+              Radius.circular(15),
             ),
           ),
         ),

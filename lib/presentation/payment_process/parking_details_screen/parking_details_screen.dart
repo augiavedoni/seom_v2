@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:seom_v2/domain/parking_tickets/entities/parking_ticket.dart';
 import 'package:seom_v2/presentation/common_widgets/rounded_button.dart';
-import 'package:seom_v2/presentation/payment_process/widgets/parking_location.dart';
+import 'package:seom_v2/presentation/payment_process/parking_details_screen/widgets/parking_location.dart';
+import 'package:seom_v2/presentation/routes/router.gr.dart';
 
 part 'widgets/parking_ticket_detail.dart';
 
-class PaymentProcessScreen extends StatelessWidget {
-  const PaymentProcessScreen({
+class ParkingDetailsScreen extends StatelessWidget {
+  const ParkingDetailsScreen({
     super.key,
     required this.parkingTicket,
   });
@@ -116,7 +117,9 @@ class PaymentProcessScreen extends StatelessWidget {
                     const Spacer(),
                     RoundedButton.fill(
                       text: 'Continuar',
-                      onPressed: () => context.router.pop(),
+                      onPressed: () => context.router.push(
+                        const PaymentMethodChooserScreenRoute(),
+                      ),
                     ),
                     const SizedBox(height: NavigationToolbar.kMiddleSpacing),
                   ],

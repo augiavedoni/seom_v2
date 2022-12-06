@@ -1,4 +1,4 @@
-part of '../payment_process_screen.dart';
+part of '../parking_details_screen.dart';
 
 class _ParkingTicketDetail extends StatelessWidget {
   const _ParkingTicketDetail({
