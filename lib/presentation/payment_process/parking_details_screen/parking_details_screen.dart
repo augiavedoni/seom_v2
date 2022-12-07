@@ -9,18 +9,18 @@ import 'package:seom_v2/presentation/routes/router.gr.dart';
 part 'widgets/parking_ticket_detail.dart';
 
 class ParkingDetailsScreen extends StatelessWidget {
-  const ParkingDetailsScreen({
+  ParkingDetailsScreen({
     super.key,
     required this.parkingTicket,
-  });
+  }) : showParkingLocation = parkingTicket.longitude.isValid() &&
+            parkingTicket.latitude.isValid();
 
   final ParkingTicket parkingTicket;
+  final bool showParkingLocation;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final showParkingLocation =
-        parkingTicket.longitude.isValid() && parkingTicket.latitude.isValid();
 
     return WillPopScope(
       onWillPop: () async => true,

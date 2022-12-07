@@ -31,6 +31,12 @@ class PaymentProcessorBloc
             ),
           ),
         ),
+        amountChanged: (event) => emit(
+          state.copyWith(
+            amount: event.amount,
+            saveFailureOrSucessOption: none(),
+          ),
+        ),
         paymentMethodChanged: (event) => emit(
           state.copyWith(
             paymentMethod: event.paymentMethod,
@@ -43,7 +49,8 @@ class PaymentProcessorBloc
             saveFailureOrSucessOption: none(),
           ),
         ),
-        executePayment: (event) {
+        executePayment: (event) async {
+          final isAccountBalance = state.paymentMethod is AccountBalance;
           Either<PaymentProcessorFailure, Unit>? failureOrSuccess;
 
           emit(
@@ -54,15 +61,18 @@ class PaymentProcessorBloc
           );
 
           if (state.paymentMethod?.failureOption.isNone() ?? false) {
-            /* failureOrSuccess = await _paymentMethodRepository.add(
-              paymentMethod: state.paymentMethod!,
-            ); */
+            failureOrSuccess = await _paymentProcessorRepository.executePayment(
+              amount: state.amount,
+              isAccountBalance: isAccountBalance,
+              paymentMethodId: isAccountBalance
+                  ? ''
+                  : (state.paymentMethod as Card).id.getOrCrash(),
+            );
           }
 
           emit(
             state.copyWith(
               isSaving: false,
-              showErrorMessages: true,
               saveFailureOrSucessOption: optionOf(failureOrSuccess),
             ),
           );

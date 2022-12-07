@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/application/payment_processor/payment_processor_bloc.dart';
+import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_method_information_card.dart';
@@ -95,7 +96,26 @@ class PaymentMethodChooserCard extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                'El cobro se hará en un pago',
+                                'El cobro se hará en un pago.',
+                              ),
+                            ],
+                          )
+                        : const SizedBox(),
+                    selectedPaymentMethod is AccountBalance &&
+                            selectedPaymentMethod.balance.getOrCrash() <= -200
+                        ? Row(
+                            children: [
+                              Icon(
+                                Icons.warning_amber_rounded,
+                                color: Colors.red[900],
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'No podrás pagar con tu saldo ya que consumiste todo el límite descubierto disponible. Para poder volver a utilizarlo, deberás hacer una recarga.',
+                                ),
                               ),
                             ],
                           )
