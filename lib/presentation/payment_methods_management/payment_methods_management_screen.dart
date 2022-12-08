@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_actor/payment_method_actor_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
 import 'package:seom_v2/injection.dart';
+import 'package:seom_v2/presentation/common_widgets/custom_app_bar.dart';
 import 'package:seom_v2/presentation/common_widgets/loading_dialog.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/add_payment_method_button.dart';
 import 'package:seom_v2/presentation/payment_methods_management/widgets/payment_method_delete_failure_dialog.dart';
@@ -55,25 +56,8 @@ class PaymentMethodsManagementScreen extends StatelessWidget {
           orElse: () => null,
         ),
         child: Scaffold(
-          appBar: AppBar(
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Medios de pago',
-                    style: theme.textTheme.headline5!.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-            iconTheme: theme.iconTheme.copyWith(color: Colors.black),
-            centerTitle: false,
-            elevation: 0,
-            backgroundColor: Colors.white,
+          appBar: CustomAppBar(
+            title: 'Medios de pago',
           ),
           backgroundColor: Colors.white,
           floatingActionButton: const AddPaymentMethodButton(),

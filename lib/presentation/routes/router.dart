@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:seom_v2/presentation/add_payment_method/add_payment_method_screen.dart';
 import 'package:seom_v2/presentation/feedback/feedback_screen.dart';
 import 'package:seom_v2/presentation/home/home_screen.dart';
+import 'package:seom_v2/presentation/parking_tickets/parking_tickets_history_screen.dart';
 import 'package:seom_v2/presentation/payment_methods_management/payment_methods_management_screen.dart';
 import 'package:seom_v2/presentation/payment_process/parking_details_screen/parking_details_screen.dart';
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/payment_method_chooser_screen.dart';
@@ -17,6 +18,7 @@ import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart';
     AutoRoute<bool>(page: AddPaymentMethodScreen),
     AutoRoute(page: ParkingDetailsScreen),
     AutoRoute(page: PaymentMethodChooserScreen),
+    AutoRoute(page: ParkingTicketsHistoryScreen),
   ],
 )
 class $Router {}

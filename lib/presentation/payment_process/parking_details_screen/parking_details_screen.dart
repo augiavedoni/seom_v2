@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:seom_v2/domain/parking_tickets/entities/parking_ticket.dart';
+import 'package:seom_v2/presentation/common_widgets/custom_app_bar.dart';
 import 'package:seom_v2/presentation/common_widgets/rounded_button.dart';
 import 'package:seom_v2/presentation/payment_process/parking_details_screen/widgets/parking_location.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
@@ -25,25 +26,8 @@ class ParkingDetailsScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => true,
       child: Scaffold(
-        appBar: AppBar(
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  'Pagar estacionamiento',
-                  style: theme.textTheme.headline5!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ],
-          leading: const SizedBox(),
-          centerTitle: false,
-          elevation: 0,
-          backgroundColor: Colors.white,
+        appBar: CustomAppBar(
+          title: 'Pagar estacionamiento',
         ),
         backgroundColor: Colors.white,
         body: Padding(

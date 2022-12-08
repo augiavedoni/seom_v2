@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
 import 'package:seom_v2/injection.dart';
 import 'package:seom_v2/presentation/add_payment_method/widgets/add_payment_method_form.dart';
+import 'package:seom_v2/presentation/common_widgets/custom_app_bar.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
 import 'package:seom_v2/presentation/common_widgets/loading_dialog.dart';
 
@@ -19,28 +20,9 @@ class AddPaymentMethodScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Añadir medio de pago',
-                style: theme.textTheme.headline5!.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ],
-        iconTheme: theme.iconTheme.copyWith(color: Colors.black),
-        centerTitle: false,
-        elevation: 0,
-        backgroundColor: Colors.white,
+      appBar: CustomAppBar(
+        title: 'Añadir medio de pago',
       ),
       backgroundColor: Colors.white,
       body: BlocProvider<PaymentMethodFormBloc>(

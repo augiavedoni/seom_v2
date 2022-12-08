@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/parking_tickets/parking_ticket_watcher/parking_ticket_watcher_bloc.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
-import 'package:seom_v2/presentation/home/widgets/parking_ticket_information_card.dart';
-import 'package:seom_v2/presentation/home/widgets/parking_ticket_with_error_card.dart';
 import 'package:seom_v2/presentation/home/widgets/recent_activity_load_failure_card.dart';
+import 'package:seom_v2/presentation/home/widgets/see_more_activity_button.dart';
+import 'package:seom_v2/presentation/parking_tickets/widgets/parking_tickets_list.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
 
 class RecentActivityList extends StatelessWidget {
@@ -53,42 +53,45 @@ class RecentActivityList extends StatelessWidget {
           builder: (context, state) => state.map(
             initial: (_) => const SizedBox(),
             loadInProgress: (_) => const SizedBox(),
-            loadSuccess: (state) => state.parkingTickets.isEmpty()
-                ? Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20,
-                    ),
-                    child: Align(
-                      child: Text(
-                        'No tenés actividad reciente',
-                        style: theme.textTheme.bodyText2!.copyWith(
-                          color: black,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  )
-                : ListView.separated(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: state.parkingTickets.size > 3
-                        ? 3
-                        : state.parkingTickets.size,
-                    itemBuilder: (_, index) {
-                      final parkingTicket = state.parkingTickets.get(index);
+            loadSuccess: (state) {
+              final amountOfParkingTickets = state.parkingTickets.size;
 
-                      return parkingTicket.failureOption.isNone()
-                          ? ParkingTicketInformationCard(
-                              parkingTicket: parkingTicket,
-                            )
-                          : ParkingTicketWithErrorCard(
-                              parkingTicket: parkingTicket,
-                            );
-                    },
-                    separatorBuilder: (_, __) => const SizedBox(
-                      height: 10,
+              if (amountOfParkingTickets == 0) {
+                return Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                  ),
+                  child: Align(
+                    child: Text(
+                      'No tenés actividad reciente',
+                      style: theme.textTheme.bodyText2!.copyWith(
+                        color: black,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
+                );
+              } else {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ParkingTicketsList(
+                      parkingTickets: state.parkingTickets,
+                      limitAmount: true,
+                    ),
+                    amountOfParkingTickets > 3
+                        ? BlocProvider<ParkingTicketWatcherBloc>.value(
+                            value: context.read<ParkingTicketWatcherBloc>(),
+                            child: const SeeMoreActivityButton(),
+                          )
+                        : const SizedBox(),
+                    SizedBox(
+                      height: amountOfParkingTickets > 3 ? 20 : null,
+                    ),
+                  ],
+                );
+              }
+            },
             loadFailure: (state) =>
                 BlocProvider<ParkingTicketWatcherBloc>.value(
               value: context.read<ParkingTicketWatcherBloc>(),
