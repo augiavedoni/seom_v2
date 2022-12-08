@@ -31,20 +31,11 @@ class PaymentMethodFormBloc
     on<PaymentMethodFormEvent>(
       (event, emit) async => event.map<FutureOr>(
         initialized: (event) => emit(
-          event.initialPaymentMethodOption.fold(
-            () => state,
-            (initialPaymentMethod) => state.copyWith(
-              paymentMethod: initialPaymentMethod,
-              isEditing: true,
-            ),
-          ),
-        ),
-        cardTypeChanged: (event) => emit(
           state.copyWith(
-            paymentMethod: (state.paymentMethod)?.copyWith(
-              type: Type(event.cardType),
+            paymentMethod: state.paymentMethod.copyWith(
+              type: Type(event.paymentMethodType),
             ),
-            saveFailureOrSucessOption: none(),
+            isEditing: true,
           ),
         ),
         cardNumberChanged: (event) => emit(
@@ -76,7 +67,7 @@ class PaymentMethodFormBloc
         expiryMonthChanged: (event) => emit(
           state.copyWith(
             paymentMethod: (state.paymentMethod as Card).copyWith(
-              expiryMonth: ExpiryMonth(event.expiryMonth.toString()),
+              expiryMonth: ExpiryMonth(event.expiryMonth),
             ),
             saveFailureOrSucessOption: none(),
           ),
@@ -84,24 +75,31 @@ class PaymentMethodFormBloc
         expiryYearChanged: (event) => emit(
           state.copyWith(
             paymentMethod: (state.paymentMethod as Card).copyWith(
-              expiryYear: ExpiryYear(event.expiryYear.toString()),
+              expiryYear: ExpiryYear(event.expiryYear),
             ),
             saveFailureOrSucessOption: none(),
           ),
         ),
         saved: (event) async {
           Either<PaymentMethodFailure, Unit>? failureOrSuccess;
+          final paymentMethod = state.paymentMethod as Card;
+          final isCardNumberValid =
+              paymentMethod.cardNumber?.isValid() ?? false;
+          final isSecuriteCodeValid =
+              paymentMethod.securityCode?.isValid() ?? false;
 
-          emit(
-            state.copyWith(
-              isSaving: true,
-              saveFailureOrSucessOption: none(),
-            ),
-          );
+          if (paymentMethod.failureOption.isNone() &&
+              isCardNumberValid &&
+              isSecuriteCodeValid) {
+            emit(
+              state.copyWith(
+                isSaving: true,
+                saveFailureOrSucessOption: none(),
+              ),
+            );
 
-          if (state.paymentMethod?.failureOption.isNone() ?? false) {
             failureOrSuccess = await _paymentMethodRepository.add(
-              paymentMethod: state.paymentMethod!,
+              paymentMethod: state.paymentMethod,
             );
           }
 

@@ -55,9 +55,7 @@ class ExpiryMonthInput extends HookWidget {
           FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
         ],
         onChanged: (value) => context.read<PaymentMethodFormBloc>().add(
-              PaymentMethodFormEvent.expiryMonthChanged(
-                int.parse(value),
-              ),
+              PaymentMethodFormEvent.expiryMonthChanged(value),
             ),
         validator: (_) {
           final payment_method.Card? card = context

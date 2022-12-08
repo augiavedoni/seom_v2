@@ -33,13 +33,12 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
         builder: (context) {
           return FloatingActionButton(
             onPressed: () async {
-              final paymentMethod =
-                  await _showPaymentMethodTypeSelector(context);
+              final cardType = await _showPaymentMethodTypeSelector(context);
 
-              if (paymentMethod != null) {
+              if (cardType != null) {
                 final hasNewPaymentMethod = await context.router.push<bool>(
                   AddPaymentMethodScreenRoute(
-                    paymentMethod: paymentMethod,
+                    cardType: cardType,
                     isPaying: false,
                   ),
                 );
@@ -59,11 +58,11 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
     );
   }
 
-  Future<PaymentMethod?> _showPaymentMethodTypeSelector(
+  Future<String?> _showPaymentMethodTypeSelector(
     BuildContext context,
   ) async =>
       Platform.isIOS
-          ? await showCupertinoModalPopup<PaymentMethod?>(
+          ? await showCupertinoModalPopup<String?>(
               context: context,
               builder: (_) => CupertinoActionSheet(
                 title: const Text('Añadir medio de pago'),
@@ -72,15 +71,11 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                 ),
                 actions: <CupertinoActionSheetAction>[
                   CupertinoActionSheetAction(
-                    onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard('debit'),
-                    ),
+                    onPressed: () => context.router.pop('debit'),
                     child: const Text('Tarjeta de débito'),
                   ),
                   CupertinoActionSheetAction(
-                    onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard('credit'),
-                    ),
+                    onPressed: () => context.router.pop('credit'),
                     child: const Text('Tarjeta de crédito'),
                   ),
                 ],
@@ -90,7 +85,7 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                 ),
               ),
             )
-          : await showDialog<PaymentMethod?>(
+          : await showDialog<String?>(
               context: context,
               builder: (_) => AlertDialog(
                 title: const Text(
@@ -103,16 +98,12 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                       '¿Qué tipo de medio de pago deseas añadir?',
                     ),
                     TextButton(
-                      onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard('debit'),
-                      ),
+                      onPressed: () => context.router.pop('debit'),
                       child: const Text('Tarjeta de débito'),
                     ),
                     TextButton(
                       child: const Text('Tarjeta de crédito'),
-                      onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard('credit'),
-                      ),
+                      onPressed: () => context.router.pop('credit'),
                     ),
                     const SizedBox(
                       height: 10,

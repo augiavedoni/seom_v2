@@ -227,6 +227,10 @@ Either<ValueFailure<String>, String> validateExpiryMonth(
   String expiryMonth,
 ) {
   if (expiryMonth.isNotEmpty) {
+    if (expiryMonth.length != 2) {
+      return left(ValueFailure.invalidExpiryMonth(failedValue: expiryMonth));
+    }
+
     final month = int.parse(expiryMonth);
 
     if (month < 1 || month > 12) {
@@ -243,6 +247,10 @@ Either<ValueFailure<String>, String> validateExpiryYear(
   String expiryYear,
 ) {
   if (expiryYear.isNotEmpty) {
+    if (expiryYear.length != 2) {
+      return left(ValueFailure.invalidExpiryYear(failedValue: expiryYear));
+    }
+
     final year = int.parse(expiryYear) + 2000;
     final today = DateTime.now();
 

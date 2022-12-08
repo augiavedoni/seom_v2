@@ -14,8 +14,6 @@
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:flutter/material.dart' as _i9;
 import 'package:seom_v2/domain/parking_tickets/entities/parking_ticket.dart'
-    as _i11;
-import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart'
     as _i10;
 import 'package:seom_v2/presentation/add_payment_method/add_payment_method_screen.dart'
     as _i5;
@@ -77,7 +75,7 @@ class Router extends _i8.RootStackRouter {
         routeData: routeData,
         child: _i5.AddPaymentMethodScreen(
           key: args.key,
-          paymentMethod: args.paymentMethod,
+          cardType: args.cardType,
           isPaying: args.isPaying,
         ),
       );
@@ -253,14 +251,14 @@ class AddPaymentMethodScreenRoute
     extends _i8.PageRouteInfo<AddPaymentMethodScreenRouteArgs> {
   AddPaymentMethodScreenRoute({
     _i9.Key? key,
-    required _i10.PaymentMethod paymentMethod,
+    required String cardType,
     required bool isPaying,
   }) : super(
           AddPaymentMethodScreenRoute.name,
           path: '/add-payment-method-screen',
           args: AddPaymentMethodScreenRouteArgs(
             key: key,
-            paymentMethod: paymentMethod,
+            cardType: cardType,
             isPaying: isPaying,
           ),
         );
@@ -271,19 +269,19 @@ class AddPaymentMethodScreenRoute
 class AddPaymentMethodScreenRouteArgs {
   const AddPaymentMethodScreenRouteArgs({
     this.key,
-    required this.paymentMethod,
+    required this.cardType,
     required this.isPaying,
   });
 
   final _i9.Key? key;
 
-  final _i10.PaymentMethod paymentMethod;
+  final String cardType;
 
   final bool isPaying;
 
   @override
   String toString() {
-    return 'AddPaymentMethodScreenRouteArgs{key: $key, paymentMethod: $paymentMethod, isPaying: $isPaying}';
+    return 'AddPaymentMethodScreenRouteArgs{key: $key, cardType: $cardType, isPaying: $isPaying}';
   }
 }
 
@@ -293,7 +291,7 @@ class ParkingDetailsScreenRoute
     extends _i8.PageRouteInfo<ParkingDetailsScreenRouteArgs> {
   ParkingDetailsScreenRoute({
     _i9.Key? key,
-    required _i11.ParkingTicket parkingTicket,
+    required _i10.ParkingTicket parkingTicket,
   }) : super(
           ParkingDetailsScreenRoute.name,
           path: '/parking-details-screen',
@@ -314,7 +312,7 @@ class ParkingDetailsScreenRouteArgs {
 
   final _i9.Key? key;
 
-  final _i11.ParkingTicket parkingTicket;
+  final _i10.ParkingTicket parkingTicket;
 
   @override
   String toString() {

@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_watcher/payment_method_watcher_bloc.dart';
-import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
 
@@ -31,14 +30,14 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
 
     return GestureDetector(
       onTap: () async {
-        final paymentMethod = await _showPaymentMethodTypeSelector(context);
+        final cardType = await _showPaymentMethodTypeSelector(context);
 
         await context.router.pop();
 
-        if (paymentMethod != null) {
+        if (cardType != null) {
           final hasNewPaymentMethod = await context.router.push<bool>(
             AddPaymentMethodScreenRoute(
-              paymentMethod: paymentMethod,
+              cardType: cardType,
               isPaying: true,
             ),
           );
@@ -93,11 +92,11 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
     );
   }
 
-  Future<PaymentMethod?> _showPaymentMethodTypeSelector(
+  Future<String?> _showPaymentMethodTypeSelector(
     BuildContext context,
   ) async =>
       Platform.isIOS
-          ? await showCupertinoModalPopup<PaymentMethod?>(
+          ? await showCupertinoModalPopup<String?>(
               context: context,
               builder: (_) => CupertinoActionSheet(
                 title: const Text('Añadir medio de pago'),
@@ -106,15 +105,11 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                 ),
                 actions: <CupertinoActionSheetAction>[
                   CupertinoActionSheetAction(
-                    onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard('debit'),
-                    ),
+                    onPressed: () => context.router.pop('debit'),
                     child: const Text('Tarjeta de débito'),
                   ),
                   CupertinoActionSheetAction(
-                    onPressed: () => context.router.pop(
-                      PaymentMethod.emptyCard('credit'),
-                    ),
+                    onPressed: () => context.router.pop('credit'),
                     child: const Text('Tarjeta de crédito'),
                   ),
                 ],
@@ -124,7 +119,7 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                 ),
               ),
             )
-          : await showDialog<PaymentMethod?>(
+          : await showDialog<String?>(
               context: context,
               builder: (_) => AlertDialog(
                 title: const Text(
@@ -137,16 +132,12 @@ class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
                       '¿Qué tipo de medio de pago deseas añadir?',
                     ),
                     TextButton(
-                      onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard('debit'),
-                      ),
+                      onPressed: () => context.router.pop('debit'),
                       child: const Text('Tarjeta de débito'),
                     ),
                     TextButton(
                       child: const Text('Tarjeta de crédito'),
-                      onPressed: () => context.router.pop(
-                        PaymentMethod.emptyCard('credit'),
-                      ),
+                      onPressed: () => context.router.pop('credit'),
                     ),
                     const SizedBox(
                       height: 10,

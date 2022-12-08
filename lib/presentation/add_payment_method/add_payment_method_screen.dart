@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seom_v2/application/payment_methods/payment_method_form/payment_method_form_bloc.dart';
-import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/injection.dart';
 import 'package:seom_v2/presentation/add_payment_method/widgets/add_payment_method_form.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
@@ -12,11 +10,11 @@ import 'package:seom_v2/presentation/common_widgets/loading_dialog.dart';
 class AddPaymentMethodScreen extends StatelessWidget {
   const AddPaymentMethodScreen({
     super.key,
-    required this.paymentMethod,
+    required this.cardType,
     required this.isPaying,
   });
 
-  final PaymentMethod paymentMethod;
+  final String cardType;
   final bool isPaying;
 
   @override
@@ -48,9 +46,7 @@ class AddPaymentMethodScreen extends StatelessWidget {
       body: BlocProvider<PaymentMethodFormBloc>(
         create: (_) => getIt<PaymentMethodFormBloc>()
           ..add(
-            PaymentMethodFormEvent.initialized(
-              optionOf(paymentMethod),
-            ),
+            PaymentMethodFormEvent.initialized(cardType),
           ),
         child: BlocConsumer<PaymentMethodFormBloc, PaymentMethodFormState>(
           listenWhen: (previous, current) =>
