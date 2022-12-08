@@ -19,9 +19,6 @@ class FailedPaymentMethodCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         color: Colors.amber,
       ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: NavigationToolbar.kMiddleSpacing,
-      ),
       padding: const EdgeInsets.all(10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,

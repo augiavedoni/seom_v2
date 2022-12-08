@@ -42,14 +42,18 @@ abstract class CardDto implements _$CardDto {
   }
 
   PaymentMethod toDomain() {
+    final editedExpiryMonth =
+        expiryMonth < 10 ? '0$expiryMonth' : '$expiryMonth';
+    final editedExpiryYear = expiryYear.toString().substring(2);
+
     return PaymentMethod.card(
       id: Id(id),
       type: Type(type),
       cardNumber: CardNumber(cardNumber ?? ''),
       securityCode: SecurityCode(securityCode ?? ''),
       brand: Brand(brand),
-      expiryMonth: ExpiryMonth(expiryMonth.toString()),
-      expiryYear: ExpiryYear(expiryYear.toString()),
+      expiryMonth: ExpiryMonth(editedExpiryMonth),
+      expiryYear: ExpiryYear(editedExpiryYear),
       lastFourDigits: LastFourDigits(lastFourDigits),
     );
   }
