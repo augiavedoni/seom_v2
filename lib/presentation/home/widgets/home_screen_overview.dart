@@ -8,12 +8,14 @@ class HomeScreenOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const <Widget>[
-        VehiclesCarousel(),
-        RecentActivityList(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const <Widget>[
+          VehiclesCarousel(),
+          RecentActivityList(),
+        ],
+      ),
     );
   }
 }

@@ -9,8 +9,21 @@ import 'package:seom_v2/domain/payment_methods/entities/payment_method.dart';
 import 'package:seom_v2/presentation/core/theme/app_colors.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
 
-class AddPaymentMethodButton extends StatelessWidget {
+class AddPaymentMethodButton extends StatefulWidget {
   const AddPaymentMethodButton({super.key});
+
+  @override
+  State<AddPaymentMethodButton> createState() => _AddPaymentMethodButtonState();
+}
+
+class _AddPaymentMethodButtonState extends State<AddPaymentMethodButton> {
+  late PaymentMethodWatcherBloc _paymentMethodWatcherBloc;
+
+  @override
+  void didChangeDependencies() {
+    _paymentMethodWatcherBloc = context.read<PaymentMethodWatcherBloc>();
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +37,18 @@ class AddPaymentMethodButton extends StatelessWidget {
                   await _showPaymentMethodTypeSelector(context);
 
               if (paymentMethod != null) {
-                context.router.push(
+                final hasNewPaymentMethod = await context.router.push<bool>(
                   AddPaymentMethodScreenRoute(
                     paymentMethod: paymentMethod,
                     isPaying: false,
                   ),
                 );
+
+                if (hasNewPaymentMethod != null && hasNewPaymentMethod) {
+                  _paymentMethodWatcherBloc.add(
+                    const PaymentMethodWatcherEvent.getAllStarted(),
+                  );
+                }
               }
             },
             backgroundColor: green,

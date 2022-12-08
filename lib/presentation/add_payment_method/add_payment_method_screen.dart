@@ -8,7 +8,6 @@ import 'package:seom_v2/injection.dart';
 import 'package:seom_v2/presentation/add_payment_method/widgets/add_payment_method_form.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_dialog.dart';
 import 'package:seom_v2/presentation/common_widgets/loading_dialog.dart';
-import 'package:seom_v2/presentation/routes/router.gr.dart';
 
 class AddPaymentMethodScreen extends StatelessWidget {
   const AddPaymentMethodScreen({
@@ -89,24 +88,13 @@ class AddPaymentMethodScreen extends StatelessWidget {
                     builder: (_) => CustomDialog(
                       dialogStatus: DialogStatus.success,
                       title: '¡Listo!',
-                      description:
-                          'Pudimos agregar el medio de pago correctamente. A partir de ahora vas a poder utilizarlo para abonar el SEOM.',
+                      description: isPaying
+                          ? 'Pudimos agregar el medio de pago correctamente. Ahora te llevaremos de nuevo al proceso de pago donde podrás elegirlo para pagar el estacionamiento más reciente.'
+                          : 'Pudimos agregar el medio de pago correctamente. A partir de ahora vas a poder utilizarlo para abonar el SEOM.',
                       mainButtonText: isPaying ? 'Volver' : 'Cerrar',
-                      mainButtonFunctionality: () {
-                        if (isPaying) {
-                          context.router.pushAndPopUntil(
-                            PaymentMethodChooserScreenRoute(),
-                            predicate: (route) =>
-                                route.settings.name ==
-                                ParkingDetailsScreenRoute.name,
-                          );
-                        } else {
-                          context.router.pushAndPopUntil(
-                            PaymentMethodsManagementScreenRoute(),
-                            predicate: (route) =>
-                                route.settings.name == HomeScreenRoute.name,
-                          );
-                        }
+                      mainButtonFunctionality: () async {
+                        await context.router.pop();
+                        await context.router.pop<bool>(true);
                       },
                     ),
                   ),

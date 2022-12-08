@@ -5,14 +5,14 @@ class PaymentProcessorState with _$PaymentProcessorState {
   const factory PaymentProcessorState({
     PaymentMethod? paymentMethod,
     Receipt? receipt,
-    required String amount,
+    required int receiptId,
     required bool isSaving,
     required Option<Either<PaymentProcessorFailure, Unit>>
         saveFailureOrSucessOption,
   }) = _Initial;
 
   factory PaymentProcessorState.initial() => PaymentProcessorState(
-        amount: '0.00',
+        receiptId: -1,
         isSaving: false,
         saveFailureOrSucessOption: none(),
       );

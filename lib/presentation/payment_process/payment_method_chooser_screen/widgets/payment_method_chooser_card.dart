@@ -59,8 +59,15 @@ class PaymentMethodChooserCard extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      BlocProvider<PaymentProcessorBloc>.value(
-                        value: context.read<PaymentProcessorBloc>(),
+                      MultiBlocProvider(
+                        providers: [
+                          BlocProvider<PaymentProcessorBloc>.value(
+                            value: context.read<PaymentProcessorBloc>(),
+                          ),
+                          BlocProvider<PaymentMethodWatcherBloc>.value(
+                            value: context.read<PaymentMethodWatcherBloc>(),
+                          ),
+                        ],
                         child: PaymentMethodsList(
                           paymentMethods: response.paymentMethods,
                         ),

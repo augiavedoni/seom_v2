@@ -118,7 +118,9 @@ class ParkingDetailsScreen extends StatelessWidget {
                     RoundedButton.fill(
                       text: 'Continuar',
                       onPressed: () => context.router.push(
-                        const PaymentMethodChooserScreenRoute(),
+                        PaymentMethodChooserScreenRoute(
+                          receiptId: parkingTicket.receipt.id,
+                        ),
                       ),
                     ),
                     const SizedBox(height: NavigationToolbar.kMiddleSpacing),

@@ -14,7 +14,7 @@ import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart';
     AutoRoute(page: HomeScreen),
     AutoRoute(page: FeedbackScreen),
     AutoRoute(page: PaymentMethodsManagementScreen),
-    AutoRoute(page: AddPaymentMethodScreen),
+    AutoRoute<bool>(page: AddPaymentMethodScreen),
     AutoRoute(page: ParkingDetailsScreen),
     AutoRoute(page: PaymentMethodChooserScreen),
   ],

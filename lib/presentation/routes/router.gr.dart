@@ -73,7 +73,7 @@ class Router extends _i8.RootStackRouter {
     },
     AddPaymentMethodScreenRoute.name: (routeData) {
       final args = routeData.argsAs<AddPaymentMethodScreenRouteArgs>();
-      return _i8.MaterialPageX<dynamic>(
+      return _i8.MaterialPageX<bool>(
         routeData: routeData,
         child: _i5.AddPaymentMethodScreen(
           key: args.key,
@@ -93,9 +93,13 @@ class Router extends _i8.RootStackRouter {
       );
     },
     PaymentMethodChooserScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<PaymentMethodChooserScreenRouteArgs>();
       return _i8.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i7.PaymentMethodChooserScreen(),
+        child: _i7.PaymentMethodChooserScreen(
+          key: args.key,
+          receiptId: args.receiptId,
+        ),
       );
     },
   };
@@ -320,12 +324,35 @@ class ParkingDetailsScreenRouteArgs {
 
 /// generated route for
 /// [_i7.PaymentMethodChooserScreen]
-class PaymentMethodChooserScreenRoute extends _i8.PageRouteInfo<void> {
-  const PaymentMethodChooserScreenRoute()
-      : super(
+class PaymentMethodChooserScreenRoute
+    extends _i8.PageRouteInfo<PaymentMethodChooserScreenRouteArgs> {
+  PaymentMethodChooserScreenRoute({
+    _i9.Key? key,
+    required int receiptId,
+  }) : super(
           PaymentMethodChooserScreenRoute.name,
           path: '/payment-method-chooser-screen',
+          args: PaymentMethodChooserScreenRouteArgs(
+            key: key,
+            receiptId: receiptId,
+          ),
         );
 
   static const String name = 'PaymentMethodChooserScreenRoute';
+}
+
+class PaymentMethodChooserScreenRouteArgs {
+  const PaymentMethodChooserScreenRouteArgs({
+    this.key,
+    required this.receiptId,
+  });
+
+  final _i9.Key? key;
+
+  final int receiptId;
+
+  @override
+  String toString() {
+    return 'PaymentMethodChooserScreenRouteArgs{key: $key, receiptId: $receiptId}';
+  }
 }

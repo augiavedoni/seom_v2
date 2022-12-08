@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seom_v2/application/payment_processor/payment_processor_bloc.dart';
+import 'package:seom_v2/injection.dart';
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/widgets/payment_method_chooser_overview.dart';
 
 class PaymentMethodChooserScreen extends StatelessWidget {
-  const PaymentMethodChooserScreen({super.key});
+  const PaymentMethodChooserScreen({
+    super.key,
+    required this.receiptId,
+  });
+
+  final int receiptId;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,13 @@ class PaymentMethodChooserScreen extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
-      body: const PaymentMethodChooserOverview(),
+      body: BlocProvider<PaymentProcessorBloc>(
+        create: (_) => getIt<PaymentProcessorBloc>()
+          ..add(
+            PaymentProcessorEvent.receiptIdChanged(receiptId),
+          ),
+        child: const PaymentMethodChooserOverview(),
+      ),
     );
   }
 }

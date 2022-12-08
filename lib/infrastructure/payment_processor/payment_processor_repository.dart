@@ -15,17 +15,17 @@ class PaymentProcessorRepository implements IPaymentProcessorRepository {
 
   PaymentProcessorRepository(this._client, this._userDataSource);
 
-  static const controllerPath = "pay";
+  static const controllerPath = "payment";
 
   @override
   Future<Either<PaymentProcessorFailure, Unit>> executePayment({
-    required String amount,
+    required int receiptId,
     required bool isAccountBalance,
     String? paymentMethodId,
   }) async {
     final SeomUser? seomUser = _userDataSource.user;
 
-    final response = await _client.get(
+    final response = await _client.post(
       controllerPath,
       parameters: {
         "customerId": seomUser!.stripeId.getOrCrash(),
