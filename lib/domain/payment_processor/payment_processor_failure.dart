@@ -6,4 +6,5 @@ part 'payment_processor_failure.freezed.dart';
 class PaymentProcessorFailure with _$PaymentProcessorFailure {
   const factory PaymentProcessorFailure.unexpected() =
       PaymentMethodUnexpectedFailure;
+  const factory PaymentProcessorFailure.cardDeclined() = CardDeclinedFailure;
 }

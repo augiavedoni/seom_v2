@@ -28,13 +28,26 @@ class PaymentProcessorRepository implements IPaymentProcessorRepository {
     final response = await _client.post(
       controllerPath,
       parameters: {
-        "customerId": seomUser!.stripeId.getOrCrash(),
+        "receiptId": receiptId,
+        "isAccountBalance": isAccountBalance,
+        "paymentMethodId": paymentMethodId ?? "",
+        "stripeUserId": seomUser!.stripeId.getOrCrash(),
       },
     );
 
     return response.map(
       ok: (response) => right(unit),
-      error: (_, __) => left(const PaymentProcessorFailure.unexpected()),
+      error: (error, statusCode) {
+        late PaymentProcessorFailure failure;
+
+        if (error.error == 'card-declined') {
+          failure = const PaymentProcessorFailure.cardDeclined();
+        } else {
+          failure = const PaymentProcessorFailure.unexpected();
+        }
+
+        return left(failure);
+      },
     );
   }
 }
