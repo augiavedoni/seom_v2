@@ -91,6 +91,7 @@ class FeedbackScreen extends StatelessWidget {
                       Text(
                         title,
                         style: Theme.of(context).textTheme.headline5,
+                        textAlign: TextAlign.center,
                       ),
                       if (description != null) ...[
                         const SizedBox(

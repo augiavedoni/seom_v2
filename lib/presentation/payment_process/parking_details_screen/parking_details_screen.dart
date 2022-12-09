@@ -24,10 +24,11 @@ class ParkingDetailsScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     return WillPopScope(
-      onWillPop: () async => true,
+      onWillPop: () async => false,
       child: Scaffold(
         appBar: CustomAppBar(
           title: 'Pagar estacionamiento',
+          showBackButton: false,
         ),
         backgroundColor: Colors.white,
         body: Padding(
