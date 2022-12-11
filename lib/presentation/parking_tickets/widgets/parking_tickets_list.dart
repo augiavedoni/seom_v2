@@ -17,6 +17,8 @@ class ParkingTicketsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      padding: limitAmount ? EdgeInsets.zero : null,
+      physics: limitAmount ? const NeverScrollableScrollPhysics() : null,
       shrinkWrap: true,
       itemCount: limitAmount
           ? parkingTickets.size >= 3
