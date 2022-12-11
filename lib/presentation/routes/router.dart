@@ -7,6 +7,7 @@ import 'package:seom_v2/presentation/payment_methods_management/payment_methods_
 import 'package:seom_v2/presentation/payment_process/parking_details_screen/parking_details_screen.dart';
 import 'package:seom_v2/presentation/payment_process/payment_in_process_screen/payment_in_process_screen.dart';
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/payment_method_chooser_screen.dart';
+import 'package:seom_v2/presentation/payment_process/successful_payment_screen/successful_payment_screen.dart';
 import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart';
 
 @MaterialAutoRouter(
@@ -21,6 +22,7 @@ import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart';
     AutoRoute(page: PaymentMethodChooserScreen),
     AutoRoute(page: ParkingTicketsHistoryScreen),
     AutoRoute(page: PaymentInProcessScreen),
+    AutoRoute(page: SuccessfulPaymentScreen),
   ],
 )
 class $Router {}

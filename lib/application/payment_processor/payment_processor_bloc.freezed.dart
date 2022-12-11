@@ -22,7 +22,6 @@ mixin _$PaymentProcessorEvent {
         initialized,
     required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,7 +31,6 @@ mixin _$PaymentProcessorEvent {
         initialized,
     TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +40,6 @@ mixin _$PaymentProcessorEvent {
         initialized,
     TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) =>
@@ -53,7 +50,6 @@ mixin _$PaymentProcessorEvent {
     required TResult Function(_ParkingTicketIdChanged value)
         parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +58,6 @@ mixin _$PaymentProcessorEvent {
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) =>
       throw _privateConstructorUsedError;
@@ -71,7 +66,6 @@ mixin _$PaymentProcessorEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) =>
@@ -168,7 +162,6 @@ class _$_Initialized implements _Initialized {
         initialized,
     required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) {
     return initialized(initialPaymentMethodOption);
@@ -181,7 +174,6 @@ class _$_Initialized implements _Initialized {
         initialized,
     TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) {
     return initialized?.call(initialPaymentMethodOption);
@@ -194,7 +186,6 @@ class _$_Initialized implements _Initialized {
         initialized,
     TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) {
@@ -211,7 +202,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_ParkingTicketIdChanged value)
         parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) {
     return initialized(this);
@@ -223,7 +213,6 @@ class _$_Initialized implements _Initialized {
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) {
     return initialized?.call(this);
@@ -235,7 +224,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) {
@@ -326,7 +314,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
         initialized,
     required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) {
     return parkingTicketIdChanged(parkingTicketId);
@@ -339,7 +326,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
         initialized,
     TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) {
     return parkingTicketIdChanged?.call(parkingTicketId);
@@ -352,7 +338,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
         initialized,
     TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) {
@@ -369,7 +354,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
     required TResult Function(_ParkingTicketIdChanged value)
         parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) {
     return parkingTicketIdChanged(this);
@@ -381,7 +365,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) {
     return parkingTicketIdChanged?.call(this);
@@ -393,7 +376,6 @@ class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) {
@@ -494,7 +476,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
         initialized,
     required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) {
     return paymentMethodChanged(paymentMethod);
@@ -507,7 +488,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
         initialized,
     TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) {
     return paymentMethodChanged?.call(paymentMethod);
@@ -520,7 +500,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
         initialized,
     TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) {
@@ -537,7 +516,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
     required TResult Function(_ParkingTicketIdChanged value)
         parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) {
     return paymentMethodChanged(this);
@@ -549,7 +527,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) {
     return paymentMethodChanged?.call(this);
@@ -561,7 +538,6 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) {
@@ -579,171 +555,6 @@ abstract class _PaymentMethodChanged implements PaymentProcessorEvent {
   PaymentMethod get paymentMethod;
   @JsonKey(ignore: true)
   _$$_PaymentMethodChangedCopyWith<_$_PaymentMethodChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_ReceiptChangedCopyWith<$Res> {
-  factory _$$_ReceiptChangedCopyWith(
-          _$_ReceiptChanged value, $Res Function(_$_ReceiptChanged) then) =
-      __$$_ReceiptChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Receipt receipt});
-
-  $ReceiptCopyWith<$Res> get receipt;
-}
-
-/// @nodoc
-class __$$_ReceiptChangedCopyWithImpl<$Res>
-    extends _$PaymentProcessorEventCopyWithImpl<$Res, _$_ReceiptChanged>
-    implements _$$_ReceiptChangedCopyWith<$Res> {
-  __$$_ReceiptChangedCopyWithImpl(
-      _$_ReceiptChanged _value, $Res Function(_$_ReceiptChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? receipt = null,
-  }) {
-    return _then(_$_ReceiptChanged(
-      null == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as Receipt,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ReceiptCopyWith<$Res> get receipt {
-    return $ReceiptCopyWith<$Res>(_value.receipt, (value) {
-      return _then(_value.copyWith(receipt: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_ReceiptChanged implements _ReceiptChanged {
-  const _$_ReceiptChanged(this.receipt);
-
-  @override
-  final Receipt receipt;
-
-  @override
-  String toString() {
-    return 'PaymentProcessorEvent.receiptChanged(receipt: $receipt)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ReceiptChanged &&
-            (identical(other.receipt, receipt) || other.receipt == receipt));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, receipt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ReceiptChangedCopyWith<_$_ReceiptChanged> get copyWith =>
-      __$$_ReceiptChangedCopyWithImpl<_$_ReceiptChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
-        initialized,
-    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
-    required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
-    required TResult Function() executePayment,
-  }) {
-    return receiptChanged(receipt);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
-        initialized,
-    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
-    TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
-    TResult? Function()? executePayment,
-  }) {
-    return receiptChanged?.call(receipt);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
-        initialized,
-    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
-    TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
-    TResult Function()? executePayment,
-    required TResult orElse(),
-  }) {
-    if (receiptChanged != null) {
-      return receiptChanged(receipt);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ParkingTicketIdChanged value)
-        parkingTicketIdChanged,
-    required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
-    required TResult Function(_ExecutePayment value) executePayment,
-  }) {
-    return receiptChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
-    TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
-    TResult? Function(_ExecutePayment value)? executePayment,
-  }) {
-    return receiptChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
-    TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
-    TResult Function(_ExecutePayment value)? executePayment,
-    required TResult orElse(),
-  }) {
-    if (receiptChanged != null) {
-      return receiptChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ReceiptChanged implements PaymentProcessorEvent {
-  const factory _ReceiptChanged(final Receipt receipt) = _$_ReceiptChanged;
-
-  Receipt get receipt;
-  @JsonKey(ignore: true)
-  _$$_ReceiptChangedCopyWith<_$_ReceiptChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -789,7 +600,6 @@ class _$_ExecutePayment implements _ExecutePayment {
         initialized,
     required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
-    required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) {
     return executePayment();
@@ -802,7 +612,6 @@ class _$_ExecutePayment implements _ExecutePayment {
         initialized,
     TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) {
     return executePayment?.call();
@@ -815,7 +624,6 @@ class _$_ExecutePayment implements _ExecutePayment {
         initialized,
     TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
-    TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) {
@@ -832,7 +640,6 @@ class _$_ExecutePayment implements _ExecutePayment {
     required TResult Function(_ParkingTicketIdChanged value)
         parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
-    required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) {
     return executePayment(this);
@@ -844,7 +651,6 @@ class _$_ExecutePayment implements _ExecutePayment {
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) {
     return executePayment?.call(this);
@@ -856,7 +662,6 @@ class _$_ExecutePayment implements _ExecutePayment {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
-    TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) {
@@ -874,7 +679,6 @@ abstract class _ExecutePayment implements PaymentProcessorEvent {
 /// @nodoc
 mixin _$PaymentProcessorState {
   PaymentMethod? get paymentMethod => throw _privateConstructorUsedError;
-  Receipt? get receipt => throw _privateConstructorUsedError;
   int get parkingTicketId => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<PaymentProcessorFailure, Receipt>>
@@ -893,14 +697,12 @@ abstract class $PaymentProcessorStateCopyWith<$Res> {
   @useResult
   $Res call(
       {PaymentMethod? paymentMethod,
-      Receipt? receipt,
       int parkingTicketId,
       bool isSaving,
       Option<Either<PaymentProcessorFailure, Receipt>>
           saveFailureOrSucessOption});
 
   $PaymentMethodCopyWith<$Res>? get paymentMethod;
-  $ReceiptCopyWith<$Res>? get receipt;
 }
 
 /// @nodoc
@@ -918,7 +720,6 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? paymentMethod = freezed,
-    Object? receipt = freezed,
     Object? parkingTicketId = null,
     Object? isSaving = null,
     Object? saveFailureOrSucessOption = null,
@@ -928,10 +729,6 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as PaymentMethod?,
-      receipt: freezed == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as Receipt?,
       parkingTicketId: null == parkingTicketId
           ? _value.parkingTicketId
           : parkingTicketId // ignore: cast_nullable_to_non_nullable
@@ -958,18 +755,6 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
       return _then(_value.copyWith(paymentMethod: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ReceiptCopyWith<$Res>? get receipt {
-    if (_value.receipt == null) {
-      return null;
-    }
-
-    return $ReceiptCopyWith<$Res>(_value.receipt!, (value) {
-      return _then(_value.copyWith(receipt: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -982,7 +767,6 @@ abstract class _$$_InitialCopyWith<$Res>
   @useResult
   $Res call(
       {PaymentMethod? paymentMethod,
-      Receipt? receipt,
       int parkingTicketId,
       bool isSaving,
       Option<Either<PaymentProcessorFailure, Receipt>>
@@ -990,8 +774,6 @@ abstract class _$$_InitialCopyWith<$Res>
 
   @override
   $PaymentMethodCopyWith<$Res>? get paymentMethod;
-  @override
-  $ReceiptCopyWith<$Res>? get receipt;
 }
 
 /// @nodoc
@@ -1005,7 +787,6 @@ class __$$_InitialCopyWithImpl<$Res>
   @override
   $Res call({
     Object? paymentMethod = freezed,
-    Object? receipt = freezed,
     Object? parkingTicketId = null,
     Object? isSaving = null,
     Object? saveFailureOrSucessOption = null,
@@ -1015,10 +796,6 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as PaymentMethod?,
-      receipt: freezed == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as Receipt?,
       parkingTicketId: null == parkingTicketId
           ? _value.parkingTicketId
           : parkingTicketId // ignore: cast_nullable_to_non_nullable
@@ -1040,15 +817,12 @@ class __$$_InitialCopyWithImpl<$Res>
 class _$_Initial implements _Initial {
   const _$_Initial(
       {this.paymentMethod,
-      this.receipt,
       required this.parkingTicketId,
       required this.isSaving,
       required this.saveFailureOrSucessOption});
 
   @override
   final PaymentMethod? paymentMethod;
-  @override
-  final Receipt? receipt;
   @override
   final int parkingTicketId;
   @override
@@ -1059,7 +833,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'PaymentProcessorState(paymentMethod: $paymentMethod, receipt: $receipt, parkingTicketId: $parkingTicketId, isSaving: $isSaving, saveFailureOrSucessOption: $saveFailureOrSucessOption)';
+    return 'PaymentProcessorState(paymentMethod: $paymentMethod, parkingTicketId: $parkingTicketId, isSaving: $isSaving, saveFailureOrSucessOption: $saveFailureOrSucessOption)';
   }
 
   @override
@@ -1069,7 +843,6 @@ class _$_Initial implements _Initial {
             other is _$_Initial &&
             (identical(other.paymentMethod, paymentMethod) ||
                 other.paymentMethod == paymentMethod) &&
-            (identical(other.receipt, receipt) || other.receipt == receipt) &&
             (identical(other.parkingTicketId, parkingTicketId) ||
                 other.parkingTicketId == parkingTicketId) &&
             (identical(other.isSaving, isSaving) ||
@@ -1080,8 +853,8 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, paymentMethod, receipt,
-      parkingTicketId, isSaving, saveFailureOrSucessOption);
+  int get hashCode => Object.hash(runtimeType, paymentMethod, parkingTicketId,
+      isSaving, saveFailureOrSucessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1093,7 +866,6 @@ class _$_Initial implements _Initial {
 abstract class _Initial implements PaymentProcessorState {
   const factory _Initial(
       {final PaymentMethod? paymentMethod,
-      final Receipt? receipt,
       required final int parkingTicketId,
       required final bool isSaving,
       required final Option<Either<PaymentProcessorFailure, Receipt>>
@@ -1101,8 +873,6 @@ abstract class _Initial implements PaymentProcessorState {
 
   @override
   PaymentMethod? get paymentMethod;
-  @override
-  Receipt? get receipt;
   @override
   int get parkingTicketId;
   @override

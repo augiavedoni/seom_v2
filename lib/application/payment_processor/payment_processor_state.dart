@@ -4,7 +4,6 @@ part of 'payment_processor_bloc.dart';
 class PaymentProcessorState with _$PaymentProcessorState {
   const factory PaymentProcessorState({
     PaymentMethod? paymentMethod,
-    Receipt? receipt,
     required int parkingTicketId,
     required bool isSaving,
     required Option<Either<PaymentProcessorFailure, Receipt>>

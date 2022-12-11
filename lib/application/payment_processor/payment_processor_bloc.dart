@@ -43,12 +43,6 @@ class PaymentProcessorBloc
             saveFailureOrSucessOption: none(),
           ),
         ),
-        receiptChanged: (event) => emit(
-          state.copyWith(
-            receipt: event.receipt,
-            saveFailureOrSucessOption: none(),
-          ),
-        ),
         executePayment: (event) async {
           final isAccountBalance = state.paymentMethod is AccountBalance;
           Either<PaymentProcessorFailure, Receipt>? failureOrSuccess;

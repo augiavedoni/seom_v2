@@ -36,7 +36,7 @@ class PaymentMethodChooserOverview extends StatelessWidget {
               (response) => context.router.replace(
                 response.fold(
                   (failure) => _getRejectedPaymentScreen(context, failure),
-                  (_) => _getSuccessfulPaymentScreen(context),
+                  (receipt) => SuccessfulPaymentScreenRoute(receipt: receipt),
                 ),
               ),
             );
@@ -89,20 +89,6 @@ class PaymentMethodChooserOverview extends StatelessWidget {
         primaryButton: FeedbackButton(
           text: 'Volver',
           onPressed: () => context.router.pop(),
-        ),
-      );
-
-  FeedbackScreenRoute _getSuccessfulPaymentScreen(
-    BuildContext context,
-  ) =>
-      FeedbackScreenRoute(
-        mainImagePath: 'lib/presentation/core/assets/successful_payment.svg',
-        title: '¡Listo!',
-        description:
-            'Pudimos procesar tu pago correctamente. Podrás encontrar toda la información relacionada a este estacionamiento en tu listado de actividad reciente.',
-        primaryButton: FeedbackButton(
-          text: 'Cerrar',
-          onPressed: () => context.router.popUntilRoot(),
         ),
       );
 }

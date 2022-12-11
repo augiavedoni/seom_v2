@@ -11,8 +11,5 @@ class PaymentProcessorEvent with _$PaymentProcessorEvent {
   const factory PaymentProcessorEvent.paymentMethodChanged(
     PaymentMethod paymentMethod,
   ) = _PaymentMethodChanged;
-  const factory PaymentProcessorEvent.receiptChanged(
-    Receipt receipt,
-  ) = _ReceiptChanged;
   const factory PaymentProcessorEvent.executePayment() = _ExecutePayment;
 }

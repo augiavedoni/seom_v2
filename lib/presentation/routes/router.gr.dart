@@ -11,11 +11,12 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:flutter/material.dart' as _i11;
-import 'package:kt_dart/collection.dart' as _i13;
+import 'package:auto_route/auto_route.dart' as _i11;
+import 'package:flutter/material.dart' as _i12;
+import 'package:kt_dart/collection.dart' as _i14;
 import 'package:seom_v2/domain/parking_tickets/entities/parking_ticket.dart'
-    as _i12;
+    as _i13;
+import 'package:seom_v2/domain/receipts/entities/receipt.dart' as _i15;
 import 'package:seom_v2/presentation/add_payment_method/add_payment_method_screen.dart'
     as _i5;
 import 'package:seom_v2/presentation/feedback/feedback_screen.dart' as _i3;
@@ -30,29 +31,31 @@ import 'package:seom_v2/presentation/payment_process/payment_in_process_screen/p
     as _i9;
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/payment_method_chooser_screen.dart'
     as _i7;
+import 'package:seom_v2/presentation/payment_process/successful_payment_screen/successful_payment_screen.dart'
+    as _i10;
 import 'package:seom_v2/presentation/sign_in/sign_in_screen.dart' as _i1;
 
-class Router extends _i10.RootStackRouter {
-  Router([_i11.GlobalKey<_i11.NavigatorState>? navigatorKey])
+class Router extends _i11.RootStackRouter {
+  Router([_i12.GlobalKey<_i12.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i10.PageFactory> pagesMap = {
+  final Map<String, _i11.PageFactory> pagesMap = {
     SignInScreenRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SignInScreen(),
       );
     },
     HomeScreenRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i2.HomeScreen(),
       );
     },
     FeedbackScreenRoute.name: (routeData) {
       final args = routeData.argsAs<FeedbackScreenRouteArgs>();
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i3.FeedbackScreen(
           key: args.key,
@@ -69,14 +72,14 @@ class Router extends _i10.RootStackRouter {
       );
     },
     PaymentMethodsManagementScreenRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i4.PaymentMethodsManagementScreen(),
       );
     },
     AddPaymentMethodScreenRoute.name: (routeData) {
       final args = routeData.argsAs<AddPaymentMethodScreenRouteArgs>();
-      return _i10.MaterialPageX<bool>(
+      return _i11.MaterialPageX<bool>(
         routeData: routeData,
         child: _i5.AddPaymentMethodScreen(
           key: args.key,
@@ -87,7 +90,7 @@ class Router extends _i10.RootStackRouter {
     },
     ParkingDetailsScreenRoute.name: (routeData) {
       final args = routeData.argsAs<ParkingDetailsScreenRouteArgs>();
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i6.ParkingDetailsScreen(
           key: args.key,
@@ -97,7 +100,7 @@ class Router extends _i10.RootStackRouter {
     },
     PaymentMethodChooserScreenRoute.name: (routeData) {
       final args = routeData.argsAs<PaymentMethodChooserScreenRouteArgs>();
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i7.PaymentMethodChooserScreen(
           key: args.key,
@@ -107,7 +110,7 @@ class Router extends _i10.RootStackRouter {
     },
     ParkingTicketsHistoryScreenRoute.name: (routeData) {
       final args = routeData.argsAs<ParkingTicketsHistoryScreenRouteArgs>();
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i8.ParkingTicketsHistoryScreen(
           key: args.key,
@@ -116,57 +119,71 @@ class Router extends _i10.RootStackRouter {
       );
     },
     PaymentInProcessScreenRoute.name: (routeData) {
-      return _i10.MaterialPageX<dynamic>(
+      return _i11.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i9.PaymentInProcessScreen(),
+      );
+    },
+    SuccessfulPaymentScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<SuccessfulPaymentScreenRouteArgs>();
+      return _i11.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i10.SuccessfulPaymentScreen(
+          key: args.key,
+          receipt: args.receipt,
+        ),
       );
     },
   };
 
   @override
-  List<_i10.RouteConfig> get routes => [
-        _i10.RouteConfig(
+  List<_i11.RouteConfig> get routes => [
+        _i11.RouteConfig(
           SignInScreenRoute.name,
           path: '/',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           HomeScreenRoute.name,
           path: '/home-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           FeedbackScreenRoute.name,
           path: '/feedback-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           PaymentMethodsManagementScreenRoute.name,
           path: '/payment-methods-management-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           AddPaymentMethodScreenRoute.name,
           path: '/add-payment-method-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           ParkingDetailsScreenRoute.name,
           path: '/parking-details-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           PaymentMethodChooserScreenRoute.name,
           path: '/payment-method-chooser-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           ParkingTicketsHistoryScreenRoute.name,
           path: '/parking-tickets-history-screen',
         ),
-        _i10.RouteConfig(
+        _i11.RouteConfig(
           PaymentInProcessScreenRoute.name,
           path: '/payment-in-process-screen',
+        ),
+        _i11.RouteConfig(
+          SuccessfulPaymentScreenRoute.name,
+          path: '/successful-payment-screen',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.SignInScreen]
-class SignInScreenRoute extends _i10.PageRouteInfo<void> {
+class SignInScreenRoute extends _i11.PageRouteInfo<void> {
   const SignInScreenRoute()
       : super(
           SignInScreenRoute.name,
@@ -178,7 +195,7 @@ class SignInScreenRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.HomeScreen]
-class HomeScreenRoute extends _i10.PageRouteInfo<void> {
+class HomeScreenRoute extends _i11.PageRouteInfo<void> {
   const HomeScreenRoute()
       : super(
           HomeScreenRoute.name,
@@ -190,9 +207,9 @@ class HomeScreenRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.FeedbackScreen]
-class FeedbackScreenRoute extends _i10.PageRouteInfo<FeedbackScreenRouteArgs> {
+class FeedbackScreenRoute extends _i11.PageRouteInfo<FeedbackScreenRouteArgs> {
   FeedbackScreenRoute({
-    _i11.Key? key,
+    _i12.Key? key,
     required String mainImagePath,
     required String title,
     String? description,
@@ -236,7 +253,7 @@ class FeedbackScreenRouteArgs {
     this.onClose,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   final String mainImagePath;
 
@@ -264,7 +281,7 @@ class FeedbackScreenRouteArgs {
 
 /// generated route for
 /// [_i4.PaymentMethodsManagementScreen]
-class PaymentMethodsManagementScreenRoute extends _i10.PageRouteInfo<void> {
+class PaymentMethodsManagementScreenRoute extends _i11.PageRouteInfo<void> {
   const PaymentMethodsManagementScreenRoute()
       : super(
           PaymentMethodsManagementScreenRoute.name,
@@ -277,9 +294,9 @@ class PaymentMethodsManagementScreenRoute extends _i10.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.AddPaymentMethodScreen]
 class AddPaymentMethodScreenRoute
-    extends _i10.PageRouteInfo<AddPaymentMethodScreenRouteArgs> {
+    extends _i11.PageRouteInfo<AddPaymentMethodScreenRouteArgs> {
   AddPaymentMethodScreenRoute({
-    _i11.Key? key,
+    _i12.Key? key,
     required String cardType,
     required bool isPaying,
   }) : super(
@@ -302,7 +319,7 @@ class AddPaymentMethodScreenRouteArgs {
     required this.isPaying,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   final String cardType;
 
@@ -317,10 +334,10 @@ class AddPaymentMethodScreenRouteArgs {
 /// generated route for
 /// [_i6.ParkingDetailsScreen]
 class ParkingDetailsScreenRoute
-    extends _i10.PageRouteInfo<ParkingDetailsScreenRouteArgs> {
+    extends _i11.PageRouteInfo<ParkingDetailsScreenRouteArgs> {
   ParkingDetailsScreenRoute({
-    _i11.Key? key,
-    required _i12.ParkingTicket parkingTicket,
+    _i12.Key? key,
+    required _i13.ParkingTicket parkingTicket,
   }) : super(
           ParkingDetailsScreenRoute.name,
           path: '/parking-details-screen',
@@ -339,9 +356,9 @@ class ParkingDetailsScreenRouteArgs {
     required this.parkingTicket,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
-  final _i12.ParkingTicket parkingTicket;
+  final _i13.ParkingTicket parkingTicket;
 
   @override
   String toString() {
@@ -352,9 +369,9 @@ class ParkingDetailsScreenRouteArgs {
 /// generated route for
 /// [_i7.PaymentMethodChooserScreen]
 class PaymentMethodChooserScreenRoute
-    extends _i10.PageRouteInfo<PaymentMethodChooserScreenRouteArgs> {
+    extends _i11.PageRouteInfo<PaymentMethodChooserScreenRouteArgs> {
   PaymentMethodChooserScreenRoute({
-    _i11.Key? key,
+    _i12.Key? key,
     required int parkingTicketId,
   }) : super(
           PaymentMethodChooserScreenRoute.name,
@@ -374,7 +391,7 @@ class PaymentMethodChooserScreenRouteArgs {
     required this.parkingTicketId,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
   final int parkingTicketId;
 
@@ -387,10 +404,10 @@ class PaymentMethodChooserScreenRouteArgs {
 /// generated route for
 /// [_i8.ParkingTicketsHistoryScreen]
 class ParkingTicketsHistoryScreenRoute
-    extends _i10.PageRouteInfo<ParkingTicketsHistoryScreenRouteArgs> {
+    extends _i11.PageRouteInfo<ParkingTicketsHistoryScreenRouteArgs> {
   ParkingTicketsHistoryScreenRoute({
-    _i11.Key? key,
-    required _i13.KtList<_i12.ParkingTicket> parkingTickets,
+    _i12.Key? key,
+    required _i14.KtList<_i13.ParkingTicket> parkingTickets,
   }) : super(
           ParkingTicketsHistoryScreenRoute.name,
           path: '/parking-tickets-history-screen',
@@ -409,9 +426,9 @@ class ParkingTicketsHistoryScreenRouteArgs {
     required this.parkingTickets,
   });
 
-  final _i11.Key? key;
+  final _i12.Key? key;
 
-  final _i13.KtList<_i12.ParkingTicket> parkingTickets;
+  final _i14.KtList<_i13.ParkingTicket> parkingTickets;
 
   @override
   String toString() {
@@ -421,7 +438,7 @@ class ParkingTicketsHistoryScreenRouteArgs {
 
 /// generated route for
 /// [_i9.PaymentInProcessScreen]
-class PaymentInProcessScreenRoute extends _i10.PageRouteInfo<void> {
+class PaymentInProcessScreenRoute extends _i11.PageRouteInfo<void> {
   const PaymentInProcessScreenRoute()
       : super(
           PaymentInProcessScreenRoute.name,
@@ -429,4 +446,39 @@ class PaymentInProcessScreenRoute extends _i10.PageRouteInfo<void> {
         );
 
   static const String name = 'PaymentInProcessScreenRoute';
+}
+
+/// generated route for
+/// [_i10.SuccessfulPaymentScreen]
+class SuccessfulPaymentScreenRoute
+    extends _i11.PageRouteInfo<SuccessfulPaymentScreenRouteArgs> {
+  SuccessfulPaymentScreenRoute({
+    _i12.Key? key,
+    required _i15.Receipt receipt,
+  }) : super(
+          SuccessfulPaymentScreenRoute.name,
+          path: '/successful-payment-screen',
+          args: SuccessfulPaymentScreenRouteArgs(
+            key: key,
+            receipt: receipt,
+          ),
+        );
+
+  static const String name = 'SuccessfulPaymentScreenRoute';
+}
+
+class SuccessfulPaymentScreenRouteArgs {
+  const SuccessfulPaymentScreenRouteArgs({
+    this.key,
+    required this.receipt,
+  });
+
+  final _i12.Key? key;
+
+  final _i15.Receipt receipt;
+
+  @override
+  String toString() {
+    return 'SuccessfulPaymentScreenRouteArgs{key: $key, receipt: $receipt}';
+  }
 }
