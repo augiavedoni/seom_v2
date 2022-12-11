@@ -27,7 +27,9 @@ class PaymentMethodChooserOverview extends StatelessWidget {
             previous.isSaving != current.isSaving,
         listener: (context, state) {
           if (state.isSaving) {
-            context.router.push(PaymentInProcessScreenRoute());
+            context.router.push(
+              const PaymentInProcessScreenRoute(),
+            );
           } else {
             state.saveFailureOrSucessOption.fold(
               () => null,
@@ -97,7 +99,7 @@ class PaymentMethodChooserOverview extends StatelessWidget {
         mainImagePath: 'lib/presentation/core/assets/successful_payment.svg',
         title: '¡Listo!',
         description:
-            'Pudimos procesar tu pago correctamente. Podrás encontrar tu recibo en tu listado de actividad reciente.',
+            'Pudimos procesar tu pago correctamente. Podrás encontrar toda la información relacionada a este estacionamiento en tu listado de actividad reciente.',
         primaryButton: FeedbackButton(
           text: 'Cerrar',
           onPressed: () => context.router.popUntilRoot(),

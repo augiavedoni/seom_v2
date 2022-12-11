@@ -31,9 +31,9 @@ class PaymentProcessorBloc
             ),
           ),
         ),
-        receiptIdChanged: (event) => emit(
+        parkingTicketIdChanged: (event) => emit(
           state.copyWith(
-            receiptId: event.receiptId,
+            parkingTicketId: event.parkingTicketId,
             saveFailureOrSucessOption: none(),
           ),
         ),
@@ -62,7 +62,7 @@ class PaymentProcessorBloc
 
           if (state.paymentMethod?.failureOption.isNone() ?? false) {
             failureOrSuccess = await _paymentProcessorRepository.executePayment(
-              receiptId: state.receiptId,
+              parkingTicketId: state.parkingTicketId,
               isAccountBalance: isAccountBalance,
               paymentMethodId: isAccountBalance
                   ? ''

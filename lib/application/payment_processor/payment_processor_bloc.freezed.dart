@@ -20,7 +20,7 @@ mixin _$PaymentProcessorEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
@@ -30,7 +30,7 @@ mixin _$PaymentProcessorEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
@@ -40,7 +40,7 @@ mixin _$PaymentProcessorEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
@@ -50,7 +50,8 @@ mixin _$PaymentProcessorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
@@ -59,7 +60,7 @@ mixin _$PaymentProcessorEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
@@ -68,7 +69,7 @@ mixin _$PaymentProcessorEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
@@ -165,7 +166,7 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
@@ -178,7 +179,7 @@ class _$_Initialized implements _Initialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
@@ -191,7 +192,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
@@ -207,7 +208,8 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
@@ -219,7 +221,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
@@ -231,7 +233,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
@@ -255,31 +257,31 @@ abstract class _Initialized implements PaymentProcessorEvent {
 }
 
 /// @nodoc
-abstract class _$$_ReceiptIdChangedCopyWith<$Res> {
-  factory _$$_ReceiptIdChangedCopyWith(
-          _$_ReceiptIdChanged value, $Res Function(_$_ReceiptIdChanged) then) =
-      __$$_ReceiptIdChangedCopyWithImpl<$Res>;
+abstract class _$$_ParkingTicketIdChangedCopyWith<$Res> {
+  factory _$$_ParkingTicketIdChangedCopyWith(_$_ParkingTicketIdChanged value,
+          $Res Function(_$_ParkingTicketIdChanged) then) =
+      __$$_ParkingTicketIdChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({int receiptId});
+  $Res call({int parkingTicketId});
 }
 
 /// @nodoc
-class __$$_ReceiptIdChangedCopyWithImpl<$Res>
-    extends _$PaymentProcessorEventCopyWithImpl<$Res, _$_ReceiptIdChanged>
-    implements _$$_ReceiptIdChangedCopyWith<$Res> {
-  __$$_ReceiptIdChangedCopyWithImpl(
-      _$_ReceiptIdChanged _value, $Res Function(_$_ReceiptIdChanged) _then)
+class __$$_ParkingTicketIdChangedCopyWithImpl<$Res>
+    extends _$PaymentProcessorEventCopyWithImpl<$Res, _$_ParkingTicketIdChanged>
+    implements _$$_ParkingTicketIdChangedCopyWith<$Res> {
+  __$$_ParkingTicketIdChangedCopyWithImpl(_$_ParkingTicketIdChanged _value,
+      $Res Function(_$_ParkingTicketIdChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? receiptId = null,
+    Object? parkingTicketId = null,
   }) {
-    return _then(_$_ReceiptIdChanged(
-      null == receiptId
-          ? _value.receiptId
-          : receiptId // ignore: cast_nullable_to_non_nullable
+    return _then(_$_ParkingTicketIdChanged(
+      null == parkingTicketId
+          ? _value.parkingTicketId
+          : parkingTicketId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -287,46 +289,47 @@ class __$$_ReceiptIdChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReceiptIdChanged implements _ReceiptIdChanged {
-  const _$_ReceiptIdChanged(this.receiptId);
+class _$_ParkingTicketIdChanged implements _ParkingTicketIdChanged {
+  const _$_ParkingTicketIdChanged(this.parkingTicketId);
 
   @override
-  final int receiptId;
+  final int parkingTicketId;
 
   @override
   String toString() {
-    return 'PaymentProcessorEvent.receiptIdChanged(receiptId: $receiptId)';
+    return 'PaymentProcessorEvent.parkingTicketIdChanged(parkingTicketId: $parkingTicketId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReceiptIdChanged &&
-            (identical(other.receiptId, receiptId) ||
-                other.receiptId == receiptId));
+            other is _$_ParkingTicketIdChanged &&
+            (identical(other.parkingTicketId, parkingTicketId) ||
+                other.parkingTicketId == parkingTicketId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, receiptId);
+  int get hashCode => Object.hash(runtimeType, parkingTicketId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReceiptIdChangedCopyWith<_$_ReceiptIdChanged> get copyWith =>
-      __$$_ReceiptIdChangedCopyWithImpl<_$_ReceiptIdChanged>(this, _$identity);
+  _$$_ParkingTicketIdChangedCopyWith<_$_ParkingTicketIdChanged> get copyWith =>
+      __$$_ParkingTicketIdChangedCopyWithImpl<_$_ParkingTicketIdChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
   }) {
-    return receiptIdChanged(receiptId);
+    return parkingTicketIdChanged(parkingTicketId);
   }
 
   @override
@@ -334,12 +337,12 @@ class _$_ReceiptIdChanged implements _ReceiptIdChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
   }) {
-    return receiptIdChanged?.call(receiptId);
+    return parkingTicketIdChanged?.call(parkingTicketId);
   }
 
   @override
@@ -347,14 +350,14 @@ class _$_ReceiptIdChanged implements _ReceiptIdChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
     required TResult orElse(),
   }) {
-    if (receiptIdChanged != null) {
-      return receiptIdChanged(receiptId);
+    if (parkingTicketIdChanged != null) {
+      return parkingTicketIdChanged(parkingTicketId);
     }
     return orElse();
   }
@@ -363,49 +366,51 @@ class _$_ReceiptIdChanged implements _ReceiptIdChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
   }) {
-    return receiptIdChanged(this);
+    return parkingTicketIdChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
   }) {
-    return receiptIdChanged?.call(this);
+    return parkingTicketIdChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
     required TResult orElse(),
   }) {
-    if (receiptIdChanged != null) {
-      return receiptIdChanged(this);
+    if (parkingTicketIdChanged != null) {
+      return parkingTicketIdChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _ReceiptIdChanged implements PaymentProcessorEvent {
-  const factory _ReceiptIdChanged(final int receiptId) = _$_ReceiptIdChanged;
+abstract class _ParkingTicketIdChanged implements PaymentProcessorEvent {
+  const factory _ParkingTicketIdChanged(final int parkingTicketId) =
+      _$_ParkingTicketIdChanged;
 
-  int get receiptId;
+  int get parkingTicketId;
   @JsonKey(ignore: true)
-  _$$_ReceiptIdChangedCopyWith<_$_ReceiptIdChanged> get copyWith =>
+  _$$_ParkingTicketIdChangedCopyWith<_$_ParkingTicketIdChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -487,7 +492,7 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
@@ -500,7 +505,7 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
@@ -513,7 +518,7 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
@@ -529,7 +534,8 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
@@ -541,7 +547,7 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
@@ -553,7 +559,7 @@ class _$_PaymentMethodChanged implements _PaymentMethodChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
@@ -652,7 +658,7 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
@@ -665,7 +671,7 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
@@ -678,7 +684,7 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
@@ -694,7 +700,8 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
@@ -706,7 +713,7 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
@@ -718,7 +725,7 @@ class _$_ReceiptChanged implements _ReceiptChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
@@ -780,7 +787,7 @@ class _$_ExecutePayment implements _ExecutePayment {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<PaymentMethod> initialPaymentMethodOption)
         initialized,
-    required TResult Function(int receiptId) receiptIdChanged,
+    required TResult Function(int parkingTicketId) parkingTicketIdChanged,
     required TResult Function(PaymentMethod paymentMethod) paymentMethodChanged,
     required TResult Function(Receipt receipt) receiptChanged,
     required TResult Function() executePayment,
@@ -793,7 +800,7 @@ class _$_ExecutePayment implements _ExecutePayment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult? Function(int receiptId)? receiptIdChanged,
+    TResult? Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult? Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult? Function(Receipt receipt)? receiptChanged,
     TResult? Function()? executePayment,
@@ -806,7 +813,7 @@ class _$_ExecutePayment implements _ExecutePayment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<PaymentMethod> initialPaymentMethodOption)?
         initialized,
-    TResult Function(int receiptId)? receiptIdChanged,
+    TResult Function(int parkingTicketId)? parkingTicketIdChanged,
     TResult Function(PaymentMethod paymentMethod)? paymentMethodChanged,
     TResult Function(Receipt receipt)? receiptChanged,
     TResult Function()? executePayment,
@@ -822,7 +829,8 @@ class _$_ExecutePayment implements _ExecutePayment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_ReceiptIdChanged value) receiptIdChanged,
+    required TResult Function(_ParkingTicketIdChanged value)
+        parkingTicketIdChanged,
     required TResult Function(_PaymentMethodChanged value) paymentMethodChanged,
     required TResult Function(_ReceiptChanged value) receiptChanged,
     required TResult Function(_ExecutePayment value) executePayment,
@@ -834,7 +842,7 @@ class _$_ExecutePayment implements _ExecutePayment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult? Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult? Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult? Function(_ReceiptChanged value)? receiptChanged,
     TResult? Function(_ExecutePayment value)? executePayment,
@@ -846,7 +854,7 @@ class _$_ExecutePayment implements _ExecutePayment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_ReceiptIdChanged value)? receiptIdChanged,
+    TResult Function(_ParkingTicketIdChanged value)? parkingTicketIdChanged,
     TResult Function(_PaymentMethodChanged value)? paymentMethodChanged,
     TResult Function(_ReceiptChanged value)? receiptChanged,
     TResult Function(_ExecutePayment value)? executePayment,
@@ -867,7 +875,7 @@ abstract class _ExecutePayment implements PaymentProcessorEvent {
 mixin _$PaymentProcessorState {
   PaymentMethod? get paymentMethod => throw _privateConstructorUsedError;
   Receipt? get receipt => throw _privateConstructorUsedError;
-  int get receiptId => throw _privateConstructorUsedError;
+  int get parkingTicketId => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<PaymentProcessorFailure, Unit>> get saveFailureOrSucessOption =>
       throw _privateConstructorUsedError;
@@ -886,7 +894,7 @@ abstract class $PaymentProcessorStateCopyWith<$Res> {
   $Res call(
       {PaymentMethod? paymentMethod,
       Receipt? receipt,
-      int receiptId,
+      int parkingTicketId,
       bool isSaving,
       Option<Either<PaymentProcessorFailure, Unit>> saveFailureOrSucessOption});
 
@@ -910,7 +918,7 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
   $Res call({
     Object? paymentMethod = freezed,
     Object? receipt = freezed,
-    Object? receiptId = null,
+    Object? parkingTicketId = null,
     Object? isSaving = null,
     Object? saveFailureOrSucessOption = null,
   }) {
@@ -923,9 +931,9 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
           ? _value.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
               as Receipt?,
-      receiptId: null == receiptId
-          ? _value.receiptId
-          : receiptId // ignore: cast_nullable_to_non_nullable
+      parkingTicketId: null == parkingTicketId
+          ? _value.parkingTicketId
+          : parkingTicketId // ignore: cast_nullable_to_non_nullable
               as int,
       isSaving: null == isSaving
           ? _value.isSaving
@@ -974,7 +982,7 @@ abstract class _$$_InitialCopyWith<$Res>
   $Res call(
       {PaymentMethod? paymentMethod,
       Receipt? receipt,
-      int receiptId,
+      int parkingTicketId,
       bool isSaving,
       Option<Either<PaymentProcessorFailure, Unit>> saveFailureOrSucessOption});
 
@@ -996,7 +1004,7 @@ class __$$_InitialCopyWithImpl<$Res>
   $Res call({
     Object? paymentMethod = freezed,
     Object? receipt = freezed,
-    Object? receiptId = null,
+    Object? parkingTicketId = null,
     Object? isSaving = null,
     Object? saveFailureOrSucessOption = null,
   }) {
@@ -1009,9 +1017,9 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
               as Receipt?,
-      receiptId: null == receiptId
-          ? _value.receiptId
-          : receiptId // ignore: cast_nullable_to_non_nullable
+      parkingTicketId: null == parkingTicketId
+          ? _value.parkingTicketId
+          : parkingTicketId // ignore: cast_nullable_to_non_nullable
               as int,
       isSaving: null == isSaving
           ? _value.isSaving
@@ -1031,7 +1039,7 @@ class _$_Initial implements _Initial {
   const _$_Initial(
       {this.paymentMethod,
       this.receipt,
-      required this.receiptId,
+      required this.parkingTicketId,
       required this.isSaving,
       required this.saveFailureOrSucessOption});
 
@@ -1040,7 +1048,7 @@ class _$_Initial implements _Initial {
   @override
   final Receipt? receipt;
   @override
-  final int receiptId;
+  final int parkingTicketId;
   @override
   final bool isSaving;
   @override
@@ -1048,7 +1056,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'PaymentProcessorState(paymentMethod: $paymentMethod, receipt: $receipt, receiptId: $receiptId, isSaving: $isSaving, saveFailureOrSucessOption: $saveFailureOrSucessOption)';
+    return 'PaymentProcessorState(paymentMethod: $paymentMethod, receipt: $receipt, parkingTicketId: $parkingTicketId, isSaving: $isSaving, saveFailureOrSucessOption: $saveFailureOrSucessOption)';
   }
 
   @override
@@ -1059,8 +1067,8 @@ class _$_Initial implements _Initial {
             (identical(other.paymentMethod, paymentMethod) ||
                 other.paymentMethod == paymentMethod) &&
             (identical(other.receipt, receipt) || other.receipt == receipt) &&
-            (identical(other.receiptId, receiptId) ||
-                other.receiptId == receiptId) &&
+            (identical(other.parkingTicketId, parkingTicketId) ||
+                other.parkingTicketId == parkingTicketId) &&
             (identical(other.isSaving, isSaving) ||
                 other.isSaving == isSaving) &&
             (identical(other.saveFailureOrSucessOption,
@@ -1070,7 +1078,7 @@ class _$_Initial implements _Initial {
 
   @override
   int get hashCode => Object.hash(runtimeType, paymentMethod, receipt,
-      receiptId, isSaving, saveFailureOrSucessOption);
+      parkingTicketId, isSaving, saveFailureOrSucessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1083,7 +1091,7 @@ abstract class _Initial implements PaymentProcessorState {
   const factory _Initial(
       {final PaymentMethod? paymentMethod,
       final Receipt? receipt,
-      required final int receiptId,
+      required final int parkingTicketId,
       required final bool isSaving,
       required final Option<Either<PaymentProcessorFailure, Unit>>
           saveFailureOrSucessOption}) = _$_Initial;
@@ -1093,7 +1101,7 @@ abstract class _Initial implements PaymentProcessorState {
   @override
   Receipt? get receipt;
   @override
-  int get receiptId;
+  int get parkingTicketId;
   @override
   bool get isSaving;
   @override

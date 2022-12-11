@@ -5,9 +5,9 @@ class PaymentProcessorEvent with _$PaymentProcessorEvent {
   const factory PaymentProcessorEvent.initialized(
     Option<PaymentMethod> initialPaymentMethodOption,
   ) = _Initialized;
-  const factory PaymentProcessorEvent.receiptIdChanged(
-    int receiptId,
-  ) = _ReceiptIdChanged;
+  const factory PaymentProcessorEvent.parkingTicketIdChanged(
+    int parkingTicketId,
+  ) = _ParkingTicketIdChanged;
   const factory PaymentProcessorEvent.paymentMethodChanged(
     PaymentMethod paymentMethod,
   ) = _PaymentMethodChanged;

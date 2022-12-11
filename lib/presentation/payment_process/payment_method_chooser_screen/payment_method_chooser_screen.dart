@@ -8,10 +8,10 @@ import 'package:seom_v2/presentation/payment_process/payment_method_chooser_scre
 class PaymentMethodChooserScreen extends StatelessWidget {
   const PaymentMethodChooserScreen({
     super.key,
-    required this.receiptId,
+    required this.parkingTicketId,
   });
 
-  final int receiptId;
+  final int parkingTicketId;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class PaymentMethodChooserScreen extends StatelessWidget {
       body: BlocProvider<PaymentProcessorBloc>(
         create: (_) => getIt<PaymentProcessorBloc>()
           ..add(
-            PaymentProcessorEvent.receiptIdChanged(receiptId),
+            PaymentProcessorEvent.parkingTicketIdChanged(parkingTicketId),
           ),
         child: const PaymentMethodChooserOverview(),
       ),

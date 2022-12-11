@@ -104,7 +104,7 @@ class ParkingDetailsScreen extends StatelessWidget {
                       text: 'Continuar',
                       onPressed: () => context.router.push(
                         PaymentMethodChooserScreenRoute(
-                          receiptId: parkingTicket.receipt.id,
+                          parkingTicketId: parkingTicket.id,
                         ),
                       ),
                     ),

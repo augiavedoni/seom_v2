@@ -101,7 +101,7 @@ class Router extends _i10.RootStackRouter {
         routeData: routeData,
         child: _i7.PaymentMethodChooserScreen(
           key: args.key,
-          receiptId: args.receiptId,
+          parkingTicketId: args.parkingTicketId,
         ),
       );
     },
@@ -355,13 +355,13 @@ class PaymentMethodChooserScreenRoute
     extends _i10.PageRouteInfo<PaymentMethodChooserScreenRouteArgs> {
   PaymentMethodChooserScreenRoute({
     _i11.Key? key,
-    required int receiptId,
+    required int parkingTicketId,
   }) : super(
           PaymentMethodChooserScreenRoute.name,
           path: '/payment-method-chooser-screen',
           args: PaymentMethodChooserScreenRouteArgs(
             key: key,
-            receiptId: receiptId,
+            parkingTicketId: parkingTicketId,
           ),
         );
 
@@ -371,16 +371,16 @@ class PaymentMethodChooserScreenRoute
 class PaymentMethodChooserScreenRouteArgs {
   const PaymentMethodChooserScreenRouteArgs({
     this.key,
-    required this.receiptId,
+    required this.parkingTicketId,
   });
 
   final _i11.Key? key;
 
-  final int receiptId;
+  final int parkingTicketId;
 
   @override
   String toString() {
-    return 'PaymentMethodChooserScreenRouteArgs{key: $key, receiptId: $receiptId}';
+    return 'PaymentMethodChooserScreenRouteArgs{key: $key, parkingTicketId: $parkingTicketId}';
   }
 }
 

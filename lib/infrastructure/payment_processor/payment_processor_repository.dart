@@ -19,7 +19,7 @@ class PaymentProcessorRepository implements IPaymentProcessorRepository {
 
   @override
   Future<Either<PaymentProcessorFailure, Unit>> executePayment({
-    required int receiptId,
+    required int parkingTicketId,
     required bool isAccountBalance,
     String? paymentMethodId,
   }) async {
@@ -28,7 +28,7 @@ class PaymentProcessorRepository implements IPaymentProcessorRepository {
     final response = await _client.post(
       controllerPath,
       parameters: {
-        "receiptId": receiptId,
+        "parkingTicketId": parkingTicketId,
         "isAccountBalance": isAccountBalance,
         "paymentMethodId": paymentMethodId ?? "",
         "stripeUserId": seomUser!.stripeId.getOrCrash(),
