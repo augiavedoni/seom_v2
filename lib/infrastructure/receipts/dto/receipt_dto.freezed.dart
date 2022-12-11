@@ -25,6 +25,7 @@ mixin _$ReceiptDto {
   String get amount => throw _privateConstructorUsedError;
   bool get paid => throw _privateConstructorUsedError;
   String? get chargeId => throw _privateConstructorUsedError;
+  bool get hasGeneratedReceipt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +39,13 @@ abstract class $ReceiptDtoCopyWith<$Res> {
           ReceiptDto value, $Res Function(ReceiptDto) then) =
       _$ReceiptDtoCopyWithImpl<$Res, ReceiptDto>;
   @useResult
-  $Res call({int id, String date, String amount, bool paid, String? chargeId});
+  $Res call(
+      {int id,
+      String date,
+      String amount,
+      bool paid,
+      String? chargeId,
+      bool hasGeneratedReceipt});
 }
 
 /// @nodoc
@@ -59,6 +66,7 @@ class _$ReceiptDtoCopyWithImpl<$Res, $Val extends ReceiptDto>
     Object? amount = null,
     Object? paid = null,
     Object? chargeId = freezed,
+    Object? hasGeneratedReceipt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -81,6 +89,10 @@ class _$ReceiptDtoCopyWithImpl<$Res, $Val extends ReceiptDto>
           ? _value.chargeId
           : chargeId // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasGeneratedReceipt: null == hasGeneratedReceipt
+          ? _value.hasGeneratedReceipt
+          : hasGeneratedReceipt // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -93,7 +105,13 @@ abstract class _$$_ReceiptDtoCopyWith<$Res>
       __$$_ReceiptDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String date, String amount, bool paid, String? chargeId});
+  $Res call(
+      {int id,
+      String date,
+      String amount,
+      bool paid,
+      String? chargeId,
+      bool hasGeneratedReceipt});
 }
 
 /// @nodoc
@@ -112,6 +130,7 @@ class __$$_ReceiptDtoCopyWithImpl<$Res>
     Object? amount = null,
     Object? paid = null,
     Object? chargeId = freezed,
+    Object? hasGeneratedReceipt = null,
   }) {
     return _then(_$_ReceiptDto(
       id: null == id
@@ -134,6 +153,10 @@ class __$$_ReceiptDtoCopyWithImpl<$Res>
           ? _value.chargeId
           : chargeId // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasGeneratedReceipt: null == hasGeneratedReceipt
+          ? _value.hasGeneratedReceipt
+          : hasGeneratedReceipt // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -147,7 +170,8 @@ class _$_ReceiptDto extends _ReceiptDto {
       required this.date,
       required this.amount,
       required this.paid,
-      this.chargeId})
+      this.chargeId,
+      required this.hasGeneratedReceipt})
       : super._();
 
   factory _$_ReceiptDto.fromJson(Map<String, dynamic> json) =>
@@ -163,10 +187,12 @@ class _$_ReceiptDto extends _ReceiptDto {
   final bool paid;
   @override
   final String? chargeId;
+  @override
+  final bool hasGeneratedReceipt;
 
   @override
   String toString() {
-    return 'ReceiptDto(id: $id, date: $date, amount: $amount, paid: $paid, chargeId: $chargeId)';
+    return 'ReceiptDto(id: $id, date: $date, amount: $amount, paid: $paid, chargeId: $chargeId, hasGeneratedReceipt: $hasGeneratedReceipt)';
   }
 
   @override
@@ -179,13 +205,15 @@ class _$_ReceiptDto extends _ReceiptDto {
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.paid, paid) || other.paid == paid) &&
             (identical(other.chargeId, chargeId) ||
-                other.chargeId == chargeId));
+                other.chargeId == chargeId) &&
+            (identical(other.hasGeneratedReceipt, hasGeneratedReceipt) ||
+                other.hasGeneratedReceipt == hasGeneratedReceipt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, date, amount, paid, chargeId);
+  int get hashCode => Object.hash(
+      runtimeType, id, date, amount, paid, chargeId, hasGeneratedReceipt);
 
   @JsonKey(ignore: true)
   @override
@@ -207,7 +235,8 @@ abstract class _ReceiptDto extends ReceiptDto {
       required final String date,
       required final String amount,
       required final bool paid,
-      final String? chargeId}) = _$_ReceiptDto;
+      final String? chargeId,
+      required final bool hasGeneratedReceipt}) = _$_ReceiptDto;
   const _ReceiptDto._() : super._();
 
   factory _ReceiptDto.fromJson(Map<String, dynamic> json) =
@@ -223,6 +252,8 @@ abstract class _ReceiptDto extends ReceiptDto {
   bool get paid;
   @override
   String? get chargeId;
+  @override
+  bool get hasGeneratedReceipt;
   @override
   @JsonKey(ignore: true)
   _$$_ReceiptDtoCopyWith<_$_ReceiptDto> get copyWith =>

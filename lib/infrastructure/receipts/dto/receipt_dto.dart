@@ -21,6 +21,7 @@ class ReceiptDto with _$ReceiptDto {
     required String amount,
     required bool paid,
     String? chargeId,
+    required bool hasGeneratedReceipt,
   }) = _ReceiptDto;
 
   factory ReceiptDto.fromDomain(Receipt receipt) {
@@ -30,6 +31,7 @@ class ReceiptDto with _$ReceiptDto {
       amount: receipt.amount.getOrCrash(),
       paid: receipt.paid,
       chargeId: receipt.chargeId.getOrCrash(),
+      hasGeneratedReceipt: receipt.hasGeneratedReceipt,
     );
   }
 
@@ -40,6 +42,7 @@ class ReceiptDto with _$ReceiptDto {
       amount: Amount(amount),
       paid: paid,
       chargeId: ChargeId(chargeId ?? ''),
+      hasGeneratedReceipt: hasGeneratedReceipt,
     );
   }
 

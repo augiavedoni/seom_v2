@@ -13,6 +13,7 @@ _$_ReceiptDto _$$_ReceiptDtoFromJson(Map<String, dynamic> json) =>
       amount: json['amount'] as String,
       paid: json['paid'] as bool,
       chargeId: json['chargeId'] as String?,
+      hasGeneratedReceipt: json['hasGeneratedReceipt'] as bool,
     );
 
 Map<String, dynamic> _$$_ReceiptDtoToJson(_$_ReceiptDto instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_ReceiptDtoToJson(_$_ReceiptDto instance) =>
       'amount': instance.amount,
       'paid': instance.paid,
       'chargeId': instance.chargeId,
+      'hasGeneratedReceipt': instance.hasGeneratedReceipt,
     };

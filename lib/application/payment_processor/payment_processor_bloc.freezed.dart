@@ -877,8 +877,8 @@ mixin _$PaymentProcessorState {
   Receipt? get receipt => throw _privateConstructorUsedError;
   int get parkingTicketId => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
-  Option<Either<PaymentProcessorFailure, Unit>> get saveFailureOrSucessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<PaymentProcessorFailure, Receipt>>
+      get saveFailureOrSucessOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PaymentProcessorStateCopyWith<PaymentProcessorState> get copyWith =>
@@ -896,7 +896,8 @@ abstract class $PaymentProcessorStateCopyWith<$Res> {
       Receipt? receipt,
       int parkingTicketId,
       bool isSaving,
-      Option<Either<PaymentProcessorFailure, Unit>> saveFailureOrSucessOption});
+      Option<Either<PaymentProcessorFailure, Receipt>>
+          saveFailureOrSucessOption});
 
   $PaymentMethodCopyWith<$Res>? get paymentMethod;
   $ReceiptCopyWith<$Res>? get receipt;
@@ -942,7 +943,7 @@ class _$PaymentProcessorStateCopyWithImpl<$Res,
       saveFailureOrSucessOption: null == saveFailureOrSucessOption
           ? _value.saveFailureOrSucessOption
           : saveFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<PaymentProcessorFailure, Unit>>,
+              as Option<Either<PaymentProcessorFailure, Receipt>>,
     ) as $Val);
   }
 
@@ -984,7 +985,8 @@ abstract class _$$_InitialCopyWith<$Res>
       Receipt? receipt,
       int parkingTicketId,
       bool isSaving,
-      Option<Either<PaymentProcessorFailure, Unit>> saveFailureOrSucessOption});
+      Option<Either<PaymentProcessorFailure, Receipt>>
+          saveFailureOrSucessOption});
 
   @override
   $PaymentMethodCopyWith<$Res>? get paymentMethod;
@@ -1028,7 +1030,7 @@ class __$$_InitialCopyWithImpl<$Res>
       saveFailureOrSucessOption: null == saveFailureOrSucessOption
           ? _value.saveFailureOrSucessOption
           : saveFailureOrSucessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<PaymentProcessorFailure, Unit>>,
+              as Option<Either<PaymentProcessorFailure, Receipt>>,
     ));
   }
 }
@@ -1052,7 +1054,8 @@ class _$_Initial implements _Initial {
   @override
   final bool isSaving;
   @override
-  final Option<Either<PaymentProcessorFailure, Unit>> saveFailureOrSucessOption;
+  final Option<Either<PaymentProcessorFailure, Receipt>>
+      saveFailureOrSucessOption;
 
   @override
   String toString() {
@@ -1093,7 +1096,7 @@ abstract class _Initial implements PaymentProcessorState {
       final Receipt? receipt,
       required final int parkingTicketId,
       required final bool isSaving,
-      required final Option<Either<PaymentProcessorFailure, Unit>>
+      required final Option<Either<PaymentProcessorFailure, Receipt>>
           saveFailureOrSucessOption}) = _$_Initial;
 
   @override
@@ -1105,7 +1108,8 @@ abstract class _Initial implements PaymentProcessorState {
   @override
   bool get isSaving;
   @override
-  Option<Either<PaymentProcessorFailure, Unit>> get saveFailureOrSucessOption;
+  Option<Either<PaymentProcessorFailure, Receipt>>
+      get saveFailureOrSucessOption;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

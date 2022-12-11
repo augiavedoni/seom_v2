@@ -21,6 +21,7 @@ mixin _$Receipt {
   Amount get amount => throw _privateConstructorUsedError;
   bool get paid => throw _privateConstructorUsedError;
   ChargeId get chargeId => throw _privateConstructorUsedError;
+  bool get hasGeneratedReceipt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ReceiptCopyWith<Receipt> get copyWith => throw _privateConstructorUsedError;
@@ -32,7 +33,12 @@ abstract class $ReceiptCopyWith<$Res> {
       _$ReceiptCopyWithImpl<$Res, Receipt>;
   @useResult
   $Res call(
-      {int id, ReceiptDate date, Amount amount, bool paid, ChargeId chargeId});
+      {int id,
+      ReceiptDate date,
+      Amount amount,
+      bool paid,
+      ChargeId chargeId,
+      bool hasGeneratedReceipt});
 }
 
 /// @nodoc
@@ -53,6 +59,7 @@ class _$ReceiptCopyWithImpl<$Res, $Val extends Receipt>
     Object? amount = null,
     Object? paid = null,
     Object? chargeId = null,
+    Object? hasGeneratedReceipt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -75,6 +82,10 @@ class _$ReceiptCopyWithImpl<$Res, $Val extends Receipt>
           ? _value.chargeId
           : chargeId // ignore: cast_nullable_to_non_nullable
               as ChargeId,
+      hasGeneratedReceipt: null == hasGeneratedReceipt
+          ? _value.hasGeneratedReceipt
+          : hasGeneratedReceipt // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -87,7 +98,12 @@ abstract class _$$_ReceiptCopyWith<$Res> implements $ReceiptCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id, ReceiptDate date, Amount amount, bool paid, ChargeId chargeId});
+      {int id,
+      ReceiptDate date,
+      Amount amount,
+      bool paid,
+      ChargeId chargeId,
+      bool hasGeneratedReceipt});
 }
 
 /// @nodoc
@@ -105,6 +121,7 @@ class __$$_ReceiptCopyWithImpl<$Res>
     Object? amount = null,
     Object? paid = null,
     Object? chargeId = null,
+    Object? hasGeneratedReceipt = null,
   }) {
     return _then(_$_Receipt(
       id: null == id
@@ -127,6 +144,10 @@ class __$$_ReceiptCopyWithImpl<$Res>
           ? _value.chargeId
           : chargeId // ignore: cast_nullable_to_non_nullable
               as ChargeId,
+      hasGeneratedReceipt: null == hasGeneratedReceipt
+          ? _value.hasGeneratedReceipt
+          : hasGeneratedReceipt // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -139,7 +160,8 @@ class _$_Receipt extends _Receipt {
       required this.date,
       required this.amount,
       required this.paid,
-      required this.chargeId})
+      required this.chargeId,
+      required this.hasGeneratedReceipt})
       : super._();
 
   @override
@@ -152,10 +174,12 @@ class _$_Receipt extends _Receipt {
   final bool paid;
   @override
   final ChargeId chargeId;
+  @override
+  final bool hasGeneratedReceipt;
 
   @override
   String toString() {
-    return 'Receipt(id: $id, date: $date, amount: $amount, paid: $paid, chargeId: $chargeId)';
+    return 'Receipt(id: $id, date: $date, amount: $amount, paid: $paid, chargeId: $chargeId, hasGeneratedReceipt: $hasGeneratedReceipt)';
   }
 
   @override
@@ -168,12 +192,14 @@ class _$_Receipt extends _Receipt {
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.paid, paid) || other.paid == paid) &&
             (identical(other.chargeId, chargeId) ||
-                other.chargeId == chargeId));
+                other.chargeId == chargeId) &&
+            (identical(other.hasGeneratedReceipt, hasGeneratedReceipt) ||
+                other.hasGeneratedReceipt == hasGeneratedReceipt));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, date, amount, paid, chargeId);
+  int get hashCode => Object.hash(
+      runtimeType, id, date, amount, paid, chargeId, hasGeneratedReceipt);
 
   @JsonKey(ignore: true)
   @override
@@ -188,7 +214,8 @@ abstract class _Receipt extends Receipt {
       required final ReceiptDate date,
       required final Amount amount,
       required final bool paid,
-      required final ChargeId chargeId}) = _$_Receipt;
+      required final ChargeId chargeId,
+      required final bool hasGeneratedReceipt}) = _$_Receipt;
   const _Receipt._() : super._();
 
   @override
@@ -201,6 +228,8 @@ abstract class _Receipt extends Receipt {
   bool get paid;
   @override
   ChargeId get chargeId;
+  @override
+  bool get hasGeneratedReceipt;
   @override
   @JsonKey(ignore: true)
   _$$_ReceiptCopyWith<_$_Receipt> get copyWith =>

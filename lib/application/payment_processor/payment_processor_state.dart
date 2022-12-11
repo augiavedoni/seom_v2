@@ -7,7 +7,7 @@ class PaymentProcessorState with _$PaymentProcessorState {
     Receipt? receipt,
     required int parkingTicketId,
     required bool isSaving,
-    required Option<Either<PaymentProcessorFailure, Unit>>
+    required Option<Either<PaymentProcessorFailure, Receipt>>
         saveFailureOrSucessOption,
   }) = _Initial;
 

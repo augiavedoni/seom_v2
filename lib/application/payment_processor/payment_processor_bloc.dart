@@ -51,7 +51,7 @@ class PaymentProcessorBloc
         ),
         executePayment: (event) async {
           final isAccountBalance = state.paymentMethod is AccountBalance;
-          Either<PaymentProcessorFailure, Unit>? failureOrSuccess;
+          Either<PaymentProcessorFailure, Receipt>? failureOrSuccess;
 
           emit(
             state.copyWith(

@@ -17,6 +17,7 @@ abstract class Receipt implements _$Receipt {
     required Amount amount,
     required bool paid,
     required ChargeId chargeId,
+    required bool hasGeneratedReceipt,
   }) = _Receipt;
 
   Option<ValueFailure<dynamic>> get failureOption {
