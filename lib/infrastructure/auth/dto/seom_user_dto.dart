@@ -13,7 +13,7 @@ part 'seom_user_dto.freezed.dart';
 part 'seom_user_dto.g.dart';
 
 @freezed
-abstract class SeomUserDto implements _$SeomUserDto {
+class SeomUserDto with _$SeomUserDto {
   const SeomUserDto._();
 
   @JsonSerializable(explicitToJson: true)

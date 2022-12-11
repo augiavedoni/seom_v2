@@ -14,7 +14,7 @@ import '../value_objects/start_time.dart';
 part 'parking_ticket.freezed.dart';
 
 @freezed
-abstract class ParkingTicket implements _$ParkingTicket {
+class ParkingTicket with _$ParkingTicket {
   const ParkingTicket._();
 
   const factory ParkingTicket({

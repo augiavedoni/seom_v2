@@ -8,7 +8,7 @@ import 'package:seom_v2/domain/receipts/value_objects/receipt_date.dart';
 part 'receipt.freezed.dart';
 
 @freezed
-abstract class Receipt implements _$Receipt {
+class Receipt with _$Receipt {
   const Receipt._();
 
   const factory Receipt({

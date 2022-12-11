@@ -13,7 +13,7 @@ part 'card_dto.freezed.dart';
 part 'card_dto.g.dart';
 
 @freezed
-abstract class CardDto implements _$CardDto {
+class CardDto with _$CardDto {
   const CardDto._();
 
   @JsonSerializable(explicitToJson: true)

@@ -11,7 +11,7 @@ import '../value_objects/year.dart';
 part 'vehicle.freezed.dart';
 
 @freezed
-abstract class Vehicle implements _$Vehicle {
+class Vehicle with _$Vehicle {
   const Vehicle._();
 
   const factory Vehicle({

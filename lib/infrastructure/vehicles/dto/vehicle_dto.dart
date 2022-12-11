@@ -13,7 +13,7 @@ part 'vehicle_dto.freezed.dart';
 part 'vehicle_dto.g.dart';
 
 @freezed
-abstract class VehicleDto implements _$VehicleDto {
+class VehicleDto with _$VehicleDto {
   const VehicleDto._();
 
   @JsonSerializable(explicitToJson: true)

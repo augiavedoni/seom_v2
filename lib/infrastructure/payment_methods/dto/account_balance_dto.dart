@@ -9,7 +9,7 @@ part 'account_balance_dto.freezed.dart';
 part 'account_balance_dto.g.dart';
 
 @freezed
-abstract class AccountBalanceDto implements _$AccountBalanceDto {
+class AccountBalanceDto with _$AccountBalanceDto {
   const AccountBalanceDto._();
 
   @JsonSerializable(explicitToJson: true)

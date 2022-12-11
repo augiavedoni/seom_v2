@@ -14,7 +14,7 @@ import 'package:seom_v2/domain/payment_methods/value_objects/type.dart';
 part 'payment_method.freezed.dart';
 
 @freezed
-abstract class PaymentMethod implements _$PaymentMethod {
+class PaymentMethod with _$PaymentMethod {
   const PaymentMethod._();
 
   const factory PaymentMethod.card({
