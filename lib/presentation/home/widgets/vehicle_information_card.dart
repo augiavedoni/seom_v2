@@ -110,21 +110,22 @@ class _VehicleInformationCard extends HookWidget {
                               color: Colors.white,
                             ),
                           ),
-                          TextButton(
-                            onPressed: () => _changeParkingStatus(
-                              context,
-                              hookedVehicle,
-                            ),
-                            child: Text(
-                              hookedVehicle.value.parked
-                                  ? "Finalizar"
-                                  : "Estacionar",
-                              style: theme.textTheme.labelLarge!.copyWith(
-                                color: green,
-                                fontWeight: FontWeight.bold,
+                          if (_verifyIfUserCanPark())
+                            TextButton(
+                              onPressed: () => _changeParkingStatus(
+                                context,
+                                hookedVehicle,
+                              ),
+                              child: Text(
+                                hookedVehicle.value.parked
+                                    ? 'Finalizar'
+                                    : 'Estacionar',
+                                style: theme.textTheme.labelLarge!.copyWith(
+                                  color: green,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
                         ],
                       ),
                     ],
@@ -142,16 +143,16 @@ class _VehicleInformationCard extends HookWidget {
     context.router.push(
       FeedbackScreenRoute(
         mainImagePath:
-            "lib/presentation/core/assets/undraw_my_location_re_r52x.svg",
-        title: "Oops... algo ocurrió",
+            'lib/presentation/core/assets/undraw_my_location_re_r52x.svg',
+        title: 'Oops... algo ocurrió',
         description:
-            "Necesitamos acceso a tu ubicación para poder ofrecerte un mejor servicio y poder asistirte mejor en caso de que sea necesario",
+            'Necesitamos acceso a tu ubicación para poder ofrecerte un mejor servicio y poder asistirte mejor en caso de que sea necesario',
         primaryButton: FeedbackButton(
-          text: "Permitir acceso",
+          text: 'Permitir acceso',
           onPressed: () async => await Geolocator.openLocationSettings(),
         ),
         secondaryButton: FeedbackButton(
-          text: "Volver",
+          text: 'Volver',
           onPressed: () => context.router.pop(),
         ),
         showClose: false,
@@ -159,6 +160,53 @@ class _VehicleInformationCard extends HookWidget {
         onWillPop: () => context.router.pop(),
       ),
     );
+  }
+
+  Future<dynamic> _showFailureDialog(
+    BuildContext context,
+    VehicleFailure failure,
+  ) {
+    final String description = failure.map(
+      unexpected: (_) => 'Oops! Algó falló... ¡Volvé a intentarlo!',
+      alreadyParked: (_) =>
+          'Este vehículo ya se encuentra estacionado. Por favor, contactate con soporte.',
+      vehicleNotFound: (_) =>
+          'Este vehículo no existe en nuestros registros. Por favor, contacte con soporte.',
+      parkingTicketNotFound: (_) =>
+          'Este vehículo no se encuentra estacionado. Por favor, contactate con soporte.ƒ',
+    );
+
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return CustomDialog(
+          title: 'Algo ocurrió...',
+          description: description,
+          mainButtonText: 'Volver',
+          mainButtonFunctionality: () => context.router.pop(),
+          dialogStatus: DialogStatus.error,
+        );
+      },
+    );
+  }
+
+  bool _verifyIfUserCanPark() {
+    final today = DateTime.now();
+
+    if (today.weekday == DateTime.saturday ||
+        today.weekday == DateTime.sunday) {
+      return false;
+    } else {
+      if (today.hour < 7) {
+        return false;
+      } else {
+        if (today.hour == 20 && today.minute >= 0) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    }
   }
 
   Future<void> _changeParkingStatus(
@@ -170,37 +218,9 @@ class _VehicleInformationCard extends HookWidget {
             const VehicleActorEvent.unparked(),
           );
     } else {
-      BlocProvider.of<PermissionsBloc>(context).add(
-        const PermissionsEvent.locationVerificationStarted(),
-      );
+      context.read<PermissionsBloc>().add(
+            const PermissionsEvent.locationVerificationStarted(),
+          );
     }
-  }
-
-  Future<dynamic> _showFailureDialog(
-    BuildContext context,
-    VehicleFailure failure,
-  ) {
-    final String description = failure.map(
-      unexpected: (_) => "Oops! Algó falló... ¡Volvé a intentarlo!",
-      alreadyParked: (_) =>
-          "Este vehículo ya se encuentra estacionado. Por favor, contactate con soporte.",
-      vehicleNotFound: (_) =>
-          "Este vehículo no existe en nuestros registros. Por favor, contacte con soporte.",
-      parkingTicketNotFound: (_) =>
-          "Este vehículo no se encuentra estacionado. Por favor, contactate con soporte.",
-    );
-
-    return showDialog(
-      context: context,
-      builder: (context) {
-        return CustomDialog(
-          title: "Algo ocurrió...",
-          description: description,
-          mainButtonText: "Volver",
-          mainButtonFunctionality: () => context.router.pop(),
-          dialogStatus: DialogStatus.error,
-        );
-      },
-    );
   }
 }
