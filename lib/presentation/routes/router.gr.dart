@@ -21,12 +21,12 @@ import 'package:seom_v2/presentation/add_payment_method/add_payment_method_scree
     as _i5;
 import 'package:seom_v2/presentation/feedback/feedback_screen.dart' as _i3;
 import 'package:seom_v2/presentation/home/home_screen.dart' as _i2;
-import 'package:seom_v2/presentation/parking_tickets/parking_tickets_history_screen.dart'
+import 'package:seom_v2/presentation/parking_tickets/parking_details_screen/parking_details_screen.dart'
+    as _i6;
+import 'package:seom_v2/presentation/parking_tickets/parking_tickets_history/parking_tickets_history_screen.dart'
     as _i8;
 import 'package:seom_v2/presentation/payment_methods_management/payment_methods_management_screen.dart'
     as _i4;
-import 'package:seom_v2/presentation/payment_process/parking_details_screen/parking_details_screen.dart'
-    as _i6;
 import 'package:seom_v2/presentation/payment_process/payment_in_process_screen/payment_in_process_screen.dart'
     as _i9;
 import 'package:seom_v2/presentation/payment_process/payment_method_chooser_screen/payment_method_chooser_screen.dart'
@@ -95,6 +95,7 @@ class Router extends _i11.RootStackRouter {
         child: _i6.ParkingDetailsScreen(
           key: args.key,
           parkingTicket: args.parkingTicket,
+          isPaying: args.isPaying,
         ),
       );
     },
@@ -338,12 +339,14 @@ class ParkingDetailsScreenRoute
   ParkingDetailsScreenRoute({
     _i12.Key? key,
     required _i13.ParkingTicket parkingTicket,
+    required bool isPaying,
   }) : super(
           ParkingDetailsScreenRoute.name,
           path: '/parking-details-screen',
           args: ParkingDetailsScreenRouteArgs(
             key: key,
             parkingTicket: parkingTicket,
+            isPaying: isPaying,
           ),
         );
 
@@ -354,15 +357,18 @@ class ParkingDetailsScreenRouteArgs {
   const ParkingDetailsScreenRouteArgs({
     this.key,
     required this.parkingTicket,
+    required this.isPaying,
   });
 
   final _i12.Key? key;
 
   final _i13.ParkingTicket parkingTicket;
 
+  final bool isPaying;
+
   @override
   String toString() {
-    return 'ParkingDetailsScreenRouteArgs{key: $key, parkingTicket: $parkingTicket}';
+    return 'ParkingDetailsScreenRouteArgs{key: $key, parkingTicket: $parkingTicket, isPaying: $isPaying}';
   }
 }
 

@@ -37,7 +37,7 @@ class _ParkingLocationState extends State<ParkingLocation> {
               width: 10,
             ),
             Text(
-              'Ubicación',
+              'Ubicación aproximada',
               style: theme.textTheme.headline6?.copyWith(
                 fontWeight: FontWeight.bold,
               ),

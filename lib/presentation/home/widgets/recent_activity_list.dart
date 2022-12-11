@@ -41,6 +41,7 @@ class RecentActivityList extends StatelessWidget {
                 context.router.push(
                   ParkingDetailsScreenRoute(
                     parkingTicket: parkingTicket,
+                    isPaying: true,
                   ),
                 );
               }

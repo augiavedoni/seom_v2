@@ -4,7 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:seom_v2/domain/parking_tickets/entities/parking_ticket.dart';
 import 'package:seom_v2/presentation/common_widgets/custom_app_bar.dart';
 import 'package:seom_v2/presentation/common_widgets/rounded_button.dart';
-import 'package:seom_v2/presentation/payment_process/parking_details_screen/widgets/parking_location.dart';
+import 'package:seom_v2/presentation/parking_tickets/parking_details_screen/widgets/parking_location.dart';
+import 'package:seom_v2/presentation/parking_tickets/widgets/visualize_receipt_button.dart';
 import 'package:seom_v2/presentation/routes/router.gr.dart';
 
 part 'widgets/parking_ticket_detail.dart';
@@ -13,22 +14,24 @@ class ParkingDetailsScreen extends StatelessWidget {
   ParkingDetailsScreen({
     super.key,
     required this.parkingTicket,
+    required this.isPaying,
   }) : showParkingLocation = parkingTicket.longitude.isValid() &&
             parkingTicket.latitude.isValid();
 
   final ParkingTicket parkingTicket;
   final bool showParkingLocation;
+  final bool isPaying;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: () async => !isPaying,
       child: Scaffold(
         appBar: CustomAppBar(
-          title: 'Pagar estacionamiento',
-          showBackButton: false,
+          title: isPaying ? 'Pagar estacionamiento' : 'Detalles',
+          showBackButton: !isPaying,
         ),
         backgroundColor: Colors.white,
         body: Padding(
@@ -84,7 +87,8 @@ class ParkingDetailsScreen extends StatelessWidget {
                     ),
                     _ParkingTicketDetail(
                       icon: Icons.paid_rounded,
-                      label: 'Monto a pagar: \$ ',
+                      label:
+                          isPaying ? 'Monto a pagar: \$ ' : 'Monto pagado: \$ ',
                       information: parkingTicket.receipt.amount.getOrCrash(),
                     ),
                     const SizedBox(
@@ -99,15 +103,28 @@ class ParkingDetailsScreen extends StatelessWidget {
                     const SizedBox(
                       height: NavigationToolbar.kMiddleSpacing,
                     ),
-                    const Spacer(),
-                    RoundedButton.fill(
-                      text: 'Continuar',
-                      onPressed: () => context.router.push(
-                        PaymentMethodChooserScreenRoute(
-                          parkingTicketId: parkingTicket.id,
-                        ),
-                      ),
+                    _ParkingTicketDetail(
+                      icon: Icons.payment_rounded,
+                      label: 'Medio de pago: ',
+                      information: parkingTicket.receipt.hasGeneratedReceipt
+                          ? 'Tarjeta'
+                          : 'Saldo',
                     ),
+                    const Spacer(),
+                    isPaying
+                        ? RoundedButton.fill(
+                            text: 'Continuar',
+                            onPressed: () => context.router.push(
+                              PaymentMethodChooserScreenRoute(
+                                parkingTicketId: parkingTicket.id,
+                              ),
+                            ),
+                          )
+                        : parkingTicket.receipt.hasGeneratedReceipt
+                            ? VisualizeReceiptButton(
+                                receipt: parkingTicket.receipt,
+                              )
+                            : const SizedBox(),
                     const SizedBox(height: NavigationToolbar.kMiddleSpacing),
                   ],
                 ),
