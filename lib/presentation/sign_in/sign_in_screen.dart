@@ -19,7 +19,7 @@ class SignInScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: lightblue,
       body: Stack(
         children: <Widget>[
